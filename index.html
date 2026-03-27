@@ -2,52 +2,127 @@
 <html>
 <head>
     <title>CyberFocus Knowledge Hub</title>
+
     <style>
         body {
-            font-family: Arial;
-            margin: 40px;
-            line-height: 1.6;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f4f6f9;
+            color: #333;
         }
-        h1 {
+
+        header {
+            background-color: #1a2a44;
+            color: white;
+            padding: 20px 40px;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        nav {
+            margin-top: 10px;
+        }
+
+        nav a {
+            color: white;
+            margin-right: 20px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .container {
+            padding: 40px;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        h2 {
             color: #1a2a44;
         }
-        h2 {
-            color: #2c3e50;
+
+        .button {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 15px;
+            background-color: #2c7be5;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .button:hover {
+            background-color: #1a5fd0;
+        }
+
+        ul {
+            padding-left: 20px;
         }
     </style>
 </head>
 
 <body>
 
-<h1>CyberFocus Knowledge Hub</h1>
+<header>
+    <h1>CyberFocus Knowledge Hub</h1>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Cybersecurity</a>
+        <a href="#">Safe AI</a>
+        <a href="#">Resources</a>
+    </nav>
+</header>
 
-<p>
-Supporting manufacturing SMEs in cybersecurity, safe AI, and digital transformation.
-</p>
+<div class="container">
 
-<h2>Cyber Threats in Manufacturing</h2>
-<p>
-Cyberattacks such as phishing and ransomware are increasing across the manufacturing sector,
-causing downtime, financial loss, and operational disruption.
-</p>
+    <div class="card">
+        <h2>About This Hub</h2>
+        <p>
+        Supporting manufacturing SMEs in cybersecurity, safe AI, and digital transformation.
+        This hub provides practical guidance, real-world scenarios, and actionable strategies.
+        </p>
+    </div>
 
-<h2>Phishing Example</h2>
-<p>
-Phishing is often the first step in a cyberattack, where attackers trick employees into revealing credentials.
-</p>
+    <div class="card">
+        <h2>Cyber Threats in Manufacturing</h2>
+        <p>
+        Cyberattacks such as phishing and ransomware are increasing across the manufacturing sector,
+        causing downtime, financial loss, and operational disruption.
+        </p>
+    </div>
 
-<a href="Phishing-infographic.pdf" target="_blank">
-    📄 Click here to view the phishing infographic
-</a>
+    <div class="card">
+        <h2>Phishing Example</h2>
+        <p>
+        Phishing is often the first step in a cyberattack, where attackers trick employees into revealing credentials.
+        </p>
 
-<h2>Key Defences</h2>
-<ul>
-<li>Multi-factor authentication (MFA)</li>
-<li>Regular patching</li>
-<li>Network segmentation</li>
-<li>Staff awareness training</li>
-<li>Secure backups</li>
-</ul>
+        <a href="Phishing-infographic.pdf" target="_blank" class="button">
+            📄 View Phishing Infographic
+        </a>
+    </div>
+
+    <div class="card">
+        <h2>Key Defences</h2>
+        <ul>
+            <li>Multi-factor authentication (MFA)</li>
+            <li>Regular patching</li>
+            <li>Network segmentation</li>
+            <li>Staff awareness training</li>
+            <li>Secure backups</li>
+        </ul>
+    </div>
+
+</div>
 
 </body>
 </html>
