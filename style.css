@@ -15,7 +15,7 @@ body {
     line-height: 1.65;
 }
 
-/* HEADER - Non-fixed, scrolls away */
+/* HEADER - Clean & non-fixed */
 header {
     background-color: #0a1728;
     padding: 20px 40px;
@@ -54,33 +54,46 @@ nav a:focus {
     border-radius: 4px;
 }
 
-/* Clean minimal hero */
+/* Improved Home Page Hero - More elegant & minimal */
 .hero {
     text-align: center;
-    padding: 120px 20px 100px;
-    background: linear-gradient(135deg, #0a1728 0%, #1e40af 100%);
+    padding: 130px 20px 110px;
+    background: linear-gradient(135deg, #0a1728 0%, #1e3a8a 100%);
     color: white;
+    position: relative;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 80px;
+    background: linear-gradient(transparent, #f8fafd);
 }
 
 .hero h2 {
-    font-size: 48px;
+    font-size: 46px;
     font-weight: 700;
-    margin-bottom: 20px;
-    line-height: 1.1;
+    margin-bottom: 18px;
+    line-height: 1.05;
+    letter-spacing: -0.5px;
 }
 
 .hero p {
-    font-size: 19.5px;
-    max-width: 680px;
-    margin: 0 auto 40px;
+    font-size: 19px;
+    max-width: 660px;
+    margin: 0 auto 38px;
     color: #dbe6f2;
+    font-weight: 400;
 }
 
-/* Button */
+/* Clean premium button */
 .button-primary,
 .button {
     display: inline-block;
-    padding: 15px 34px;
+    padding: 15px 36px;
     background-color: #ffffff;
     color: #1a2a44;
     border-radius: 8px;
@@ -88,13 +101,14 @@ nav a:focus {
     text-decoration: none;
     font-size: 15.5px;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.07);
 }
 
 .button-primary:hover,
 .button:hover {
-    background-color: #f1f5f9;
+    background-color: #f8fafc;
     transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
 }
 
 /* Container */
@@ -104,29 +118,55 @@ nav a:focus {
     padding: 0 20px;
 }
 
-/* Minimal cards */
+/* Improved minimal cards for better professionalism */
 .card {
     background: white;
-    padding: 38px;
-    margin-bottom: 36px;
+    padding: 40px;
+    margin-bottom: 40px;
     border-radius: 12px;
     border: 1px solid #e6ebf3;
-    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.05);
-}
-
-/* Important fix for smooth scroll to workshops */
-#workshops {
-    scroll-margin-top: 100px;   /* Prevents hiding under header */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
 }
 
 .card h2 {
-    font-size: 25px;
-    margin-bottom: 18px;
+    font-size: 24px;
+    margin-bottom: 16px;
     color: #0f172a;
     font-weight: 600;
 }
 
-/* Resource grid */
+/* Workshops section - better spacing */
+#workshops {
+    scroll-margin-top: 100px;
+}
+
+.workshop-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 22px 0;
+    border-bottom: 1px solid #e6ebf3;
+    gap: 24px;
+}
+
+.workshop-item:last-child {
+    border-bottom: none;
+}
+
+.workshop-item p {
+    margin-top: 6px;
+    color: #475569;
+    font-size: 15px;
+}
+
+.workshop-item span {
+    color: #2563eb;
+    font-weight: 600;
+    white-space: nowrap;
+    padding-top: 3px;
+}
+
+/* Resource grid (for resources page) */
 .resource-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
@@ -146,38 +186,12 @@ nav a:focus {
     font-size: 19px;
 }
 
-/* Workshop items */
-.workshop-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    padding: 20px 0;
-    border-bottom: 1px solid #e6ebf3;
-    gap: 20px;
-}
-
-.workshop-item:last-child {
-    border-bottom: none;
-}
-
-.workshop-item p {
-    margin-top: 6px;
-    color: #475569;
-    font-size: 15px;
-}
-
-.workshop-item span {
-    color: #2563eb;
-    font-weight: 600;
-    white-space: nowrap;
-}
-
 /* Footer */
 .footer {
     background-color: #0a1728;
     color: #94a3b8;
     text-align: center;
-    padding: 50px 20px 40px;
+    padding: 52px 20px 42px;
     margin-top: 100px;
     font-size: 15px;
 }
@@ -192,10 +206,10 @@ nav a:focus {
 
 /* Responsive */
 @media (max-width: 768px) {
-    .hero h2 { font-size: 40px; }
-    .hero { padding: 90px 20px 80px; }
+    .hero h2 { font-size: 38px; }
+    .hero { padding: 100px 20px 80px; }
     header { padding: 16px 20px; }
     nav a { margin-left: 18px; font-size: 15px; }
-    .card { padding: 30px; }
+    .card { padding: 32px; }
     #workshops { scroll-margin-top: 80px; }
 }
