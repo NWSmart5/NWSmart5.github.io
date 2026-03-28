@@ -15,14 +15,14 @@ body {
     line-height: 1.6;
 }
 
-/* HEADER - Larger, more balanced & premium */
+/* HEADER - Improved proportion, contrast & accessibility */
 header {
     background-color: #0a1728;
-    padding: 22px 40px;
+    padding: 24px 40px;
     position: sticky;
     top: 0;
     z-index: 100;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
 }
 
 .nav-container {
@@ -35,25 +35,34 @@ header {
 
 header h1 {
     color: #ffffff;
-    font-size: 28px;
+    font-size: 30px;
     font-weight: 700;
-    letter-spacing: -0.5px;
+    letter-spacing: -0.6px;
+}
+
+nav {
+    display: flex;
+    align-items: center;
 }
 
 nav a {
-    color: #b0c4db;
-    margin-left: 32px;
+    color: #e2e8f0;           /* Higher contrast white-ish */
+    margin-left: 35px;
     text-decoration: none;
-    font-size: 16.5px;
+    font-size: 17.5px;
     font-weight: 500;
     transition: color 0.3s ease;
 }
 
-nav a:hover {
+nav a:hover,
+nav a:focus {
     color: #ffffff;
+    outline: 2px solid #60a5fa;   /* Clear blue focus ring for accessibility */
+    outline-offset: 4px;
+    border-radius: 4px;
 }
 
-/* HERO - More premium & impactful */
+/* HERO - Minor refinement */
 .hero {
     text-align: center;
     padding: 140px 20px 120px;
@@ -68,7 +77,6 @@ nav a:hover {
     position: absolute;
     top: 0; left: 0; right: 0; bottom: 0;
     background: radial-gradient(circle at 30% 20%, rgba(255,255,255,0.09) 0%, transparent 60%);
-    pointer-events: none;
 }
 
 .hero h2 {
@@ -85,7 +93,7 @@ nav a:hover {
     color: #dbe6f2;
 }
 
-/* Premium button */
+/* Button */
 .button-primary,
 .button {
     display: inline-block;
@@ -107,7 +115,7 @@ nav a:hover {
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.18);
 }
 
-/* Container & Cards */
+/* Rest of your styles (cards, workshops, footer, etc.) remain the same */
 .container {
     max-width: 1100px;
     margin: 80px auto;
@@ -136,7 +144,6 @@ nav a:hover {
     font-weight: 600;
 }
 
-/* Resource grid */
 .resource-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -162,7 +169,6 @@ nav a:hover {
     font-size: 20px;
 }
 
-/* Workshop items */
 .workshop-item {
     display: flex;
     justify-content: space-between;
@@ -189,7 +195,6 @@ nav a:hover {
     padding-top: 4px;
 }
 
-/* Footer */
 .footer {
     background-color: #0a1728;
     color: #94a3b8;
@@ -211,7 +216,7 @@ nav a:hover {
 @media (max-width: 768px) {
     .hero h2 { font-size: 42px; }
     .hero { padding: 100px 20px 90px; }
-    header { padding: 18px 20px; }
-    nav a { margin-left: 18px; font-size: 15px; }
+    header { padding: 20px 20px; }
+    nav a { margin-left: 20px; font-size: 16px; }
     .card { padding: 32px; }
 }
