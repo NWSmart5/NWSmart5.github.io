@@ -1,11 +1,11 @@
-/* RESET */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* FULL PAGE LAYOUT FIX */
+
 html, body {
     height: 100%;
     font-family: Arial, sans-serif;
@@ -13,7 +13,7 @@ html, body {
     color: #333;
 }
 
-/* FLEX STRUCTURE (THIS FIXES WHITE SPACE ISSUE) */
+
 body {
     display: flex;
     flex-direction: column;
@@ -64,7 +64,7 @@ nav a:hover {
 
 /* MAIN CONTENT AREA */
 .container {
-    flex: 1; /* 🔥 THIS PUSHES FOOTER DOWN */
+    flex: 1;
     padding: 40px;
     max-width: 1000px;
     margin: auto;
@@ -95,7 +95,7 @@ h2 {
     color: #1a2a44;
 }
 
-/* BUTTONS (FIXED) */
+
 .button {
     display: inline-block;
     margin-top: 10px;
@@ -114,7 +114,7 @@ h2 {
     color: #2c7be5;
 }
 
-/* RESOURCE GRID (PREMIUM LOOK) */
+/* RESOURCE GRID */
 .resource-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -147,7 +147,7 @@ h2 {
     margin-bottom: 15px;
 }
 
-/* FOOTER (LOCKED TO BOTTOM) */
+/* FOOTER  */
 .footer {
     background-color: #1a2a44;
     color: white;
