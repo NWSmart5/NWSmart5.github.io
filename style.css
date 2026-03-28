@@ -32,6 +32,7 @@ nav a {
     padding: 60px 40px;
     text-align: center;
 }
+
 .hero img {
     max-width: 500px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.2);
@@ -50,37 +51,41 @@ nav a {
     border-radius: 10px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
-.card a {
+
+/* ✅ FIXED: only normal links, NOT buttons */
+.card a:not(.button) {
     color: #2c7be5;
     text-decoration: none;
 }
-.button {
-    color: white !important;
-}
 
-.card a:hover {
+.card a:not(.button):hover {
     text-decoration: underline;
 }
+
 h2 {
     color: #1a2a44;
 }
 
+/* ✅ CLEAN BUTTON STYLE (no duplicates, no !important) */
 .button {
     display: inline-block;
     margin-top: 10px;
     padding: 12px 18px;
     background-color: #2c7be5;
-    color: white; 
+    color: white;
     text-decoration: none;
     border-radius: 6px;
     font-weight: bold;
     border: 2px solid #2c7be5;
+    transition: all 0.2s ease;
 }
 
 .button:hover {
     background-color: white;
     color: #2c7be5;
 }
+
+/* ✅ PREMIUM GRID */
 .resource-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -111,7 +116,6 @@ h2 {
     padding-left: 15px;
     margin-bottom: 15px;
 }
-
 
 .footer {
     background-color: #1a2a44;
