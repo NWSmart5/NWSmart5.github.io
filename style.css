@@ -54,6 +54,9 @@ nav a {
     color: #2c7be5;
     text-decoration: none;
 }
+.button {
+    color: white !important;
+}
 
 .card a:hover {
     text-decoration: underline;
