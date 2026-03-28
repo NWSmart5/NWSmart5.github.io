@@ -12,14 +12,14 @@ body {
     font-family: 'Segoe UI', system-ui, -apple-system, Arial, sans-serif;
     background-color: #f8fafd;
     color: #1a2a44;
-    line-height: 1.6;
+    line-height: 1.65;
 }
 
-/* HEADER - Slightly bigger but not oversized */
+/* HEADER - Clean, non-fixed, slightly larger */
 header {
     background-color: #0a1728;
     padding: 20px 40px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
 .nav-container {
@@ -38,12 +38,12 @@ header h1 {
 }
 
 nav a {
-    color: #e2e8f0;           /* Better contrast for accessibility */
+    color: #e2e8f0;
     margin-left: 30px;
     text-decoration: none;
     font-size: 16px;
     font-weight: 500;
-    transition: color 0.3s ease;
+    transition: color 0.25s ease;
 }
 
 nav a:hover,
@@ -54,38 +54,29 @@ nav a:focus {
     border-radius: 4px;
 }
 
-/* HERO - Back to more balanced size */
+/* HERO - Minimalistic & clean */
 .hero {
     text-align: center;
-    padding: 110px 20px 90px;
+    padding: 120px 20px 100px;
     background: linear-gradient(135deg, #0a1728 0%, #1e40af 100%);
     color: white;
-    position: relative;
-    overflow: hidden;
-}
-
-.hero::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: radial-gradient(circle at 30% 20%, rgba(255,255,255,0.08) 0%, transparent 60%);
 }
 
 .hero h2 {
-    font-size: 46px;
+    font-size: 48px;
     font-weight: 700;
-    margin-bottom: 18px;
+    margin-bottom: 20px;
     line-height: 1.1;
 }
 
 .hero p {
-    font-size: 19px;
-    max-width: 700px;
-    margin: 0 auto 35px;
+    font-size: 19.5px;
+    max-width: 680px;
+    margin: 0 auto 40px;
     color: #dbe6f2;
 }
 
-/* Button */
+/* Clean button */
 .button-primary,
 .button {
     display: inline-block;
@@ -97,36 +88,30 @@ nav a:focus {
     text-decoration: none;
     font-size: 15.5px;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 .button-primary:hover,
 .button:hover {
     background-color: #f1f5f9;
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
 }
 
-/* Container & Cards - Moderate sizing */
+/* Container */
 .container {
-    max-width: 1100px;
-    margin: 70px auto;
+    max-width: 1080px;
+    margin: 80px auto;
     padding: 0 20px;
 }
 
+/* Minimal cards */
 .card {
     background: white;
-    padding: 36px;
-    margin-bottom: 32px;
+    padding: 38px;
+    margin-bottom: 36px;
     border-radius: 12px;
-    border: 1px solid #e2e8f0;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e6ebf3;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.05);
 }
 
 .card h2 {
@@ -148,13 +133,7 @@ nav a:focus {
     background: #f8fafd;
     padding: 28px;
     border-radius: 10px;
-    border: 1px solid #e2e8f0;
-    transition: all 0.3s ease;
-}
-
-.resource-item:hover {
-    border-color: #3b82f6;
-    box-shadow: 0 6px 18px rgba(59, 130, 246, 0.1);
+    border: 1px solid #e6ebf3;
 }
 
 .resource-item h3 {
@@ -162,13 +141,13 @@ nav a:focus {
     font-size: 19px;
 }
 
-/* Workshop items */
+/* Workshop items - clean */
 .workshop-item {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    padding: 18px 0;
-    border-bottom: 1px solid #e2e8f0;
+    padding: 20px 0;
+    border-bottom: 1px solid #e6ebf3;
     gap: 20px;
 }
 
@@ -186,7 +165,6 @@ nav a:focus {
     color: #2563eb;
     font-weight: 600;
     white-space: nowrap;
-    padding-top: 4px;
 }
 
 /* Footer */
@@ -195,7 +173,7 @@ nav a:focus {
     color: #94a3b8;
     text-align: center;
     padding: 50px 20px 40px;
-    margin-top: 90px;
+    margin-top: 100px;
     font-size: 15px;
 }
 
@@ -209,9 +187,9 @@ nav a:focus {
 
 /* Responsive */
 @media (max-width: 768px) {
-    .hero h2 { font-size: 38px; }
-    .hero { padding: 90px 20px; }
+    .hero h2 { font-size: 40px; }
+    .hero { padding: 90px 20px 80px; }
     header { padding: 16px 20px; }
     nav a { margin-left: 18px; font-size: 15px; }
-    .card { padding: 28px; }
+    .card { padding: 30px; }
 }
