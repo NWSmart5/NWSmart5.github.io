@@ -1,10 +1,25 @@
-body {
-    font-family: Arial, sans-serif;
+/* RESET */
+* {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* FULL PAGE LAYOUT FIX */
+html, body {
+    height: 100%;
+    font-family: Arial, sans-serif;
     background-color: #f4f6f9;
     color: #333;
 }
 
+/* FLEX STRUCTURE (THIS FIXES WHITE SPACE ISSUE) */
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+/* HEADER */
 header {
     background-color: #1a2a44;
     color: white;
@@ -15,6 +30,7 @@ header h1 {
     margin: 0;
 }
 
+/* NAV */
 nav {
     margin-top: 10px;
 }
@@ -26,6 +42,11 @@ nav a {
     font-weight: bold;
 }
 
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* HERO */
 .hero {
     background: linear-gradient(to right, #1a2a44, #2c7be5);
     color: white;
@@ -35,15 +56,22 @@ nav a {
 
 .hero img {
     max-width: 500px;
+    width: 100%;
+    margin-top: 20px;
+    border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
+/* MAIN CONTENT AREA */
 .container {
+    flex: 1; /* 🔥 THIS PUSHES FOOTER DOWN */
     padding: 40px;
     max-width: 1000px;
     margin: auto;
+    width: 100%;
 }
 
+/* CARDS */
 .card {
     background: white;
     padding: 25px;
@@ -52,7 +80,7 @@ nav a {
     box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
 
-/* ✅ FIXED: only normal links, NOT buttons */
+/* NORMAL LINKS */
 .card a:not(.button) {
     color: #2c7be5;
     text-decoration: none;
@@ -62,11 +90,12 @@ nav a {
     text-decoration: underline;
 }
 
+/* HEADINGS */
 h2 {
     color: #1a2a44;
 }
 
-/* ✅ CLEAN BUTTON STYLE (no duplicates, no !important) */
+/* BUTTONS (FIXED) */
 .button {
     display: inline-block;
     margin-top: 10px;
@@ -85,7 +114,7 @@ h2 {
     color: #2c7be5;
 }
 
-/* ✅ PREMIUM GRID */
+/* RESOURCE GRID (PREMIUM LOOK) */
 .resource-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -96,7 +125,7 @@ h2 {
 .resource-item {
     background: #f9fbff;
     padding: 20px;
-    border-radius: 8px;
+    border-radius: 10px;
     border: 1px solid #e0e6ed;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
@@ -111,16 +140,17 @@ h2 {
     color: #1a2a44;
 }
 
+/* WORKSHOP STYLE */
 .workshop {
     border-left: 5px solid #2c7be5;
     padding-left: 15px;
     margin-bottom: 15px;
 }
 
+/* FOOTER (LOCKED TO BOTTOM) */
 .footer {
     background-color: #1a2a44;
     color: white;
     padding: 25px;
     text-align: center;
-    margin-top: 40px;
 }
