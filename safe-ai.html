@@ -3,13 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Safe AI | CyberFocus Knowledge Hub</title>
+    <title>Safe AI | NWSmart5.0 Knowledge Hub</title>
     <link rel="stylesheet" href="style.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX');
+    </script>
 </head>
 <body>
     <header>
         <div class="nav-container">
-            <h1>CyberFocus</h1>
+            <h1>NWSmart5.0 <span>Knowledge Hub</span></h1>
             <nav>
                 <a href="index.html">Home</a>
                 <a href="cybersecurity.html">Cybersecurity</a>
@@ -20,35 +27,45 @@
         </div>
     </header>
 
+    <section class="page-hero">
+        <h2>Safe & Responsible AI</h2>
+        <p>Ethical, transparent, and secure AI adoption for manufacturing SMEs — aligned with Industry 5.0 human-centric principles.</p>
+    </section>
+
     <div class="container">
         <div class="card">
-            <h2>Safe AI in Manufacturing</h2>
-            <p>AI adoption in SMEs must be secure, transparent, and aligned with ethical and operational requirements.</p>
+            <h2>Why Safe AI Matters</h2>
+            <p>AI can transform predictive maintenance, quality control and automation — but must be implemented responsibly to avoid bias, data leaks and loss of human oversight.</p>
         </div>
 
         <div class="card">
-            <h2>Key Risks</h2>
-            <ul style="margin-left: 20px; line-height: 1.8;">
-                <li>Data leakage through AI tools</li>
-                <li>Bias in automated decisions</li>
-                <li>Lack of explainability</li>
-            </ul>
+            <h2>Key Risks & Mitigation</h2>
+            <div class="checklist">
+                <ul>
+                    <li>Data leakage through AI tools</li>
+                    <li>Bias in automated decisions</li>
+                    <li>Lack of explainability</li>
+                    <li>Over-reliance reducing human control</li>
+                </ul>
+            </div>
         </div>
 
         <div class="card">
-            <h2>Best Practices</h2>
-            <ul style="margin-left: 20px; line-height: 1.8;">
-                <li>Use trusted AI platforms</li>
-                <li>Limit sensitive data input</li>
-                <li>Implement human oversight</li>
+            <h2>Best Practice Checklist</h2>
+            <ul style="line-height:2.0;">
+                <li>✅ Start with small pilots</li>
+                <li>✅ Perform AI ethics & impact assessments</li>
+                <li>✅ Use explainable AI tools</li>
+                <li>✅ Maintain human oversight</li>
+                <li>✅ Train staff on responsible use</li>
             </ul>
+            <a href="resources.html" class="button-primary" style="margin-top:24px;">Browse Safe AI Resources →</a>
         </div>
     </div>
 
     <footer class="footer">
-        <p><strong>CyberFocus Project</strong></p>
+        <p><strong>NWSmart5.0 Knowledge Hub</strong> — CyberFocus Project</p>
         <p>University of Salford | Greater Manchester</p>
-        <p>Supporting SMEs in cybersecurity, safe AI, and digital transformation</p>
     </footer>
 </body>
 </html>
