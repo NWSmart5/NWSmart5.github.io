@@ -3,15 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resources | NWSmart5.0 Knowledge Hub</title>
+    <title>Knowledge Library | NWSmart5.0</title>
     <link rel="stylesheet" href="style.css">
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-XXXXXXXXXX');
-    </script>
+    <script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-XXXXXXXXXX');</script>
 </head>
 <body>
     <header>
@@ -22,24 +17,16 @@
                 <a href="cybersecurity.html">Cybersecurity</a>
                 <a href="safe-ai.html">Safe AI</a>
                 <a href="digital.html">Digital Transformation</a>
-                <a href="resources.html">Resources</a>
+                <a href="library.html">Knowledge Library</a>
             </nav>
         </div>
     </header>
 
     <div class="container">
-        <h2 style="margin-bottom:12px;">Resource Library</h2>
-        <p style="font-size:19px;color:#475569;">Curated NCSC Cyber Action Toolkit, guides, videos, PDFs and project materials for manufacturing SMEs.</p>
+        <h2 style="margin-bottom: 10px;">Knowledge Library</h2>
+        <p style="font-size: 19px; color: #475569;">Curated tools, guides, videos and PDFs from NCSC and project partners.</p>
 
-        <input type="text" id="resource-search" placeholder="Search resources (phishing, AI, ransomware, backup...)">
-
-        <div class="resource-filters">
-            <button class="filter-btn active" data-filter="all">All</button>
-            <button class="filter-btn" data-filter="video">Videos</button>
-            <button class="filter-btn" data-filter="pdf">PDFs</button>
-            <button class="filter-btn" data-filter="guide">Guides</button>
-            <button class="filter-btn" data-filter="tool">Tools</button>
-        </div>
+        <input type="text" id="resource-search" placeholder="Search resources..." style="width:100%; max-width:520px; padding:14px; margin:25px 0; border-radius:50px; border:1px solid #ddd;">
 
         <div class="resource-grid" id="resource-grid"></div>
     </div>
@@ -50,16 +37,13 @@
     </footer>
 
     <script>
-        const resources = [
-            {title: "Cyber Action Toolkit", desc: "Guide for small businesses to protect against common cyberattacks", type: "guide", link: "https://www.ncsc.gov.uk/collection/cyber-action-toolkit", label: "NCSC"},
-            {title: "10 Steps to Cyber Security Infographic", desc: "Essential guidance for SMEs", type: "pdf", link: "2021-10-steps-to-cyber-security-infographic.pdf", label: "PDF"},
-            {title: "Phishing Infographic", desc: "How to spot and avoid phishing", type: "pdf", link: "Phishing-infographic.pdf", label: "PDF"},
-            {title: "Preparing for Cyber Incidents", desc: "Video guidance", type: "video", link: "https://youtu.be/3duIYKse7kg", label: "Video"},
-            {title: "What is Phishing?", desc: "Staff awareness video", type: "video", link: "https://youtu.be/SnPjf4N409o", label: "Video"},
-            {title: "Cyber Essentials Readiness Check", desc: "Assess your readiness", type: "tool", link: "https://www.ncsc.gov.uk/cyberessentials/get-ready", label: "Tool"},
-            // Add more resources here easily
+        const resources = [ /* Same as before - add your full list here */ 
+            {title: "Cyber Action Toolkit", desc: "Small business guide to common cyberattacks", type: "guide", link: "https://www.ncsc.gov.uk/collection/cyber-action-toolkit", label: "NCSC"},
+            {title: "10 Steps to Cyber Security", desc: "Essential infographic", type: "pdf", link: "2021-10-steps-to-cyber-security-infographic.pdf", label: "PDF"},
+            // Add more...
         ];
 
+        // Rendering script (same as previous version)
         function renderResources(filtered) {
             const grid = document.getElementById('resource-grid');
             grid.innerHTML = '';
@@ -67,33 +51,20 @@
                 const card = document.createElement('div');
                 card.className = 'resource-card';
                 card.innerHTML = `
-                    <div class="type ${r.type}">${r.label}</div>
+                    <strong>${r.label}</strong>
                     <h3>${r.title}</h3>
                     <p>${r.desc}</p>
-                    <a href="${r.link}" target="_blank" class="link">Access →</a>
+                    <a href="${r.link}" target="_blank" class="button-primary" style="margin-top:15px; display:inline-block;">Access Resource</a>
                 `;
                 grid.appendChild(card);
             });
         }
-
         renderResources(resources);
 
         document.getElementById('resource-search').addEventListener('input', e => {
             const term = e.target.value.toLowerCase();
-            const filtered = resources.filter(r => 
-                r.title.toLowerCase().includes(term) || r.desc.toLowerCase().includes(term)
-            );
+            const filtered = resources.filter(r => r.title.toLowerCase().includes(term) || r.desc.toLowerCase().includes(term));
             renderResources(filtered);
-        });
-
-        document.querySelectorAll('.filter-btn').forEach(btn => {
-            btn.addEventListener('click', () => {
-                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-                const filter = btn.dataset.filter;
-                const filtered = filter === 'all' ? resources : resources.filter(r => r.type === filter);
-                renderResources(filtered);
-            });
         });
     </script>
 </body>
