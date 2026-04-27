@@ -29,10 +29,10 @@
 
     <div class="container">
         <h2 style="margin-bottom: 12px;">Knowledge Library</h2>
-        <p style="font-size: 19px; color: #475569;">Curated NCSC Cyber Action Toolkit, guides, videos, infographics and project resources.</p>
+        <p style="font-size: 19px; color: #475569;">Curated NCSC tools, guides, videos, infographics and project resources for manufacturing SMEs.</p>
 
-        <input type="text" id="resource-search" placeholder="Search resources (phishing, AI, ransomware...)" 
-               style="width:100%; max-width:560px; padding:16px 20px; margin:30px 0; border-radius:50px; border:1px solid #cbd5e1; font-size:16px;">
+        <input type="text" id="resource-search" placeholder="Search resources..." 
+               style="width:100%; max-width:560px; padding:16px 20px; margin:30px 0; border-radius:50px; border:1px solid #e0e7ff;">
 
         <div class="resource-grid" id="resource-grid"></div>
     </div>
@@ -44,11 +44,10 @@
 
     <script>
         const resources = [
-            {title: "Cyber Action Toolkit", desc: "Practical guide for small businesses against common cyberattacks", link: "https://www.ncsc.gov.uk/collection/cyber-action-toolkit"},
-            {title: "10 Steps to Cyber Security Infographic", desc: "Essential NCSC guidance", link: "2021-10-steps-to-cyber-security-infographic.pdf"},
-            {title: "Phishing Infographic", desc: "How to spot and avoid phishing attacks", link: "Phishing-infographic.pdf"},
-            {title: "Preparing for Cyber Incidents", desc: "Video - What to do before, during and after an attack", link: "https://youtu.be/3duIYKse7kg"},
-            // Add more resources here
+            {title: "Cyber Action Toolkit", desc: "Practical guide for small businesses", link: "https://www.ncsc.gov.uk/collection/cyber-action-toolkit"},
+            {title: "10 Steps to Cyber Security", desc: "NCSC essential infographic", link: "2021-10-steps-to-cyber-security-infographic.pdf"},
+            {title: "Phishing Infographic", desc: "Spot and avoid phishing attacks", link: "Phishing-infographic.pdf"},
+            // Add more items here
         ];
 
         function renderResources(filtered) {
@@ -60,7 +59,7 @@
                 card.innerHTML = `
                     <h3>${r.title}</h3>
                     <p>${r.desc}</p>
-                    <a href="${r.link}" target="_blank" class="button-primary" style="margin-top:20px; display:inline-block;">Access Resource</a>
+                    <a href="${r.link}" target="_blank" class="button-primary" style="margin-top:20px;display:inline-block;">Access Resource</a>
                 `;
                 grid.appendChild(card);
             });
