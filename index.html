@@ -3,13 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CyberFocus Knowledge Hub</title>
+    <meta name="description" content="NWSmart5.0 Knowledge Hub - Cybersecurity, Safe AI and Industry 5.0 resources for Northwest manufacturing SMEs.">
+    <title>NWSmart5.0 Knowledge Hub | University of Salford</title>
     <link rel="stylesheet" href="style.css">
+    <!-- Google Analytics 4 - Replace G-XXXXXXXXXX -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX');
+    </script>
 </head>
 <body>
     <header>
         <div class="nav-container">
-            <h1>CyberFocus</h1>
+            <h1>NWSmart5.0 <span>Knowledge Hub</span></h1>
             <nav>
                 <a href="index.html">Home</a>
                 <a href="cybersecurity.html">Cybersecurity</a>
@@ -20,55 +29,40 @@
         </div>
     </header>
 
-    <!-- Clean Hero -->
     <section class="hero">
-        <h2>CyberFocus Knowledge Hub</h2>
-        <p>Supporting manufacturing SMEs in cybersecurity, safe AI, and digital transformation.</p>
-        <a href="#workshops" class="button-primary">View Upcoming Workshops</a>
+        <h2>NWSmart5.0 Knowledge Hub</h2>
+        <p>Practical tools and guidance for Northwest manufacturing SMEs in cybersecurity, safe & responsible AI, and human-centric Industry 5.0 transformation.</p>
+        <a href="resources.html" class="button-primary">Browse Resources</a>
     </section>
 
     <div class="container">
         <div class="card">
-            <h2>About This Hub</h2>
-            <p>This platform provides practical cybersecurity guidance, AI adoption strategies, and digital transformation insights tailored for manufacturing SMEs.</p>
+            <h2>Project Vision</h2>
+            <p>Empowering manufacturing SMEs in Greater Manchester and the North West to lead secure, smart, sustainable, and human-centric industrial transformation.</p>
         </div>
 
-        <div class="card">
-            <h2>Cyber Threats in Manufacturing</h2>
-            <p>Manufacturing organisations are increasingly targeted by ransomware, phishing, and supply chain attacks. This hub delivers actionable steps to reduce risk and build resilience.</p>
-        </div>
-
-        <!-- Workshops Section - ID moved here for better scrolling -->
-        <div id="workshops" class="card">
-            <h2>Upcoming Workshops</h2>
-            <div class="workshop-item">
-                <div>
-                    <strong>Cyber Threats on the Factory Floor</strong>
-                    <p>Understanding ransomware and phishing risks in manufacturing environments.</p>
-                </div>
-                <span>March 2026</span>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px;">
+            <div class="card">
+                <h3>🔐 Cybersecurity</h3>
+                <p>CyBOK-aligned protection for factory floor and OT systems.</p>
+                <a href="cybersecurity.html" class="button" style="margin-top:16px;display:inline-block;">Explore →</a>
             </div>
-            <div class="workshop-item">
-                <div>
-                    <strong>Safe AI Adoption for SMEs</strong>
-                    <p>How to implement AI tools securely and responsibly.</p>
-                </div>
-                <span>April 2026</span>
+            <div class="card">
+                <h3>🤖 Safe AI</h3>
+                <p>Responsible AI adoption with fairness, transparency and ethics.</p>
+                <a href="safe-ai.html" class="button" style="margin-top:16px;display:inline-block;">Explore →</a>
             </div>
-            <div class="workshop-item">
-                <div>
-                    <strong>Digital Transformation & Security</strong>
-                    <p>Balancing innovation with cybersecurity in Industry 4.0.</p>
-                </div>
-                <span>May 2026</span>
+            <div class="card">
+                <h3>🏭 Digital Transformation</h3>
+                <p>Industry 5.0 roadmaps focused on people, sustainability and resilience.</p>
+                <a href="digital.html" class="button" style="margin-top:16px;display:inline-block;">Explore →</a>
             </div>
         </div>
     </div>
 
     <footer class="footer">
-        <p><strong>CyberFocus Project</strong></p>
-        <p>University of Salford | Greater Manchester</p>
-        <p>Supporting SMEs in cybersecurity, safe AI, and digital transformation</p>
+        <p><strong>NWSmart5.0 Knowledge Hub</strong> — CyberFocus Project</p>
+        <p>University of Salford • Greater Manchester Chamber of Commerce • Greater Manchester Institute of Technology</p>
     </footer>
 </body>
 </html>
