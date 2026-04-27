@@ -23,10 +23,10 @@
     </header>
 
     <div class="container">
-        <h2 style="margin-bottom: 10px;">Knowledge Library</h2>
-        <p style="font-size: 19px; color: #475569;">Curated tools, guides, videos and PDFs from NCSC and project partners.</p>
+        <h2>Knowledge Library</h2>
+        <p style="font-size:19px; color:#475569; margin-bottom:30px;">Curated NCSC tools, guides, videos, and project resources for manufacturing SMEs.</p>
 
-        <input type="text" id="resource-search" placeholder="Search resources..." style="width:100%; max-width:520px; padding:14px; margin:25px 0; border-radius:50px; border:1px solid #ddd;">
+        <input type="text" id="resource-search" placeholder="Search resources..." style="width:100%; max-width:520px; padding:14px 20px; margin-bottom:30px; border-radius:50px; border:1px solid #ddd;">
 
         <div class="resource-grid" id="resource-grid"></div>
     </div>
@@ -37,13 +37,13 @@
     </footer>
 
     <script>
-        const resources = [ /* Same as before - add your full list here */ 
-            {title: "Cyber Action Toolkit", desc: "Small business guide to common cyberattacks", type: "guide", link: "https://www.ncsc.gov.uk/collection/cyber-action-toolkit", label: "NCSC"},
-            {title: "10 Steps to Cyber Security", desc: "Essential infographic", type: "pdf", link: "2021-10-steps-to-cyber-security-infographic.pdf", label: "PDF"},
-            // Add more...
+        const resources = [
+            {title: "Cyber Action Toolkit", desc: "Practical guide for small businesses", link: "https://www.ncsc.gov.uk/collection/cyber-action-toolkit"},
+            {title: "10 Steps to Cyber Security Infographic", desc: "Essential NCSC guidance", link: "2021-10-steps-to-cyber-security-infographic.pdf"},
+            {title: "Phishing Infographic", desc: "Spot and avoid phishing", link: "Phishing-infographic.pdf"},
+            // Add all your resources here
         ];
 
-        // Rendering script (same as previous version)
         function renderResources(filtered) {
             const grid = document.getElementById('resource-grid');
             grid.innerHTML = '';
@@ -51,10 +51,9 @@
                 const card = document.createElement('div');
                 card.className = 'resource-card';
                 card.innerHTML = `
-                    <strong>${r.label}</strong>
                     <h3>${r.title}</h3>
                     <p>${r.desc}</p>
-                    <a href="${r.link}" target="_blank" class="button-primary" style="margin-top:15px; display:inline-block;">Access Resource</a>
+                    <a href="${r.link}" target="_blank" class="button-primary">Access Resource</a>
                 `;
                 grid.appendChild(card);
             });
@@ -63,7 +62,9 @@
 
         document.getElementById('resource-search').addEventListener('input', e => {
             const term = e.target.value.toLowerCase();
-            const filtered = resources.filter(r => r.title.toLowerCase().includes(term) || r.desc.toLowerCase().includes(term));
+            const filtered = resources.filter(r => 
+                r.title.toLowerCase().includes(term) || r.desc.toLowerCase().includes(term)
+            );
             renderResources(filtered);
         });
     </script>
