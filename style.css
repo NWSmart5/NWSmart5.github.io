@@ -12,7 +12,7 @@ body {
     line-height: 1.75;
 }
 
-/* NAVBAR */
+/* ==================== NAVBAR ==================== */
 header {
     background: #0f172a;
     padding: 20px 40px;
@@ -21,28 +21,45 @@ header {
     top: 0;
     z-index: 100;
 }
+
 .nav-container {
     max-width: 1280px;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
 }
+
 header h1 {
     color: #ffffff;
     font-size: 28px;
     font-weight: 700;
+    margin: 0;
+    white-space: nowrap;
 }
-header h1 span { color: #67e8f9; }
+
+header h1 span { 
+    color: #67e8f9; 
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 32px;           /* Better spacing control */
+}
 
 nav a {
     color: #bae6fd;
-    margin-left: 32px;
     text-decoration: none;
     font-size: 16.2px;
     font-weight: 500;
+    white-space: nowrap;
 }
-nav a:hover { color: #67e8f9; }
+
+nav a:hover { 
+    color: #67e8f9; 
+}
 
 /* HERO - YOUR IMAGE (Simplified) */
 .hero {
