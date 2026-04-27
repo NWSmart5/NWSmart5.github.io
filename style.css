@@ -7,16 +7,16 @@ html { scroll-behavior: smooth; }
 
 body {
     font-family: 'Segoe UI', system-ui, -apple-system, Arial, sans-serif;
-    background-color: #f8f7fc;
+    background-color: #f8f9fc;
     color: #1e2937;
     line-height: 1.75;
 }
 
-/* NAVBAR - Clean & Modern like the example */
+/* NAVBAR */
 header {
-    background: linear-gradient(135deg, #4c1d95, #312e81);
+    background: linear-gradient(135deg, #1e3a8a, #312e81);
     padding: 20px 40px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
     position: sticky;
     top: 0;
     z-index: 100;
@@ -33,14 +33,14 @@ header h1 {
     font-size: 28px;
     font-weight: 700;
 }
-header h1 span { color: #c4b5fd; }
+header h1 span { color: #93c5fd; }
 
 nav {
     display: flex;
     gap: 32px;
 }
 nav a {
-    color: #e0e7ff;
+    color: #dbeafe;
     text-decoration: none;
     font-size: 16.2px;
     font-weight: 500;
@@ -51,49 +51,46 @@ nav a:hover {
     transform: translateY(-2px);
 }
 
-/* HERO with subtle animation */
+/* HERO */
 .hero {
-    background: linear-gradient(rgba(49, 46, 129, 0.75), rgba(76, 29, 149, 0.8)), url('cyber.jpg') center/cover no-repeat;
+    background: linear-gradient(rgba(30, 58, 138, 0.75), rgba(49, 46, 129, 0.75)), url('cyber.jpg') center/cover no-repeat;
     color: white;
     text-align: center;
     padding: 160px 20px 120px;
-    animation: fadeIn 1.2s ease;
 }
-.hero h2 {
-    font-size: 52px;
-    margin-bottom: 18px;
+.hero h2, .page-hero h2 {
+    animation: fadeInUp 1s ease forwards;
 }
 .hero p {
-    font-size: 21px;
-    max-width: 800px;
-    margin: 0 auto 40px;
+    animation: fadeInUp 1.2s ease forwards;
 }
 
 /* Page Hero */
 .page-hero {
-    background: linear-gradient(135deg, #312e81, #4c1d95);
+    background: linear-gradient(135deg, #1e3a8a, #4338ca);
     color: white;
     text-align: center;
     padding: 120px 20px 80px;
 }
 
-/* Buttons - Soft Purple */
+/* Friendly Button */
 .button-primary {
     display: inline-block;
-    padding: 16px 40px;
-    background: #7c3aed;
+    padding: 16px 42px;
+    background: #6366f1;
     color: white;
     border-radius: 50px;
     font-weight: 600;
     text-decoration: none;
-    transition: all 0.3s ease;
+    transition: all 0.4s ease;
+    animation: pulse 2s infinite;
 }
 .button-primary:hover {
-    background: #6d28d9;
-    transform: translateY(-3px) scale(1.05);
+    background: #4f46e5;
+    transform: translateY(-4px) scale(1.05);
 }
 
-/* Cards with soft animation */
+/* Cards with friendly animation */
 .container {
     max-width: 1280px;
     margin: 80px auto;
@@ -103,13 +100,15 @@ nav a:hover {
     background: white;
     padding: 48px;
     border-radius: 24px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
     margin-bottom: 48px;
     transition: all 0.4s ease;
+    opacity: 0;
+    animation: fadeInUp 0.8s forwards;
 }
 .card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 20px 40px rgba(124, 58, 237, 0.12);
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(99, 102, 241, 0.15);
 }
 
 /* Resource Cards */
@@ -126,22 +125,32 @@ nav a:hover {
     transition: all 0.4s ease;
 }
 .resource-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 18px 35px rgba(124, 58, 237, 0.15);
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(99, 102, 241, 0.18);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.03); }
 }
 
 /* Footer */
 .footer {
-    background: linear-gradient(135deg, #312e81, #1e1b4b);
+    background: linear-gradient(135deg, #1e3a8a, #312e81);
     color: #c4c4e0;
     padding: 60px 20px 40px;
     text-align: center;
-}
-
-/* Gentle Fade-in Animation */
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
 }
 
 /* Responsive */
