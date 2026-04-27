@@ -13,9 +13,9 @@ body {
 
 /* ==================== NAVBAR ==================== */
 header {
-    background: #4c1d95;           /* New Purple */
+    background: #2e0a4d;           /* Dark Hollow Purple */
     padding: 20px 40px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     position: sticky;
     top: 0;
     z-index: 100;
@@ -36,7 +36,7 @@ header h1 {
     white-space: nowrap;
 }
 header h1 span {
-    color: #67e8f9;
+    color: #a5b4fc;                /* Soft light purple accent */
 }
 nav {
     display: flex;
@@ -44,19 +44,19 @@ nav {
     gap: 32px;
 }
 nav a {
-    color: #bae6fd;
+    color: #c4d0ff;
     text-decoration: none;
     font-size: 16.2px;
     font-weight: 500;
     white-space: nowrap;
 }
 nav a:hover {
-    color: #67e8f9;
+    color: #e0e7ff;
 }
 
 /* ==================== HERO / BANNER ==================== */
 .hero, .page-hero {
-    background: linear-gradient(rgba(76, 29, 149, 0.88), rgba(30, 20, 80, 0.92)),
+    background: linear-gradient(rgba(46, 10, 77, 0.92), rgba(20, 5, 45, 0.94)),
                 url('images/cyber.jpg') center/cover no-repeat;
     color: white;
     text-align: center;
@@ -71,6 +71,7 @@ nav a:hover {
 .hero h2, .page-hero h2 {
     font-size: 3.2rem;
     margin-bottom: 20px;
+    color: white;
 }
 
 .hero p, .page-hero p {
@@ -84,14 +85,14 @@ nav a:hover {
 .button-primary {
     display: inline-block;
     padding: 16px 44px;
-    background: #67e8f9;
-    color: #0f172a;
+    background: #7c3aed;
+    color: white;
     border-radius: 50px;
     font-weight: 600;
     text-decoration: none;
 }
 .button-primary:hover {
-    background: #22d3ee;
+    background: #6d28d9;
     transform: translateY(-3px);
 }
 
@@ -122,7 +123,7 @@ nav a:hover {
 
 /* Footer */
 .footer {
-    background: #0f172a;
+    background: #1a0b2e;
     color: #94a3b8;
     padding: 60px 20px 40px;
     text-align: center;
