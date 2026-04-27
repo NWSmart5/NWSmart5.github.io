@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Knowledge Library | NWSmart5.0</title>
+    <link rel="stylesheet" href="style.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-XXXXXXXXXX');</script>
+</head>
+<body>
+    <header>
+        <div class="nav-container">
+            <h1>NWSmart5.0 <span>Knowledge Hub</span></h1>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="cybersecurity.html">Cybersecurity</a>
+                <a href="safe-ai.html">Safe AI</a>
+                <a href="digital.html">Digital Transformation</a>
+                <a href="library.html">Knowledge Library</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <h2 style="margin-bottom: 10px;">Knowledge Library</h2>
+        <p style="font-size: 19px; color: #475569;">Curated tools, guides, videos and PDFs from NCSC and project partners.</p>
+
+        <input type="text" id="resource-search" placeholder="Search resources..." style="width:100%; max-width:520px; padding:14px; margin:25px 0; border-radius:50px; border:1px solid #ddd;">
+
+        <div class="resource-grid" id="resource-grid"></div>
+    </div>
+
+    <footer class="footer">
+        <p><strong>NWSmart5.0 Knowledge Hub</strong> — CyberFocus Project</p>
+        <p>University of Salford | Greater Manchester</p>
+    </footer>
+
+    <script>
+        const resources = [ /* Same as before - add your full list here */ 
+            {title: "Cyber Action Toolkit", desc: "Small business guide to common cyberattacks", type: "guide", link: "https://www.ncsc.gov.uk/collection/cyber-action-toolkit", label: "NCSC"},
+            {title: "10 Steps to Cyber Security", desc: "Essential infographic", type: "pdf", link: "2021-10-steps-to-cyber-security-infographic.pdf", label: "PDF"},
+            // Add more...
+        ];
+
+        // Rendering script (same as previous version)
+        function renderResources(filtered) {
+            const grid = document.getElementById('resource-grid');
+            grid.innerHTML = '';
+            filtered.forEach(r => {
+                const card = document.createElement('div');
+                card.className = 'resource-card';
+                card.innerHTML = `
+                    <strong>${r.label}</strong>
+                    <h3>${r.title}</h3>
+                    <p>${r.desc}</p>
+                    <a href="${r.link}" target="_blank" class="button-primary" style="margin-top:15px; display:inline-block;">Access Resource</a>
+                `;
+                grid.appendChild(card);
+            });
+        }
+        renderResources(resources);
+
+        document.getElementById('resource-search').addEventListener('input', e => {
+            const term = e.target.value.toLowerCase();
+            const filtered = resources.filter(r => r.title.toLowerCase().includes(term) || r.desc.toLowerCase().includes(term));
+            renderResources(filtered);
+        });
+    </script>
+</body>
+</html>
