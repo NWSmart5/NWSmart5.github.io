@@ -51,21 +51,21 @@ nav a:hover {
     transform: translateY(-2px);
 }
 
-/* HERO */
+/* HERO - YOUR IMAGE HERE */
 .hero {
-    background: linear-gradient(rgba(30, 58, 138, 0.75), rgba(49, 46, 129, 0.75)), url('cyber.jpg') center/cover no-repeat;
+    background: linear-gradient(rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.85)), 
+                url('cyber.jpg') center/cover no-repeat fixed;
     color: white;
     text-align: center;
-    padding: 160px 20px 120px;
-}
-.hero h2, .page-hero h2 {
-    animation: fadeInUp 1s ease forwards;
-}
-.hero p {
-    animation: fadeInUp 1.2s ease forwards;
+    padding: 170px 20px 130px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-/* Page Hero */
+/* Other pages hero */
 .page-hero {
     background: linear-gradient(135deg, #1e3a8a, #4338ca);
     color: white;
@@ -73,7 +73,7 @@ nav a:hover {
     padding: 120px 20px 80px;
 }
 
-/* Friendly Button */
+/* Button */
 .button-primary {
     display: inline-block;
     padding: 16px 42px;
@@ -83,14 +83,13 @@ nav a:hover {
     font-weight: 600;
     text-decoration: none;
     transition: all 0.4s ease;
-    animation: pulse 2s infinite;
 }
 .button-primary:hover {
     background: #4f46e5;
     transform: translateY(-4px) scale(1.05);
 }
 
-/* Cards with friendly animation */
+/* Cards */
 .container {
     max-width: 1280px;
     margin: 80px auto;
@@ -103,8 +102,6 @@ nav a:hover {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
     margin-bottom: 48px;
     transition: all 0.4s ease;
-    opacity: 0;
-    animation: fadeInUp 0.8s forwards;
 }
 .card:hover {
     transform: translateY(-10px);
@@ -125,24 +122,7 @@ nav a:hover {
     transition: all 0.4s ease;
 }
 .resource-card:hover {
-    transform: translateY(-8px) scale(1.02);
-    box-shadow: 0 20px 40px rgba(99, 102, 241, 0.18);
-}
-
-/* Animations */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-@keyframes pulse {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.03); }
+    transform: translateY(-8px);
 }
 
 /* Footer */
@@ -153,8 +133,9 @@ nav a:hover {
     text-align: center;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-    nav { gap: 20px; }
-    .hero h2 { font-size: 42px; }
+/* Animations */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
 }
+.card { animation: fadeInUp 0.8s forwards; }
