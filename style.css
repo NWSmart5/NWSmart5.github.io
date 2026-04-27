@@ -7,16 +7,16 @@ html { scroll-behavior: smooth; }
 
 body {
     font-family: 'Segoe UI', system-ui, -apple-system, Arial, sans-serif;
-    background-color: #f8fafd;
-    color: #1f2a44;
+    background-color: #f0f4f8;
+    color: #1e2937;
     line-height: 1.75;
 }
 
-/* HEADER */
+/* === NEW NAVBAR === */
 header {
-    background-color: #0c1c35;
-    padding: 20px 40px;
-    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+    background-color: #0a1f3d;
+    padding: 18px 40px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     position: sticky;
     top: 0;
     z-index: 100;
@@ -30,64 +30,84 @@ header {
 }
 header h1 {
     color: #ffffff;
-    font-size: 27px;
+    font-size: 28px;
     font-weight: 700;
+    letter-spacing: -0.5px;
 }
-header h1 span { color: #4fc3f7; }
+header h1 span { color: #67e8f9; }
+
+nav {
+    display: flex;
+    gap: 35px;
+}
 nav a {
-    color: #c8d6eb;
-    margin-left: 32px;
+    color: #bae6fd;
     text-decoration: none;
-    font-size: 16px;
+    font-size: 16.2px;
     font-weight: 500;
+    position: relative;
+    transition: color 0.3s;
 }
-nav a:hover { color: #ffffff; }
+nav a:hover {
+    color: #ffffff;
+}
+nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -6px;
+    left: 0;
+    background-color: #67e8f9;
+    transition: width 0.3s ease;
+}
+nav a:hover::after {
+    width: 100%;
+}
 
 /* HERO with your image */
 .hero {
-    background: linear-gradient(rgba(12, 28, 53, 0.75), rgba(12, 28, 53, 0.85)), url('cyber.jpg') center/cover no-repeat;
+    background: linear-gradient(rgba(10, 31, 61, 0.78), rgba(10, 31, 61, 0.82)), url('cyber.jpg') center/cover no-repeat;
     color: white;
     text-align: center;
-    padding: 160px 20px 110px;
-    position: relative;
+    padding: 170px 20px 120px;
 }
 .hero h2 {
-    font-size: 52px;
-    line-height: 1.1;
-    margin-bottom: 18px;
+    font-size: 54px;
+    margin-bottom: 20px;
 }
 .hero p {
     font-size: 21px;
-    max-width: 780px;
+    max-width: 800px;
     margin: 0 auto 40px;
 }
 
-/* Page Hero (for other pages) */
+/* Page Hero */
 .page-hero {
-    background: linear-gradient(135deg, #0c1c35 0%, #1e3a6b 100%);
+    background: linear-gradient(135deg, #0a1f3d 0%, #1e3a6b 100%);
     color: white;
     text-align: center;
-    padding: 110px 20px 80px;
+    padding: 120px 20px 80px;
 }
-.page-hero h2 { font-size: 46px; }
+.page-hero h2 { font-size: 48px; }
 
-/* BUTTONS - Soft Teal */
+/* Buttons */
 .button-primary {
     display: inline-block;
-    padding: 15px 38px;
-    background: #4fc3f7;
-    color: white;
+    padding: 16px 40px;
+    background: #67e8f9;
+    color: #0a1f3d;
     border-radius: 50px;
     font-weight: 600;
     text-decoration: none;
     transition: all 0.3s;
 }
 .button-primary:hover {
-    background: #29b6f6;
-    transform: translateY(-2px);
+    background: #22d3ee;
+    transform: translateY(-3px);
 }
 
-/* CARDS - Clean & Soft */
+/* Cards */
 .container {
     max-width: 1280px;
     margin: 80px auto;
@@ -95,40 +115,40 @@ nav a:hover { color: #ffffff; }
 }
 .card {
     background: white;
-    padding: 45px;
-    border-radius: 20px;
-    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.06);
-    margin-bottom: 45px;
+    padding: 48px;
+    border-radius: 24px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.07);
+    margin-bottom: 48px;
 }
 
-/* Resource Cards */
+/* Resource Grid */
 .resource-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-    gap: 26px;
+    gap: 28px;
 }
 .resource-card {
     background: white;
-    padding: 28px;
-    border-radius: 18px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+    padding: 32px;
+    border-radius: 20px;
+    box-shadow: 0 6px 25px rgba(0,0,0,0.06);
     transition: all 0.3s;
 }
 .resource-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+    transform: translateY(-6px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.12);
 }
 
-/* FOOTER */
+/* Footer */
 .footer {
-    background: #0c1c35;
-    color: #a3b8d8;
-    padding: 55px 20px 35px;
+    background: #0a1f3d;
+    color: #94a3b8;
+    padding: 60px 20px 40px;
     text-align: center;
 }
 
 /* Responsive */
 @media (max-width: 768px) {
+    nav { gap: 20px; }
     .hero h2 { font-size: 42px; }
-    nav a { margin-left: 16px; }
 }
