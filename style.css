@@ -14,8 +14,7 @@ body {
 
 /* NAVBAR */
 header {
-    background: rgba(15, 23, 42, 0.95);
-    backdrop-filter: blur(8px);
+    background: rgba(15, 23, 42, 0.97);
     padding: 20px 40px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     position: sticky;
@@ -36,25 +35,19 @@ header h1 {
 }
 header h1 span { color: #67e8f9; }
 
-nav {
-    display: flex;
-    gap: 32px;
-}
 nav a {
     color: #bae6fd;
+    margin-left: 32px;
     text-decoration: none;
     font-size: 16.2px;
     font-weight: 500;
-    transition: all 0.3s ease;
+    transition: color 0.3s;
 }
-nav a:hover {
-    color: #67e8f9;
-    transform: translateY(-2px);
-}
+nav a:hover { color: #67e8f9; }
 
-/* HERO - YOUR IMAGE */
+/* HERO - YOUR IMAGE WITH BETTER OVERLAY */
 .hero {
-    background: linear-gradient(rgba(15, 23, 42, 0.78), rgba(15, 23, 42, 0.85)), 
+    background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.9)), 
                 url('images/cyber.jpg') center/cover no-repeat fixed;
     color: white;
     text-align: center;
@@ -66,15 +59,15 @@ nav a:hover {
     align-items: center;
 }
 
-/* Other Page Hero */
+/* Page Hero */
 .page-hero {
-    background: linear-gradient(135deg, #1e3a8a, #4338ca);
+    background: linear-gradient(135deg, #1e3a8a, #312e81);
     color: white;
     text-align: center;
     padding: 120px 20px 80px;
 }
 
-/* Button */
+/* Button - Cyan to match image */
 .button-primary {
     display: inline-block;
     padding: 16px 44px;
@@ -100,7 +93,7 @@ nav a:hover {
     background: white;
     padding: 48px;
     border-radius: 24px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
     margin-bottom: 48px;
     transition: all 0.4s ease;
 }
