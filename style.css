@@ -4,7 +4,6 @@
     box-sizing: border-box;
 }
 html { scroll-behavior: smooth; }
-
 body {
     font-family: 'Segoe UI', system-ui, -apple-system, Arial, sans-serif;
     background-color: #f0f4f8;
@@ -14,14 +13,13 @@ body {
 
 /* ==================== NAVBAR ==================== */
 header {
-    background: #0f172a;
+    background: #4c1d95;           /* New Purple */
     padding: 20px 40px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     position: sticky;
     top: 0;
     z-index: 100;
 }
-
 .nav-container {
     max-width: 1280px;
     margin: 0 auto;
@@ -30,7 +28,6 @@ header {
     align-items: center;
     width: 100%;
 }
-
 header h1 {
     color: #ffffff;
     font-size: 28px;
@@ -38,17 +35,14 @@ header h1 {
     margin: 0;
     white-space: nowrap;
 }
-
-header h1 span { 
-    color: #67e8f9; 
+header h1 span {
+    color: #67e8f9;
 }
-
 nav {
     display: flex;
     align-items: center;
-    gap: 32px;           /* Better spacing control */
+    gap: 32px;
 }
-
 nav a {
     color: #bae6fd;
     text-decoration: none;
@@ -56,23 +50,34 @@ nav a {
     font-weight: 500;
     white-space: nowrap;
 }
-
-nav a:hover { 
-    color: #67e8f9; 
+nav a:hover {
+    color: #67e8f9;
 }
 
-/* HERO - YOUR IMAGE (Simplified) */
-.hero {
-    background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.9)), 
+/* ==================== HERO / BANNER ==================== */
+.hero, .page-hero {
+    background: linear-gradient(rgba(76, 29, 149, 0.88), rgba(30, 20, 80, 0.92)),
                 url('images/cyber.jpg') center/cover no-repeat;
     color: white;
     text-align: center;
-    padding: 200px 20px 160px;
-    min-height: 100vh;
+    padding: 180px 20px 140px;
+    min-height: 70vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.hero h2, .page-hero h2 {
+    font-size: 3.2rem;
+    margin-bottom: 20px;
+}
+
+.hero p, .page-hero p {
+    font-size: 1.35rem;
+    max-width: 820px;
+    margin: 0 auto;
+    opacity: 0.95;
 }
 
 /* Button */
@@ -103,7 +108,6 @@ nav a:hover {
     box-shadow: 0 10px 30px rgba(0,0,0,0.08);
     margin-bottom: 48px;
 }
-
 .resource-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
