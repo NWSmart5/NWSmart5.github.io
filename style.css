@@ -7,16 +7,17 @@ html { scroll-behavior: smooth; }
 
 body {
     font-family: 'Segoe UI', system-ui, -apple-system, Arial, sans-serif;
-    background-color: #f8f9fc;
+    background-color: #f0f4f8;
     color: #1e2937;
     line-height: 1.75;
 }
 
 /* NAVBAR */
 header {
-    background: linear-gradient(135deg, #1e3a8a, #312e81);
+    background: rgba(15, 23, 42, 0.95);
+    backdrop-filter: blur(8px);
     padding: 20px 40px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     position: sticky;
     top: 0;
     z-index: 100;
@@ -33,31 +34,31 @@ header h1 {
     font-size: 28px;
     font-weight: 700;
 }
-header h1 span { color: #93c5fd; }
+header h1 span { color: #67e8f9; }
 
 nav {
     display: flex;
     gap: 32px;
 }
 nav a {
-    color: #dbeafe;
+    color: #bae6fd;
     text-decoration: none;
     font-size: 16.2px;
     font-weight: 500;
     transition: all 0.3s ease;
 }
 nav a:hover {
-    color: #ffffff;
+    color: #67e8f9;
     transform: translateY(-2px);
 }
 
-/* HERO - YOUR IMAGE HERE */
+/* HERO - YOUR IMAGE */
 .hero {
-    background: linear-gradient(rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.85)), 
-                url('cyber.jpg') center/cover no-repeat fixed;
+    background: linear-gradient(rgba(15, 23, 42, 0.78), rgba(15, 23, 42, 0.85)), 
+                url('images/cyber.jpg') center/cover no-repeat fixed;
     color: white;
     text-align: center;
-    padding: 170px 20px 130px;
+    padding: 180px 20px 140px;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -65,7 +66,7 @@ nav a:hover {
     align-items: center;
 }
 
-/* Other pages hero */
+/* Other Page Hero */
 .page-hero {
     background: linear-gradient(135deg, #1e3a8a, #4338ca);
     color: white;
@@ -76,16 +77,16 @@ nav a:hover {
 /* Button */
 .button-primary {
     display: inline-block;
-    padding: 16px 42px;
-    background: #6366f1;
-    color: white;
+    padding: 16px 44px;
+    background: #67e8f9;
+    color: #0f172a;
     border-radius: 50px;
     font-weight: 600;
     text-decoration: none;
     transition: all 0.4s ease;
 }
 .button-primary:hover {
-    background: #4f46e5;
+    background: #22d3ee;
     transform: translateY(-4px) scale(1.05);
 }
 
@@ -99,16 +100,14 @@ nav a:hover {
     background: white;
     padding: 48px;
     border-radius: 24px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
     margin-bottom: 48px;
     transition: all 0.4s ease;
 }
 .card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(99, 102, 241, 0.15);
 }
 
-/* Resource Cards */
 .resource-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
@@ -127,15 +126,8 @@ nav a:hover {
 
 /* Footer */
 .footer {
-    background: linear-gradient(135deg, #1e3a8a, #312e81);
-    color: #c4c4e0;
+    background: #0f172a;
+    color: #94a3b8;
     padding: 60px 20px 40px;
     text-align: center;
 }
-
-/* Animations */
-@keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-.card { animation: fadeInUp 0.8s forwards; }
