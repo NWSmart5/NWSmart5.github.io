@@ -14,7 +14,7 @@ body {
 
 /* NAVBAR */
 header {
-    background: rgba(15, 23, 42, 0.97);
+    background: #0f172a;
     padding: 20px 40px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     position: sticky;
@@ -41,17 +41,16 @@ nav a {
     text-decoration: none;
     font-size: 16.2px;
     font-weight: 500;
-    transition: color 0.3s;
 }
 nav a:hover { color: #67e8f9; }
 
-/* HERO - YOUR IMAGE WITH BETTER OVERLAY */
+/* HERO - YOUR IMAGE (Simplified) */
 .hero {
     background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.9)), 
-                url('images/cyber.jpg') center/cover no-repeat fixed;
+                url('images/cyber.jpg') center/cover no-repeat;
     color: white;
     text-align: center;
-    padding: 180px 20px 140px;
+    padding: 200px 20px 160px;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -59,15 +58,7 @@ nav a:hover { color: #67e8f9; }
     align-items: center;
 }
 
-/* Page Hero */
-.page-hero {
-    background: linear-gradient(135deg, #1e3a8a, #312e81);
-    color: white;
-    text-align: center;
-    padding: 120px 20px 80px;
-}
-
-/* Button - Cyan to match image */
+/* Button */
 .button-primary {
     display: inline-block;
     padding: 16px 44px;
@@ -76,11 +67,10 @@ nav a:hover { color: #67e8f9; }
     border-radius: 50px;
     font-weight: 600;
     text-decoration: none;
-    transition: all 0.4s ease;
 }
 .button-primary:hover {
     background: #22d3ee;
-    transform: translateY(-4px) scale(1.05);
+    transform: translateY(-3px);
 }
 
 /* Cards */
@@ -93,12 +83,8 @@ nav a:hover { color: #67e8f9; }
     background: white;
     padding: 48px;
     border-radius: 24px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
     margin-bottom: 48px;
-    transition: all 0.4s ease;
-}
-.card:hover {
-    transform: translateY(-10px);
 }
 
 .resource-grid {
@@ -111,10 +97,6 @@ nav a:hover { color: #67e8f9; }
     padding: 32px;
     border-radius: 20px;
     box-shadow: 0 8px 25px rgba(0,0,0,0.07);
-    transition: all 0.4s ease;
-}
-.resource-card:hover {
-    transform: translateY(-8px);
 }
 
 /* Footer */
