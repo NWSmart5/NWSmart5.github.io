@@ -7,16 +7,16 @@ html { scroll-behavior: smooth; }
 
 body {
     font-family: 'Segoe UI', system-ui, -apple-system, Arial, sans-serif;
-    background-color: #f0f4f8;
+    background-color: #f8f7fc;
     color: #1e2937;
     line-height: 1.75;
 }
 
-/* === NEW NAVBAR === */
+/* NAVBAR - Clean & Modern like the example */
 header {
-    background-color: #0a1f3d;
-    padding: 18px 40px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(135deg, #4c1d95, #312e81);
+    padding: 20px 40px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     position: sticky;
     top: 0;
     z-index: 100;
@@ -32,49 +32,36 @@ header h1 {
     color: #ffffff;
     font-size: 28px;
     font-weight: 700;
-    letter-spacing: -0.5px;
 }
-header h1 span { color: #67e8f9; }
+header h1 span { color: #c4b5fd; }
 
 nav {
     display: flex;
-    gap: 35px;
+    gap: 32px;
 }
 nav a {
-    color: #bae6fd;
+    color: #e0e7ff;
     text-decoration: none;
     font-size: 16.2px;
     font-weight: 500;
-    position: relative;
-    transition: color 0.3s;
+    transition: all 0.3s ease;
 }
 nav a:hover {
     color: #ffffff;
-}
-nav a::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: -6px;
-    left: 0;
-    background-color: #67e8f9;
-    transition: width 0.3s ease;
-}
-nav a:hover::after {
-    width: 100%;
+    transform: translateY(-2px);
 }
 
-/* HERO with your image */
+/* HERO with subtle animation */
 .hero {
-    background: linear-gradient(rgba(10, 31, 61, 0.78), rgba(10, 31, 61, 0.82)), url('cyber.jpg') center/cover no-repeat;
+    background: linear-gradient(rgba(49, 46, 129, 0.75), rgba(76, 29, 149, 0.8)), url('cyber.jpg') center/cover no-repeat;
     color: white;
     text-align: center;
-    padding: 170px 20px 120px;
+    padding: 160px 20px 120px;
+    animation: fadeIn 1.2s ease;
 }
 .hero h2 {
-    font-size: 54px;
-    margin-bottom: 20px;
+    font-size: 52px;
+    margin-bottom: 18px;
 }
 .hero p {
     font-size: 21px;
@@ -84,30 +71,29 @@ nav a:hover::after {
 
 /* Page Hero */
 .page-hero {
-    background: linear-gradient(135deg, #0a1f3d 0%, #1e3a6b 100%);
+    background: linear-gradient(135deg, #312e81, #4c1d95);
     color: white;
     text-align: center;
     padding: 120px 20px 80px;
 }
-.page-hero h2 { font-size: 48px; }
 
-/* Buttons */
+/* Buttons - Soft Purple */
 .button-primary {
     display: inline-block;
     padding: 16px 40px;
-    background: #67e8f9;
-    color: #0a1f3d;
+    background: #7c3aed;
+    color: white;
     border-radius: 50px;
     font-weight: 600;
     text-decoration: none;
-    transition: all 0.3s;
+    transition: all 0.3s ease;
 }
 .button-primary:hover {
-    background: #22d3ee;
-    transform: translateY(-3px);
+    background: #6d28d9;
+    transform: translateY(-3px) scale(1.05);
 }
 
-/* Cards */
+/* Cards with soft animation */
 .container {
     max-width: 1280px;
     margin: 80px auto;
@@ -117,11 +103,16 @@ nav a:hover::after {
     background: white;
     padding: 48px;
     border-radius: 24px;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.07);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
     margin-bottom: 48px;
+    transition: all 0.4s ease;
+}
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(124, 58, 237, 0.12);
 }
 
-/* Resource Grid */
+/* Resource Cards */
 .resource-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
@@ -131,20 +122,26 @@ nav a:hover::after {
     background: white;
     padding: 32px;
     border-radius: 20px;
-    box-shadow: 0 6px 25px rgba(0,0,0,0.06);
-    transition: all 0.3s;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.07);
+    transition: all 0.4s ease;
 }
 .resource-card:hover {
     transform: translateY(-6px);
-    box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+    box-shadow: 0 18px 35px rgba(124, 58, 237, 0.15);
 }
 
 /* Footer */
 .footer {
-    background: #0a1f3d;
-    color: #94a3b8;
+    background: linear-gradient(135deg, #312e81, #1e1b4b);
+    color: #c4c4e0;
     padding: 60px 20px 40px;
     text-align: center;
+}
+
+/* Gentle Fade-in Animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 /* Responsive */
