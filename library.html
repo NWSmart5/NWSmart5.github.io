@@ -22,25 +22,30 @@
 
     <section class="page-hero" style="min-height: 45vh; padding: 100px 20px;">
         <h2>Knowledge Library</h2>
-        <p>Curated tools, guides, PDFs, checklists and resources for Northwest manufacturing SMEs</p>
+        <p>All curated PDFs, guides and tools for Northwest manufacturing SMEs</p>
     </section>
 
     <div class="container">
         <div class="main-content">
             <input type="text" id="resource-search" placeholder="Search resources..." 
-                   style="width:100%; padding:16px 20px; margin-bottom:30px; border-radius:50px; border:1px solid #cbd5e1; font-size:16px;">
+                   style="width:100%; padding:16px 20px; margin-bottom:20px; border-radius:50px; border:1px solid #cbd5e1;">
+
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-category="all">All</button>
+                <button class="filter-btn" data-category="cyber">Cybersecurity</button>
+                <button class="filter-btn" data-category="ai">Safe AI</button>
+                <button class="filter-btn" data-category="digital">Digital Transformation</button>
+            </div>
 
             <div class="resource-grid" id="resource-grid"></div>
         </div>
 
-        <!-- Sidebar -->
         <div class="sidebar">
-            <h3>Categories</h3>
+            <h3>Important External Links</h3>
             <ul>
-                <li><a href="#">All Resources</a></li>
-                <li><a href="#">Cybersecurity</a></li>
-                <li><a href="#">Safe AI</a></li>
-                <li><a href="#">Digital Transformation</a></li>
+                <li><a href="https://www.ncsc.gov.uk/" target="_blank">National Cyber Security Centre</a></li>
+                <li><a href="https://www.ncsc.gov.uk/collection/cyber-action-toolkit" target="_blank">Cyber Action Toolkit</a></li>
+                <li><a href="https://www.gov.uk/government/publications/cyber-essentials-scheme-overview" target="_blank">Cyber Essentials</a></li>
             </ul>
         </div>
     </div>
@@ -52,10 +57,18 @@
 
     <script>
         const resources = [
-            {title: "NCSC 10 Steps to Cyber Security", desc: "Essential infographic for SMEs", link: "#"},
-            {title: "Safe AI Checklist", desc: "Responsible AI adoption guide", link: "#"},
-            {title: "Digital Transformation Roadmap", desc: "Step-by-step guide for manufacturers", link: "#"},
-            // Add more real resources here later
+            {title: "NCSC 10 Steps to Cyber Security", category: "cyber", link: "pdfs/10-steps-to-cyber-security.pdf"},
+            {title: "NCSC Small Business Guide", category: "cyber", link: "pdfs/NCSC_A5_Small_Business_Guide_v4_OCT2020.pdf"},
+            {title: "Response and Recovery Guide", category: "cyber", link: "pdfs/NCSC_A5_Response_and_Recovery_Guide.pdf"},
+            {title: "NCSC SBG Actions", category: "cyber", link: "pdfs/NCSC_SBG_Actions.pdf"},
+            {title: "Recovering a Hacked Account", category: "cyber", link: "pdfs/recovering-a-hacked-account.pdf"},
+            {title: "Securing Your Devices", category: "cyber", link: "pdfs/Securing-your-devices.pdf"},
+            {title: "How to Secure Online Meetings", category: "cyber", link: "pdfs/How-to-secure-your-online-meetings.pdf"},
+            {title: "Mitigating Malware and Ransomware", category: "cyber", link: "pdfs/Mitigating-malware-and-ransomware.pdf"},
+            {title: "Choosing a Managed Service Provider", category: "cyber", link: "pdfs/choosing-a-managed-service-provider.pdf"},
+            {title: "Effective Steps to Cyber Exercise", category: "cyber", link: "pdfs/effective-steps-to-cyber-exercise.pdf"},
+            {title: "Social Media Protection", category: "cyber", link: "pdfs/social-media-protect-what-you-publish.pdf"},
+            // Add Safe AI and Digital ones later when you have them
         ];
 
         function renderResources(filtered) {
@@ -66,21 +79,36 @@
                 card.className = 'resource-card';
                 card.innerHTML = `
                     <h3>${r.title}</h3>
-                    <p>${r.desc}</p>
-                    <a href="${r.link}" class="button-primary" style="margin-top:20px; display:inline-block;">Download / Access</a>
+                    <p style="color:#64748b; font-size:14px;">${r.category.toUpperCase()} • PDF</p>
+                    <a href="${r.link}" target="_blank" class="button-primary" style="margin-top:16px; display:inline-block; width:100%; text-align:center;">Download PDF</a>
                 `;
                 grid.appendChild(card);
             });
         }
 
+        // Initial render
         renderResources(resources);
 
-        document.getElementById('resource-search').addEventListener('input', e => {
-            const term = e.target.value.toLowerCase();
-            const filtered = resources.filter(r => 
-                r.title.toLowerCase().includes(term) || r.desc.toLowerCase().includes(term)
-            );
+        // Search
+        document.getElementById('resource-search').addEventListener('input', () => {
+            const term = document.getElementById('resource-search').value.toLowerCase();
+            const filtered = resources.filter(r => r.title.toLowerCase().includes(term));
             renderResources(filtered);
+        });
+
+        // Category filters
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                const category = btn.dataset.category;
+                let filtered = resources;
+                if (category !== 'all') {
+                    filtered = resources.filter(r => r.category === category);
+                }
+                renderResources(filtered);
+            });
         });
     </script>
 </body>
