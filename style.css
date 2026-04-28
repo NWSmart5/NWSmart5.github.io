@@ -13,7 +13,7 @@ body {
 
 /* ==================== NAVBAR ==================== */
 header {
-    background: #5b21b6;           /* Exact purple from your image */
+    background: #2c1a5c;           /* Exact purple from your image */
     padding: 20px 40px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
     position: sticky;
@@ -36,7 +36,7 @@ header h1 {
     white-space: nowrap;
 }
 header h1 span {
-    color: #67e8f9;                /* Cyan accent like in the image */
+    color: #93c5fd;                /* Cyan accent like in the image */
 }
 nav {
     display: flex;
@@ -56,7 +56,7 @@ nav a:hover {
 
 /* ==================== HERO / BANNER ==================== */
 .hero, .page-hero {
-    background: linear-gradient(rgba(91, 33, 182, 0.90), rgba(91, 33, 182, 0.95)),
+    background: linear-gradient(rgba(44, 26, 92, 0.85), rgba(20, 15, 55, 0.90)),
                 url('images/cyber.jpg') center/cover no-repeat;
     color: white;
     text-align: center;
@@ -85,7 +85,7 @@ nav a:hover {
 .button-primary {
     display: inline-block;
     padding: 16px 44px;
-    background: #7c3aed;
+    background: #7c6ac9;
     color: white;
     border-radius: 50px;
     font-weight: 600;
