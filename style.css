@@ -138,6 +138,25 @@ nav a:hover { color: #ffffff; }
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 24px;
 }
+/* Filter buttons for Library */
+.filter-buttons {
+    margin: 20px 0;
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+.filter-btn {
+    padding: 8px 20px;
+    background: #e0f2fe;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 500;
+}
+.filter-btn.active {
+    background: #14b8a6;
+    color: white;
+}
 
 /* Footer */
 .footer {
