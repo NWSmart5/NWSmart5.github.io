@@ -4,6 +4,7 @@
     box-sizing: border-box;
 }
 html { scroll-behavior: smooth; }
+
 body {
     font-family: 'Segoe UI', system-ui, -apple-system, Arial, sans-serif;
     background-color: #f0f4f8;
@@ -13,9 +14,9 @@ body {
 
 /* ==================== NAVBAR ==================== */
 header {
-    background: #2c1a5c;           /* Exact purple from your image */
-    padding: 20px 40px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+    background: #1e3a8a;           /* Soft deep blue */
+    padding: 18px 40px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     position: sticky;
     top: 0;
     z-index: 100;
@@ -26,105 +27,131 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
 }
 header h1 {
     color: #ffffff;
-    font-size: 28px;
+    font-size: 27px;
     font-weight: 700;
-    margin: 0;
-    white-space: nowrap;
 }
-header h1 span {
-    color: #93c5fd;                /* Cyan accent like in the image */
-}
+header h1 span { color: #67e8f9; }
+
 nav {
     display: flex;
-    align-items: center;
-    gap: 32px;
+    gap: 28px;
 }
 nav a {
-    color: #e0e7ff;
+    color: #e0f2fe;
     text-decoration: none;
-    font-size: 16.2px;
     font-weight: 500;
-    white-space: nowrap;
+    font-size: 16px;
 }
-nav a:hover {
-    color: #ffffff;
-}
+nav a:hover { color: #ffffff; }
 
-/* ==================== HERO / BANNER ==================== */
+/* ==================== HERO ==================== */
 .hero, .page-hero {
-    background: linear-gradient(rgba(44, 26, 92, 0.85), rgba(20, 15, 55, 0.90)),
+    background: linear-gradient(rgba(30, 58, 138, 0.75), rgba(15, 23, 42, 0.85)),
                 url('images/cyber.jpg') center/cover no-repeat;
     color: white;
     text-align: center;
-    padding: 180px 20px 140px;
-    min-height: 70vh;
+    padding: 160px 20px 120px;
+    min-height: 65vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
 }
-
 .hero h2, .page-hero h2 {
-    font-size: 3.2rem;
-    margin-bottom: 20px;
-    color: white;
+    font-size: 3rem;
+    margin-bottom: 16px;
 }
-
 .hero p, .page-hero p {
-    font-size: 1.35rem;
-    max-width: 820px;
-    margin: 0 auto;
-    opacity: 0.95;
+    font-size: 1.3rem;
+    max-width: 780px;
+    margin: 0 auto 30px;
 }
 
-/* Button - Matching the image */
+/* Buttons */
 .button-primary {
     display: inline-block;
-    padding: 16px 44px;
-    background: #7c6ac9;
+    padding: 14px 36px;
+    background: #14b8a6;
     color: white;
     border-radius: 50px;
     font-weight: 600;
     text-decoration: none;
+    transition: all 0.3s;
 }
 .button-primary:hover {
-    background: #6d28d9;
+    background: #0f766e;
     transform: translateY(-3px);
 }
 
-/* Cards */
+/* Main Content */
 .container {
     max-width: 1280px;
-    margin: 80px auto;
+    margin: 60px auto;
     padding: 0 20px;
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 40px;
 }
-.card {
+
+/* Left content area */
+.main-content { }
+
+/* Sidebar - Perfect for PDFs & Links */
+.sidebar {
     background: white;
-    padding: 48px;
-    border-radius: 24px;
+    padding: 28px;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.07);
+    height: fit-content;
+    position: sticky;
+    top: 100px;
+}
+.sidebar h3 {
+    color: #1e40af;
+    margin-bottom: 18px;
+    font-size: 1.25rem;
+}
+.sidebar ul {
+    list-style: none;
+}
+.sidebar ul li {
+    margin-bottom: 12px;
+}
+.sidebar a {
+    color: #1e3a8a;
+    text-decoration: none;
+}
+.sidebar a:hover { text-decoration: underline; }
+
+/* Cards */
+.card, .resource-card {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-    margin-bottom: 48px;
+    margin-bottom: 32px;
 }
 .resource-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-    gap: 28px;
-}
-.resource-card {
-    background: white;
-    padding: 32px;
-    border-radius: 20px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.07);
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 24px;
 }
 
 /* Footer */
 .footer {
-    background: #1e0b3a;
+    background: #1e2937;
     color: #94a3b8;
-    padding: 60px 20px 40px;
+    padding: 50px 20px 30px;
     text-align: center;
+    margin-top: 80px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+    nav { gap: 16px; font-size: 15px; }
 }
