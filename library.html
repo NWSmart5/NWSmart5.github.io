@@ -22,20 +22,26 @@
 
     <section class="page-hero" style="min-height: 45vh; padding: 100px 20px;">
         <h2>Knowledge Library</h2>
-        <p>All curated PDFs and guides for Northwest manufacturing SMEs</p>
+        <p>Curated infographics, guides and tools for Northwest manufacturing SMEs</p>
     </section>
 
     <div class="container">
         <div class="main-content">
-            <input type="text" id="resource-search" placeholder="Search resources..." 
-                   style="width:100%; padding:16px 20px; margin-bottom:20px; border-radius:50px; border:1px solid #cbd5e1; font-size:16px;">
 
-            <div class="filter-buttons">
-                <button class="filter-btn active" data-category="all">All</button>
-                <button class="filter-btn" data-category="cyber">Cybersecurity</button>
+            <!-- Cybersecurity Section -->
+            <h2 style="margin: 40px 0 20px;">Cybersecurity Infographics & Guides</h2>
+            <div class="resource-grid" id="cyber-grid"></div>
+
+            <!-- Digital Transformation Section -->
+            <h2 style="margin: 60px 0 20px;">Digital Transformation</h2>
+            <div class="resource-grid" id="digital-grid"></div>
+
+            <!-- Safe AI Section -->
+            <h2 style="margin: 60px 0 20px;">Safe & Responsible AI</h2>
+            <div class="resource-card" style="text-align:center; padding:40px;">
+                <p><strong>No resources yet.</strong> We will add Safe AI infographics and toolkits soon.</p>
             </div>
 
-            <div class="resource-grid" id="resource-grid"></div>
         </div>
 
         <div class="sidebar">
@@ -53,54 +59,42 @@
     </footer>
 
     <script>
-        const resources = [
-            {title: "Choosing a Managed Service Provider", category: "cyber", link: "pdfs/choosing-a-managed-service-provider-msp.pdf"},
-            {title: "Effective Steps to Cyber Exercise Creation", category: "cyber", link: "pdfs/effective-steps-to-cyber-exercise-creation.pdf"},
-            {title: "How to Secure Your Online Meetings", category: "cyber", link: "pdfs/How-to-secure-your-online-meetings.pdf"},
-            {title: "Mitigating Malware and Ransomware Attacks", category: "cyber", link: "pdfs/Mitigating-malware-and-ransomware-attacks.pdf"},
-            {title: "NCSC Response and Recovery Guide", category: "cyber", link: "pdfs/NCSC_A5 Response and Recovery Guide_v3_OCT20.pdf"},
-            {title: "NCSC Small Business Guide", category: "cyber", link: "pdfs/NCSC_A5_Small_Business_Guide_v4_OCT20.pdf"},
-            {title: "NCSC SBG Actions", category: "cyber", link: "pdfs/NCSC_SBG_Actions.pdf"},
-            {title: "Recovering a Hacked Account", category: "cyber", link: "pdfs/recovering-a-hacked-account.pdf"},
-            {title: "Securing Your Devices", category: "cyber", link: "pdfs/Securing-your-devices.pdf"},
-            {title: "Social Media Protection", category: "cyber", link: "pdfs/social-media-protect-what-you-publish.pdf"}
+        const cyberResources = [
+            {title: "10 Steps to Cyber Security", link: "infographics/2021-10-steps-to-cyber-security-infographic.pdf"},
+            {title: "Ransomware - What You Need to Know", link: "infographics/NCSC_Ransomware-what-you-need-to-know.pdf"},
+            {title: "Phishing - Defending Your Organisation", link: "infographics/Phishing-attacks-defending-your-organisation-infographic.pdf"},
+            {title: "Backing Up Your Data", link: "infographics/Backing up your data (NCSC Infographic).pdf"},
+            {title: "Supply Chain Cyber Security", link: "infographics/Assess-supply-chain-cyber-security.pdf"},
+            {title: "Protecting Devices from Viruses & Malware", link: "infographics/Protecting-devices-from-viruses-and-malware-infographic.pdf"},
+            {title: "Recovering Hacked Accounts", link: "infographics/recovering-hacked-accounts-infographics.pdf"},
+            {title: "Password Policy", link: "infographics/password_policy_infographic.pdf"},
+            {title: "Use 2SV to Protect Accounts", link: "infographics/Use-2SV-to-protect-accounts-infographic.pdf"},
+            {title: "Video Conferencing Security", link: "infographics/Video_conferencing_infographic.pdf"},
+            // Add more as needed
         ];
 
-        function renderResources(filtered) {
-            const grid = document.getElementById('resource-grid');
-            grid.innerHTML = '';
-            filtered.forEach(r => {
+        const digitalResources = [
+            {title: "Moving from Physical to Digital", link: "infographics/moving-physical-digital-infographic.pdf"}
+        ];
+
+        function renderGrid(resources, containerId) {
+            const container = document.getElementById(containerId);
+            container.innerHTML = '';
+            resources.forEach(r => {
                 const card = document.createElement('div');
                 card.className = 'resource-card';
                 card.innerHTML = `
                     <h3>${r.title}</h3>
-                    <p style="color:#64748b; font-size:14px;">Cybersecurity • PDF</p>
-                    <a href="${r.link}" target="_blank" class="button-primary" 
-                       style="margin-top:16px; display:inline-block; width:100%; text-align:center;">
+                    <a href="${r.link}" target="_blank" class="button-primary" style="margin-top:15px; width:100%; text-align:center; display:inline-block;">
                         Download PDF
                     </a>
                 `;
-                grid.appendChild(card);
+                container.appendChild(card);
             });
         }
 
-        renderResources(resources);
-
-        // Search functionality
-        document.getElementById('resource-search').addEventListener('input', () => {
-            const term = document.getElementById('resource-search').value.toLowerCase();
-            const filtered = resources.filter(r => r.title.toLowerCase().includes(term));
-            renderResources(filtered);
-        });
-
-        // Filter buttons
-        document.querySelectorAll('.filter-btn').forEach(btn => {
-            btn.addEventListener('click', () => {
-                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-                renderResources(resources); // For now all are cyber
-            });
-        });
+        renderGrid(cyberResources, 'cyber-grid');
+        renderGrid(digitalResources, 'digital-grid');
     </script>
 </body>
 </html>
