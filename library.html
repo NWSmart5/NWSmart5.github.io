@@ -22,26 +22,23 @@
 
     <section class="page-hero" style="min-height: 45vh; padding: 100px 20px;">
         <h2>Knowledge Library</h2>
-        <p>Curated infographics, guides and tools for Northwest manufacturing SMEs</p>
+        <p>Search and download practical infographics, guides and tools for manufacturing SMEs</p>
     </section>
 
     <div class="container">
         <div class="main-content">
 
-            <!-- Cybersecurity Section -->
-            <h2 style="margin: 40px 0 20px;">Cybersecurity Infographics & Guides</h2>
-            <div class="resource-grid" id="cyber-grid"></div>
+            <input type="text" id="resource-search" placeholder="Search resources (e.g. ransomware, phishing, password)..." 
+                   style="width:100%; padding:16px 20px; margin-bottom:25px; border-radius:50px; border:1px solid #cbd5e1; font-size:16px;">
 
-            <!-- Digital Transformation Section -->
-            <h2 style="margin: 60px 0 20px;">Digital Transformation</h2>
-            <div class="resource-grid" id="digital-grid"></div>
-
-            <!-- Safe AI Section -->
-            <h2 style="margin: 60px 0 20px;">Safe & Responsible AI</h2>
-            <div class="resource-card" style="text-align:center; padding:40px;">
-                <p><strong>No resources yet.</strong> We will add Safe AI infographics and toolkits soon.</p>
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-category="all">All Resources</button>
+                <button class="filter-btn" data-category="cyber">Cybersecurity</button>
+                <button class="filter-btn" data-category="digital">Digital Transformation</button>
+                <button class="filter-btn" data-category="ai">Safe AI</button>
             </div>
 
+            <div class="resource-grid" id="resource-grid"></div>
         </div>
 
         <div class="sidebar">
@@ -59,42 +56,75 @@
     </footer>
 
     <script>
-        const cyberResources = [
-            {title: "10 Steps to Cyber Security", link: "infographics/2021-10-steps-to-cyber-security-infographic.pdf"},
-            {title: "Ransomware - What You Need to Know", link: "infographics/NCSC_Ransomware-what-you-need-to-know.pdf"},
-            {title: "Phishing - Defending Your Organisation", link: "infographics/Phishing-attacks-defending-your-organisation-infographic.pdf"},
-            {title: "Backing Up Your Data", link: "infographics/Backing up your data (NCSC Infographic).pdf"},
-            {title: "Supply Chain Cyber Security", link: "infographics/Assess-supply-chain-cyber-security.pdf"},
-            {title: "Protecting Devices from Viruses & Malware", link: "infographics/Protecting-devices-from-viruses-and-malware-infographic.pdf"},
-            {title: "Recovering Hacked Accounts", link: "infographics/recovering-hacked-accounts-infographics.pdf"},
-            {title: "Password Policy", link: "infographics/password_policy_infographic.pdf"},
-            {title: "Use 2SV to Protect Accounts", link: "infographics/Use-2SV-to-protect-accounts-infographic.pdf"},
-            {title: "Video Conferencing Security", link: "infographics/Video_conferencing_infographic.pdf"},
-            // Add more as needed
+        const resources = [
+            // === CYBERSECURITY ===
+            {title: "10 Steps to Cyber Security", category: "cyber", link: "infographics/2021-10-steps-to-cyber-security-infographic.pdf"},
+            {title: "Ransomware - What You Need to Know", category: "cyber", link: "infographics/NCSC_Ransomware-what-you-need-to-know.pdf"},
+            {title: "Phishing - Defending Your Organisation", category: "cyber", link: "infographics/Phishing-attacks-defending-your-organisation-infographic.pdf"},
+            {title: "Phishing - Dealing with Suspicious Emails", category: "cyber", link: "infographics/Phishing-attacks-dealing-suspicious-emails-infographic.pdf"},
+            {title: "Backing Up Your Data", category: "cyber", link: "infographics/Backing up your data (NCSC Infographic).pdf"},
+            {title: "Supply Chain Cyber Security", category: "cyber", link: "infographics/Assess-supply-chain-cyber-security.pdf"},
+            {title: "Protecting Devices from Viruses & Malware", category: "cyber", link: "infographics/Protecting-devices-from-viruses-and-malware-infographic.pdf"},
+            {title: "Recovering Hacked Accounts", category: "cyber", link: "infographics/recovering-hacked-accounts-infographics.pdf"},
+            {title: "Use 2SV to Protect Accounts", category: "cyber", link: "infographics/Use-2SV-to-protect-accounts-infographic.pdf"},
+            {title: "Video Conferencing Security", category: "cyber", link: "infographics/Video_conferencing_infographic.pdf"},
+            {title: "Password Policy", category: "cyber", link: "infographics/password_policy_infographic.pdf"},
+            {title: "Reporting Cyber Incidents", category: "cyber", link: "infographics/NCSC_Reporting-incidents-infographic.pdf"},
+            {title: "Cyber Exercise Creation", category: "cyber", link: "infographics/cyber_exercise_creation.pdf"},
+            
+            // === DIGITAL TRANSFORMATION ===
+            {title: "Moving from Physical to Digital", category: "digital", link: "infographics/moving-physical-digital-infographic.pdf"},
+
+            // === SAFE AI === (Add more when ready)
+            // {title: "Safe AI Checklist", category: "ai", link: "infographics/safe-ai-checklist.pdf"},
         ];
 
-        const digitalResources = [
-            {title: "Moving from Physical to Digital", link: "infographics/moving-physical-digital-infographic.pdf"}
-        ];
-
-        function renderGrid(resources, containerId) {
-            const container = document.getElementById(containerId);
-            container.innerHTML = '';
-            resources.forEach(r => {
+        function renderResources(filtered) {
+            const grid = document.getElementById('resource-grid');
+            grid.innerHTML = '';
+            
+            filtered.forEach(r => {
                 const card = document.createElement('div');
                 card.className = 'resource-card';
                 card.innerHTML = `
                     <h3>${r.title}</h3>
-                    <a href="${r.link}" target="_blank" class="button-primary" style="margin-top:15px; width:100%; text-align:center; display:inline-block;">
-                        Download PDF
+                    <p style="color:#64748b; font-size:14px; margin:8px 0;">${r.category.toUpperCase()} • PDF</p>
+                    <a href="${r.link}" target="_blank" class="button-primary" 
+                       style="margin-top:12px; width:100%; text-align:center; display:inline-block;">
+                        Download Infographic
                     </a>
                 `;
-                container.appendChild(card);
+                grid.appendChild(card);
             });
         }
 
-        renderGrid(cyberResources, 'cyber-grid');
-        renderGrid(digitalResources, 'digital-grid');
+        // Initial render
+        renderResources(resources);
+
+        // Search functionality
+        document.getElementById('resource-search').addEventListener('input', () => {
+            const term = document.getElementById('resource-search').value.toLowerCase();
+            const filtered = resources.filter(r => 
+                r.title.toLowerCase().includes(term)
+            );
+            renderResources(filtered);
+        });
+
+        // Filter buttons
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                const category = btn.dataset.category;
+                let filtered = resources;
+                
+                if (category !== 'all') {
+                    filtered = resources.filter(r => r.category === category);
+                }
+                renderResources(filtered);
+            });
+        });
     </script>
 </body>
 </html>
