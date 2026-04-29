@@ -20,11 +20,10 @@
         </div>
     </header>
 
-    <!-- Hero with your image -->
     <section class="page-hero" style="background: linear-gradient(rgba(30, 58, 138, 0.75), rgba(15, 23, 42, 0.85)),
                 url('images/infpic.jpg') center/cover no-repeat !important;">
         <h2>All Infographics</h2>
-        <p>Practical NCSC infographics and visual guides for manufacturing SMEs</p>
+        <p>Practical NCSC and industry infographics for manufacturing SMEs</p>
     </section>
 
     <div class="container">
@@ -32,15 +31,19 @@
             <input type="text" id="infographic-search" placeholder="Search infographics (e.g. ransomware, phishing, backup)..." 
                    style="width:100%; padding:16px 20px; margin-bottom:25px; border-radius:50px; border:1px solid #cbd5e1; font-size:16px;">
 
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-category="all">All</button>
+                <button class="filter-btn" data-category="cyber">Cybersecurity</button>
+                <button class="filter-btn" data-category="digital">Digital Transformation</button>
+                <button class="filter-btn" data-category="ai">Safe AI</button>
+            </div>
+
             <div class="resource-grid" id="infographic-grid"></div>
         </div>
 
         <div class="sidebar">
-            <h3>Categories</h3>
-            <ul>
-                <li><a href="#" onclick="filterCategory('all')">All Infographics</a></li>
-                <li><a href="#" onclick="filterCategory('cyber')">Cybersecurity</a></li>
-            </ul>
+            <h3>Quick Tip</h3>
+            <p>These infographics are designed to be easy to share with your team.</p>
         </div>
     </div>
 
@@ -51,20 +54,29 @@
 
     <script>
         const infographics = [
-            {title: "10 Steps to Cyber Security", link: "infographics/2021-10-steps-to-cyber-security-infographic.pdf"},
-            {title: "Ransomware - What You Need to Know", link: "infographics/NCSC_Ransomware-what-you-need-to-know.pdf"},
-            {title: "Phishing - Defending Your Organisation", link: "infographics/Phishing-attacks-defending-your-organisation-infographic.pdf"},
-            {title: "Phishing - Dealing with Suspicious Emails", link: "infographics/Phishing-attacks-dealing-suspicious-emails-infographic.pdf"},
-            {title: "Backing Up Your Data", link: "infographics/Backing up your data (NCSC Infographic).pdf"},
-            {title: "Supply Chain Cyber Security", link: "infographics/Assess-supply-chain-cyber-security.pdf"},
-            {title: "Protecting Devices from Viruses & Malware", link: "infographics/Protecting-devices-from-viruses-and-malware-infographic.pdf"},
-            {title: "Recovering Hacked Accounts", link: "infographics/recovering-hacked-accounts-infographics.pdf"},
-            {title: "Use 2SV to Protect Accounts", link: "infographics/Use-2SV-to-protect-accounts-infographic.pdf"},
-            {title: "Video Conferencing Security", link: "infographics/Video_conferencing_infographic.pdf"},
-            {title: "Password Policy", link: "infographics/password_policy_infographic.pdf"},
-            {title: "Reporting Cyber Incidents", link: "infographics/NCSC_Reporting-incidents-infographic.pdf"},
-            {title: "Cyber Exercise Creation", link: "infographics/cyber_exercise_creation.pdf"},
-            {title: "Moving from Physical to Digital", link: "infographics/moving-physical-digital-infographic.pdf"}
+            // Cybersecurity
+            {title: "10 Steps to Cyber Security", category: "cyber", link: "infographics/2021-10-steps-to-cyber-security-infographic.pdf"},
+            {title: "Ransomware - What You Need to Know", category: "cyber", link: "infographics/NCSC_Ransomware-what-you-need-to-know.pdf"},
+            {title: "Phishing - Defending Your Organisation", category: "cyber", link: "infographics/Phishing-attacks-defending-your-organisation-infographic.pdf"},
+            {title: "Phishing - Dealing with Suspicious Emails", category: "cyber", link: "infographics/Phishing-attacks-dealing-suspicious-emails-infographic.pdf"},
+            {title: "Backing Up Your Data", category: "cyber", link: "infographics/Backing up your data (NCSC Infographic).pdf"},
+            {title: "Supply Chain Cyber Security", category: "cyber", link: "infographics/Assess-supply-chain-cyber-security.pdf"},
+            {title: "Protecting Devices from Viruses & Malware", category: "cyber", link: "infographics/Protecting-devices-from-viruses-and-malware-infographic.pdf"},
+            {title: "Recovering Hacked Accounts", category: "cyber", link: "infographics/recovering-hacked-accounts-infographics.pdf"},
+            {title: "Use 2SV to Protect Accounts", category: "cyber", link: "infographics/Use-2SV-to-protect-accounts-infographic.pdf"},
+            {title: "Video Conferencing Security", category: "cyber", link: "infographics/Video_conferencing_infographic.pdf"},
+            {title: "Password Policy", category: "cyber", link: "infographics/password_policy_infographic.pdf"},
+            {title: "Reporting Cyber Incidents", category: "cyber", link: "infographics/NCSC_Reporting-incidents-infographic.pdf"},
+            {title: "Cyber Exercise Creation", category: "cyber", link: "infographics/cyber_exercise_creation.pdf"},
+            {title: "Small Business Guide Infographic", category: "cyber", link: "infographics/Small Business Guide 1.2a Infographic.pdf"},
+            {title: "Stay Safe Online - Top Tips for Staff", category: "cyber", link: "infographics/Stay-safe-online-top-tips-for-staff-infographic.pdf"},
+            {title: "Connected Places Cyber Security Principles", category: "cyber", link: "infographics/Connected-Places-Cyber-Security-Principles-infographic.pdf"},
+
+            // Digital Transformation
+            {title: "Moving from Physical to Digital", category: "digital", link: "infographics/moving-physical-digital-infographic.pdf"},
+
+            // Safe AI (placeholder - add when ready)
+            // {title: "Safe AI Basics", category: "ai", link: "infographics/safe-ai-infographic.pdf"}
         ];
 
         function renderInfographics(filtered) {
@@ -75,6 +87,7 @@
                 card.className = 'resource-card';
                 card.innerHTML = `
                     <h3>${item.title}</h3>
+                    <p style="color:#64748b; font-size:14px; margin:8px 0;">${item.category.toUpperCase()} • PDF</p>
                     <a href="${item.link}" target="_blank" class="button-primary" 
                        style="margin-top:15px; width:100%; text-align:center; display:inline-block;">
                         Download Infographic
@@ -84,9 +97,10 @@
             });
         }
 
+        // Initial render
         renderInfographics(infographics);
 
-        // Search functionality
+        // Search
         document.getElementById('infographic-search').addEventListener('input', (e) => {
             const term = e.target.value.toLowerCase();
             const filtered = infographics.filter(item => 
@@ -95,9 +109,21 @@
             renderInfographics(filtered);
         });
 
-        function filterCategory(cat) {
-            renderInfographics(infographics); // Simple version for now
-        }
+        // Filter buttons
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                const category = btn.dataset.category;
+                let filtered = infographics;
+                
+                if (category !== 'all') {
+                    filtered = infographics.filter(item => item.category === category);
+                }
+                renderInfographics(filtered);
+            });
+        });
     </script>
 </body>
 </html>
