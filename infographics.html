@@ -16,12 +16,11 @@
                 <a href="safe-ai.html">Safe AI</a>
                 <a href="digital.html">Digital Transformation</a>
                 <a href="library.html">Knowledge Library</a>
-                <a href="infographics.html">All Infographics</a>
             </nav>
         </div>
     </header>
 
-    <!-- Updated Hero with new image -->
+    <!-- Hero with your image -->
     <section class="page-hero" style="background: linear-gradient(rgba(30, 58, 138, 0.75), rgba(15, 23, 42, 0.85)),
                 url('images/infpic.jpg') center/cover no-repeat !important;">
         <h2>All Infographics</h2>
@@ -87,6 +86,7 @@
 
         renderInfographics(infographics);
 
+        // Search functionality
         document.getElementById('infographic-search').addEventListener('input', (e) => {
             const term = e.target.value.toLowerCase();
             const filtered = infographics.filter(item => 
@@ -96,8 +96,7 @@
         });
 
         function filterCategory(cat) {
-            // For future expansion
-            renderInfographics(infographics);
+            renderInfographics(infographics); // Simple version for now
         }
     </script>
 </body>
