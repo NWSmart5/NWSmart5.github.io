@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Infographics | NWSmart5.0 Knowledge Hub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="nav-container">
+            <h1>NWSmart5.0 <span>Knowledge Hub</span></h1>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="cybersecurity.html">Cybersecurity</a>
+                <a href="safe-ai.html">Safe AI</a>
+                <a href="digital.html">Digital Transformation</a>
+                <a href="library.html">Knowledge Library</a>
+                <a href="infographics.html">All Infographics</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-hero" style="min-height: 45vh; padding: 100px 20px;">
+        <h2>All Infographics</h2>
+        <p>Download practical NCSC infographics and visual guides for manufacturing SMEs</p>
+    </section>
+
+    <div class="container">
+        <div class="main-content">
+            <input type="text" id="infographic-search" placeholder="Search infographics (e.g. ransomware, phishing, backup)..." 
+                   style="width:100%; padding:16px 20px; margin-bottom:25px; border-radius:50px; border:1px solid #cbd5e1; font-size:16px;">
+
+            <div class="resource-grid" id="infographic-grid"></div>
+        </div>
+
+        <div class="sidebar">
+            <h3>Categories</h3>
+            <ul>
+                <li><a href="#" onclick="filterCategory('all')">All Infographics</a></li>
+                <li><a href="#" onclick="filterCategory('cyber')">Cybersecurity</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p><strong>NWSmart5.0 Knowledge Hub</strong> — CyberFocus Project<br>
+        University of Salford • Greater Manchester</p>
+    </footer>
+
+    <script>
+        const infographics = [
+            {title: "10 Steps to Cyber Security", link: "infographics/2021-10-steps-to-cyber-security-infographic.pdf"},
+            {title: "Ransomware - What You Need to Know", link: "infographics/NCSC_Ransomware-what-you-need-to-know.pdf"},
+            {title: "Phishing - Defending Your Organisation", link: "infographics/Phishing-attacks-defending-your-organisation-infographic.pdf"},
+            {title: "Phishing - Dealing with Suspicious Emails", link: "infographics/Phishing-attacks-dealing-suspicious-emails-infographic.pdf"},
+            {title: "Backing Up Your Data", link: "infographics/Backing up your data (NCSC Infographic).pdf"},
+            {title: "Supply Chain Cyber Security", link: "infographics/Assess-supply-chain-cyber-security.pdf"},
+            {title: "Protecting Devices from Viruses & Malware", link: "infographics/Protecting-devices-from-viruses-and-malware-infographic.pdf"},
+            {title: "Recovering Hacked Accounts", link: "infographics/recovering-hacked-accounts-infographics.pdf"},
+            {title: "Use 2SV to Protect Accounts", link: "infographics/Use-2SV-to-protect-accounts-infographic.pdf"},
+            {title: "Video Conferencing Security", link: "infographics/Video_conferencing_infographic.pdf"},
+            {title: "Password Policy", link: "infographics/password_policy_infographic.pdf"},
+            {title: "Reporting Cyber Incidents", link: "infographics/NCSC_Reporting-incidents-infographic.pdf"},
+            {title: "Cyber Exercise Creation", link: "infographics/cyber_exercise_creation.pdf"},
+            {title: "Moving from Physical to Digital", link: "infographics/moving-physical-digital-infographic.pdf"}
+        ];
+
+        function renderInfographics(filtered) {
+            const grid = document.getElementById('infographic-grid');
+            grid.innerHTML = '';
+            filtered.forEach(item => {
+                const card = document.createElement('div');
+                card.className = 'resource-card';
+                card.innerHTML = `
+                    <h3>${item.title}</h3>
+                    <a href="${item.link}" target="_blank" class="button-primary" 
+                       style="margin-top:15px; width:100%; text-align:center; display:inline-block;">
+                        Download Infographic
+                    </a>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        renderInfographics(infographics);
+
+        // Search
+        document.getElementById('infographic-search').addEventListener('input', (e) => {
+            const term = e.target.value.toLowerCase();
+            const filtered = infographics.filter(item => 
+                item.title.toLowerCase().includes(term)
+            );
+            renderInfographics(filtered);
+        });
+    </script>
+</body>
+</html>
