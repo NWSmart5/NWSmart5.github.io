@@ -31,12 +31,12 @@
 
     <section class="page-hero" style="background: linear-gradient(rgba(30, 58, 138, 0.85), rgba(15, 23, 42, 0.9)); padding: 140px 20px;">
         <h2>Live News & Insights</h2>
-        <p>Real-time updates from trusted cybersecurity and manufacturing sources</p>
+        <p>Real-time updates on cybersecurity, safe AI, digital transformation & Industry 5.0 for UK manufacturing SMEs</p>
     </section>
 
     <div class="container">
         <div class="main-content" style="grid-column: 1 / -1;">
-            <input type="text" id="news-search" placeholder="Search news..." 
+            <input type="text" id="news-search" placeholder="Search news (ransomware, AI, digital transformation...)" 
                    style="width:100%; padding:16px 20px; margin:20px 0 25px; border-radius:50px; border:1px solid #cbd5e1; font-size:16px;">
 
             <div class="filter-buttons" style="margin-bottom:30px;">
@@ -61,12 +61,13 @@
         const feeds = [
             {url: 'https://industrialcyber.co/feed/', name: 'Industrial Cyber'},
             {url: 'https://www.ncsc.gov.uk/api/1/services/v1/all-rss-feed.xml', name: 'NCSC'},
-            // Add more feeds here later if you want
+            // Government & Digital Transformation focused (added more relevant ones)
+            {url: 'https://www.gov.uk/government/news.atom', name: 'Gov.uk News'},
         ];
 
         async function fetchLiveNews() {
             const container = document.getElementById('news-grid');
-            container.innerHTML = `<p style="grid-column:1/-1; text-align:center; padding:60px;">Loading live news from multiple sources...</p>`;
+            container.innerHTML = `<p style="grid-column:1/-1; text-align:center; padding:60px;">Loading live news from NCSC, Gov.uk & Industry sources...</p>`;
 
             for (let feed of feeds) {
                 try {
@@ -78,20 +79,24 @@
                     const parser = new DOMParser();
                     const xml = parser.parseFromString(text, "text/xml");
 
-                    const items = Array.from(xml.querySelectorAll("item")).slice(0, 6);
+                    const items = Array.from(xml.querySelectorAll("item, entry")).slice(0, 7);
 
                     items.forEach(item => {
-                        const title = item.querySelector("title").textContent.trim();
+                        const titleElem = item.querySelector("title");
+                        const title = titleElem ? titleElem.textContent.trim() : "Untitled";
+
                         let category = "cyber";
                         const lower = title.toLowerCase();
                         if (lower.includes("ai") || lower.includes("artificial") || lower.includes("responsible")) category = "ai";
-                        if (lower.includes("digital") || lower.includes("industry 5") || lower.includes("transformation")) category = "digital";
+                        if (lower.includes("digital") || lower.includes("industry 5") || lower.includes("transformation") || lower.includes("automation")) category = "digital";
 
                         allNews.push({
                             title: title,
-                            link: item.querySelector("link").textContent.trim(),
-                            excerpt: (item.querySelector("description")?.textContent || "").replace(/<[^>]+>/g, '').substring(0, 160) + "...",
-                            date: item.querySelector("pubDate") ? new Date(item.querySelector("pubDate").textContent).toLocaleDateString('en-GB') : "Recent",
+                            link: item.querySelector("link") ? item.querySelector("link").textContent.trim() : "#",
+                            excerpt: (item.querySelector("description, summary, content") ? 
+                                    item.querySelector("description, summary, content").textContent.replace(/<[^>]+>/g, '').substring(0, 160) + "..." : ""),
+                            date: item.querySelector("pubDate, published, updated") ? 
+                                  new Date(item.querySelector("pubDate, published, updated").textContent).toLocaleDateString('en-GB') : "Recent",
                             source: feed.name,
                             category: category
                         });
@@ -111,7 +116,7 @@
             grid.innerHTML = '';
 
             if (items.length === 0) {
-                grid.innerHTML = `<p style="grid-column:1/-1; text-align:center; padding:40px;">No news found.</p>`;
+                grid.innerHTML = `<p style="grid-column:1/-1; text-align:center; padding:40px;">No news found. Please refresh.</p>`;
                 return;
             }
 
@@ -128,7 +133,7 @@
             });
         }
 
-        // Search
+        // Search & Filters (unchanged)
         document.getElementById('news-search').addEventListener('input', (e) => {
             const term = e.target.value.toLowerCase();
             const filtered = allNews.filter(item => 
@@ -137,7 +142,6 @@
             renderNews(filtered);
         });
 
-        // Filters
         document.querySelectorAll('.filter-btn').forEach(btn => {
             btn.addEventListener('click', () => {
                 document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
