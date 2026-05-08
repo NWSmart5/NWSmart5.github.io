@@ -6,13 +6,13 @@
     <title>NWSmart5.0 Knowledge Hub</title>
     <link rel="stylesheet" href="style.css">
     <!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-LHEP92H7P6"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-LHEP92H7P6');
-</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LHEP92H7P6"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-LHEP92H7P6');
+    </script>
 </head>
 <body>
     <header>
@@ -37,7 +37,6 @@
 
     <div class="container">
         <div class="main-content">
-
             <!-- Welcome -->
             <div class="card">
                 <h2>Welcome to NWSmart5.0 Knowledge Hub</h2>
@@ -62,17 +61,15 @@
                 </ul>
             </div>
 
-            <!-- Partners Section -->
+            <!-- Partners -->
             <div class="card">
                 <h2>Our Partners</h2>
                 <p>NWSmart5.0 is a collaborative project bringing together academia, industry and regional stakeholders to deliver real impact for manufacturing SMEs.</p>
-                
                 <ul style="line-height: 2.0; font-size: 16.5px;">
                     <li><strong>University of Salford</strong> – Academic leadership in AI, cybersecurity and digital transformation</li>
                     <li><strong>Greater Manchester Chamber of Commerce (GMCC)</strong> – Industry engagement and SME outreach</li>
                     <li><strong>Greater Manchester Institute of Technology (GMIoT)</strong> – Skills development and workforce support</li>
                 </ul>
-                
                 <p>This partnership ensures that all resources and activities are practical, relevant and aligned with the needs of Northwest manufacturers.</p>
             </div>
 
@@ -80,65 +77,99 @@
             <div class="card" id="upcoming-workshops">
                 <h2>Upcoming Workshops</h2>
                 <p>We are delivering a series of free, in-person interactive workshops across Greater Manchester and the North West.</p>
-                
                 <p><strong>Workshop topics include:</strong></p>
                 <ul style="line-height: 2.0; font-size: 16.5px;">
                     <li>Cybersecurity best practices for manufacturing environments</li>
                     <li>Safe and responsible AI adoption</li>
                     <li>Digital transformation readiness and Industry 5.0</li>
                 </ul>
-                
                 <p><strong>Dates and venues will be announced shortly.</strong> Please check back regularly or contact us to register your interest.</p>
             </div>
-
         </div>
 
-      <!-- New: Latest News Sidebar -->
-<div class="sidebar">
-    <h3>Latest News & Insights</h3>
-    <p style="font-size:14px; color:#64748b; margin-bottom:20px;">Manufacturing SMEs • Cybersecurity • Safe AI • Industry 5.0</p>
+        <!-- UPDATED LIVE NEWS SIDEBAR -->
+        <div class="sidebar">
+            <h3>Latest News & Insights</h3>
+            <p style="font-size:14px; color:#64748b; margin-bottom:20px;">
+                Manufacturing • Cybersecurity • Safe AI • Industry 5.0
+            </p>
 
-    <!-- News Teaser 1 -->
-    <div class="news-teaser">
-        <span class="news-date">May 6, 2026</span>
-        <h4><a href="news/uk-manufacturers-cyber-attacks-2026.html">78% of UK Manufacturers Hit by Cyber Attacks in 2025</a></h4>
-        <p>New NCSC report shows ransomware and supply-chain attacks remain the biggest threat to North West SMEs.</p>
-        <a href="news/uk-manufacturers-cyber-attacks-2026.html" class="read-more">Read full story →</a>
+            <div id="rss-news" style="min-height: 420px;">
+                <p style="color:#64748b; font-style:italic;">Loading latest news...</p>
+            </div>
+
+            <a href="news.html" style="display:block; margin-top:25px; text-align:center; color:#14b8a6; font-weight:600;">
+                View All Curated News →
+            </a>
+        </div>
     </div>
-
-    <!-- News Teaser 2 -->
-    <div class="news-teaser">
-        <span class="news-date">April 28, 2026</span>
-        <h4><a href="news/industry-5.0-pilot-greater-manchester.html">New Industry 5.0 Pilot Programme Launches in Greater Manchester</a></h4>
-        <p>University of Salford and GMCC launch hands-on digital transformation support for 25 local SMEs.</p>
-        <a href="news/industry-5.0-pilot-greater-manchester.html" class="read-more">Read full story →</a>
-    </div>
-
-    <!-- News Teaser 3 -->
-    <div class="news-teaser">
-        <span class="news-date">April 15, 2026</span>
-        <h4><a href="news/safe-ai-toolkit-manufacturing.html">Free Safe AI Toolkit Released for Manufacturing SMEs</a></h4>
-        <p>Practical checklist and risk-assessment template to help you adopt AI responsibly and securely.</p>
-        <a href="news/safe-ai-toolkit-manufacturing.html" class="read-more">Read full story →</a>
-    </div>
-
-    <!-- News Teaser 4 -->
-    <div class="news-teaser">
-        <span class="news-date">March 22, 2026</span>
-        <h4><a href="news/ot-security-best-practices.html">OT Security: 5 Steps Every Manufacturer Should Take Now</a></h4>
-        <p>NCSC and CyberFocus experts share simple ways to protect legacy equipment in Industry 5.0.</p>
-        <a href="news/ot-security-best-practices.html" class="read-more">Read full story →</a>
-    </div>
-
-    <a href="news.html" style="display:block; margin-top:25px; text-align:center; color:#14b8a6; font-weight:600;">
-        View All News →
-    </a>
-</div>
 
     <!-- Footer -->
     <footer class="footer">
         <p><strong>NWSmart5.0 Knowledge Hub</strong> — CyberFocus Project<br>
         University of Salford • Greater Manchester</p>
     </footer>
+
+    <!-- RSS JavaScript -->
+    <script>
+        const rssFeeds = [
+            "https://www.ncsc.gov.uk/api/1/services/v1/all-rss-feed.xml",
+            "https://industrialcyber.co/feed/"
+        ];
+
+        async function fetchRSS(url) {
+            try {
+                const proxy = `https://api.allorigins.win/get?url=${encodeURIComponent(url)}`;
+                const res = await fetch(proxy);
+                const data = await res.json();
+                
+                const parser = new DOMParser();
+                const xml = parser.parseFromString(data.contents, "text/xml");
+                
+                return Array.from(xml.querySelectorAll("item")).slice(0, 5).map(item => ({
+                    title: item.querySelector("title").textContent,
+                    link: item.querySelector("link").textContent,
+                    pubDate: item.querySelector("pubDate") ? 
+                             new Date(item.querySelector("pubDate").textContent).toLocaleDateString('en-GB') : "Recent",
+                    source: url.includes("ncsc") ? "NCSC" : "Industrial Cyber"
+                }));
+            } catch (e) {
+                console.error("RSS failed for:", url);
+                return [];
+            }
+        }
+
+        async function loadNews() {
+            const container = document.getElementById('rss-news');
+            let allNews = [];
+
+            for (const feed of rssFeeds) {
+                const items = await fetchRSS(feed);
+                allNews = allNews.concat(items);
+            }
+
+            allNews.sort((a, b) => new Date(b.pubDate) - new Date(a.pubDate));
+            allNews = allNews.slice(0, 5);
+
+            if (allNews.length === 0) {
+                container.innerHTML = `<p style="color:#ef4444;">Unable to load live news right now.</p>`;
+                return;
+            }
+
+            let html = '';
+            allNews.forEach(item => {
+                html += `
+                    <div class="news-teaser">
+                        <span class="news-date">${item.pubDate} • ${item.source}</span>
+                        <h4><a href="${item.link}" target="_blank" rel="noopener">${item.title}</a></h4>
+                    </div>
+                `;
+            });
+
+            container.innerHTML = html;
+        }
+
+        window.addEventListener('load', loadNews);
+    </script>
 </body>
 </html>
