@@ -31,13 +31,33 @@
 
     <section class="page-hero" style="background: linear-gradient(rgba(30, 58, 138, 0.85), rgba(15, 23, 42, 0.9)); padding: 140px 20px;">
         <h2>Live News & Insights</h2>
-        <p>Real-time updates from NCSC, Industrial Cyber and UK Government sources</p>
+        <p>Real-time updates from NCSC, industry, and official UK Government sources</p>
     </section>
 
     <div class="container">
         <div class="main-content" style="grid-column: 1 / -1;">
-            <input type="text" id="news-search" placeholder="Search news (ransomware, AI, digital transformation...)" 
-                   style="width:100%; padding:16px 20px; margin:20px 0 25px; border-radius:50px; border:1px solid #cbd5e1; font-size:16px;">
+
+            <!-- Official Government Section -->
+            <h3 style="margin: 30px 0 15px;">Official UK Government & Policy Updates</h3>
+            <div class="resource-grid" style="margin-bottom:40px;">
+                <div class="card news-card">
+                    <h4><a href="https://www.ncsc.gov.uk/" target="_blank">NCSC Latest Guidance</a></h4>
+                    <p>Official UK National Cyber Security Centre – best practices for manufacturers</p>
+                </div>
+                <div class="card news-card">
+                    <h4><a href="https://www.gov.uk/government/organisations/department-for-science-innovation-and-technology" target="_blank">DSIT – Digital & AI Policy</a></h4>
+                    <p>Department for Science, Innovation and Technology – AI regulation and digital strategy</p>
+                </div>
+                <div class="card news-card">
+                    <h4><a href="https://www.gov.uk/government/organisations/department-for-business-and-trade" target="_blank">Department for Business and Trade</a></h4>
+                    <p>Support for manufacturing SMEs and digital transformation</p>
+                </div>
+            </div>
+
+            <h3 style="margin: 30px 0 15px;">Live Industry & Cyber News</h3>
+
+            <input type="text" id="news-search" placeholder="Search news..." 
+                   style="width:100%; padding:16px 20px; margin-bottom:25px; border-radius:50px; border:1px solid #cbd5e1; font-size:16px;">
 
             <div class="filter-buttons" style="margin-bottom:30px;">
                 <button class="filter-btn active" data-category="all">All</button>
@@ -61,12 +81,11 @@
         const feeds = [
             {url: 'https://industrialcyber.co/feed/', name: 'Industrial Cyber'},
             {url: 'https://www.ncsc.gov.uk/api/1/services/v1/all-rss-feed.xml', name: 'NCSC'}
-            // Gov.uk general feed removed because it doesn't parse reliably
         ];
 
         async function fetchLiveNews() {
             const container = document.getElementById('news-grid');
-            container.innerHTML = `<p style="grid-column:1/-1; text-align:center; padding:60px;">Loading live news from NCSC & Industry sources...</p>`;
+            container.innerHTML = `<p style="grid-column:1/-1; text-align:center; padding:60px;">Loading live news...</p>`;
 
             for (let feed of feeds) {
                 try {
@@ -84,18 +103,14 @@
                         const title = item.querySelector("title").textContent.trim();
                         let category = "cyber";
                         const lower = title.toLowerCase();
-
-                        if (lower.includes("ai") || lower.includes("artificial") || lower.includes("responsible") || lower.includes("ethics")) category = "ai";
-                        if (lower.includes("digital") || lower.includes("industry 5") || lower.includes("transformation") || 
-                            lower.includes("automation") || lower.includes("smart manufacturing")) category = "digital";
+                        if (lower.includes("ai") || lower.includes("artificial") || lower.includes("ethics")) category = "ai";
+                        if (lower.includes("digital") || lower.includes("industry 5") || lower.includes("transformation") || lower.includes("smart")) category = "digital";
 
                         allNews.push({
                             title: title,
                             link: item.querySelector("link").textContent.trim(),
-                            excerpt: (item.querySelector("description") ? 
-                                    item.querySelector("description").textContent.replace(/<[^>]+>/g, '').substring(0, 160) + "..." : ""),
-                            date: item.querySelector("pubDate") ? 
-                                  new Date(item.querySelector("pubDate").textContent).toLocaleDateString('en-GB') : "Recent",
+                            excerpt: (item.querySelector("description") ? item.querySelector("description").textContent.replace(/<[^>]+>/g, '').substring(0, 160) + "..." : ""),
+                            date: item.querySelector("pubDate") ? new Date(item.querySelector("pubDate").textContent).toLocaleDateString('en-GB') : "Recent",
                             source: feed.name,
                             category: category
                         });
@@ -113,11 +128,6 @@
             const grid = document.getElementById('news-grid');
             grid.innerHTML = '';
 
-            if (items.length === 0) {
-                grid.innerHTML = `<p style="grid-column:1/-1; text-align:center; padding:40px;">No news found. Please refresh.</p>`;
-                return;
-            }
-
             items.forEach(item => {
                 const card = document.createElement('div');
                 card.className = 'card news-card';
@@ -131,7 +141,7 @@
             });
         }
 
-        // Search & Filters
+        // Search and Filters (working)
         document.getElementById('news-search').addEventListener('input', (e) => {
             const term = e.target.value.toLowerCase();
             const filtered = allNews.filter(item => 
