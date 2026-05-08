@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>News & Insights | NWSmart5.0 Knowledge Hub</title>
     <link rel="stylesheet" href="style.css">
+    <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-LHEP92H7P6"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -30,7 +31,7 @@
 
     <section class="page-hero" style="background: linear-gradient(rgba(30, 58, 138, 0.85), rgba(15, 23, 42, 0.9)); padding: 140px 20px;">
         <h2>Live News & Insights</h2>
-        <p>Real-time updates on cybersecurity, safe AI, and digital transformation for manufacturing</p>
+        <p>Real-time updates from trusted cybersecurity and manufacturing sources</p>
     </section>
 
     <div class="container">
@@ -59,7 +60,8 @@
 
         const feeds = [
             {url: 'https://industrialcyber.co/feed/', name: 'Industrial Cyber'},
-            // Add more reliable feeds here if you find good ones
+            {url: 'https://www.ncsc.gov.uk/api/1/services/v1/all-rss-feed.xml', name: 'NCSC'},
+            // Add more feeds here later if you want
         ];
 
         async function fetchLiveNews() {
@@ -76,22 +78,20 @@
                     const parser = new DOMParser();
                     const xml = parser.parseFromString(text, "text/xml");
 
-                    const items = Array.from(xml.querySelectorAll("item")).slice(0, 8);
+                    const items = Array.from(xml.querySelectorAll("item")).slice(0, 6);
 
                     items.forEach(item => {
                         const title = item.querySelector("title").textContent.trim();
                         let category = "cyber";
-                        const lowerTitle = title.toLowerCase();
-                        if (lowerTitle.includes("ai") || lowerTitle.includes("artificial")) category = "ai";
-                        if (lowerTitle.includes("digital") || lowerTitle.includes("industry 5") || lowerTitle.includes("transformation")) category = "digital";
+                        const lower = title.toLowerCase();
+                        if (lower.includes("ai") || lower.includes("artificial") || lower.includes("responsible")) category = "ai";
+                        if (lower.includes("digital") || lower.includes("industry 5") || lower.includes("transformation")) category = "digital";
 
                         allNews.push({
                             title: title,
                             link: item.querySelector("link").textContent.trim(),
-                            excerpt: item.querySelector("description") ? 
-                                    item.querySelector("description").textContent.replace(/<[^>]+>/g, '').substring(0, 160) + "..." : "",
-                            date: item.querySelector("pubDate") ? 
-                                  new Date(item.querySelector("pubDate").textContent).toLocaleDateString('en-GB') : "Recent",
+                            excerpt: (item.querySelector("description")?.textContent || "").replace(/<[^>]+>/g, '').substring(0, 160) + "...",
+                            date: item.querySelector("pubDate") ? new Date(item.querySelector("pubDate").textContent).toLocaleDateString('en-GB') : "Recent",
                             source: feed.name,
                             category: category
                         });
@@ -101,7 +101,7 @@
                 }
             }
 
-            // Remove duplicates and sort by date
+            // Remove duplicates
             allNews = allNews.filter((v, i, a) => a.findIndex(t => t.title === v.title) === i);
             renderNews(allNews);
         }
@@ -128,7 +128,7 @@
             });
         }
 
-        // Search & Filters (same as before)
+        // Search
         document.getElementById('news-search').addEventListener('input', (e) => {
             const term = e.target.value.toLowerCase();
             const filtered = allNews.filter(item => 
@@ -137,6 +137,7 @@
             renderNews(filtered);
         });
 
+        // Filters
         document.querySelectorAll('.filter-btn').forEach(btn => {
             btn.addEventListener('click', () => {
                 document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
