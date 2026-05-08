@@ -87,7 +87,7 @@
             </div>
         </div>
 
-        <!-- UPDATED LIVE NEWS SIDEBAR -->
+        <!-- LIVE NEWS SIDEBAR -->
         <div class="sidebar">
             <h3>Latest News & Insights</h3>
             <p style="font-size:14px; color:#64748b; margin-bottom:20px;">
@@ -110,65 +110,58 @@
         University of Salford • Greater Manchester</p>
     </footer>
 
-    <!-- RSS JavaScript -->
+    <!-- FIXED RSS JavaScript -->
     <script>
-        const rssFeeds = [
-            "https://www.ncsc.gov.uk/api/1/services/v1/all-rss-feed.xml",
-            "https://industrialcyber.co/feed/"
-        ];
+        async function loadNews() {
+            const container = document.getElementById('rss-news');
+            container.innerHTML = `<p style="color:#64748b; font-style:italic;">Loading latest manufacturing & cyber news...</p>`;
 
-        async function fetchRSS(url) {
             try {
-                const proxy = `https://api.allorigins.win/get?url=${encodeURIComponent(url)}`;
+                // Reliable feed focused on industrial cybersecurity
+                const proxy = `https://api.allorigins.win/get?url=${encodeURIComponent('https://industrialcyber.co/feed/')}`;
                 const res = await fetch(proxy);
                 const data = await res.json();
                 
                 const parser = new DOMParser();
                 const xml = parser.parseFromString(data.contents, "text/xml");
                 
-                return Array.from(xml.querySelectorAll("item")).slice(0, 5).map(item => ({
-                    title: item.querySelector("title").textContent,
-                    link: item.querySelector("link").textContent,
-                    pubDate: item.querySelector("pubDate") ? 
-                             new Date(item.querySelector("pubDate").textContent).toLocaleDateString('en-GB') : "Recent",
-                    source: url.includes("ncsc") ? "NCSC" : "Industrial Cyber"
-                }));
+                const items = Array.from(xml.querySelectorAll("item")).slice(0, 5);
+
+                if (items.length === 0) throw new Error("No items found");
+
+                let html = '';
+                items.forEach(item => {
+                    const title = item.querySelector("title").textContent;
+                    const link = item.querySelector("link").textContent;
+                    const pubDateElem = item.querySelector("pubDate");
+                    const pubDate = pubDateElem ? 
+                        new Date(pubDateElem.textContent).toLocaleDateString('en-GB') : "Recent";
+
+                    html += `
+                        <div class="news-teaser">
+                            <span class="news-date">${pubDate} • Industrial Cyber</span>
+                            <h4><a href="${link}" target="_blank" rel="noopener">${title}</a></h4>
+                        </div>
+                    `;
+                });
+
+                container.innerHTML = html;
+
             } catch (e) {
-                console.error("RSS failed for:", url);
-                return [];
-            }
-        }
-
-        async function loadNews() {
-            const container = document.getElementById('rss-news');
-            let allNews = [];
-
-            for (const feed of rssFeeds) {
-                const items = await fetchRSS(feed);
-                allNews = allNews.concat(items);
-            }
-
-            allNews.sort((a, b) => new Date(b.pubDate) - new Date(a.pubDate));
-            allNews = allNews.slice(0, 5);
-
-            if (allNews.length === 0) {
-                container.innerHTML = `<p style="color:#ef4444;">Unable to load live news right now.</p>`;
-                return;
-            }
-
-            let html = '';
-            allNews.forEach(item => {
-                html += `
-                    <div class="news-teaser">
-                        <span class="news-date">${item.pubDate} • ${item.source}</span>
-                        <h4><a href="${item.link}" target="_blank" rel="noopener">${item.title}</a></h4>
-                    </div>
+                console.error(e);
+                container.innerHTML = `
+                    <p style="color:#f59e0b; line-height:1.5;">
+                        Live feed temporarily unavailable.<br><br>
+                        <strong>Please refresh the page (Ctrl + Shift + R).</strong>
+                    </p>
+                    <p style="margin-top:15px; font-size:14px;">
+                        You can also visit our <a href="news.html" style="color:#14b8a6; font-weight:600;">Curated News</a> section.
+                    </p>
                 `;
-            });
-
-            container.innerHTML = html;
+            }
         }
 
+        // Load news when page finishes loading
         window.addEventListener('load', loadNews);
     </script>
 </body>
