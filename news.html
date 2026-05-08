@@ -31,20 +31,20 @@
 
     <section class="page-hero" style="background: linear-gradient(rgba(30, 58, 138, 0.85), rgba(15, 23, 42, 0.9)); padding: 140px 20px;">
         <h2>Live News & Insights</h2>
-        <p>Real-time updates on cybersecurity, safe AI, digital transformation and Industry 5.0</p>
+        <p>Real-time updates from industry and cybersecurity sources</p>
     </section>
 
     <div class="container">
         <div class="main-content" style="grid-column: 1 / -1;">
             
-            <input type="text" id="news-search" placeholder="Search news..." 
-                   style="width:100%; padding:16px 20px; margin:20px 0 25px; border-radius:50px; border:1px solid #cbd5e1;">
+            <input type="text" id="news-search" placeholder="Search news (e.g. ransomware, AI, OT...)" 
+                   style="width:100%; padding:16px 20px; margin:20px 0 25px; border-radius:50px; border:1px solid #cbd5e1; font-size:16px;">
 
             <div class="filter-buttons" style="margin-bottom:30px;">
-                <button class="filter-btn active" data-category="all">All</button>
+                <button class="filter-btn active" data-category="all">All News</button>
                 <button class="filter-btn" data-category="cyber">Cybersecurity</button>
                 <button class="filter-btn" data-category="ai">Safe AI</button>
-                <button class="filter-btn" data-category="digital">Digital</button>
+                <button class="filter-btn" data-category="digital">Digital Transformation</button>
             </div>
 
             <div id="news-grid" class="resource-grid"></div>
@@ -56,13 +56,12 @@
         University of Salford • Greater Manchester</p>
     </footer>
 
-    <!-- LIVE RSS SCRIPT -->
     <script>
         let allNews = [];
 
         async function fetchLiveNews() {
             const container = document.getElementById('news-grid');
-            container.innerHTML = `<p style="grid-column:1/-1; text-align:center; padding:40px;">Loading live news...</p>`;
+            container.innerHTML = `<p style="grid-column:1/-1; text-align:center; padding:60px 20px;">Loading live news...</p>`;
 
             try {
                 const proxyUrl = `https://corsproxy.io/?${encodeURIComponent('https://industrialcyber.co/feed/')}`;
@@ -73,14 +72,20 @@
                 const xml = parser.parseFromString(text, "text/xml");
 
                 allNews = Array.from(xml.querySelectorAll("item")).map(item => {
+                    const title = item.querySelector("title").textContent.trim();
+                    // Simple keyword-based category assignment
+                    let category = "cyber";
+                    if (title.toLowerCase().includes("ai") || title.toLowerCase().includes("artificial")) category = "ai";
+                    if (title.toLowerCase().includes("digital") || title.toLowerCase().includes("industry 5")) category = "digital";
+
                     return {
-                        title: item.querySelector("title").textContent.trim(),
+                        title: title,
                         link: item.querySelector("link").textContent.trim(),
                         excerpt: item.querySelector("description") ? 
-                                item.querySelector("description").textContent.trim().replace(/<[^>]+>/g, '').substring(0, 160) + "..." : "",
+                                item.querySelector("description").textContent.replace(/<[^>]+>/g, '').substring(0, 160) + "..." : "",
                         date: item.querySelector("pubDate") ? 
                               new Date(item.querySelector("pubDate").textContent).toLocaleDateString('en-GB') : "Recent",
-                        category: "cyber"
+                        category: category
                     };
                 });
 
@@ -88,15 +93,18 @@
 
             } catch (e) {
                 console.error(e);
-                container.innerHTML = `<p style="grid-column:1/-1; color:#f59e0b; text-align:center; padding:40px;">
-                    Unable to load live news.<br>Please refresh the page.
-                </p>`;
+                container.innerHTML = `<p style="grid-column:1/-1; color:#f59e0b; text-align:center; padding:60px;">Unable to load live news.<br>Please refresh the page.</p>`;
             }
         }
 
         function renderNews(items) {
             const grid = document.getElementById('news-grid');
             grid.innerHTML = '';
+
+            if (items.length === 0) {
+                grid.innerHTML = `<p style="grid-column:1/-1; text-align:center; padding:40px;">No results found.</p>`;
+                return;
+            }
 
             items.forEach(item => {
                 const card = document.createElement('div');
@@ -115,22 +123,27 @@
         document.getElementById('news-search').addEventListener('input', (e) => {
             const term = e.target.value.toLowerCase();
             const filtered = allNews.filter(item => 
-                item.title.toLowerCase().includes(term) || 
-                item.excerpt.toLowerCase().includes(term)
+                item.title.toLowerCase().includes(term) || item.excerpt.toLowerCase().includes(term)
             );
             renderNews(filtered);
         });
 
-        // Filters (currently all go to cyber since we have one feed)
+        // Filters - Now working!
         document.querySelectorAll('.filter-btn').forEach(btn => {
             btn.addEventListener('click', () => {
                 document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
                 btn.classList.add('active');
-                renderNews(allNews);   // You can expand this later with multiple feeds
+
+                const category = btn.dataset.category;
+                let filtered = allNews;
+
+                if (category !== 'all') {
+                    filtered = allNews.filter(item => item.category === category);
+                }
+                renderNews(filtered);
             });
         });
 
-        // Load news when page opens
         window.addEventListener('load', fetchLiveNews);
     </script>
 </body>
