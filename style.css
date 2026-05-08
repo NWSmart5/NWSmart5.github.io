@@ -197,6 +197,62 @@ nav a:hover { color: #ffffff; }
     max-width: 1280px;
     margin: 0 auto;
 }
+/* ==================== NEWS TEASERS (Sidebar) ==================== */
+.news-teaser {
+    background: #f8fafc;
+    border-radius: 16px;
+    padding: 18px;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+}
+
+.news-teaser:hover {
+    background: #f1f5f9;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+}
+
+.news-date {
+    font-size: 13px;
+    color: #64748b;
+    font-weight: 500;
+    display: block;
+    margin-bottom: 6px;
+}
+
+.news-teaser h4 {
+    font-size: 1.05rem;
+    line-height: 1.4;
+    margin-bottom: 8px;
+}
+
+.news-teaser h4 a {
+    color: #1e3a8a;
+    text-decoration: none;
+}
+
+.news-teaser h4 a:hover {
+    color: #14b8a6;
+    text-decoration: underline;
+}
+
+.news-teaser p {
+    font-size: 15px;
+    color: #475569;
+    line-height: 1.5;
+    margin-bottom: 12px;
+}
+
+.read-more {
+    font-size: 14px;
+    color: #14b8a6;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.read-more:hover {
+    text-decoration: underline;
+}
 
 /* Responsive */
 @media (max-width: 900px) {
