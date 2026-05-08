@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>News & Insights | NWSmart5.0 Knowledge Hub</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-LHEP92H7P6"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -31,17 +30,16 @@
 
     <section class="page-hero" style="background: linear-gradient(rgba(30, 58, 138, 0.85), rgba(15, 23, 42, 0.9)); padding: 140px 20px;">
         <h2>Live News & Insights</h2>
-        <p>Real-time updates from industry and cybersecurity sources</p>
+        <p>Real-time updates on cybersecurity, safe AI, and digital transformation for manufacturing</p>
     </section>
 
     <div class="container">
         <div class="main-content" style="grid-column: 1 / -1;">
-            
-            <input type="text" id="news-search" placeholder="Search news (e.g. ransomware, AI, OT...)" 
+            <input type="text" id="news-search" placeholder="Search news..." 
                    style="width:100%; padding:16px 20px; margin:20px 0 25px; border-radius:50px; border:1px solid #cbd5e1; font-size:16px;">
 
             <div class="filter-buttons" style="margin-bottom:30px;">
-                <button class="filter-btn active" data-category="all">All News</button>
+                <button class="filter-btn active" data-category="all">All</button>
                 <button class="filter-btn" data-category="cyber">Cybersecurity</button>
                 <button class="filter-btn" data-category="ai">Safe AI</button>
                 <button class="filter-btn" data-category="digital">Digital Transformation</button>
@@ -59,42 +57,53 @@
     <script>
         let allNews = [];
 
+        const feeds = [
+            {url: 'https://industrialcyber.co/feed/', name: 'Industrial Cyber'},
+            // Add more reliable feeds here if you find good ones
+        ];
+
         async function fetchLiveNews() {
             const container = document.getElementById('news-grid');
-            container.innerHTML = `<p style="grid-column:1/-1; text-align:center; padding:60px 20px;">Loading live news...</p>`;
+            container.innerHTML = `<p style="grid-column:1/-1; text-align:center; padding:60px;">Loading live news from multiple sources...</p>`;
 
-            try {
-                const proxyUrl = `https://corsproxy.io/?${encodeURIComponent('https://industrialcyber.co/feed/')}`;
-                const res = await fetch(proxyUrl);
-                const text = await res.text();
+            for (let feed of feeds) {
+                try {
+                    const proxyUrl = `https://corsproxy.io/?${encodeURIComponent(feed.url)}`;
+                    const res = await fetch(proxyUrl);
+                    if (!res.ok) continue;
 
-                const parser = new DOMParser();
-                const xml = parser.parseFromString(text, "text/xml");
+                    const text = await res.text();
+                    const parser = new DOMParser();
+                    const xml = parser.parseFromString(text, "text/xml");
 
-                allNews = Array.from(xml.querySelectorAll("item")).map(item => {
-                    const title = item.querySelector("title").textContent.trim();
-                    // Simple keyword-based category assignment
-                    let category = "cyber";
-                    if (title.toLowerCase().includes("ai") || title.toLowerCase().includes("artificial")) category = "ai";
-                    if (title.toLowerCase().includes("digital") || title.toLowerCase().includes("industry 5")) category = "digital";
+                    const items = Array.from(xml.querySelectorAll("item")).slice(0, 8);
 
-                    return {
-                        title: title,
-                        link: item.querySelector("link").textContent.trim(),
-                        excerpt: item.querySelector("description") ? 
-                                item.querySelector("description").textContent.replace(/<[^>]+>/g, '').substring(0, 160) + "..." : "",
-                        date: item.querySelector("pubDate") ? 
-                              new Date(item.querySelector("pubDate").textContent).toLocaleDateString('en-GB') : "Recent",
-                        category: category
-                    };
-                });
+                    items.forEach(item => {
+                        const title = item.querySelector("title").textContent.trim();
+                        let category = "cyber";
+                        const lowerTitle = title.toLowerCase();
+                        if (lowerTitle.includes("ai") || lowerTitle.includes("artificial")) category = "ai";
+                        if (lowerTitle.includes("digital") || lowerTitle.includes("industry 5") || lowerTitle.includes("transformation")) category = "digital";
 
-                renderNews(allNews);
-
-            } catch (e) {
-                console.error(e);
-                container.innerHTML = `<p style="grid-column:1/-1; color:#f59e0b; text-align:center; padding:60px;">Unable to load live news.<br>Please refresh the page.</p>`;
+                        allNews.push({
+                            title: title,
+                            link: item.querySelector("link").textContent.trim(),
+                            excerpt: item.querySelector("description") ? 
+                                    item.querySelector("description").textContent.replace(/<[^>]+>/g, '').substring(0, 160) + "..." : "",
+                            date: item.querySelector("pubDate") ? 
+                                  new Date(item.querySelector("pubDate").textContent).toLocaleDateString('en-GB') : "Recent",
+                            source: feed.name,
+                            category: category
+                        });
+                    });
+                } catch (e) {
+                    console.log(`Failed to load ${feed.name}`);
+                }
             }
+
+            // Remove duplicates and sort by date
+            allNews = allNews.filter((v, i, a) => a.findIndex(t => t.title === v.title) === i);
+            renderNews(allNews);
         }
 
         function renderNews(items) {
@@ -102,7 +111,7 @@
             grid.innerHTML = '';
 
             if (items.length === 0) {
-                grid.innerHTML = `<p style="grid-column:1/-1; text-align:center; padding:40px;">No results found.</p>`;
+                grid.innerHTML = `<p style="grid-column:1/-1; text-align:center; padding:40px;">No news found.</p>`;
                 return;
             }
 
@@ -110,7 +119,7 @@
                 const card = document.createElement('div');
                 card.className = 'card news-card';
                 card.innerHTML = `
-                    <span class="news-date">${item.date}</span>
+                    <span class="news-date">${item.date} • ${item.source}</span>
                     <h3><a href="${item.link}" target="_blank">${item.title}</a></h3>
                     <p>${item.excerpt}</p>
                     <a href="${item.link}" target="_blank" class="read-more">Read Full Article →</a>
@@ -119,7 +128,7 @@
             });
         }
 
-        // Search
+        // Search & Filters (same as before)
         document.getElementById('news-search').addEventListener('input', (e) => {
             const term = e.target.value.toLowerCase();
             const filtered = allNews.filter(item => 
@@ -128,18 +137,12 @@
             renderNews(filtered);
         });
 
-        // Filters - Now working!
         document.querySelectorAll('.filter-btn').forEach(btn => {
             btn.addEventListener('click', () => {
                 document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
                 btn.classList.add('active');
-
-                const category = btn.dataset.category;
-                let filtered = allNews;
-
-                if (category !== 'all') {
-                    filtered = allNews.filter(item => item.category === category);
-                }
+                const cat = btn.dataset.category;
+                const filtered = cat === 'all' ? allNews : allNews.filter(item => item.category === cat);
                 renderNews(filtered);
             });
         });
