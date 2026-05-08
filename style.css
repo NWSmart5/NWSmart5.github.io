@@ -3,7 +3,10 @@
     padding: 0;
     box-sizing: border-box;
 }
-html { scroll-behavior: smooth; }
+
+html { 
+    scroll-behavior: smooth; 
+}
 
 body {
     font-family: 'Segoe UI', system-ui, -apple-system, Arial, sans-serif;
@@ -14,13 +17,14 @@ body {
 
 /* ==================== NAVBAR ==================== */
 header {
-    background: #1e3a8a;           /* Soft deep blue */
+    background: #1e3a8a;
     padding: 18px 40px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     position: sticky;
     top: 0;
     z-index: 100;
 }
+
 .nav-container {
     max-width: 1280px;
     margin: 0 auto;
@@ -28,24 +32,32 @@ header {
     justify-content: space-between;
     align-items: center;
 }
+
 header h1 {
     color: #ffffff;
     font-size: 27px;
     font-weight: 700;
 }
-header h1 span { color: #67e8f9; }
+
+header h1 span { 
+    color: #67e8f9; 
+}
 
 nav {
     display: flex;
     gap: 28px;
 }
+
 nav a {
     color: #e0f2fe;
     text-decoration: none;
     font-weight: 500;
     font-size: 16px;
 }
-nav a:hover { color: #ffffff; }
+
+nav a:hover { 
+    color: #ffffff; 
+}
 
 /* ==================== HERO ==================== */
 .hero, .page-hero {
@@ -59,17 +71,18 @@ nav a:hover { color: #ffffff; }
     flex-direction: column;
     justify-content: center;
 }
+
 .hero h2, .page-hero h2 {
     font-size: 3rem;
     margin-bottom: 16px;
 }
+
 .hero p, .page-hero p {
     font-size: 1.3rem;
     max-width: 780px;
     margin: 0 auto 30px;
 }
 
-/* Buttons */
 /* Buttons */
 .button-primary {
     display: inline-block;
@@ -90,7 +103,6 @@ nav a:hover { color: #ffffff; }
     box-shadow: 0 12px 25px rgba(20, 184, 166, 0.4);
 }
 
-/* Special styling for Hero button */
 .hero .button-primary {
     padding: 18px 48px;
     font-size: 1.25rem;
@@ -98,11 +110,7 @@ nav a:hover { color: #ffffff; }
     box-shadow: 0 10px 25px rgba(20, 184, 166, 0.35);
 }
 
-.hero .button-primary:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 15px 30px rgba(20, 184, 166, 0.45);
-}
-/* Main Content */
+/* Main Container */
 .container {
     max-width: 1280px;
     margin: 60px auto;
@@ -112,10 +120,7 @@ nav a:hover { color: #ffffff; }
     gap: 40px;
 }
 
-/* Left content area */
-.main-content { }
-
-/* Sidebar - Perfect for PDFs & Links */
+/* Sidebar */
 .sidebar {
     background: white;
     padding: 28px;
@@ -125,22 +130,51 @@ nav a:hover { color: #ffffff; }
     position: sticky;
     top: 100px;
 }
+
 .sidebar h3 {
     color: #1e40af;
     margin-bottom: 18px;
     font-size: 1.25rem;
 }
-.sidebar ul {
-    list-style: none;
+
+/* ==================== NEWS TEASERS (Live RSS) ==================== */
+.news-teaser {
+    background: #f8fafc;
+    border-radius: 16px;
+    padding: 18px;
+    margin-bottom: 18px;
+    transition: all 0.3s ease;
 }
-.sidebar ul li {
-    margin-bottom: 12px;
+
+.news-teaser:hover {
+    background: #f1f5f9;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.08);
 }
-.sidebar a {
+
+.news-teaser .news-date {
+    font-size: 13px;
+    color: #64748b;
+    font-weight: 500;
+    display: block;
+    margin-bottom: 6px;
+}
+
+.news-teaser h4 {
+    font-size: 1.02rem;
+    line-height: 1.35;
+    margin: 6px 0 8px;
+}
+
+.news-teaser h4 a {
     color: #1e3a8a;
     text-decoration: none;
 }
-.sidebar a:hover { text-decoration: underline; }
+
+.news-teaser h4 a:hover {
+    color: #14b8a6;
+    text-decoration: underline;
+}
 
 /* Cards */
 .card, .resource-card {
@@ -150,18 +184,21 @@ nav a:hover { color: #ffffff; }
     box-shadow: 0 10px 30px rgba(0,0,0,0.08);
     margin-bottom: 32px;
 }
+
 .resource-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 24px;
 }
-/* Filter buttons for Library */
+
+/* Filter buttons */
 .filter-buttons {
     margin: 20px 0;
     display: flex;
     gap: 12px;
     flex-wrap: wrap;
 }
+
 .filter-btn {
     padding: 8px 20px;
     background: #e0f2fe;
@@ -170,6 +207,7 @@ nav a:hover { color: #ffffff; }
     cursor: pointer;
     font-weight: 500;
 }
+
 .filter-btn.active {
     background: #14b8a6;
     color: white;
@@ -183,8 +221,6 @@ nav a:hover { color: #ffffff; }
     padding: 60px 20px 40px;
     text-align: center;
     width: 100%;
-    left: 0;
-    right: 0;
     border-top: 5px solid #14b8a6;
 }
 
@@ -193,71 +229,13 @@ nav a:hover { color: #ffffff; }
     margin: 0;
 }
 
-.footer-content {
-    max-width: 1280px;
-    margin: 0 auto;
-}
-/* ==================== NEWS TEASERS (Sidebar) ==================== */
-.news-teaser {
-    background: #f8fafc;
-    border-radius: 16px;
-    padding: 18px;
-    margin-bottom: 20px;
-    transition: all 0.3s ease;
-}
-
-.news-teaser:hover {
-    background: #f1f5f9;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 15px rgba(0,0,0,0.08);
-}
-
-.news-date {
-    font-size: 13px;
-    color: #64748b;
-    font-weight: 500;
-    display: block;
-    margin-bottom: 6px;
-}
-
-.news-teaser h4 {
-    font-size: 1.05rem;
-    line-height: 1.4;
-    margin-bottom: 8px;
-}
-
-.news-teaser h4 a {
-    color: #1e3a8a;
-    text-decoration: none;
-}
-
-.news-teaser h4 a:hover {
-    color: #14b8a6;
-    text-decoration: underline;
-}
-
-.news-teaser p {
-    font-size: 15px;
-    color: #475569;
-    line-height: 1.5;
-    margin-bottom: 12px;
-}
-
-.read-more {
-    font-size: 14px;
-    color: #14b8a6;
-    font-weight: 600;
-    text-decoration: none;
-}
-
-.read-more:hover {
-    text-decoration: underline;
-}
-
 /* Responsive */
 @media (max-width: 900px) {
     .container {
         grid-template-columns: 1fr;
     }
-    nav { gap: 16px; font-size: 15px; }
+    nav { 
+        gap: 16px; 
+        font-size: 15px; 
+    }
 }
