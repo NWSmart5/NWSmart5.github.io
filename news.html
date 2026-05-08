@@ -29,17 +29,25 @@
         </div>
     </header>
 
-    <section class="page-hero" style="background: linear-gradient(rgba(30, 58, 138, 0.85), rgba(15, 23, 42, 0.9)), url('images/news-bg.jpg') center/cover no-repeat;">
-        <h2>News & Insights</h2>
-        <p>Latest updates on cybersecurity, safe AI, and digital transformation for Northwest manufacturing SMEs</p>
+    <section class="page-hero" style="background: linear-gradient(rgba(30, 58, 138, 0.85), rgba(15, 23, 42, 0.9)); padding: 140px 20px;">
+        <h2>Live News & Insights</h2>
+        <p>Real-time updates on cybersecurity, safe AI, digital transformation and Industry 5.0</p>
     </section>
 
     <div class="container">
-        <div class="main-content" style="grid-column: 1 / -1; max-width: 1100px; margin: 0 auto;">
+        <div class="main-content" style="grid-column: 1 / -1;">
             
-            <div class="resource-grid" id="news-grid">
-                <!-- Populated by JavaScript -->
+            <input type="text" id="news-search" placeholder="Search news..." 
+                   style="width:100%; padding:16px 20px; margin:20px 0 25px; border-radius:50px; border:1px solid #cbd5e1;">
+
+            <div class="filter-buttons" style="margin-bottom:30px;">
+                <button class="filter-btn active" data-category="all">All</button>
+                <button class="filter-btn" data-category="cyber">Cybersecurity</button>
+                <button class="filter-btn" data-category="ai">Safe AI</button>
+                <button class="filter-btn" data-category="digital">Digital</button>
             </div>
+
+            <div id="news-grid" class="resource-grid"></div>
         </div>
     </div>
 
@@ -48,64 +56,82 @@
         University of Salford • Greater Manchester</p>
     </footer>
 
+    <!-- LIVE RSS SCRIPT -->
     <script>
-        // You can add more articles here easily
-        const newsItems = [
-            {
-                title: "UK SMEs Name Cyber Attacks as Their Biggest Worry",
-                date: "May 8, 2026",
-                excerpt: "New Hiscox survey reveals cyber risk is now the top concern for UK small and medium manufacturers.",
-                link: "#",
-                category: "cyber"
-            },
-            {
-                title: "78% of UK Manufacturers Hit by Cyber Attacks in 2025",
-                date: "May 6, 2026",
-                excerpt: "NCSC-backed report shows ransomware and supply chain attacks continue to threaten North West SMEs.",
-                link: "#",
-                category: "cyber"
-            },
-            {
-                title: "Industry 5.0 Pilot Programme Launches in Greater Manchester",
-                date: "April 28, 2026",
-                excerpt: "University of Salford and GMCC partner to support 25 local SMEs with hands-on digital transformation.",
-                link: "#",
-                category: "digital"
-            },
-            {
-                title: "Free Safe AI Toolkit Released for Manufacturing SMEs",
-                date: "April 15, 2026",
-                excerpt: "Practical checklist and risk assessment templates to help manufacturers adopt AI responsibly.",
-                link: "#",
-                category: "ai"
-            },
-            {
-                title: "OT Security: 5 Critical Steps for Industry 5.0",
-                date: "March 22, 2026",
-                excerpt: "Experts share simple but effective ways to protect legacy equipment from modern threats.",
-                link: "#",
-                category: "cyber"
-            }
-        ];
+        let allNews = [];
 
-        function renderNews() {
+        async function fetchLiveNews() {
+            const container = document.getElementById('news-grid');
+            container.innerHTML = `<p style="grid-column:1/-1; text-align:center; padding:40px;">Loading live news...</p>`;
+
+            try {
+                const proxyUrl = `https://corsproxy.io/?${encodeURIComponent('https://industrialcyber.co/feed/')}`;
+                const res = await fetch(proxyUrl);
+                const text = await res.text();
+
+                const parser = new DOMParser();
+                const xml = parser.parseFromString(text, "text/xml");
+
+                allNews = Array.from(xml.querySelectorAll("item")).map(item => {
+                    return {
+                        title: item.querySelector("title").textContent.trim(),
+                        link: item.querySelector("link").textContent.trim(),
+                        excerpt: item.querySelector("description") ? 
+                                item.querySelector("description").textContent.trim().replace(/<[^>]+>/g, '').substring(0, 160) + "..." : "",
+                        date: item.querySelector("pubDate") ? 
+                              new Date(item.querySelector("pubDate").textContent).toLocaleDateString('en-GB') : "Recent",
+                        category: "cyber"
+                    };
+                });
+
+                renderNews(allNews);
+
+            } catch (e) {
+                console.error(e);
+                container.innerHTML = `<p style="grid-column:1/-1; color:#f59e0b; text-align:center; padding:40px;">
+                    Unable to load live news.<br>Please refresh the page.
+                </p>`;
+            }
+        }
+
+        function renderNews(items) {
             const grid = document.getElementById('news-grid');
             grid.innerHTML = '';
 
-            newsItems.forEach(item => {
+            items.forEach(item => {
                 const card = document.createElement('div');
                 card.className = 'card news-card';
                 card.innerHTML = `
                     <span class="news-date">${item.date}</span>
-                    <h3>${item.title}</h3>
+                    <h3><a href="${item.link}" target="_blank">${item.title}</a></h3>
                     <p>${item.excerpt}</p>
-                    <a href="${item.link}" class="read-more">Read Full Article →</a>
+                    <a href="${item.link}" target="_blank" class="read-more">Read Full Article →</a>
                 `;
                 grid.appendChild(card);
             });
         }
 
-        renderNews();
+        // Search
+        document.getElementById('news-search').addEventListener('input', (e) => {
+            const term = e.target.value.toLowerCase();
+            const filtered = allNews.filter(item => 
+                item.title.toLowerCase().includes(term) || 
+                item.excerpt.toLowerCase().includes(term)
+            );
+            renderNews(filtered);
+        });
+
+        // Filters (currently all go to cyber since we have one feed)
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                renderNews(allNews);   // You can expand this later with multiple feeds
+            });
+        });
+
+        // Load news when page opens
+        window.addEventListener('load', fetchLiveNews);
     </script>
 </body>
 </html>
