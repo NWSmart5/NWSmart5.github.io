@@ -31,55 +31,75 @@
 
     <section class="page-hero" style="background: linear-gradient(rgba(30, 58, 138, 0.85), rgba(15, 23, 42, 0.9)), url('images/safe-ai-hero.jpg') center/cover no-repeat;">
         <h2>Safe & Responsible AI Use for Manufacturing SMEs</h2>
-        <p>Practical guidance based on NCSC Guidelines for Secure AI System Development</p>
+        <p>Practical guidance based on official NCSC Guidelines for Secure AI System Development (2023)</p>
     </section>
 
     <div class="container">
         <div class="main-content">
 
-            <!-- Source Note -->
+            <!-- Source -->
             <div class="card" style="background:#f0f4f8; border-left:5px solid #1e40af;">
-                <strong>Source:</strong> NCSC, CISA and international partners – Guidelines for Secure AI System Development (2023)<br>
+                <strong>Source:</strong> National Cyber Security Centre (NCSC) et al. (2023) Guidelines for Secure AI System Development.<br>
                 <a href="https://www.ncsc.gov.uk/sites/default/files/documents/Guidelines-for-secure-AI-system-development.pdf" target="_blank">Download Full PDF →</a>
             </div>
 
-            <!-- Why This Matters -->
+            <!-- 4 Key Stages with Detailed Content -->
             <div class="card">
-                <h2>Why Safe AI Matters</h2>
-                <p>AI can transform manufacturing, but it also introduces new risks. Following official NCSC guidance helps you adopt AI securely and responsibly.</p>
-            </div>
-
-            <!-- 4 Lifecycle Stages with Custom Accordions -->
-            <div class="card">
-                <h2>The 4 Key Stages of Secure AI</h2>
-                <p>Adapted for manufacturing SMEs from the official NCSC Guidelines.</p>
+                <h2>The 4 Key Stages of Secure AI (Adapted for Manufacturing SMEs)</h2>
 
                 <div class="accordion">
                     <button class="accordion-btn">1. Secure Design</button>
                     <div class="accordion-content">
-                        <p>Understand threats early. Perform risk assessments and design with security and human oversight in mind.</p>
-                        <p><strong>SME Tip:</strong> Demand threat models from vendors and maintain human control on the factory floor.</p>
+                        <p><strong>Focus:</strong> Understand risks early and make informed design choices before adopting or buying AI.</p>
+                        <ul>
+                            <li>Raise awareness of AI-specific threats (prompt injection, data poisoning, adversarial attacks)</li>
+                            <li>Conduct holistic threat modelling — consider impact on production, safety, and proprietary data</li>
+                            <li>Choose AI only when appropriate and apply least privilege, guardrails, and human oversight</li>
+                            <li>Prioritise explainable models for quality inspection and predictive maintenance</li>
+                        </ul>
+                        <p><strong>SME Takeaway:</strong> Always ask vendors for threat models and evidence of secure design. Plan human oversight for factory-floor AI.</p>
                     </div>
                 </div>
 
                 <div class="accordion">
                     <button class="accordion-btn">2. Secure Development & Integration</button>
                     <div class="accordion-content">
-                        <p>Protect your data and models. Require proper documentation (Model Cards, SBOMs) from suppliers.</p>
+                        <p><strong>Focus:</strong> Secure your supply chain and protect valuable manufacturing data.</p>
+                        <ul>
+                            <li>Vet suppliers of models, data, and APIs</li>
+                            <li>Protect proprietary factory data when fine-tuning models</li>
+                            <li>Demand documentation (Model Cards, SBOMs)</li>
+                            <li>Manage technical debt and have decommissioning plans</li>
+                        </ul>
+                        <p><strong>SME Takeaway:</strong> Treat your manufacturing data as highly sensitive. Require full documentation before integration.</p>
                     </div>
                 </div>
 
                 <div class="accordion">
                     <button class="accordion-btn">3. Secure Deployment</button>
                     <div class="accordion-content">
-                        <p>Use strong access controls, testing, and incident response plans before going live in production.</p>
+                        <p><strong>Focus:</strong> Launch AI safely into your production environment.</p>
+                        <ul>
+                            <li>Apply strong access controls and environment segregation</li>
+                            <li>Protect models from tampering or theft</li>
+                            <li>Prepare AI-specific incident response plans</li>
+                            <li>Test thoroughly in conditions that match your factory</li>
+                        </ul>
+                        <p><strong>SME Takeaway:</strong> Always have manual overrides ready for any AI controlling physical equipment.</p>
                     </div>
                 </div>
 
                 <div class="accordion">
                     <button class="accordion-btn">4. Secure Operation & Maintenance</button>
                     <div class="accordion-content">
-                        <p>Monitor performance, detect anomalies, and plan secure updates throughout the AI system's life.</p>
+                        <p><strong>Focus:</strong> Keep the AI secure throughout its lifetime.</p>
+                        <ul>
+                            <li>Monitor inputs, outputs, and performance for drift or attacks</li>
+                            <li>Implement secure update processes</li>
+                            <li>Log and learn from incidents</li>
+                            <li>Share anonymised lessons with industry</li>
+                        </ul>
+                        <p><strong>SME Takeaway:</strong> Treat major model updates with the same caution as installing new machinery.</p>
                     </div>
                 </div>
             </div>
@@ -87,8 +107,6 @@
             <!-- Interactive Checklist -->
             <div class="card">
                 <h2>Practical Checklist for Safe AI Adoption</h2>
-                <p>Tick off items as you complete them.</p>
-                
                 <div id="checklist" class="checklist">
                     <label><input type="checkbox"> Identified the specific business task AI will support</label>
                     <label><input type="checkbox"> Conducted threat modelling and risk assessment</label>
@@ -96,12 +114,10 @@
                     <label><input type="checkbox"> Checked GDPR and data privacy compliance</label>
                     <label><input type="checkbox"> Applied secure-by-design principles</label>
                     <label><input type="checkbox"> Tested for bias and adversarial attacks</label>
-                    <label><input type="checkbox"> Documented models, data, and limitations</label>
-                    <label><input type="checkbox"> Implemented logging and monitoring</label>
-                    <label><input type="checkbox"> Created an incident response plan</label>
-                    <label><input type="checkbox"> Planned for ongoing maintenance and updates</label>
+                    <label><input type="checkbox"> Documented models, data sources and limitations</label>
+                    <label><input type="checkbox"> Implemented logging, monitoring and incident response</label>
+                    <label><input type="checkbox"> Planned for ongoing maintenance and secure updates</label>
                 </div>
-
                 <button onclick="clearChecklist()" class="button-primary" style="margin-top:20px;">Reset Checklist</button>
             </div>
 
@@ -109,7 +125,7 @@
 
         <!-- Sidebar -->
         <div class="sidebar">
-            <h3>Quick Resources</h3>
+            <h3>Key Resources</h3>
             <ul>
                 <li><a href="https://www.ncsc.gov.uk/sites/default/files/documents/Guidelines-for-secure-AI-system-development.pdf" target="_blank">→ NCSC Full Guidelines (PDF)</a></li>
                 <li><a href="https://www.ncsc.gov.uk/collection/ai-security" target="_blank">→ NCSC AI Security Collection</a></li>
@@ -124,31 +140,22 @@
     </footer>
 
     <script>
-        // Accordion Functionality
+        // Accordion
         document.querySelectorAll('.accordion-btn').forEach(button => {
             button.addEventListener('click', () => {
-                const content = button.nextElementSibling;
-                const isOpen = content.style.maxHeight;
-
-                // Close all others
-                document.querySelectorAll('.accordion-content').forEach(item => {
-                    item.style.maxHeight = null;
-                });
-
-                // Toggle current
-                if (isOpen) {
+                document.querySelectorAll('.accordion-content').forEach(content => {
                     content.style.maxHeight = null;
-                } else {
-                    content.style.maxHeight = content.scrollHeight + "px";
-                }
+                });
+                const content = button.nextElementSibling;
+                content.style.maxHeight = content.scrollHeight + "px";
             });
         });
 
-        // Checklist Persistence
+        // Checklist
         function saveChecklist() {
             const checks = {};
-            document.querySelectorAll('#checklist input[type="checkbox"]').forEach((cb, index) => {
-                checks[index] = cb.checked;
+            document.querySelectorAll('#checklist input[type="checkbox"]').forEach((cb, i) => {
+                checks[i] = cb.checked;
             });
             localStorage.setItem('safeAIChecklist', JSON.stringify(checks));
         }
@@ -157,59 +164,28 @@
             const saved = localStorage.getItem('safeAIChecklist');
             if (saved) {
                 const checks = JSON.parse(saved);
-                document.querySelectorAll('#checklist input[type="checkbox"]').forEach((cb, index) => {
-                    cb.checked = checks[index] || false;
+                document.querySelectorAll('#checklist input[type="checkbox"]').forEach((cb, i) => {
+                    cb.checked = checks[i] || false;
                 });
             }
         }
 
         function clearChecklist() {
-            if (confirm("Reset the entire checklist?")) {
+            if (confirm("Reset the checklist?")) {
                 document.querySelectorAll('#checklist input[type="checkbox"]').forEach(cb => cb.checked = false);
                 localStorage.removeItem('safeAIChecklist');
             }
         }
 
-        // Auto-save checklist
         document.getElementById('checklist').addEventListener('change', saveChecklist);
-
-        // Load saved checklist on page load
         window.addEventListener('load', loadChecklist);
     </script>
 
     <style>
-        .accordion {
-            margin-bottom: 12px;
-            border: 1px solid #e2e8f0;
-            border-radius: 12px;
-            overflow: hidden;
-        }
-        .accordion-btn {
-            width: 100%;
-            padding: 18px 20px;
-            background: white;
-            border: none;
-            text-align: left;
-            font-weight: 600;
-            font-size: 1.1rem;
-            cursor: pointer;
-        }
-        .accordion-content {
-            padding: 0 20px;
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease;
-            background: #f8fafc;
-        }
-        .checklist label {
-            display: block;
-            padding: 12px 0;
-            border-bottom: 1px solid #f1f5f9;
-            cursor: pointer;
-        }
-        .checklist input[type="checkbox"] {
-            margin-right: 12px;
-        }
+        .accordion { margin-bottom: 16px; border: 1px solid #e2e8f0; border-radius: 12px; overflow: hidden; }
+        .accordion-btn { width: 100%; padding: 18px 22px; background: white; border: none; text-align: left; font-weight: 600; font-size: 1.1rem; cursor: pointer; }
+        .accordion-content { padding: 0 22px; max-height: 0; overflow: hidden; transition: max-height 0.4s ease; background: #f8fafc; }
+        .checklist label { display: block; padding: 12px 8px; border-bottom: 1px solid #f1f5f9; cursor: pointer; }
     </style>
 </body>
 </html>
