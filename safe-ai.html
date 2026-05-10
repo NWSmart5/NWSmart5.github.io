@@ -29,69 +29,64 @@
         </div>
     </header>
 
-    <section class="page-hero" style="background: linear-gradient(rgba(30, 58, 138, 0.85), rgba(15, 23, 42, 0.9)), url('images/Screenshot 2026-05-10 151158.jpeg') center/cover no-repeat;">
+    <section class="page-hero" style="background: linear-gradient(rgba(30, 58, 138, 0.85), rgba(15, 23, 42, 0.9)), url('images/safe-ai-hero.jpg') center/cover no-repeat;">
         <h2>Safe & Responsible AI Use for Manufacturing SMEs</h2>
-        <p>Secure, ethical and human-centric AI adoption for Northwest manufacturers</p>
+        <p>Practical guidance based on official NCSC Guidelines for Secure AI System Development</p>
     </section>
 
     <div class="container">
         <div class="main-content">
 
             <!-- Source Note -->
-            <div class="card" style="background:#f0f4f8; border-left:5px solid #1e40af;">
-                <p><strong>Source:</strong> NCSC, CISA and international partners – <em>Guidelines for Secure AI System Development</em> (November 2023)<br>
-                Full PDF: <a href="https://www.ncsc.gov.uk/sites/default/files/documents/Guidelines-for-secure-AI-system-development.pdf" target="_blank">Download NCSC Guidelines</a></p>
+            <div class="card" style="background:#f0f4f8; border-left:5px solid #1e40af; font-size:15px;">
+                <strong>Source:</strong> NCSC, CISA and international partners – <em>Guidelines for Secure AI System Development</em> (November 2023)<br>
+                <a href="https://www.ncsc.gov.uk/sites/default/files/documents/Guidelines-for-secure-AI-system-development.pdf" target="_blank" style="color:#1e40af;">Download Full PDF →</a>
             </div>
 
-            <!-- Introduction -->
+            <!-- Why This Matters -->
             <div class="card">
-                <h2>Introduction</h2>
-                <p>Artificial intelligence (AI) systems have the potential to bring many benefits to manufacturing. However, for these opportunities to be fully realised, AI must be developed, deployed and operated in a <strong>secure and responsible way</strong>.</p>
-                <p>Cyber security is a necessary precondition for the safety, resilience, privacy, fairness, efficacy and reliability of AI systems.</p>
+                <h2>Why Safe AI Matters for Manufacturing SMEs</h2>
+                <p>AI offers huge potential for Northwest manufacturers — predictive maintenance, quality control, smarter supply chains and more. However, AI systems face both traditional cyber threats and new risks such as prompt injection, data poisoning and model theft.</p>
+                <p>Secure and responsible AI is essential for Industry 5.0 — delivering productivity gains while protecting your operations, people, and data.</p>
             </div>
 
-            <!-- Why AI Security Is Different -->
+            <!-- The 4 Key Lifecycle Stages -->
             <div class="card">
-                <h2>Why AI Security Is Different</h2>
-                <p>AI systems face novel vulnerabilities known as <strong>Adversarial Machine Learning (AML)</strong>, including:</p>
-                <ul style="line-height: 2.0; font-size: 16.5px;">
-                    <li>Prompt injection attacks (especially in LLMs)</li>
-                    <li>Data poisoning (corrupting training data)</li>
-                    <li>Model theft and inversion attacks</li>
-                    <li>Supply chain compromises</li>
-                </ul>
-            </div>
+                <h2>The 4 Key Lifecycle Stages for Secure AI</h2>
+                <p>Adapted from the official NCSC Guidelines for manufacturing adopters and integrators.</p>
 
-            <!-- Secure by Design Principles -->
-            <div class="card">
-                <h2>Secure by Design – Core Principles</h2>
-                <ul style="line-height: 2.1; font-size: 16.5px;">
-                    <li><strong>Principle 1:</strong> Take Ownership of Customer Security Outcomes</li>
-                    <li><strong>Principle 2:</strong> Embrace Radical Transparency and Accountability</li>
-                    <li><strong>Principle 3:</strong> Lead from the Top – Security must be a board-level priority</li>
-                </ul>
-            </div>
+                <!-- Stage 1 -->
+                <details class="stage">
+                    <summary><strong>1. Secure Design</strong></summary>
+                    <p>Understand threats and design security in from the start. Conduct threat modelling and choose models carefully. Prioritise explainability and human oversight — especially important on the factory floor.</p>
+                    <p><strong>SME Tip:</strong> Ask vendors for threat models and secure defaults. Always maintain human oversight for safety-critical processes.</p>
+                </details>
 
-            <!-- Four-Stage Secure AI Lifecycle -->
-            <div class="card">
-                <h2>The Four-Stage Secure AI Lifecycle</h2>
-                
-                <h3>1. Secure Design</h3>
-                <p>Understand threats, conduct risk assessments, apply secure-by-design principles, and choose appropriate models with proper due diligence.</p>
+                <!-- Stage 2 -->
+                <details class="stage">
+                    <summary><strong>2. Secure Development / Integration</strong></summary>
+                    <p>Protect your data, models and supply chain. Demand proper documentation (Model Cards, SBOMs) from suppliers. Secure any fine-tuning or integration work you do in-house.</p>
+                    <p><strong>SME Tip:</strong> Treat your manufacturing data as a valuable asset and protect it carefully.</p>
+                </details>
 
-                <h3>2. Secure Development</h3>
-                <p>Protect training data, document models (Model Cards, SBOMs), manage technical debt, and secure the supply chain.</p>
+                <!-- Stage 3 -->
+                <details class="stage">
+                    <summary><strong>3. Secure Deployment</strong></summary>
+                    <p>Apply strong access controls, logging, and testing before going live. Have clear incident response plans for AI-specific failures.</p>
+                    <p><strong>SME Tip:</strong> Test AI systems thoroughly in your own environment before full production use.</p>
+                </details>
 
-                <h3>3. Secure Deployment</h3>
-                <p>Apply strong access controls, segregation, logging, and incident response plans. Release responsibly with clear user guidance.</p>
-
-                <h3>4. Secure Operation & Maintenance</h3>
-                <p>Monitor inputs and outputs, detect drift and adversarial attacks, automate secure updates, and continuously improve.</p>
+                <!-- Stage 4 -->
+                <details class="stage">
+                    <summary><strong>4. Secure Operation & Maintenance</strong></summary>
+                    <p>Continuously monitor inputs, outputs and performance. Detect drift and adversarial attacks. Plan secure updates and learn from incidents.</p>
+                    <p><strong>SME Tip:</strong> Treat major model updates with the same care as installing new machinery.</p>
+                </details>
             </div>
 
             <!-- Practical Checklist -->
             <div class="card">
-                <h2>Practical Checklist for Manufacturing SMEs</h2>
+                <h2>Practical Checklist for Safe AI Adoption</h2>
                 <ul style="line-height: 2.1; font-size: 16.5px;">
                     <li>Identified the specific business task AI will support</li>
                     <li>Conducted threat modelling and risk assessment</li>
@@ -99,26 +94,33 @@
                     <li>Checked GDPR and data privacy compliance</li>
                     <li>Applied secure-by-design and input/output controls</li>
                     <li>Tested for bias, fairness, and adversarial attacks</li>
-                    <li>Documented models, data, and limitations</li>
-                    <li>Implemented logging, monitoring, and incident response</li>
+                    <li>Documented models, data sources and limitations</li>
+                    <li>Implemented logging, monitoring and incident response</li>
+                    <li>Planned for ongoing maintenance and secure updates</li>
                 </ul>
+            </div>
+
+            <!-- Responsible & Ethical Alignment -->
+            <div class="card">
+                <h2>Responsible & Human-Centric AI (Industry 5.0)</h2>
+                <p>Safe AI must also be ethical and human-centric. This means maintaining transparency, fairness, and meaningful human control — aligning with both NCSC guidance and Industry 5.0 principles.</p>
             </div>
 
             <!-- Resources -->
             <div class="card">
-                <h2>Recommended Downloads & Resources</h2>
+                <h2>Key Resources & Downloads</h2>
                 <div class="resource-grid">
                     <div class="resource-card">
                         <h3>NCSC Guidelines for Secure AI System Development</h3>
                         <a href="https://www.ncsc.gov.uk/sites/default/files/documents/Guidelines-for-secure-AI-system-development.pdf" target="_blank" class="button-primary">Download Full PDF</a>
                     </div>
                     <div class="resource-card">
-                        <h3>Made Smarter AI Adoption Toolkit</h3>
-                        <a href="#" class="button-primary">Download Toolkit (PDF)</a>
+                        <h3>NCSC AI Security Collection</h3>
+                        <a href="https://www.ncsc.gov.uk/collection/ai-security" target="_blank" class="button-primary">Visit Collection</a>
                     </div>
                     <div class="resource-card">
-                        <h3>Shifting the Balance of Cybersecurity Risk</h3>
-                        <a href="https://www.cisa.gov/sites/default/files/2023-10/SecureByDesign_1025_508c.pdf" target="_blank" class="button-primary">Download PDF</a>
+                        <h3>Made Smarter AI Toolkit</h3>
+                        <a href="#" class="button-primary">Download Toolkit</a>
                     </div>
                 </div>
             </div>
@@ -127,23 +129,34 @@
 
         <!-- Sidebar -->
         <div class="sidebar">
-            <h3>Quick Links</h3>
+            <h3>Quick Actions</h3>
             <ul>
-                <li><a href="https://www.ncsc.gov.uk/collection/ai-security" target="_blank">NCSC AI Security Collection</a></li>
-                <li><a href="https://www.ncsc.gov.uk/" target="_blank">National Cyber Security Centre</a></li>
-                <li><a href="#" target="_blank">Made Smarter AI Toolkit</a></li>
+                <li><a href="https://www.ncsc.gov.uk/sites/default/files/documents/Guidelines-for-secure-AI-system-development.pdf" target="_blank">→ Download NCSC Guidelines</a></li>
+                <li><a href="#" target="_blank">→ Safe AI Checklist (PDF)</a></li>
+                <li><a href="news.html">→ Latest AI News</a></li>
             </ul>
         </div>
-    </div>
-
-    <!-- Source Note (Footer) -->
-    <div style="text-align:center; padding:20px; background:#f8fafc; font-size:14px; color:#64748b;">
-        Source: NCSC, CISA and international partners – Guidelines for Secure AI System Development (2023)
     </div>
 
     <footer class="footer">
         <p><strong>NWSmart5.0 Knowledge Hub</strong> — CyberFocus Project<br>
         University of Salford • Greater Manchester</p>
+        <p style="font-size:14px; margin-top:15px;">Source: NCSC et al. (2023) Guidelines for Secure AI System Development</p>
     </footer>
+
+    <style>
+        details.stage {
+            margin-bottom: 18px;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 16px;
+            background: white;
+        }
+        details.stage summary {
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 1.1rem;
+        }
+    </style>
 </body>
 </html>
