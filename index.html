@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NWSmart5.0 Knowledge Hub</title>
     <link rel="stylesheet" href="style.css">
+    
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-LHEP92H7P6"></script>
     <script>
@@ -37,7 +38,6 @@
 
     <div class="container">
         <div class="main-content">
-
             <div class="card">
                 <h2>Welcome to the NWSmart5.0 Knowledge Hub</h2>
                 <p>Your free, open-access resource centre dedicated to helping manufacturing SMEs in Greater Manchester and the North West thrive in Industry 5.0.</p>
@@ -52,23 +52,20 @@
                     “Industry 5.0 is a sustainable, human-centric and resilient European industry… It moves the focus from shareholder to stakeholder value… placing the wellbeing of the industry worker at the centre of the production process.”
                 </blockquote>
                 <p><strong>Source:</strong> Breque, M., De Nul, L., & Petridis, A. (2021). Industry 5.0: Towards a sustainable, human-centric and resilient European industry. European Commission.</p>
-
+                
                 <h3>The Three Core Pillars:</h3>
-
                 <div class="modern-accordion">
                     <button class="accordion-btn">Human-Centricity</button>
                     <div class="accordion-content">
                         <p>Technology serves people. Workers move from repetitive tasks to more creative, supervisory, and fulfilling roles. Emphasis on wellbeing, inclusion, diversity, and lifelong learning.</p>
                     </div>
                 </div>
-
                 <div class="modern-accordion">
                     <button class="accordion-btn">Sustainability</button>
                     <div class="accordion-content">
                         <p>Production respects planetary boundaries — supporting the circular economy, resource efficiency, renewable energy, and the European Green Deal.</p>
                     </div>
                 </div>
-
                 <div class="modern-accordion">
                     <button class="accordion-btn">Resilience</button>
                     <div class="accordion-content">
@@ -99,23 +96,19 @@
             <div class="card" id="upcoming-workshops">
                 <h2>Upcoming Workshops</h2>
                 <p>Stay ahead with our practical, hands-on workshops designed specifically for manufacturing SMEs in the North West.</p>
-
                 <div class="workshop-item">
                     <strong>Digital Transformation for Industry 5.0</strong><br>
                     <span><strong>4 June 2026 • 9:00 AM – 10:00 AM</strong><br>Manchester Dish</span><br><br>
                     <a href="#" class="button-primary">Register on Eventbrite →</a>
                 </div>
-
                 <div class="workshop-item">
                     <strong>Safe & Responsible AI Adoption in Manufacturing</strong><br>
                     <span>Date TBC</span>
                 </div>
-
                 <div class="workshop-item">
                     <strong>Cybersecurity Essentials for Industry 5.0</strong><br>
                     <span>Date TBC</span>
                 </div>
-
                 <p style="margin-top:25px;">
                     <strong>All workshops are free for eligible North West manufacturing SMEs.</strong> Limited places — register early.
                 </p>
@@ -123,7 +116,7 @@
 
             <div class="card">
                 <h2>Long-Term Commitment</h2>
-                <p>This hub is hosted and maintained long-term by the University of Salford. It will continue to grow with new resources, tools, and case studies well beyond the project period, providing ongoing support for the region’s manufacturing sector.</p>
+                <p>This hub is hosted and maintained long-term by the University of Salford. It will continue to grow with new resources, tools, and case studies well beyond the project period.</p>
             </div>
 
             <div class="card" style="text-align:center;">
@@ -132,10 +125,9 @@
                 <a href="#" class="button-primary" style="margin:10px; background:#1e40af;">Download Toolkits</a>
                 <a href="news.html" class="button-primary" style="margin:10px;">Latest News</a>
             </div>
-
         </div>
 
-        <!-- LIVE NEWS SIDEBAR - UNTOUCHED -->
+        <!-- LIVE NEWS SIDEBAR -->
         <div class="sidebar">
             <h3>Latest News & Insights</h3>
             <p style="font-size:14px; color:#64748b; margin-bottom:20px;">Live from Cybersecurity & Manufacturing Sources</p>
@@ -153,18 +145,98 @@
         University of Salford • Greater Manchester</p>
     </footer>
 
-    <!-- LIVE RSS (unchanged) -->
+    <!-- ==================== LIVE RSS SCRIPT ==================== -->
     <script>
-        // Your existing working RSS script here...
-        async function loadNews() { /* ... keep your current working code ... */ }
+        async function loadNews() {
+            const container = document.getElementById('rss-news');
+            container.innerHTML = '<p style="color:#64748b; font-style:italic;">Loading live news...</p>';
+
+            const feeds = [
+                { name: "NIST Cybersecurity", url: "https://www.nist.gov/blogs/cybersecurity-insights/rss.xml" },
+                { name: "CISA Alerts", url: "https://www.cisa.gov/uscert/ncas/alerts.xml" },
+                { name: "Security Magazine", url: "https://www.securitymagazine.com/rss/15" },
+                { name: "Industrial Cyber", url: "https://industrialcyber.co/feed/" }
+            ];
+
+            let allItems = [];
+
+            for (const feed of feeds) {
+                try {
+                    const proxyUrl = `https://api.allorigins.win/get?url=${encodeURIComponent(feed.url)}`;
+                    const response = await fetch(proxyUrl);
+                    if (!response.ok) continue;
+
+                    const data = await response.json();
+                    const xmlText = data.contents;
+
+                    const parser = new DOMParser();
+                    const xmlDoc = parser.parseFromString(xmlText, "text/xml");
+
+                    const items = xmlDoc.querySelectorAll("item");
+                    
+                    items.forEach(item => {
+                        const title = item.querySelector("title")?.textContent?.trim() || "No title";
+                        const link = item.querySelector("link")?.textContent?.trim() || "#";
+                        const pubDate = item.querySelector("pubDate")?.textContent?.trim();
+                        const description = item.querySelector("description")?.textContent?.trim() || "";
+
+                        allItems.push({
+                            title,
+                            link,
+                            pubDate: pubDate ? new Date(pubDate) : new Date(0),
+                            source: feed.name,
+                            description: description.substring(0, 120) + (description.length > 120 ? "..." : "")
+                        });
+                    });
+                } catch (e) {
+                    console.warn(`Failed to load ${feed.name}:`, e);
+                }
+            }
+
+            allItems.sort((a, b) => b.pubDate - a.pubDate);
+            allItems = allItems.slice(0, 6);
+
+            if (allItems.length === 0) {
+                container.innerHTML = `<p style="color:#ef4444;">Could not load news. Please try again later.</p>`;
+                return;
+            }
+
+            let html = '';
+            allItems.forEach(item => {
+                const dateStr = item.pubDate.toLocaleDateString('en-GB', { 
+                    day: 'numeric', month: 'short', year: 'numeric' 
+                });
+                
+                html += `
+                    <div style="margin-bottom: 18px; padding-bottom: 12px; border-bottom: 1px solid #e2e8f0;">
+                        <a href="${item.link}" target="_blank" rel="noopener" 
+                           style="text-decoration: none; color: #0f766e; font-weight: 600; line-height: 1.3;">
+                            ${item.title}
+                        </a>
+                        <div style="font-size: 13px; color: #64748b; margin-top: 4px;">
+                            ${item.source} • ${dateStr}
+                        </div>
+                    </div>
+                `;
+            });
+
+            container.innerHTML = html;
+        }
+
+        // Run when page loads
         window.addEventListener('load', loadNews);
     </script>
 
+    <!-- Accordion Script -->
     <script>
-        // Accordion functionality
         document.querySelectorAll('.accordion-btn').forEach(btn => {
             btn.addEventListener('click', () => {
-                document.querySelectorAll('.accordion-content').forEach(c => c.style.maxHeight = null);
+                // Close all others
+                document.querySelectorAll('.accordion-content').forEach(c => {
+                    c.style.maxHeight = null;
+                });
+                
+                // Open this one
                 const content = btn.nextElementSibling;
                 content.style.maxHeight = content.scrollHeight + "px";
             });
