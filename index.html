@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NWSmart5.0 Knowledge Hub</title>
     <link rel="stylesheet" href="style.css">
-    
+   
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-LHEP92H7P6"></script>
     <script>
@@ -38,7 +38,6 @@
 
     <div class="container">
         <div class="main-content">
-
             <div class="card">
                 <h2>Welcome to the NWSmart5.0 Knowledge Hub</h2>
                 <p>Your free, open-access resource centre dedicated to helping manufacturing SMEs in Greater Manchester and the North West thrive in Industry 5.0.</p>
@@ -48,14 +47,14 @@
             <div class="card">
                 <h2>What is Industry 5.0?</h2>
                 <p>Industry 5.0 is the natural evolution of Industry 4.0. While Industry 4.0 brought digitalisation, automation, IoT, and AI for greater efficiency, Industry 5.0 goes further by placing <strong>people, sustainability, and resilience</strong> at the core of industrial transformation.</p>
-                
+               
                 <blockquote style="font-style:italic; color:#475569; margin:25px 0; padding:20px; background:#f8fafc; border-left:5px solid #14b8a6;">
                     “Industry 5.0 is a sustainable, human-centric and resilient European industry… It moves the focus from shareholder to stakeholder value… placing the wellbeing of the industry worker at the centre of the production process.”
                 </blockquote>
                 <p><strong>Source:</strong> Breque, M., De Nul, L., & Petridis, A. (2021). Industry 5.0: Towards a sustainable, human-centric and resilient European industry. European Commission.</p>
-                
+               
                 <h3 style="margin: 30px 0 20px 0; color:#1e3a8a;">The Three Core Pillars:</h3>
-                
+               
                 <div class="modern-accordion">
                     <button class="accordion-btn">Human-Centricity</button>
                     <div class="accordion-content">
@@ -121,7 +120,7 @@
                 <p>This hub is hosted and maintained long-term by the University of Salford. It will continue to grow with new resources, tools, and case studies well beyond the project period.</p>
             </div>
 
-            <!-- Fixed Ready to strengthen section -->
+            <!-- Ready to strengthen section -->
             <div class="card" style="text-align:center; padding: 45px 30px;">
                 <h2>Ready to strengthen your business?</h2>
                 <p style="margin: 15px 0 25px; font-size: 1.1rem; color: #475569;">
@@ -133,7 +132,6 @@
                     <a href="digital.html" class="button-primary" style="background:#14b8a6;">Digital Transformation</a>
                 </div>
             </div>
-
         </div>
 
         <!-- Sidebar -->
@@ -154,7 +152,7 @@
         University of Salford • Greater Manchester</p>
     </footer>
 
-    <!-- ==================== RSS NEWS SCRIPT (Fixed) ==================== -->
+    <!-- ==================== IMPROVED RSS NEWS SCRIPT ==================== -->
     <script>
         async function loadNews() {
             const container = document.getElementById('rss-news');
@@ -162,9 +160,9 @@
 
             const feeds = [
                 { name: "NIST Cybersecurity", url: "https://www.nist.gov/blogs/cybersecurity-insights/rss.xml" },
-                { name: "CISA", url: "https://www.cisa.gov/cybersecurity-advisories/all.xml" },
                 { name: "Security Magazine", url: "https://www.securitymagazine.com/rss/15" },
-                { name: "Industrial Cyber", url: "https://industrialcyber.co/feed/" }
+                { name: "Industrial Cyber", url: "https://industrialcyber.co/feed/" },
+                { name: "Krebs on Security", url: "https://krebsonsecurity.com/feed/" }
             ];
 
             let allItems = [];
@@ -172,7 +170,8 @@
             for (const feed of feeds) {
                 try {
                     const proxyUrl = `https://api.allorigins.win/get?url=${encodeURIComponent(feed.url)}`;
-                    const response = await fetch(proxyUrl);
+                    const response = await fetch(proxyUrl, { cache: "no-store" });
+                    
                     if (!response.ok) continue;
 
                     const data = await response.json();
@@ -231,10 +230,10 @@
         document.querySelectorAll('.accordion-btn').forEach(btn => {
             btn.addEventListener('click', () => {
                 const isActive = btn.classList.contains('active');
-                
+               
                 document.querySelectorAll('.accordion-btn').forEach(b => b.classList.remove('active'));
                 document.querySelectorAll('.accordion-content').forEach(c => c.style.maxHeight = null);
-                
+               
                 if (!isActive) {
                     btn.classList.add('active');
                     const content = btn.nextElementSibling;
