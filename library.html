@@ -6,26 +6,26 @@
     <title>Knowledge Library | NWSmart5.0</title>
     <link rel="stylesheet" href="style.css">
     <!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-LHEP92H7P6"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-LHEP92H7P6');
-</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LHEP92H7P6"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-LHEP92H7P6');
+    </script>
 </head>
 <body>
     <header>
         <div class="nav-container">
             <h1>NWSmart5.0 <span>Knowledge Hub</span></h1>
-           <nav>
-    <a href="index.html">Home</a>
-    <a href="cybersecurity.html">Cybersecurity</a>
-    <a href="safe-ai.html">Safe AI</a>
-    <a href="digital.html">Digital Transformation</a>
-    <a href="library.html">Knowledge Library</a>
-    <a href="news.html">News</a>
-</nav>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="cybersecurity.html">Cybersecurity</a>
+                <a href="safe-ai.html">Safe AI</a>
+                <a href="digital.html">Digital Transformation</a>
+                <a href="library.html">Knowledge Library</a>
+                <a href="news.html">News</a>
+            </nav>
         </div>
     </header>
 
@@ -36,12 +36,12 @@
 
     <div class="container">
         <div class="main-content">
-
-            <input type="text" id="resource-search" placeholder="Search resources (e.g. ransomware, phishing, password)..." 
-                   style="width:100%; padding:16px 20px; margin-bottom:25px; border-radius:50px; border:1px solid #cbd5e1; font-size:16px;">
+            <input type="text" id="resource-search" 
+                   placeholder="Search resources (e.g. ransomware, phishing, password)...">
 
             <div class="filter-buttons">
                 <button class="filter-btn active" data-category="all">All Resources</button>
+                <button class="filter-btn" data-category="infographic">Infographics</button>
                 <button class="filter-btn" data-category="cyber">Cybersecurity</button>
                 <button class="filter-btn" data-category="digital">Digital Transformation</button>
                 <button class="filter-btn" data-category="ai">Safe AI</button>
@@ -66,39 +66,43 @@
 
     <script>
         const resources = [
-            // === CYBERSECURITY ===
-            {title: "10 Steps to Cyber Security", category: "cyber", link: "infographics/2021-10-steps-to-cyber-security-infographic.pdf"},
-            {title: "Ransomware - What You Need to Know", category: "cyber", link: "infographics/NCSC_Ransomware-what-you-need-to-know.pdf"},
-            {title: "Phishing - Defending Your Organisation", category: "cyber", link: "infographics/Phishing-attacks-defending-your-organisation-infographic.pdf"},
-            {title: "Phishing - Dealing with Suspicious Emails", category: "cyber", link: "infographics/Phishing-attacks-dealing-suspicious-emails-infographic.pdf"},
-            {title: "Backing Up Your Data", category: "cyber", link: "infographics/Backing up your data (NCSC Infographic).pdf"},
-            {title: "Supply Chain Cyber Security", category: "cyber", link: "infographics/Assess-supply-chain-cyber-security.pdf"},
-            {title: "Protecting Devices from Viruses & Malware", category: "cyber", link: "infographics/Protecting-devices-from-viruses-and-malware-infographic.pdf"},
-            {title: "Recovering Hacked Accounts", category: "cyber", link: "infographics/recovering-hacked-accounts-infographics.pdf"},
-            {title: "Use 2SV to Protect Accounts", category: "cyber", link: "infographics/Use-2SV-to-protect-accounts-infographic.pdf"},
-            {title: "Video Conferencing Security", category: "cyber", link: "infographics/Video_conferencing_infographic.pdf"},
-            {title: "Password Policy", category: "cyber", link: "infographics/password_policy_infographic.pdf"},
-            {title: "Reporting Cyber Incidents", category: "cyber", link: "infographics/NCSC_Reporting-incidents-infographic.pdf"},
-            {title: "Cyber Exercise Creation", category: "cyber", link: "infographics/cyber_exercise_creation.pdf"},
-            
+            // === INFRASTRUCTURE & CYBERSECURITY ===
+            {title: "10 Steps to Cyber Security", category: "infographic", link: "infographics/2021-10-steps-to-cyber-security-infographic.pdf"},
+            {title: "Ransomware - What You Need to Know", category: "infographic", link: "infographics/NCSC_Ransomware-what-you-need-to-know.pdf"},
+            {title: "Phishing - Defending Your Organisation", category: "infographic", link: "infographics/Phishing-attacks-defending-your-organisation-infographic.pdf"},
+            {title: "Phishing - Dealing with Suspicious Emails", category: "infographic", link: "infographics/Phishing-attacks-dealing-suspicious-emails-infographic.pdf"},
+            {title: "Backing Up Your Data", category: "infographic", link: "infographics/Backing up your data (NCSC Infographic).pdf"},
+            {title: "Supply Chain Cyber Security", category: "infographic", link: "infographics/Assess-supply-chain-cyber-security.pdf"},
+            {title: "Protecting Devices from Viruses & Malware", category: "infographic", link: "infographics/Protecting-devices-from-viruses-and-malware-infographic.pdf"},
+            {title: "Recovering Hacked Accounts", category: "infographic", link: "infographics/recovering-hacked-accounts-infographics.pdf"},
+            {title: "Use 2SV to Protect Accounts", category: "infographic", link: "infographics/Use-2SV-to-protect-accounts-infographic.pdf"},
+            {title: "Video Conferencing Security", category: "infographic", link: "infographics/Video_conferencing_infographic.pdf"},
+            {title: "Password Policy", category: "infographic", link: "infographics/password_policy_infographic.pdf"},
+            {title: "Reporting Cyber Incidents", category: "infographic", link: "infographics/NCSC_Reporting-incidents-infographic.pdf"},
+            {title: "Cyber Exercise Creation", category: "infographic", link: "infographics/cyber_exercise_creation.pdf"},
+           
             // === DIGITAL TRANSFORMATION ===
-            {title: "Moving from Physical to Digital", category: "digital", link: "infographics/moving-physical-digital-infographic.pdf"},
-
-            // === SAFE AI === (Add more when ready)
-            // {title: "Safe AI Checklist", category: "ai", link: "infographics/safe-ai-checklist.pdf"},
+            {title: "Moving from Physical to Digital", category: "infographic", link: "infographics/moving-physical-digital-infographic.pdf"},
+            
+            // Add more Safe AI items later with category: "infographic"
         ];
 
         function renderResources(filtered) {
             const grid = document.getElementById('resource-grid');
             grid.innerHTML = '';
-            
+           
+            if (filtered.length === 0) {
+                grid.innerHTML = `<p style="grid-column: 1 / -1; text-align: center; padding: 40px; color: #64748b;">No resources found.</p>`;
+                return;
+            }
+
             filtered.forEach(r => {
                 const card = document.createElement('div');
                 card.className = 'resource-card';
                 card.innerHTML = `
                     <h3>${r.title}</h3>
                     <p style="color:#64748b; font-size:14px; margin:8px 0;">${r.category.toUpperCase()} • PDF</p>
-                    <a href="${r.link}" target="_blank" class="button-primary" 
+                    <a href="${r.link}" target="_blank" class="button-primary"
                        style="margin-top:12px; width:100%; text-align:center; display:inline-block;">
                         Download Infographic
                     </a>
@@ -127,7 +131,7 @@
 
                 const category = btn.dataset.category;
                 let filtered = resources;
-                
+
                 if (category !== 'all') {
                     filtered = resources.filter(r => r.category === category);
                 }
