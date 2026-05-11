@@ -93,7 +93,6 @@
                 </ul>
             </div>
 
-            <!-- Upcoming Workshops -->
             <div class="card" id="upcoming-workshops">
                 <h2>Upcoming Workshops</h2>
                 <p>Stay ahead with our practical, hands-on workshops designed specifically for manufacturing SMEs in the North West.</p>
@@ -120,7 +119,6 @@
                 <p>This hub is hosted and maintained long-term by the University of Salford. It will continue to grow with new resources, tools, and case studies well beyond the project period.</p>
             </div>
 
-            <!-- Ready to strengthen section -->
             <div class="card" style="text-align:center; padding: 45px 30px;">
                 <h2>Ready to strengthen your business?</h2>
                 <p style="margin: 15px 0 25px; font-size: 1.1rem; color: #475569;">
@@ -152,7 +150,7 @@
         University of Salford • Greater Manchester</p>
     </footer>
 
-    <!-- ==================== IMPROVED RSS NEWS SCRIPT ==================== -->
+    <!-- ==================== FIXED RSS NEWS SCRIPT ==================== -->
     <script>
         async function loadNews() {
             const container = document.getElementById('rss-news');
@@ -169,13 +167,14 @@
 
             for (const feed of feeds) {
                 try {
-                    const proxyUrl = `https://api.allorigins.win/get?url=${encodeURIComponent(feed.url)}`;
-                    const response = await fetch(proxyUrl, { cache: "no-store" });
+                    // Using corsproxy.io - currently more reliable
+                    const proxyUrl = `https://corsproxy.io/?${encodeURIComponent(feed.url)}`;
+                    const response = await fetch(proxyUrl);
                     
                     if (!response.ok) continue;
 
-                    const data = await response.json();
-                    const xmlDoc = new DOMParser().parseFromString(data.contents, "text/xml");
+                    const xmlText = await response.text();
+                    const xmlDoc = new DOMParser().parseFromString(xmlText, "text/xml");
 
                     xmlDoc.querySelectorAll("item").forEach(item => {
                         const title = item.querySelector("title")?.textContent?.trim() || "No title";
@@ -225,15 +224,14 @@
         window.addEventListener('load', loadNews);
     </script>
 
-    <!-- ==================== ACCORDION SCRIPT ==================== -->
+    <!-- Accordion Script -->
     <script>
         document.querySelectorAll('.accordion-btn').forEach(btn => {
             btn.addEventListener('click', () => {
                 const isActive = btn.classList.contains('active');
-               
                 document.querySelectorAll('.accordion-btn').forEach(b => b.classList.remove('active'));
                 document.querySelectorAll('.accordion-content').forEach(c => c.style.maxHeight = null);
-               
+                
                 if (!isActive) {
                     btn.classList.add('active');
                     const content = btn.nextElementSibling;
