@@ -44,48 +44,68 @@
                 <p>We combine practical guidance on safe AI, cybersecurity, and digital transformation with a strong focus on human-centric, sustainable, and resilient practices.</p>
             </div>
 
+            <!-- Industry 5.0 Section with Expandable Pillars -->
             <div class="card">
                 <h2>What is Industry 5.0?</h2>
                 <p>Industry 5.0 goes beyond automation by placing <strong>people, sustainability, and resilience</strong> at the centre of industrial transformation.</p>
-                <blockquote>“Industry 5.0 is a sustainable, human-centric and resilient European industry… placing the wellbeing of the industry worker at the centre of the production process.”</blockquote>
-                <p><strong>Source:</strong> European Commission (2021)</p>
 
-                <div class="pillars">
-                    <div class="pillar-card">
-                        <h3>Human-Centricity</h3>
-                        <p>Technology serves people. Focus on wellbeing, inclusion and meaningful work.</p>
+                <div class="accordion" style="margin-top:25px;">
+                    <button class="accordion-btn">Human-Centricity</button>
+                    <div class="accordion-content">
+                        <p>Technology serves people. Workers move from repetitive tasks to more creative, supervisory, and fulfilling roles. Emphasis on wellbeing, inclusion, diversity, and lifelong learning.</p>
                     </div>
-                    <div class="pillar-card">
-                        <h3>Sustainability</h3>
-                        <p>Respect planetary boundaries and support the circular economy.</p>
+                </div>
+
+                <div class="accordion">
+                    <button class="accordion-btn">Sustainability</button>
+                    <div class="accordion-content">
+                        <p>Production respects planetary boundaries and supports the circular economy, resource efficiency, renewable energy, and the European Green Deal.</p>
                     </div>
-                    <div class="pillar-card">
-                        <h3>Resilience</h3>
-                        <p>Build systems that withstand cyber-attacks, supply chain shocks and climate events.</p>
+                </div>
+
+                <div class="accordion">
+                    <button class="accordion-btn">Resilience</button>
+                    <div class="accordion-content">
+                        <p>Building robust systems and supply chains that can withstand shocks such as cyber-attacks, pandemics, geopolitical issues, and climate events.</p>
                     </div>
                 </div>
             </div>
 
+            <!-- What You'll Find Here - Simple List -->
             <div class="card">
                 <h2>What You’ll Find Here</h2>
-                <div class="resource-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
-                    <div class="resource-card">Best Practice Guides & Toolkits</div>
-                    <div class="resource-card">Workshop Materials & Recordings</div>
-                    <div class="resource-card">Risk Assessment Tools</div>
-                    <div class="resource-card">Real North West SME Case Studies</div>
-                    <div class="resource-card">Templates & Checklists</div>
-                    <div class="resource-card">Community & Peer Learning</div>
-                </div>
+                <ul style="line-height: 2.0; font-size: 16.5px;">
+                    <li>Best Practice Guides & Toolkits (Safe AI, Cybersecurity, Digital Transformation)</li>
+                    <li>Workshop Materials & Recordings</li>
+                    <li>Digital Maturity & Risk Assessment Tools</li>
+                    <li>Real SME Case Studies from the North West</li>
+                    <li>Templates & Checklists tailored for manufacturing</li>
+                    <li>Peer Learning & Community Resources</li>
+                </ul>
             </div>
 
+            <!-- Upcoming Workshops - Interactive -->
             <div class="card" id="upcoming-workshops">
                 <h2>Upcoming Workshops</h2>
-                <p>Free, practical workshops designed for manufacturing SMEs in the North West.</p>
-                <ul style="line-height: 2.0; font-size: 16.5px;">
-                    <li><strong>Safe & Responsible AI Adoption</strong> – Date TBC</li>
-                    <li><strong>Cybersecurity Essentials for Industry 5.0</strong> – Date TBC</li>
-                    <li><strong>Secure Digital Transformation Roadmaps</strong> – Date TBC</li>
-                </ul>
+                <p>Free, practical, in-person workshops designed for manufacturing SMEs in the North West.</p>
+
+                <div class="workshop-item">
+                    <strong>Digital Transformation for Industry 5.0</strong><br>
+                    <span>4 June 2026 • 9:00 AM – 10:00 AM • Manchester Dish</span><br>
+                    <small>One-hour practical workshop</small>
+                </div>
+
+                <div class="workshop-item">
+                    <strong>Safe & Responsible AI Adoption</strong><br>
+                    <span>Date TBC</span>
+                </div>
+
+                <div class="workshop-item">
+                    <strong>Cybersecurity Essentials for Industry 5.0</strong><br>
+                    <span>Date TBC</span>
+                </div>
+
+                <p style="margin-top:20px;"><strong>All workshops are free for eligible North West manufacturing SMEs.</strong></p>
             </div>
 
         </div>
@@ -108,7 +128,7 @@
         University of Salford • Greater Manchester</p>
     </footer>
 
-    <!-- LIVE RSS SCRIPT (UNCHANGED) -->
+    <!-- LIVE RSS SCRIPT (UNTOUCHED) -->
     <script>
         async function loadNews() {
             const container = document.getElementById('rss-news');
@@ -143,6 +163,17 @@
             container.innerHTML = `<p style="color:#f59e0b;">Live feed temporarily unavailable.<br>Try refreshing the page.</p>`;
         }
         window.addEventListener('load', loadNews);
+    </script>
+
+    <script>
+        // Accordion for Industry 5.0 Pillars
+        document.querySelectorAll('.accordion-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.accordion-content').forEach(c => c.style.maxHeight = null);
+                const content = btn.nextElementSibling;
+                content.style.maxHeight = content.scrollHeight + "px";
+            });
+        });
     </script>
 </body>
 </html>
