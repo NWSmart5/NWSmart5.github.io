@@ -30,110 +30,128 @@
     </header>
 
     <!-- HERO -->
-    <section class="page-hero" style="background: linear-gradient(rgba(30, 58, 138, 0.85), rgba(15, 23, 42, 0.9)), url('images/safe-ai-hero.jpg') center/cover no-repeat; min-height: 70vh;">
+    <section class="page-hero" style="background: linear-gradient(rgba(30, 58, 138, 0.85), rgba(15, 23, 42, 0.9)), url('images/safe-ai-hero.jpg') center/cover no-repeat;">
         <h2>Safe & Responsible AI for Manufacturing SMEs</h2>
-        <p>Secure, ethical and human-centric AI adoption for Industry 5.0</p>
-        <a href="#stages" class="button-primary" style="margin-top:30px;">Explore the 4 Stages →</a>
-        <a href="https://www.ncsc.gov.uk/sites/default/files/documents/Guidelines-for-secure-AI-system-development.pdf" target="_blank" class="button-primary" style="background:#1e40af; margin-left:15px;">Download NCSC Guidelines</a>
+        <p>Secure, Responsible, and Human-Centric AI Adoption for Industry 5.0</p>
     </section>
 
     <div class="container">
+        <div class="main-content">
 
-        <!-- WHY SAFE AI MATTERS -->
-        <div class="card">
-            <h2>Why Safe AI Matters for Northwest Manufacturing SMEs</h2>
-            <p>AI is transforming manufacturing through predictive maintenance, quality control, supply chain optimisation and intelligent automation. However, AI systems also introduce new cybersecurity, operational and ethical risks that must be managed carefully.</p>
-            <p>Secure and responsible AI is essential for building trust, protecting operations, and achieving truly human-centric Industry 5.0 transformation.</p>
+            <!-- Why Safe AI Matters -->
+            <div class="card">
+                <h2>Why Safe AI Matters for Manufacturing SMEs</h2>
+                <p>Artificial Intelligence (AI) is transforming manufacturing through predictive maintenance, quality control, automation, supply chain optimisation, machine vision, and intelligent decision-making.</p>
+                <p>However, AI systems also introduce new cybersecurity and operational risks. Without secure and responsible implementation, AI can create vulnerabilities affecting production, safety, intellectual property, compliance, and business continuity.</p>
+                <p>For manufacturing SMEs across Greater Manchester and the Northwest, adopting AI securely is essential for building resilient, sustainable, and future-ready operations aligned with Industry 5.0 principles.</p>
+            </div>
+
+            <!-- Common AI Security Risks -->
+            <div class="card">
+                <h2>Common AI Security Risks</h2>
+                <table style="width:100%; border-collapse:collapse; margin-top:15px;">
+                    <tr style="background:#f1f5f9;"><th style="padding:12px; text-align:left;">AI Risk</th><th style="padding:12px; text-align:left;">Description</th></tr>
+                    <tr><td style="padding:12px; border-bottom:1px solid #e2e8f0;"><strong>Prompt Injection</strong></td><td style="padding:12px; border-bottom:1px solid #e2e8f0;">Manipulating AI systems through malicious inputs</td></tr>
+                    <tr><td style="padding:12px; border-bottom:1px solid #e2e8f0;"><strong>Data Poisoning</strong></td><td style="padding:12px; border-bottom:1px solid #e2e8f0;">Corrupting training data to influence AI behaviour</td></tr>
+                    <tr><td style="padding:12px; border-bottom:1px solid #e2e8f0;"><strong>Model Theft / Inversion</strong></td><td style="padding:12px; border-bottom:1px solid #e2e8f0;">Extracting sensitive training data or intellectual property</td></tr>
+                    <tr><td style="padding:12px; border-bottom:1px solid #e2e8f0;"><strong>Adversarial Inputs</strong></td><td style="padding:12px; border-bottom:1px solid #e2e8f0;">Crafting inputs that cause incorrect AI decisions</td></tr>
+                    <tr><td style="padding:12px; border-bottom:1px solid #e2e8f0;"><strong>AI Drift</strong></td><td style="padding:12px; border-bottom:1px solid #e2e8f0;">Gradual decline in model accuracy or reliability</td></tr>
+                    <tr><td style="padding:12px;"><strong>Supply Chain Risks</strong></td><td style="padding:12px;">Vulnerabilities in third-party AI tools, APIs, libraries, or datasets</td></tr>
+                </table>
+            </div>
+
+            <!-- Four Stages -->
+            <div class="card">
+                <h2>The Four Stages of Secure AI Adoption</h2>
+
+                <div class="accordion">
+                    <button class="accordion-btn">1. Secure Design</button>
+                    <div class="accordion-content">
+                        <p><strong>Plan Before You Buy or Build</strong></p>
+                        <p>Raise awareness, conduct threat modelling, assess suppliers, and apply secure-by-design principles from the start.</p>
+                        <p><strong>SME Tip:</strong> Start with clearly defined business problems instead of technology hype.</p>
+                    </div>
+                </div>
+
+                <div class="accordion">
+                    <button class="accordion-btn">2. Secure Development and Integration</button>
+                    <div class="accordion-content">
+                        <p><strong>Protect Data, Models, and Infrastructure</strong></p>
+                        <p>Vet suppliers, protect proprietary data, maintain documentation (Model Cards, SBOMs), and manage technical debt.</p>
+                        <p><strong>SME Tip:</strong> Always request full documentation and security assurances from suppliers.</p>
+                    </div>
+                </div>
+
+                <div class="accordion">
+                    <button class="accordion-btn">3. Secure Deployment</button>
+                    <div class="accordion-content">
+                        <p><strong>Launch AI Safely and Responsibly</strong></p>
+                        <p>Secure infrastructure, conduct thorough testing, and prepare incident response plans before full rollout.</p>
+                        <p><strong>SME Tip:</strong> Start with small-scale pilots in realistic factory conditions.</p>
+                    </div>
+                </div>
+
+                <div class="accordion">
+                    <button class="accordion-btn">4. Secure Operations and Maintenance</button>
+                    <div class="accordion-content">
+                        <p><strong>Maintain AI Security Throughout the Lifecycle</strong></p>
+                        <p>Monitor for anomalies and drift, test updates, and continuously review risks and controls.</p>
+                        <p><strong>SME Tip:</strong> Treat AI systems like critical operational assets.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick-Start Checklist -->
+            <div class="card">
+                <h2>Quick-Start Safe AI Checklist for SMEs</h2>
+                <div id="checklist" class="checklist">
+                    <label><input type="checkbox"> We understand AI-specific cyber risks</label>
+                    <label><input type="checkbox"> We have assessed operational and safety impacts</label>
+                    <label><input type="checkbox"> We conduct supplier due diligence</label>
+                    <label><input type="checkbox"> We document AI limitations and intended use</label>
+                    <label><input type="checkbox"> Access controls follow least privilege principles</label>
+                    <label><input type="checkbox"> Secure settings are enabled by default</label>
+                    <label><input type="checkbox"> We monitor AI performance and anomalies</label>
+                    <label><input type="checkbox"> We maintain incident response procedures</label>
+                    <label><input type="checkbox"> Staff receive AI security awareness training</label>
+                </div>
+                <button onclick="clearChecklist()" class="button-primary" style="margin-top:20px;">Reset Checklist</button>
+            </div>
+
+            <!-- Resources -->
+            <div class="card">
+                <h2>Further Resources</h2>
+                <div class="resource-grid">
+                    <div class="resource-card">
+                        <h3>NCSC Secure AI Guidelines</h3>
+                        <a href="https://www.ncsc.gov.uk/sites/default/files/documents/Guidelines-for-secure-AI-system-development.pdf" target="_blank" class="button-primary">Download PDF</a>
+                    </div>
+                    <div class="resource-card">
+                        <h3>NCSC AI Security Collection</h3>
+                        <a href="https://www.ncsc.gov.uk/collection/ai-security" target="_blank" class="button-primary">Visit Collection</a>
+                    </div>
+                    <div class="resource-card">
+                        <h3>Made Smarter AI Toolkit</h3>
+                        <a href="#" class="button-primary">Download Toolkit</a>
+                    </div>
+                </div>
+            </div>
+
         </div>
 
-        <!-- COMMON RISKS -->
-        <div class="card">
-            <h2>Common AI Security Risks</h2>
-            <div class="resource-grid">
-                <div class="resource-card"><h3>Prompt Injection</h3><p>Attackers trick AI with malicious inputs</p></div>
-                <div class="resource-card"><h3>Data Poisoning</h3><p>Corrupting training data to influence behaviour</p></div>
-                <div class="resource-card"><h3>Model Theft</h3><p>Stealing valuable proprietary models</p></div>
-                <div class="resource-card"><h3>Adversarial Attacks</h3><p>Inputs designed to fool AI systems</p></div>
-                <div class="resource-card"><h3>AI Drift</h3><p>Gradual decline in model accuracy</p></div>
-                <div class="resource-card"><h3>Supply Chain Risks</h3><p>Vulnerabilities in third-party tools and data</p></div>
-            </div>
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <h3>Key Links</h3>
+            <ul>
+                <li><a href="https://www.ncsc.gov.uk/sites/default/files/documents/Guidelines-for-secure-AI-system-development.pdf" target="_blank">NCSC Secure AI Guidelines (PDF)</a></li>
+                <li><a href="https://www.ncsc.gov.uk/collection/ai-security" target="_blank">NCSC AI Security Collection</a></li>
+            </ul>
         </div>
-
-        <!-- 4 STAGES -->
-        <div class="card" id="stages">
-            <h2>The Four Stages of Secure AI Adoption</h2>
-
-            <div class="accordion">
-                <button class="accordion-btn">1. Secure Design</button>
-                <div class="accordion-content">
-                    <p>Understand threats early and make informed decisions before adopting AI. Conduct threat modelling and prioritise human oversight — especially for factory-floor applications.</p>
-                </div>
-            </div>
-
-            <div class="accordion">
-                <button class="accordion-btn">2. Secure Development & Integration</button>
-                <div class="accordion-content">
-                    <p>Secure your data, models and supply chain. Demand proper documentation and protect proprietary manufacturing data when fine-tuning models.</p>
-                </div>
-            </div>
-
-            <div class="accordion">
-                <button class="accordion-btn">3. Secure Deployment</button>
-                <div class="accordion-content">
-                    <p>Test thoroughly in your environment, apply strong controls, and prepare incident response plans before going live.</p>
-                </div>
-            </div>
-
-            <div class="accordion">
-                <button class="accordion-btn">4. Secure Operation & Maintenance</button>
-                <div class="accordion-content">
-                    <p>Monitor performance, detect anomalies, and manage updates carefully throughout the AI system’s life.</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- CHECKLIST -->
-        <div class="card">
-            <h2>Safe AI Quick-Start Checklist</h2>
-            <div id="checklist" class="checklist">
-                <label><input type="checkbox"> Understand AI-specific threats (prompt injection, data poisoning, etc.)</label>
-                <label><input type="checkbox"> Conduct threat modelling for your use case</label>
-                <label><input type="checkbox"> Ensure human oversight for critical decisions</label>
-                <label><input type="checkbox"> Check GDPR and data privacy compliance</label>
-                <label><input type="checkbox"> Demand documentation from AI suppliers</label>
-                <label><input type="checkbox"> Test AI in realistic factory conditions</label>
-                <label><input type="checkbox"> Implement monitoring and logging</label>
-                <label><input type="checkbox"> Prepare AI-specific incident response plans</label>
-            </div>
-            <button onclick="clearChecklist()" class="button-primary" style="margin-top:20px;">Reset Checklist</button>
-        </div>
-
-        <!-- RESOURCES -->
-        <div class="card">
-            <h2>Key Resources & Downloads</h2>
-            <div class="resource-grid">
-                <div class="resource-card">
-                    <h3>NCSC Secure AI Guidelines</h3>
-                    <a href="https://www.ncsc.gov.uk/sites/default/files/documents/Guidelines-for-secure-AI-system-development.pdf" target="_blank" class="button-primary">Download PDF</a>
-                </div>
-                <div class="resource-card">
-                    <h3>NCSC AI Security Collection</h3>
-                    <a href="https://www.ncsc.gov.uk/collection/ai-security" target="_blank" class="button-primary">Visit Collection</a>
-                </div>
-                <div class="resource-card">
-                    <h3>Made Smarter AI Toolkit</h3>
-                    <a href="#" class="button-primary">Download Toolkit</a>
-                </div>
-            </div>
-        </div>
-
     </div>
 
     <footer class="footer">
-        <p><strong>NWSmart5.0 Knowledge Hub</strong> — CyberFocus Project • University of Salford</p>
-        <p style="font-size:14px; margin-top:10px;">
-            Source: National Cyber Security Centre (NCSC) et al. (2023) Guidelines for Secure AI System Development
-        </p>
+        <p><strong>NWSmart5.0 Knowledge Hub</strong> — CyberFocus Project<br>
+        University of Salford • Greater Manchester</p>
     </footer>
 
     <script>
