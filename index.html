@@ -44,34 +44,34 @@
                 <p>We combine practical guidance on safe AI, cybersecurity, and digital transformation with a strong focus on human-centric, sustainable, and resilient practices.</p>
             </div>
 
-            <!-- Industry 5.0 Section with Expandable Pillars -->
+            <!-- Industry 5.0 with Expandable Accordions -->
             <div class="card">
                 <h2>What is Industry 5.0?</h2>
                 <p>Industry 5.0 goes beyond automation by placing <strong>people, sustainability, and resilience</strong> at the centre of industrial transformation.</p>
 
-                <div class="accordion" style="margin-top:25px;">
+                <div class="accordion">
                     <button class="accordion-btn">Human-Centricity</button>
                     <div class="accordion-content">
-                        <p>Technology serves people. Workers move from repetitive tasks to more creative, supervisory, and fulfilling roles. Emphasis on wellbeing, inclusion, diversity, and lifelong learning.</p>
+                        <p>Technology serves people. Focus on wellbeing, inclusion and meaningful work.</p>
                     </div>
                 </div>
 
                 <div class="accordion">
                     <button class="accordion-btn">Sustainability</button>
                     <div class="accordion-content">
-                        <p>Production respects planetary boundaries and supports the circular economy, resource efficiency, renewable energy, and the European Green Deal.</p>
+                        <p>Respect planetary boundaries and support the circular economy.</p>
                     </div>
                 </div>
 
                 <div class="accordion">
                     <button class="accordion-btn">Resilience</button>
                     <div class="accordion-content">
-                        <p>Building robust systems and supply chains that can withstand shocks such as cyber-attacks, pandemics, geopolitical issues, and climate events.</p>
+                        <p>Build systems that withstand cyber-attacks, supply chain shocks and climate events.</p>
                     </div>
                 </div>
             </div>
 
-            <!-- What You'll Find Here - Simple List -->
+            <!-- What You’ll Find Here - Clean List -->
             <div class="card">
                 <h2>What You’ll Find Here</h2>
                 <ul style="line-height: 2.0; font-size: 16.5px;">
@@ -84,28 +84,33 @@
                 </ul>
             </div>
 
-            <!-- Upcoming Workshops - Interactive -->
+            <!-- Upcoming Workshops -->
             <div class="card" id="upcoming-workshops">
                 <h2>Upcoming Workshops</h2>
-                <p>Free, practical, in-person workshops designed for manufacturing SMEs in the North West.</p>
+                <p>Free, practical workshops designed specifically for manufacturing SMEs in the North West.</p>
 
                 <div class="workshop-item">
                     <strong>Digital Transformation for Industry 5.0</strong><br>
-                    <span>4 June 2026 • 9:00 AM – 10:00 AM • Manchester Dish</span><br>
-                    <small>One-hour practical workshop</small>
+                    <span><strong>4 June 2026 • 9:00 AM – 10:00 AM</strong><br>
+                    Manchester Dish</span><br>
+                    <small>One-hour practical workshop</small><br><br>
+                    <a href="#" class="button-primary" style="font-size:1rem; padding:12px 24px;">Register on Eventbrite →</a>
                 </div>
 
                 <div class="workshop-item">
                     <strong>Safe & Responsible AI Adoption</strong><br>
-                    <span>Date TBC</span>
+                    <span>Date to be confirmed</span>
                 </div>
 
                 <div class="workshop-item">
                     <strong>Cybersecurity Essentials for Industry 5.0</strong><br>
-                    <span>Date TBC</span>
+                    <span>Date to be confirmed</span>
                 </div>
 
-                <p style="margin-top:20px;"><strong>All workshops are free for eligible North West manufacturing SMEs.</strong></p>
+                <p style="margin-top:25px; font-size:15px;">
+                    <strong>All workshops are free for eligible North West manufacturing SMEs.</strong><br>
+                    Limited places — register early.
+                </p>
             </div>
 
         </div>
@@ -166,7 +171,7 @@
     </script>
 
     <script>
-        // Accordion for Industry 5.0 Pillars
+        // Accordion for Industry 5.0
         document.querySelectorAll('.accordion-btn').forEach(btn => {
             btn.addEventListener('click', () => {
                 document.querySelectorAll('.accordion-content').forEach(c => c.style.maxHeight = null);
