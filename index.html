@@ -38,6 +38,7 @@
 
     <div class="container">
         <div class="main-content">
+
             <div class="card">
                 <h2>Welcome to the NWSmart5.0 Knowledge Hub</h2>
                 <p>Your free, open-access resource centre dedicated to helping manufacturing SMEs in Greater Manchester and the North West thrive in Industry 5.0.</p>
@@ -48,12 +49,13 @@
                 <h2>What is Industry 5.0?</h2>
                 <p>Industry 5.0 is the natural evolution of Industry 4.0. While Industry 4.0 brought digitalisation, automation, IoT, and AI for greater efficiency, Industry 5.0 goes further by placing <strong>people, sustainability, and resilience</strong> at the core of industrial transformation.</p>
                 
-                <blockquote style="font-style:italic; color:#475569; margin:20px 0;">
+                <blockquote style="font-style:italic; color:#475569; margin:25px 0; padding:20px; background:#f8fafc; border-left:5px solid #14b8a6;">
                     “Industry 5.0 is a sustainable, human-centric and resilient European industry… It moves the focus from shareholder to stakeholder value… placing the wellbeing of the industry worker at the centre of the production process.”
                 </blockquote>
                 <p><strong>Source:</strong> Breque, M., De Nul, L., & Petridis, A. (2021). Industry 5.0: Towards a sustainable, human-centric and resilient European industry. European Commission.</p>
                 
-                <h3>The Three Core Pillars:</h3>
+                <h3 style="margin: 30px 0 20px 0; color:#1e3a8a;">The Three Core Pillars:</h3>
+                
                 <div class="modern-accordion">
                     <button class="accordion-btn">Human-Centricity</button>
                     <div class="accordion-content">
@@ -119,15 +121,22 @@
                 <p>This hub is hosted and maintained long-term by the University of Salford. It will continue to grow with new resources, tools, and case studies well beyond the project period.</p>
             </div>
 
-            <div class="card" style="text-align:center;">
+            <!-- Fixed Ready to strengthen section -->
+            <div class="card" style="text-align:center; padding: 45px 30px;">
                 <h2>Ready to strengthen your business?</h2>
-                <a href="library.html" class="button-primary" style="margin:10px;">Browse All Resources</a>
-                <a href="#" class="button-primary" style="margin:10px; background:#1e40af;">Download Toolkits</a>
-                <a href="news.html" class="button-primary" style="margin:10px;">Latest News</a>
+                <p style="margin: 15px 0 25px; font-size: 1.1rem; color: #475569;">
+                    Explore our key areas and get practical support for your manufacturing SME.
+                </p>
+                <div style="display: flex; flex-wrap: wrap; gap: 16px; justify-content: center;">
+                    <a href="cybersecurity.html" class="button-primary" style="background:#1e3a8a;">Cybersecurity</a>
+                    <a href="safe-ai.html" class="button-primary" style="background:#0f766e;">Safe & Responsible AI</a>
+                    <a href="digital.html" class="button-primary" style="background:#14b8a6;">Digital Transformation</a>
+                </div>
             </div>
+
         </div>
 
-        <!-- LIVE NEWS SIDEBAR -->
+        <!-- Sidebar -->
         <div class="sidebar">
             <h3>Latest News & Insights</h3>
             <p style="font-size:14px; color:#64748b; margin-bottom:20px;">Live from Cybersecurity & Manufacturing Sources</p>
@@ -145,7 +154,7 @@
         University of Salford • Greater Manchester</p>
     </footer>
 
-    <!-- ==================== LIVE RSS SCRIPT ==================== -->
+    <!-- ==================== RSS NEWS SCRIPT (Fixed) ==================== -->
     <script>
         async function loadNews() {
             const container = document.getElementById('rss-news');
@@ -153,7 +162,7 @@
 
             const feeds = [
                 { name: "NIST Cybersecurity", url: "https://www.nist.gov/blogs/cybersecurity-insights/rss.xml" },
-                { name: "CISA Alerts", url: "https://www.cisa.gov/uscert/ncas/alerts.xml" },
+                { name: "CISA", url: "https://www.cisa.gov/cybersecurity-advisories/all.xml" },
                 { name: "Security Magazine", url: "https://www.securitymagazine.com/rss/15" },
                 { name: "Industrial Cyber", url: "https://industrialcyber.co/feed/" }
             ];
@@ -167,29 +176,20 @@
                     if (!response.ok) continue;
 
                     const data = await response.json();
-                    const xmlText = data.contents;
+                    const xmlDoc = new DOMParser().parseFromString(data.contents, "text/xml");
 
-                    const parser = new DOMParser();
-                    const xmlDoc = parser.parseFromString(xmlText, "text/xml");
-
-                    const items = xmlDoc.querySelectorAll("item");
-                    
-                    items.forEach(item => {
+                    xmlDoc.querySelectorAll("item").forEach(item => {
                         const title = item.querySelector("title")?.textContent?.trim() || "No title";
                         const link = item.querySelector("link")?.textContent?.trim() || "#";
-                        const pubDate = item.querySelector("pubDate")?.textContent?.trim();
-                        const description = item.querySelector("description")?.textContent?.trim() || "";
+                        const pubDateStr = item.querySelector("pubDate")?.textContent?.trim();
+                        const pubDate = pubDateStr ? new Date(pubDateStr) : new Date(0);
 
-                        allItems.push({
-                            title,
-                            link,
-                            pubDate: pubDate ? new Date(pubDate) : new Date(0),
-                            source: feed.name,
-                            description: description.substring(0, 120) + (description.length > 120 ? "..." : "")
-                        });
+                        if (title && link) {
+                            allItems.push({ title, link, pubDate, source: feed.name });
+                        }
                     });
                 } catch (e) {
-                    console.warn(`Failed to load ${feed.name}:`, e);
+                    console.warn(`Failed to load ${feed.name}`);
                 }
             }
 
@@ -197,7 +197,7 @@
             allItems = allItems.slice(0, 6);
 
             if (allItems.length === 0) {
-                container.innerHTML = `<p style="color:#ef4444;">Could not load news. Please try again later.</p>`;
+                container.innerHTML = `<p style="color:#ef4444; text-align:center;">Unable to load news right now.<br><small>Please refresh the page.</small></p>`;
                 return;
             }
 
@@ -208,12 +208,12 @@
                 });
                 
                 html += `
-                    <div style="margin-bottom: 18px; padding-bottom: 12px; border-bottom: 1px solid #e2e8f0;">
+                    <div style="margin-bottom: 16px; padding: 16px; background:#f8fafc; border-radius:12px;">
                         <a href="${item.link}" target="_blank" rel="noopener" 
-                           style="text-decoration: none; color: #0f766e; font-weight: 600; line-height: 1.3;">
+                           style="text-decoration:none; color:#1e3a8a; font-weight:600; line-height:1.4;">
                             ${item.title}
                         </a>
-                        <div style="font-size: 13px; color: #64748b; margin-top: 4px;">
+                        <div style="font-size:13px; color:#64748b; margin-top:6px;">
                             ${item.source} • ${dateStr}
                         </div>
                     </div>
@@ -223,22 +223,23 @@
             container.innerHTML = html;
         }
 
-        // Run when page loads
         window.addEventListener('load', loadNews);
     </script>
 
-    <!-- Accordion Script -->
+    <!-- ==================== ACCORDION SCRIPT ==================== -->
     <script>
         document.querySelectorAll('.accordion-btn').forEach(btn => {
             btn.addEventListener('click', () => {
-                // Close all others
-                document.querySelectorAll('.accordion-content').forEach(c => {
-                    c.style.maxHeight = null;
-                });
+                const isActive = btn.classList.contains('active');
                 
-                // Open this one
-                const content = btn.nextElementSibling;
-                content.style.maxHeight = content.scrollHeight + "px";
+                document.querySelectorAll('.accordion-btn').forEach(b => b.classList.remove('active'));
+                document.querySelectorAll('.accordion-content').forEach(c => c.style.maxHeight = null);
+                
+                if (!isActive) {
+                    btn.classList.add('active');
+                    const content = btn.nextElementSibling;
+                    content.style.maxHeight = content.scrollHeight + "px";
+                }
             });
         });
     </script>
