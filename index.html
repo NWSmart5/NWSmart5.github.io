@@ -38,61 +38,54 @@
     <div class="container">
         <div class="main-content">
 
-            <!-- New Welcome Section -->
             <div class="card">
                 <h2>Welcome to the NWSmart5.0 Knowledge Hub</h2>
                 <p>Your free, open-access resource centre dedicated to helping manufacturing SMEs in Greater Manchester and the North West thrive in Industry 5.0.</p>
                 <p>We combine practical guidance on safe AI, cybersecurity, and digital transformation with a strong focus on human-centric, sustainable, and resilient practices.</p>
             </div>
 
-            <!-- What is Industry 5.0 -->
             <div class="card">
                 <h2>What is Industry 5.0?</h2>
-                <p>Industry 5.0 is the natural evolution of Industry 4.0. While Industry 4.0 brought digitalisation, automation, IoT, and AI for greater efficiency, Industry 5.0 goes further by placing <strong>people, sustainability, and resilience</strong> at the core of industrial transformation.</p>
-                <blockquote style="font-style:italic; color:#475569;">
-                    “Industry 5.0 is a sustainable, human-centric and resilient European industry… It moves the focus from shareholder to stakeholder value… placing the wellbeing of the industry worker at the centre of the production process.”
-                </blockquote>
+                <p>Industry 5.0 goes beyond automation by placing <strong>people, sustainability, and resilience</strong> at the centre of industrial transformation.</p>
+                <blockquote>“Industry 5.0 is a sustainable, human-centric and resilient European industry… placing the wellbeing of the industry worker at the centre of the production process.”</blockquote>
                 <p><strong>Source:</strong> European Commission (2021)</p>
 
-                <h3>The Three Core Pillars:</h3>
-                <ul style="line-height: 2.0; font-size: 16.5px;">
-                    <li><strong>Human-Centricity</strong> – Technology serves people. Emphasis on wellbeing, inclusion and lifelong learning.</li>
-                    <li><strong>Sustainability</strong> – Production respects planetary boundaries and supports the circular economy.</li>
-                    <li><strong>Resilience</strong> – Building robust systems that can withstand shocks such as cyber-attacks and supply chain disruptions.</li>
-                </ul>
+                <div class="pillars">
+                    <div class="pillar-card">
+                        <h3>Human-Centricity</h3>
+                        <p>Technology serves people. Focus on wellbeing, inclusion and meaningful work.</p>
+                    </div>
+                    <div class="pillar-card">
+                        <h3>Sustainability</h3>
+                        <p>Respect planetary boundaries and support the circular economy.</p>
+                    </div>
+                    <div class="pillar-card">
+                        <h3>Resilience</h3>
+                        <p>Build systems that withstand cyber-attacks, supply chain shocks and climate events.</p>
+                    </div>
+                </div>
             </div>
 
-            <!-- Why This Matters -->
-            <div class="card">
-                <h2>Why This Matters for North West SMEs</h2>
-                <p>Manufacturing SMEs face real barriers — technological complexity, skills gaps, and uncertainty around secure implementation.</p>
-                <p>This Knowledge Hub bridges those gaps with practical, actionable resources so you can adopt smart technologies securely, responsibly, and sustainably.</p>
-            </div>
-
-            <!-- What You'll Find Here -->
             <div class="card">
                 <h2>What You’ll Find Here</h2>
-                <ul style="line-height: 2.0; font-size: 16.5px;">
-                    <li>Best Practice Guides & Toolkits (Safe AI, Cybersecurity, Digital Transformation)</li>
-                    <li>Workshop Recordings, Slides & Materials</li>
-                    <li>Digital Maturity & Risk Assessment Tools</li>
-                    <li>Real SME Case Studies from the North West</li>
-                    <li>Templates & Checklists tailored for manufacturing</li>
-                    <li>Peer Learning & Community Resources</li>
-                </ul>
+                <div class="resource-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+                    <div class="resource-card">Best Practice Guides & Toolkits</div>
+                    <div class="resource-card">Workshop Materials & Recordings</div>
+                    <div class="resource-card">Risk Assessment Tools</div>
+                    <div class="resource-card">Real North West SME Case Studies</div>
+                    <div class="resource-card">Templates & Checklists</div>
+                    <div class="resource-card">Community & Peer Learning</div>
+                </div>
             </div>
 
-            <!-- Upcoming Workshops -->
             <div class="card" id="upcoming-workshops">
                 <h2>Upcoming Workshops</h2>
-                <p>Stay ahead with our practical, hands-on workshops designed specifically for manufacturing SMEs in the North West.</p>
-                <p><strong>Next Workshops (2026):</strong></p>
+                <p>Free, practical workshops designed for manufacturing SMEs in the North West.</p>
                 <ul style="line-height: 2.0; font-size: 16.5px;">
-                    <li>Safe & Responsible AI Adoption in Manufacturing – [Date TBC]</li>
-                    <li>Cybersecurity Essentials for Industry 5.0 – [Date TBC]</li>
-                    <li>Building Secure Digital Transformation Roadmaps – [Date TBC]</li>
+                    <li><strong>Safe & Responsible AI Adoption</strong> – Date TBC</li>
+                    <li><strong>Cybersecurity Essentials for Industry 5.0</strong> – Date TBC</li>
+                    <li><strong>Secure Digital Transformation Roadmaps</strong> – Date TBC</li>
                 </ul>
-                <p><strong>All workshops are free for eligible North West manufacturing SMEs.</strong> Limited places — register early.</p>
             </div>
 
         </div>
@@ -100,9 +93,7 @@
         <!-- LIVE NEWS SIDEBAR (UNTOUCHED) -->
         <div class="sidebar">
             <h3>Latest News & Insights</h3>
-            <p style="font-size:14px; color:#64748b; margin-bottom:20px;">
-                Live from Cybersecurity & Manufacturing Sources
-            </p>
+            <p style="font-size:14px; color:#64748b; margin-bottom:20px;">Live from Cybersecurity & Manufacturing Sources</p>
             <div id="rss-news" style="min-height: 420px;">
                 <p style="color:#64748b; font-style:italic;">Loading live news...</p>
             </div>
@@ -123,20 +114,13 @@
             const container = document.getElementById('rss-news');
             container.innerHTML = `<p style="color:#64748b;">Loading live news...</p>`;
 
-            const feeds = [
-                'https://industrialcyber.co/feed/',
-                'https://www.ncsc.gov.uk/api/1/services/v1/all-rss-feed.xml'
-            ];
-            const proxies = [
-                (url) => `https://corsproxy.io/?${encodeURIComponent(url)}`,
-                (url) => `https://api.allorigins.win/get?url=${encodeURIComponent(url)}`
-            ];
+            const feeds = ['https://industrialcyber.co/feed/', 'https://www.ncsc.gov.uk/api/1/services/v1/all-rss-feed.xml'];
+            const proxies = [(url) => `https://corsproxy.io/?${encodeURIComponent(url)}`, (url) => `https://api.allorigins.win/get?url=${encodeURIComponent(url)}`];
 
             for (let feed of feeds) {
                 for (let proxyFn of proxies) {
                     try {
-                        const proxyUrl = proxyFn(feed);
-                        const res = await fetch(proxyUrl);
+                        const res = await fetch(proxyFn(feed));
                         if (!res.ok) continue;
                         const text = await res.text();
                         const parser = new DOMParser();
@@ -148,29 +132,15 @@
                         items.forEach(item => {
                             const title = item.querySelector("title")?.textContent?.trim() || "Untitled";
                             const link = item.querySelector("link")?.textContent?.trim();
-                            const dateElem = item.querySelector("pubDate");
-                            const date = dateElem ? new Date(dateElem.textContent).toLocaleDateString('en-GB') : "Recent";
-                            html += `
-                                <div class="news-teaser">
-                                    <span class="news-date">${date}</span>
-                                    <h4><a href="${link}" target="_blank" rel="noopener">${title}</a></h4>
-                                </div>
-                            `;
+                            const date = item.querySelector("pubDate") ? new Date(item.querySelector("pubDate").textContent).toLocaleDateString('en-GB') : "Recent";
+                            html += `<div class="news-teaser"><span class="news-date">${date}</span><h4><a href="${link}" target="_blank">${title}</a></h4></div>`;
                         });
                         container.innerHTML = html;
                         return;
-                    } catch (e) {
-                        console.log("Proxy failed for feed");
-                    }
+                    } catch (e) {}
                 }
             }
-
-            container.innerHTML = `
-                <p style="color:#f59e0b; line-height:1.5;">
-                    Live feed temporarily unavailable.<br><br>
-                    <strong>Refresh the page (Ctrl + Shift + R)</strong>
-                </p>
-            `;
+            container.innerHTML = `<p style="color:#f59e0b;">Live feed temporarily unavailable.<br>Try refreshing the page.</p>`;
         }
         window.addEventListener('load', loadNews);
     </script>
