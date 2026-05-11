@@ -41,7 +41,7 @@
 
             <div class="filter-buttons">
                 <button class="filter-btn active" data-category="all">All Resources</button>
-                <button class="filter-btn" data-category="infographic">Infographics</button>
+                <button class="filter-btn" data-category="infographic">Infographics & Guides</button>
                 <button class="filter-btn" data-category="cyber">Cybersecurity</button>
                 <button class="filter-btn" data-category="digital">Digital Transformation</button>
                 <button class="filter-btn" data-category="ai">Safe AI</button>
@@ -66,7 +66,7 @@
 
     <script>
         const resources = [
-            // === INFOGRAPHICS (will show under Infographics filter) ===
+            // === From infographics folder ===
             {title: "10 Steps to Cyber Security", category: "infographic", link: "infographics/2021-10-steps-to-cyber-security-infographic.pdf"},
             {title: "Ransomware - What You Need to Know", category: "infographic", link: "infographics/NCSC_Ransomware-what-you-need-to-know.pdf"},
             {title: "Phishing - Defending Your Organisation", category: "infographic", link: "infographics/Phishing-attacks-defending-your-organisation-infographic.pdf"},
@@ -81,10 +81,18 @@
             {title: "Reporting Cyber Incidents", category: "infographic", link: "infographics/NCSC_Reporting-incidents-infographic.pdf"},
             {title: "Cyber Exercise Creation", category: "infographic", link: "infographics/cyber_exercise_creation.pdf"},
             {title: "Moving from Physical to Digital", category: "infographic", link: "infographics/moving-physical-digital-infographic.pdf"},
-            
-            // Add future non-infographic items here with different categories
-            // Example:
-            // {title: "Safe AI Implementation Guide", category: "ai", link: "guides/safe-ai-guide.pdf"},
+
+            // === New PDFs from pdfs/ folder ===
+            {title: "How to Secure Your Online Meetings", category: "infographic", link: "pdfs/How-to-secure-your-online-meetings.pdf"},
+            {title: "Mitigating Malware and Ransomware Attacks", category: "infographic", link: "pdfs/Mitigating-malware-and-ransomware-attacks.pdf"},
+            {title: "NCSC A5 Response and Recovery Guide", category: "infographic", link: "pdfs/NCSC_A5_Response_and_Recovery_Guide_v3.pdf"},
+            {title: "NCSC A5 Small Business Guide", category: "infographic", link: "pdfs/NCSC_A5_Small_Business_Guide_v4_OCT20.pdf"},
+            {title: "NCSC SBG Actions", category: "infographic", link: "pdfs/NCSC_SBG_Actions.pdf"},
+            {title: "Securing Your Devices", category: "infographic", link: "pdfs/Securing-your-devices.pdf"},
+            {title: "Choosing a Managed Service Provider", category: "infographic", link: "pdfs/choosing-a-managed-service-provider-msp.pdf"},
+            {title: "Effective Steps to Cyber Exercise Creation", category: "infographic", link: "pdfs/effective-steps-to-cyber-exercise-creation.pdf"},
+            {title: "Recovering a Hacked Account", category: "infographic", link: "pdfs/recovering-a-hacked-account.pdf"},
+            {title: "Social Media - Protect What You Publish", category: "infographic", link: "pdfs/social-media-protect-what-you-publish.pdf"}
         ];
 
         function renderResources(filtered) {
@@ -92,7 +100,10 @@
             grid.innerHTML = '';
            
             if (filtered.length === 0) {
-                grid.innerHTML = `<p style="grid-column: 1 / -1; text-align: center; padding: 40px; color: #64748b;">No resources found.</p>`;
+                grid.innerHTML = `<p style="grid-column: 1 / -1; text-align: center; padding: 60px 20px; color: #64748b; font-size: 1.1rem;">
+                    No resources found in this category yet.<br>
+                    <small>More content coming soon.</small>
+                </p>`;
                 return;
             }
 
@@ -101,25 +112,23 @@
                 card.className = 'resource-card';
                 card.innerHTML = `
                     <h3>${r.title}</h3>
-                    <p style="color:#64748b; font-size:14px; margin:8px 0;">INFOGRAPHIC • PDF</p>
+                    <p style="color:#64748b; font-size:14px; margin:8px 0;">PDF GUIDE</p>
                     <a href="${r.link}" target="_blank" class="button-primary"
                        style="margin-top:12px; width:100%; text-align:center; display:inline-block;">
-                        Download Infographic
+                        Download PDF
                     </a>
                 `;
                 grid.appendChild(card);
             });
         }
 
-        // Initial render (shows All)
+        // Initial load
         renderResources(resources);
 
-        // Search
+        // Search functionality
         document.getElementById('resource-search').addEventListener('input', () => {
             const term = document.getElementById('resource-search').value.toLowerCase();
-            const filtered = resources.filter(r => 
-                r.title.toLowerCase().includes(term)
-            );
+            const filtered = resources.filter(r => r.title.toLowerCase().includes(term));
             renderResources(filtered);
         });
 
