@@ -66,7 +66,7 @@
 
     <script>
         const resources = [
-            // === INFRASTRUCTURE & CYBERSECURITY ===
+            // === INFOGRAPHICS (will show under Infographics filter) ===
             {title: "10 Steps to Cyber Security", category: "infographic", link: "infographics/2021-10-steps-to-cyber-security-infographic.pdf"},
             {title: "Ransomware - What You Need to Know", category: "infographic", link: "infographics/NCSC_Ransomware-what-you-need-to-know.pdf"},
             {title: "Phishing - Defending Your Organisation", category: "infographic", link: "infographics/Phishing-attacks-defending-your-organisation-infographic.pdf"},
@@ -80,11 +80,11 @@
             {title: "Password Policy", category: "infographic", link: "infographics/password_policy_infographic.pdf"},
             {title: "Reporting Cyber Incidents", category: "infographic", link: "infographics/NCSC_Reporting-incidents-infographic.pdf"},
             {title: "Cyber Exercise Creation", category: "infographic", link: "infographics/cyber_exercise_creation.pdf"},
-           
-            // === DIGITAL TRANSFORMATION ===
             {title: "Moving from Physical to Digital", category: "infographic", link: "infographics/moving-physical-digital-infographic.pdf"},
             
-            // Add more Safe AI items later with category: "infographic"
+            // Add future non-infographic items here with different categories
+            // Example:
+            // {title: "Safe AI Implementation Guide", category: "ai", link: "guides/safe-ai-guide.pdf"},
         ];
 
         function renderResources(filtered) {
@@ -101,7 +101,7 @@
                 card.className = 'resource-card';
                 card.innerHTML = `
                     <h3>${r.title}</h3>
-                    <p style="color:#64748b; font-size:14px; margin:8px 0;">${r.category.toUpperCase()} • PDF</p>
+                    <p style="color:#64748b; font-size:14px; margin:8px 0;">INFOGRAPHIC • PDF</p>
                     <a href="${r.link}" target="_blank" class="button-primary"
                        style="margin-top:12px; width:100%; text-align:center; display:inline-block;">
                         Download Infographic
@@ -111,10 +111,10 @@
             });
         }
 
-        // Initial render
+        // Initial render (shows All)
         renderResources(resources);
 
-        // Search functionality
+        // Search
         document.getElementById('resource-search').addEventListener('input', () => {
             const term = document.getElementById('resource-search').value.toLowerCase();
             const filtered = resources.filter(r => 
