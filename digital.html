@@ -14,38 +14,6 @@
         gtag('config', 'G-LHEP92H7P6');
     </script>
 </head>
-    <script>
-function scoreItem(btn, value) {
-    const buttons = btn.parentElement.querySelectorAll('button');
-    buttons.forEach(b => b.style.background = '#e0f2fe');
-    btn.style.background = '#14b8a6';
-    btn.style.color = 'white';
-    
-    calculateTotal();
-}
-
-function calculateTotal() {
-    let total = 0;
-    document.querySelectorAll('.score-buttons').forEach(group => {
-        const active = group.querySelector('button[style*="14b8a6"]');
-        if (active) total += parseInt(active.textContent);
-    });
-    
-    document.getElementById('total-score').textContent = total;
-    
-    const interp = document.getElementById('score-interpretation');
-    if (total <= 12) {
-        interp.innerHTML = '🟡 <strong>Early stage</strong> – Focus on awareness and small quick wins';
-        interp.style.color = '#f59e0b';
-    } else if (total <= 18) {
-        interp.innerHTML = '🟢 <strong>Making progress</strong> – Develop a structured plan';
-        interp.style.color = '#14b8a6';
-    } else {
-        interp.innerHTML = '🔵 <strong>Advanced</strong> – Ready to scale and measure long-term impact';
-        interp.style.color = '#1e3a8a';
-    }
-}
-</script>
 <body>
     <header>
         <div class="nav-container">
