@@ -14,34 +14,34 @@
         gtag('config', 'G-LHEP92H7P6');
     </script>
 </head>
-    <script>
-    function scoreItem(btn, value) {
-        // Reset all buttons in this row
-        const buttons = btn.parentElement.querySelectorAll('button');
-        buttons.forEach(b => {
+   <script>
+    function scoreItem(btn) {
+        const group = btn.parentElement;
+        // Reset all buttons in this group
+        group.querySelectorAll('button').forEach(b => {
             b.style.background = '#e0f2fe';
             b.style.color = '#1e3a8a';
         });
-        
-        // Highlight selected button
+        // Highlight selected
         btn.style.background = '#14b8a6';
         btn.style.color = 'white';
-        
+
         calculateTotal();
     }
 
     function calculateTotal() {
         let total = 0;
         document.querySelectorAll('.score-buttons').forEach(group => {
-            const activeBtn = group.querySelector('button[style*="14b8a6"]');
-            if (activeBtn) total += parseInt(activeBtn.textContent);
+            const active = group.querySelector('button[style*="14b8a6"]');
+            if (active) total += parseInt(active.textContent);
         });
-        
+
         document.getElementById('total-score').textContent = total;
-        
+
         const interp = document.getElementById('score-interpretation');
         if (total === 0) {
-            interp.textContent = '';
+            interp.textContent = 'Click the numbers to get your score';
+            interp.style.color = '#64748b';
         } else if (total <= 12) {
             interp.innerHTML = '🟡 <strong>Early stage</strong> – Focus on awareness and small quick wins';
             interp.style.color = '#f59e0b';
