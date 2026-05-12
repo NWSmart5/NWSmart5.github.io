@@ -1,11 +1,4 @@
-    <style>
-        .accordion { margin-bottom: 16px; border: 1px solid #e2e8f0; border-radius: 12px; overflow: hidden; }
-        .accordion-btn { width: 100%; padding: 20px; background: white; border: none; text-align: left; font-weight: 600; font-size: 1.15rem; cursor: pointer; }
-        .accordion-content { padding: 0 22px; max-height: 0; overflow: hidden; transition: max-height 0.4s ease; background: #f8fafc; }
-        .checklist label { display: block; padding: 14px 10px; border-bottom: 1px solid #f1f5f9; cursor: pointer; }
-    </style>
-</body>
-</html>* {
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -190,59 +183,6 @@ nav a:hover::after {
     margin-bottom: 18px;
     font-size: 1.25rem;
 }
-/* === IMPROVED RESOURCE CARDS (matches your screenshot) === */
-.resource-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-    gap: 24px;
-    margin-top: 20px;
-}
-
-.resource-card {
-    background: white;
-    border-radius: 16px;
-    padding: 28px 24px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.06);
-    transition: all 0.3s ease;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-}
-
-.resource-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 15px 35px rgba(0,0,0,0.12);
-}
-
-.resource-card h3 {
-    margin: 0 0 12px 0;
-    color: #1e3a8a;
-    font-size: 1.25rem;
-    line-height: 1.4;
-}
-
-.resource-type {
-    color: #64748b;
-    font-size: 0.95rem;
-    margin-bottom: 24px;
-    font-weight: 500;
-}
-
-.download-btn {
-    margin-top: auto;
-    text-align: center;
-    padding: 14px 24px;
-    font-size: 1.05rem;
-    border-radius: 50px;
-}
-
-/* Make filter buttons nicer */
-.filter-buttons {
-    margin: 25px 0 35px 0;
-    display: flex;
-    gap: 12px;
-    flex-wrap: wrap;
-}
 
 /* ==================== ACCORDION ==================== */
 .modern-accordion {
@@ -297,40 +237,37 @@ nav a:hover::after {
     line-height: 1.7;
 }
 
-/* Workshop Items */
-.workshop-item {
-    background: #f8fafc;
-    padding: 22px;
-    border-radius: 12px;
-    margin: 18px 0;
-    border-left: 5px solid #14b8a6;
-    transition: all 0.3s ease;
+/* ==================== RESOURCE GRID & CARDS (Library + Digital) ==================== */
+.resource-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 24px;
 }
 
-.workshop-item:hover {
-    transform: translateX(8px);
-    background: #f0f9f7;
+.resource-card {
+    background: white;
+    padding: 28px 24px;
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    transition: all 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
-/* ==================== LIVE NEWS ==================== */
-#rss-news {
-    max-height: 520px;
-    overflow-y: auto;
-    padding-right: 8px;
+.resource-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.12);
 }
 
-#rss-news::-webkit-scrollbar {
-    width: 6px;
+.resource-card h3 {
+    margin-bottom: 12px;
+    color: #1e3a8a;
 }
 
-#rss-news::-webkit-scrollbar-thumb {
-    background: #94a3b8;
-    border-radius: 10px;
-}
-
-/* ==================== FILTER BUTTONS (Library Page) ==================== */
+/* Filter Buttons */
 .filter-buttons {
-    margin: 20px 0 30px 0;
+    margin: 25px 0 35px 0;
     display: flex;
     gap: 12px;
     flex-wrap: wrap;
@@ -357,23 +294,6 @@ nav a:hover::after {
     background: #14b8a6;
     color: white;
     box-shadow: 0 4px 12px rgba(20, 184, 166, 0.3);
-}
-
-/* Resource Grid & Cards */
-.resource-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 24px;
-}
-
-.resource-card {
-    padding: 28px;
-    margin-bottom: 0;
-}
-
-.resource-card h3 {
-    margin-bottom: 8px;
-    color: #1e3a8a;
 }
 
 /* Search Input */
