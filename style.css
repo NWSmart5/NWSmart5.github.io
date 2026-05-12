@@ -237,11 +237,12 @@ nav a:hover::after {
     line-height: 1.7;
 }
 
-/* ==================== RESOURCE GRID & CARDS (Library + Digital) ==================== */
+/* ==================== RESOURCE GRID & CARDS (FIXED ALIGNMENT) ==================== */
 .resource-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
     gap: 24px;
+    margin-top: 20px;
 }
 
 .resource-card {
@@ -253,6 +254,7 @@ nav a:hover::after {
     display: flex;
     flex-direction: column;
     height: 100%;
+    min-height: 280px;
 }
 
 .resource-card:hover {
@@ -271,6 +273,12 @@ nav a:hover::after {
     color: #475569;
     font-size: 15px;
     margin-bottom: 20px;
+}
+
+.resource-card .button-primary {
+    margin-top: auto;
+    width: 100%;
+    text-align: center;
 }
 
 /* Filter Buttons */
