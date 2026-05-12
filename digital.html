@@ -208,7 +208,7 @@
                     <strong>Adapted from:</strong> Greater Manchester Digital Blueprint 2023–2026 (GMCA, 2023).
                 </p>
             </div>  
-          <!-- Practical Readiness Checker - FIXED VERSION -->
+                     <!-- Practical Readiness Checker -->
             <div class="card">
                 <h2>Practical Readiness Checker – How Aligned Is Your Business?</h2>
                 <p>Score each statement from <strong>1 (Not started)</strong> to <strong>5 (Fully in place)</strong>. This quick self-assessment will help you understand your current digital maturity.</p>
@@ -229,75 +229,96 @@
                 </ul>
             </div>
 
-            <script>
-                // Self-contained script for Readiness Checker
-                const questions = [
-                    "1. We have a clear plan for adopting digital technology / AI to improve productivity and resilience.",
-                    "2. We are building digital skills across our workforce.",
-                    "3. We consider cybersecurity and responsible AI when introducing new tools.",
-                    "4. Our digital projects involve people from different backgrounds and skill levels.",
-                    "5. We track the impact of digital changes on sustainability (energy use, waste, etc.)."
-                ];
+            <div class="card">
+                <h2>Coming Soon</h2>
+                <p>More resources will be added here including case studies, maturity tools, and workshop materials.</p>
+            </div>
 
-                function renderChecker() {
-                    const container = document.getElementById('readiness-checker');
-                    let html = '';
-                    questions.forEach((q, i) => {
-                        html += `
-                            <div style="background:#f8fafc; padding:18px 20px; border-radius:12px; margin-bottom:16px; border-left:5px solid #14b8a6;">
-                                <label style="display:block; margin-bottom:12px; font-weight:500;">${q}</label>
-                                <div style="display:flex; gap:8px;">
-                                    ${[1,2,3,4,5].map(n => `
-                                        <button onclick="selectScore(${i}, ${n}, this)" 
-                                                style="width:48px; height:48px; border:none; border-radius:50%; background:#e0f2fe; font-weight:600; cursor:pointer;">
-                                            ${n}
-                                        </button>
-                                    `).join('')}
-                                </div>
-                            </div>`;
-                    });
-                    container.innerHTML = html;
-                }
+        </div>   <!-- ← Close main-content -->
 
-                let scores = [0,0,0,0,0];
+        <!-- Sidebar - This must stay here -->
+        <div class="sidebar">
+            <h3>Quick Downloads</h3>
+            <ul>
+                <li><a href="https://www.madesmarter.uk/media/vuumewqe/madesmarter-digital-transformation.pdf" target="_blank">→ Made Smarter Digital Transformation Roadmap</a></li>
+            </ul>
+        </div>
+    </div>   <!-- ← Close container -->
 
-                window.selectScore = function(questionIndex, value, btn) {
-                    // Highlight selected button
-                    const buttons = btn.parentElement.querySelectorAll('button');
-                    buttons.forEach(b => {
-                        b.style.background = '#e0f2fe';
-                        b.style.color = '#1e3a8a';
-                    });
-                    btn.style.background = '#14b8a6';
-                    btn.style.color = 'white';
+    <footer class="footer">
+        <p><strong>NWSmart5.0 Knowledge Hub</strong> — CyberFocus Project<br>
+        University of Salford • Greater Manchester</p>
+    </footer>
 
-                    scores[questionIndex] = value;
-                    updateTotal();
-                };
+    <!-- Readiness Checker Script -->
+    <script>
+        const questions = [
+            "1. We have a clear plan for adopting digital technology / AI to improve productivity and resilience.",
+            "2. We are building digital skills across our workforce.",
+            "3. We consider cybersecurity and responsible AI when introducing new tools.",
+            "4. Our digital projects involve people from different backgrounds and skill levels.",
+            "5. We track the impact of digital changes on sustainability (energy use, waste, etc.)."
+        ];
 
-                function updateTotal() {
-                    const total = scores.reduce((a, b) => a + b, 0);
-                    document.getElementById('total-score').textContent = total;
+        function renderChecker() {
+            const container = document.getElementById('readiness-checker');
+            let html = '';
+            questions.forEach((q, i) => {
+                html += `
+                    <div style="background:#f8fafc; padding:18px 20px; border-radius:12px; margin-bottom:16px; border-left:5px solid #14b8a6;">
+                        <label style="display:block; margin-bottom:12px; font-weight:500;">${q}</label>
+                        <div style="display:flex; gap:8px;">
+                            ${[1,2,3,4,5].map(n => `
+                                <button onclick="selectScore(${i}, ${n}, this)" 
+                                        style="width:48px; height:48px; border:none; border-radius:50%; background:#e0f2fe; font-weight:600; cursor:pointer;">
+                                    ${n}
+                                </button>
+                            `).join('')}
+                        </div>
+                    </div>`;
+            });
+            container.innerHTML = html;
+        }
 
-                    const interp = document.getElementById('score-interpretation');
-                    if (total === 0) {
-                        interp.textContent = 'Click the numbers above to get your score';
-                        interp.style.color = '#64748b';
-                    } else if (total <= 12) {
-                        interp.innerHTML = '🟡 <strong>Early stage</strong> – Focus on awareness and small quick wins';
-                        interp.style.color = '#f59e0b';
-                    } else if (total <= 18) {
-                        interp.innerHTML = '🟢 <strong>Making progress</strong> – Develop a structured plan';
-                        interp.style.color = '#14b8a6';
-                    } else {
-                        interp.innerHTML = '🔵 <strong>Advanced</strong> – Ready to scale and measure long-term impact';
-                        interp.style.color = '#1e3a8a';
-                    }
-                }
+        let scores = [0,0,0,0,0];
 
-                // Run when page loads
-                window.addEventListener('load', renderChecker);
-            </script>
+        window.selectScore = function(questionIndex, value, btn) {
+            const buttons = btn.parentElement.querySelectorAll('button');
+            buttons.forEach(b => {
+                b.style.background = '#e0f2fe';
+                b.style.color = '#1e3a8a';
+            });
+            btn.style.background = '#14b8a6';
+            btn.style.color = 'white';
+
+            scores[questionIndex] = value;
+            updateTotal();
+        };
+
+        function updateTotal() {
+            const total = scores.reduce((a, b) => a + b, 0);
+            document.getElementById('total-score').textContent = total;
+
+            const interp = document.getElementById('score-interpretation');
+            if (total === 0) {
+                interp.textContent = 'Click the numbers above to get your score';
+                interp.style.color = '#64748b';
+            } else if (total <= 12) {
+                interp.innerHTML = '🟡 <strong>Early stage</strong> – Focus on awareness and small quick wins';
+                interp.style.color = '#f59e0b';
+            } else if (total <= 18) {
+                interp.innerHTML = '🟢 <strong>Making progress</strong> – Develop a structured plan';
+                interp.style.color = '#14b8a6';
+            } else {
+                interp.innerHTML = '🔵 <strong>Advanced</strong> – Ready to scale and measure long-term impact';
+                interp.style.color = '#1e3a8a';
+            }
+        }
+
+        window.addEventListener('load', renderChecker);
+    </script>
+</body>
+</html>
 
             
                 <h2>Coming Soon</h2>
