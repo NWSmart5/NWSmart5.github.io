@@ -247,7 +247,7 @@
                     <strong>Adapted from:</strong> Greater Manchester Digital Blueprint 2023–2026 (GMCA, 2023).
                 </p>
             </div>
-                        <!-- NEW: Practical Readiness Checker -->
+                                   <!-- NEW: Practical Readiness Checker (Fixed) -->
             <div class="card">
                 <h2>Practical Readiness Checker – How Aligned Is Your Business?</h2>
                 <p>Score each statement from <strong>1 (Not started)</strong> to <strong>5 (Fully in place)</strong>. This quick self-assessment will help you understand your current digital maturity.</p>
@@ -255,59 +255,59 @@
                 <div class="readiness-checker" style="margin-top: 30px;">
                     <div class="checker-item">
                         <label>1. We have a clear plan for adopting digital technology / AI to improve productivity and resilience.</label>
-                        <div class="score-buttons">
-                            <button onclick="scoreItem(this, 1)">1</button>
-                            <button onclick="scoreItem(this, 2)">2</button>
-                            <button onclick="scoreItem(this, 3)">3</button>
-                            <button onclick="scoreItem(this, 4)">4</button>
-                            <button onclick="scoreItem(this, 5)">5</button>
+                        <div class="score-buttons" data-question="1">
+                            <button onclick="scoreItem(this)">1</button>
+                            <button onclick="scoreItem(this)">2</button>
+                            <button onclick="scoreItem(this)">3</button>
+                            <button onclick="scoreItem(this)">4</button>
+                            <button onclick="scoreItem(this)">5</button>
                         </div>
                     </div>
                     <div class="checker-item">
                         <label>2. We are building digital skills across our workforce.</label>
-                        <div class="score-buttons">
-                            <button onclick="scoreItem(this, 1)">1</button>
-                            <button onclick="scoreItem(this, 2)">2</button>
-                            <button onclick="scoreItem(this, 3)">3</button>
-                            <button onclick="scoreItem(this, 4)">4</button>
-                            <button onclick="scoreItem(this, 5)">5</button>
+                        <div class="score-buttons" data-question="2">
+                            <button onclick="scoreItem(this)">1</button>
+                            <button onclick="scoreItem(this)">2</button>
+                            <button onclick="scoreItem(this)">3</button>
+                            <button onclick="scoreItem(this)">4</button>
+                            <button onclick="scoreItem(this)">5</button>
                         </div>
                     </div>
                     <div class="checker-item">
                         <label>3. We consider cybersecurity and responsible AI when introducing new tools.</label>
-                        <div class="score-buttons">
-                            <button onclick="scoreItem(this, 1)">1</button>
-                            <button onclick="scoreItem(this, 2)">2</button>
-                            <button onclick="scoreItem(this, 3)">3</button>
-                            <button onclick="scoreItem(this, 4)">4</button>
-                            <button onclick="scoreItem(this, 5)">5</button>
+                        <div class="score-buttons" data-question="3">
+                            <button onclick="scoreItem(this)">1</button>
+                            <button onclick="scoreItem(this)">2</button>
+                            <button onclick="scoreItem(this)">3</button>
+                            <button onclick="scoreItem(this)">4</button>
+                            <button onclick="scoreItem(this)">5</button>
                         </div>
                     </div>
                     <div class="checker-item">
                         <label>4. Our digital projects involve people from different backgrounds and skill levels.</label>
-                        <div class="score-buttons">
-                            <button onclick="scoreItem(this, 1)">1</button>
-                            <button onclick="scoreItem(this, 2)">2</button>
-                            <button onclick="scoreItem(this, 3)">3</button>
-                            <button onclick="scoreItem(this, 4)">4</button>
-                            <button onclick="scoreItem(this, 5)">5</button>
+                        <div class="score-buttons" data-question="4">
+                            <button onclick="scoreItem(this)">1</button>
+                            <button onclick="scoreItem(this)">2</button>
+                            <button onclick="scoreItem(this)">3</button>
+                            <button onclick="scoreItem(this)">4</button>
+                            <button onclick="scoreItem(this)">5</button>
                         </div>
                     </div>
                     <div class="checker-item">
                         <label>5. We track the impact of digital changes on sustainability (energy use, waste, etc.).</label>
-                        <div class="score-buttons">
-                            <button onclick="scoreItem(this, 1)">1</button>
-                            <button onclick="scoreItem(this, 2)">2</button>
-                            <button onclick="scoreItem(this, 3)">3</button>
-                            <button onclick="scoreItem(this, 4)">4</button>
-                            <button onclick="scoreItem(this, 5)">5</button>
+                        <div class="score-buttons" data-question="5">
+                            <button onclick="scoreItem(this)">1</button>
+                            <button onclick="scoreItem(this)">2</button>
+                            <button onclick="scoreItem(this)">3</button>
+                            <button onclick="scoreItem(this)">4</button>
+                            <button onclick="scoreItem(this)">5</button>
                         </div>
                     </div>
                 </div>
 
                 <div style="margin-top: 40px; padding: 25px; background:#f0f9f7; border-radius: 12px; text-align:center;" id="score-result">
-                    <h3>Your Total Score: <span id="total-score">0</span>/25</h3>
-                    <p id="score-interpretation" style="font-size:1.1rem; margin-top:10px;"></p>
+                    <h3>Your Total Score: <span id="total-score" style="font-size:2rem; color:#1e3a8a;">0</span>/25</h3>
+                    <p id="score-interpretation" style="font-size:1.1rem; margin-top:10px; min-height:50px;"></p>
                 </div>
 
                 <h3 style="margin: 35px 0 15px 0; color:#1e3a8a;">Reflection Questions</h3>
@@ -316,7 +316,6 @@
                     <li><strong>What is one practical step we could take in the next 3 months?</strong></li>
                 </ul>
             </div>
-
             <div class="card">
                 <h2>Coming Soon</h2>
                 <p>More resources will be added here including case studies, maturity tools, and workshop materials.</p>
