@@ -263,6 +263,14 @@ nav a:hover::after {
 .resource-card h3 {
     margin-bottom: 12px;
     color: #1e3a8a;
+    line-height: 1.4;
+}
+
+.resource-card p {
+    flex-grow: 1;
+    color: #475569;
+    font-size: 15px;
+    margin-bottom: 20px;
 }
 
 /* Filter Buttons */
