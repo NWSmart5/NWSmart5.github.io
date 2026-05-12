@@ -255,6 +255,93 @@
                          style="max-width: 100%; height: auto; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.12);">
                 </div>
             </div>
+                        <!-- Barriers Self-Check - Self-Contained -->
+            <div class="card">
+                <h2>Barriers Self-Check – How Big Are Your Challenges?</h2>
+                <p>Score each barrier from <strong>1 (Not an issue)</strong> to <strong>5 (Major problem)</strong>.</p>
+                
+                <div id="barriers-checker" style="margin-top: 30px;"></div>
+
+                <div style="margin-top: 40px; padding: 25px; background:#f0f9f7; border-radius: 12px; text-align:center;" id="barriers-result">
+                    <h3>Your Total Score: <span id="barriers-total-score" style="font-size:2.2rem; font-weight:bold; color:#1e3a8a;">0</span>/30</h3>
+                    <p id="barriers-interpretation" style="font-size:1.1rem; margin-top:12px; min-height:60px;"></p>
+                </div>
+
+                <h3 style="margin: 35px 0 15px 0; color:#1e3a8a;">Next Step Tip</h3>
+                <p style="background:#f0f9f7; padding:20px; border-radius:12px;">
+                    Identify your biggest barrier(s) and use the tools in the <strong>Made Smarter Roadmap</strong> section above to begin addressing it.
+                </p>
+            </div>
+
+            <!-- Self-contained Script for Barriers Self-Check -->
+            <script>
+                const barrierQuestions = [
+                    "1. Cost of buying and implementing new technology",
+                    "2. Finding or training staff with the right digital skills",
+                    "3. Resistance to change from the team or leadership",
+                    "4. Uncertainty about the real benefits of new technology",
+                    "5. Difficulty integrating new tools with existing systems",
+                    "6. Concerns about regulation or policy changes"
+                ];
+
+                function renderBarriersChecker() {
+                    const container = document.getElementById('barriers-checker');
+                    let html = '';
+                    barrierQuestions.forEach((q, i) => {
+                        html += `
+                            <div style="background:#f8fafc; padding:18px 20px; border-radius:12px; margin-bottom:16px; border-left:5px solid #f59e0b;">
+                                <label style="display:block; margin-bottom:12px; font-weight:500;">${q}</label>
+                                <div style="display:flex; gap:8px;">
+                                    ${[1,2,3,4,5].map(n => `
+                                        <button onclick="selectBarrier(${i}, ${n}, this)" 
+                                                style="width:48px; height:48px; border:none; border-radius:50%; background:#e0f2fe; font-weight:600; cursor:pointer;">
+                                            ${n}
+                                        </button>
+                                    `).join('')}
+                                </div>
+                            </div>`;
+                    });
+                    container.innerHTML = html;
+                }
+
+                let barrierScores = [0,0,0,0,0,0];
+
+                window.selectBarrier = function(qIndex, value, btn) {
+                    const buttons = btn.parentElement.querySelectorAll('button');
+                    buttons.forEach(b => {
+                        b.style.background = '#e0f2fe';
+                        b.style.color = '#1e3a8a';
+                    });
+                    btn.style.background = '#14b8a6';
+                    btn.style.color = 'white';
+
+                    barrierScores[qIndex] = value;
+                    updateBarriersTotal();
+                };
+
+                function updateBarriersTotal() {
+                    const total = barrierScores.reduce((a, b) => a + b, 0);
+                    document.getElementById('barriers-total-score').textContent = total;
+
+                    const interp = document.getElementById('barriers-interpretation');
+                    if (total === 0) {
+                        interp.textContent = 'Click the numbers above to get your score';
+                        interp.style.color = '#64748b';
+                    } else if (total <= 12) {
+                        interp.innerHTML = '🟢 <strong>Relatively low barriers</strong> – Good position to start testing solutions';
+                        interp.style.color = '#14b8a6';
+                    } else if (total <= 20) {
+                        interp.innerHTML = '🟡 <strong>Moderate challenges</strong> – Focus on your highest-scoring areas';
+                        interp.style.color = '#f59e0b';
+                    } else {
+                        interp.innerHTML = '🔴 <strong>Significant barriers</strong> – Consider expert diagnostics and structured support';
+                        interp.style.color = '#ef4444';
+                    }
+                }
+
+                // Auto-run when page loads
+                window.addEventListener('load', renderBarriersChecker);
+            </script>
 
             <div class="card">
                 <h2>Coming Soon</h2>
