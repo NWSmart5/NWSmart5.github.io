@@ -349,6 +349,43 @@ nav a:hover::after {
     background: linear-gradient(rgba(30, 58, 138, 0.75), rgba(15, 23, 42, 0.85)),
                 url('images/Digital.jpg') center/cover no-repeat !important;
 }
+/* Readiness Checker */
+.checker-item {
+    background: #f8fafc;
+    padding: 18px 20px;
+    border-radius: 12px;
+    margin-bottom: 16px;
+    border-left: 5px solid #14b8a6;
+}
+
+.checker-item label {
+    display: block;
+    margin-bottom: 12px;
+    font-weight: 500;
+    color: #1e3a8a;
+}
+
+.score-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.score-buttons button {
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+    background: #e0f2fe;
+    color: #1e3a8a;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.score-buttons button:hover {
+    background: #bae6fd;
+    transform: scale(1.1);
+}
 
 /* Responsive */
 @media (max-width: 900px) {
