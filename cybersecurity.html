@@ -146,6 +146,97 @@
                     </a>
                 </p>
             </div>
+                        <!-- Quick Cyber Maturity Self-Check -->
+            <div class="card">
+                <h2>Quick Cyber Maturity Self-Check for SMEs</h2>
+                <p>Score each statement from <strong>1 (Not started)</strong> to <strong>5 (Fully in place)</strong>. Total score out of 50.</p>
+                
+                <div id="cyber-maturity-checker" style="margin-top: 30px;"></div>
+
+                <div style="margin-top: 40px; padding: 25px; background:#f0f9f7; border-radius: 12px; text-align:center;" id="maturity-result">
+                    <h3>Your Total Score: <span id="maturity-total-score" style="font-size:2.2rem; font-weight:bold; color:#1e3a8a;">0</span>/50</h3>
+                    <p id="maturity-interpretation" style="font-size:1.1rem; margin-top:12px; min-height:60px;"></p>
+                </div>
+
+                <h3 style="margin: 35px 0 15px 0; color:#1e3a8a;">Reflection Questions</h3>
+                <ul style="line-height: 2.0; padding-left: 20px;">
+                    <li><strong>What is one area you will improve in the next 3 months?</strong></li>
+                    <li><strong>Would you like free tailored support from the NWSmart5.0 team?</strong></li>
+                </ul>
+            </div>
+
+            <!-- Self-contained Script for Cyber Maturity Self-Check -->
+            <script>
+                const maturityQuestions = [
+                    "1. Our board regularly discusses cyber risk as a business issue.",
+                    "2. We have a basic incident response plan tested in the last 12 months.",
+                    "3. All staff have completed cyber awareness training.",
+                    "4. We separate IT and OT networks where possible.",
+                    "5. We apply multi-factor authentication everywhere possible.",
+                    "6. We keep systems patched and updated on a schedule.",
+                    "7. We assess cyber risks from suppliers and vendors.",
+                    "8. We have backups that are tested and air-gapped.",
+                    "9. We know how to report a cyber incident quickly.",
+                    "10. We review cyber insurance coverage annually."
+                ];
+
+                function renderMaturityChecker() {
+                    const container = document.getElementById('cyber-maturity-checker');
+                    let html = '';
+                    maturityQuestions.forEach((q, i) => {
+                        html += `
+                            <div style="background:#f8fafc; padding:18px 20px; border-radius:12px; margin-bottom:16px; border-left:5px solid #1e3a8a;">
+                                <label style="display:block; margin-bottom:12px; font-weight:500;">${q}</label>
+                                <div style="display:flex; gap:8px;">
+                                    ${[1,2,3,4,5].map(n => `
+                                        <button onclick="selectMaturity(${i}, ${n}, this)" 
+                                                style="width:48px; height:48px; border:none; border-radius:50%; background:#e0f2fe; font-weight:600; cursor:pointer;">
+                                            ${n}
+                                        </button>
+                                    `).join('')}
+                                </div>
+                            </div>`;
+                    });
+                    container.innerHTML = html;
+                }
+
+                let maturityScores = new Array(10).fill(0);
+
+                window.selectMaturity = function(qIndex, value, btn) {
+                    const buttons = btn.parentElement.querySelectorAll('button');
+                    buttons.forEach(b => {
+                        b.style.background = '#e0f2fe';
+                        b.style.color = '#1e3a8a';
+                    });
+                    btn.style.background = '#14b8a6';
+                    btn.style.color = 'white';
+
+                    maturityScores[qIndex] = value;
+                    updateMaturityTotal();
+                };
+
+                function updateMaturityTotal() {
+                    const total = maturityScores.reduce((a, b) => a + b, 0);
+                    document.getElementById('maturity-total-score').textContent = total;
+
+                    const interp = document.getElementById('maturity-interpretation');
+                    if (total === 0) {
+                        interp.textContent = 'Click the numbers above to get your score';
+                        interp.style.color = '#64748b';
+                    } else if (total <= 20) {
+                        interp.innerHTML = '🟡 <strong>Early Stage</strong> – Focus on foundations and awareness';
+                        interp.style.color = '#f59e0b';
+                    } else if (total <= 35) {
+                        interp.innerHTML = '🟢 <strong>Moderate Maturity</strong> – Good progress, strengthen weak areas';
+                        interp.style.color = '#14b8a6';
+                    } else {
+                        interp.innerHTML = '🔵 <strong>High Maturity</strong> – Strong foundation, focus on continuous improvement';
+                        interp.style.color = '#1e3a8a';
+                    }
+                }
+
+                window.addEventListener('load', renderMaturityChecker);
+            </script>
             <!-- Cybersecurity Resources & Guides - FULL LIST -->
             <div class="card">
                 <h2>Cybersecurity Resources & Guides</h2>
