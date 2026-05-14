@@ -93,7 +93,7 @@
                 </div>
             </div>
 
-                        <!-- OT/ICS Security for Manufacturing -->
+                                   <!-- OT/ICS Security for Manufacturing - Updated -->
             <div class="card">
                 <h2>OT/ICS Security for Manufacturing</h2>
                 <p>Manufacturing systems such as PLCs, SCADA, robots, sensors and automated production lines use <strong>Operational Technology (OT)</strong> and <strong>Industrial Control Systems (ICS)</strong>. These systems directly control physical processes on the factory floor.</p>
@@ -107,41 +107,46 @@
 
                 <h3 style="margin: 30px 0 15px 0; color:#1e3a8a;">The Purdue Model – Simple Network Architecture Guide</h3>
                 <p>The Purdue Model divides factory networks into clear levels (0–5). It helps you separate office IT from factory OT so problems cannot easily spread.</p>
-                <ul style="line-height: 2.0;">
-                    <li><strong>Levels 0–3:</strong> OT zone (sensors, controllers, SCADA)</li>
-                    <li><strong>Levels 4–5:</strong> IT/enterprise zone</li>
-                </ul>
-                <p><strong>Practical tip for SMEs:</strong> Start by drawing a simple map of your own factory network using this model. It shows exactly where to add protection.</p>
+
+                <!-- Purdue Model Image -->
+                <div style="text-align:center; margin: 25px 0; background:#f8fafc; padding: 20px; border-radius: 16px;">
+                    <img src="images/PurdueDiagram.png" 
+                         alt="The Purdue Model showing OT Levels 0-3 and IT Levels 4-5 with clear security boundary for manufacturing SMEs" 
+                         style="max-width: 100%; height: auto; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.15);">
+                </div>
+
+                <p><strong>Key Protection Idea:</strong> Keep strong separation between OT (Levels 0–3) and IT (Levels 4–5). Use firewalls or data diodes in the DMZ (Level 3.5) so that a problem in the office cannot reach the factory floor.</p>
+
+                <p><strong>Practical tip for SMEs:</strong> Draw your own simple version of this model for your factory. List your equipment in each level. It immediately shows you the best places to add protection.</p>
 
                 <h3 style="margin: 30px 0 15px 0; color:#1e3a8a;">Top Practical Actions for North West Manufacturers</h3>
                 <div class="resource-grid" style="gap: 20px;">
                     <div class="resource-card">
-                        <h3>1. Network Segmentation</h3>
-                        <p>Separate IT and OT networks using firewalls or unidirectional gateways.</p>
+                        <h3>Network Segmentation</h3>
+                        <p>Segment IT and OT networks using firewalls or unidirectional gateways.</p>
                     </div>
                     <div class="resource-card">
-                        <h3>2. Strict Remote Access</h3>
+                        <h3>Strict Remote Access</h3>
                         <p>Limit remote access with multi-factor authentication and just-in-time controls.</p>
                     </div>
                     <div class="resource-card">
-                        <h3>3. Careful Patching</h3>
-                        <p>Patch OT systems on a schedule — always test in a safe environment first.</p>
+                        <h3>Careful Patching</h3>
+                        <p>Patch and update OT systems carefully — always test first.</p>
                     </div>
                     <div class="resource-card">
-                        <h3>4. Continuous Monitoring</h3>
+                        <h3>Continuous Monitoring</h3>
                         <p>Monitor for unusual behaviour on the factory floor.</p>
                     </div>
                     <div class="resource-card">
-                        <h3>5. Secure-by-Design</h3>
+                        <h3>Secure-by-Design</h3>
                         <p>Choose new connected machines that follow secure-by-design principles.</p>
                     </div>
                 </div>
 
                 <p style="margin-top: 25px; font-size:15px; color:#475569; text-align:center;">
-                    <strong>Source:</strong> NCSC Secure Connectivity Principles for Operational Technology (updated guidance developed with international partners).
+                    <strong>Source:</strong> NCSC Secure Connectivity Principles for Operational Technology (developed with international partners).
                 </p>
             </div>
-
                         <!-- Cybersecurity for Safe AI Adoption -->
             <div class="card">
                 <h2>Cybersecurity for Safe AI Adoption</h2>
