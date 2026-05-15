@@ -159,22 +159,7 @@ nav a:hover::after {
     box-shadow: 0 20px 40px rgba(0,0,0,0.12);
 }
 
-/* Sidebar */
-.sidebar {
-    background: white;
-    padding: 28px;
-    border-radius: 20px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.07);
-    height: fit-content;
-    position: sticky;
-    top: 100px;
-}
 
-.sidebar h3 {
-    color: #1e40af;
-    margin-bottom: 18px;
-    font-size: 1.25rem;
-}
 
 /* ==================== ACCORDION ==================== */
 .modern-accordion {
@@ -342,24 +327,8 @@ nav a:hover::after {
     margin-top: 10px;
 }
 
-/* Make sidebar stick better */
-.sidebar {
-    flex-shrink: 0;
-    width: 280px;
-    margin-left: 30px;
-}
 
-/* Responsive fallback */
-@media (max-width: 900px) {
-    .container {
-        flex-direction: column;
-    }
-    .sidebar {
-        margin-left: 0;
-        width: 100%;
-        margin-top: 30px;
-    }
-}
+
 
 /* Footer */
 .footer {
@@ -418,23 +387,8 @@ nav a:hover::after {
     background: #bae6fd;
     transform: scale(1.1);
 }
-/* Sidebar - Prevent extending to footer */
-.sidebar {
-    background: white;
-    padding: 28px;
-    border-radius: 20px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.07);
-    position: sticky;
-    top: 100px;
-    max-height: calc(100vh - 140px);   /* Stops it from going to footer */
-    overflow-y: auto;
-    align-self: start;
-}
-/* Responsive */
-@media (max-width: 900px) {
-    .container {
-        grid-template-columns: 1fr;
-    }
+
+
     .hero h2, .page-hero h2 {
         font-size: 2.4rem;
     }
@@ -443,6 +397,7 @@ nav a:hover::after {
         font-size: 15px;
     }
 }
+/* ==================== MAIN LAYOUT ==================== */
 /* ==================== MAIN LAYOUT ==================== */
 .container {
     max-width: 1280px;
@@ -468,17 +423,28 @@ nav a:hover::after {
     align-self: start;
 }
 
-/* Make videos smaller so they don't break layout */
+/* Videos - keep them compact */
 .resource-card iframe {
     height: 210px !important;
 }
 
-/* Mobile: stack sidebar below */
+/* Mobile - stack vertically */
 @media (max-width: 900px) {
     .container {
         grid-template-columns: 1fr;
     }
 }
+
+
+
+
+
+/* Make videos smaller so they don't break layout */
+.resource-card iframe {
+    height: 210px !important;
+}
+
+
 
 
 
