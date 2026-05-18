@@ -635,3 +635,46 @@ nav a:hover::after {
     align-items: center;
     justify-content: center;
 }
+/* ==================== HORIZONTAL SCROLL FOR PDF RESOURCES ==================== */
+
+.resource-scroll {
+    display: flex;
+    gap: 24px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 12px 4px 28px;
+    margin-top: 30px;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+}
+
+.resource-scroll .resource-card {
+    flex: 0 0 360px;
+    min-height: 330px;
+    scroll-snap-align: start;
+}
+
+.resource-scroll::-webkit-scrollbar {
+    height: 10px;
+}
+
+.resource-scroll::-webkit-scrollbar-track {
+    background: #e5e7eb;
+    border-radius: 999px;
+}
+
+.resource-scroll::-webkit-scrollbar-thumb {
+    background: #14b8a6;
+    border-radius: 999px;
+}
+
+.resource-scroll::-webkit-scrollbar-thumb:hover {
+    background: #0f766e;
+}
+
+.scroll-hint {
+    color: #64748b;
+    font-size: 0.95rem;
+    margin-top: 8px;
+    font-style: italic;
+}
