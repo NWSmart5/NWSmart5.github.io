@@ -419,21 +419,49 @@ nav a:hover::after {
     min-width: 0;
 }
 
+/* ==================== SIDEBAR JUMP LINKS ==================== */
+
 .sidebar {
-    background: white;
-    padding: 28px;
-    border-radius: 20px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.07);
-
-    position: sticky;
-    top: 100px;
     max-height: calc(100vh - 130px);
-overflow-y: auto;
-
-    height: fit-content;
-    align-self: start;
-    
+    overflow-y: auto;
 }
+
+.sidebar h3 {
+    color: #0f172a;
+    font-size: 1.25rem;
+    margin-bottom: 14px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.sidebar li {
+    margin-bottom: 10px;
+}
+
+.sidebar a {
+    display: block;
+    padding: 11px 14px;
+    border-radius: 12px;
+    background: #f8fafc;
+    color: #1e3a8a;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.94rem;
+    line-height: 1.35;
+    border: 1px solid #e2e8f0;
+    transition: all 0.25s ease;
+}
+
+.sidebar a:hover {
+    background: #e0f2fe;
+    border-color: #14b8a6;
+    color: #0f172a;
+    transform: translateX(4px);
+}
+
 .sidebar::-webkit-scrollbar {
     width: 8px;
 }
@@ -448,6 +476,10 @@ overflow-y: auto;
     border-radius: 999px;
 }
 
+/* Stops sticky navbar covering section titles when jumping */
+.card {
+    scroll-margin-top: 120px;
+}
 /* Mobile */
 
 @media (max-width: 900px) {
