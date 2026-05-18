@@ -427,10 +427,10 @@ nav a:hover::after {
     border-radius: 20px;
     box-shadow: 0 8px 25px rgba(0,0,0,0.07);
     position: sticky;
-    top: 100px;
+    top: 25px;
     height: fit-content;
     align-self: start;
-    max-height: calc(100vh - 130px);
+    max-height: calc(100vh - 50px);
     overflow-y: auto;
 }
 
