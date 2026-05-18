@@ -560,21 +560,48 @@
         <p><strong>NWSmart5.0 Knowledge Hub</strong> — CyberFocus Project<br>
         University of Salford • Greater Manchester</p>
     </footer>
-    <!-- Accordion Script -->
-    <script>
-        document.querySelectorAll('.accordion-btn').forEach(btn => {
-            btn.addEventListener('click', () => {
-                const isActive = btn.classList.contains('active');
-                document.querySelectorAll('.accordion-btn').forEach(b => b.classList.remove('active'));
-                document.querySelectorAll('.accordion-content').forEach(c => c.style.maxHeight = null);
-               
-                if (!isActive) {
-                    btn.classList.add('active');
-                    const content = btn.nextElementSibling;
-                    content.style.maxHeight = content.scrollHeight + "px";
-                }
-            });
+   <!-- Accordion + Sidebar Highlight Script -->
+<script>
+    document.querySelectorAll('.accordion-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const isActive = btn.classList.contains('active');
+            document.querySelectorAll('.accordion-btn').forEach(b => b.classList.remove('active'));
+            document.querySelectorAll('.accordion-content').forEach(c => c.style.maxHeight = null);
+           
+            if (!isActive) {
+                btn.classList.add('active');
+                const content = btn.nextElementSibling;
+                content.style.maxHeight = content.scrollHeight + "px";
+            }
         });
-    </script>
+    });
+
+    // Highlight sidebar link based on current section
+    const sections = document.querySelectorAll(".card[id]");
+    const sidebarLinks = document.querySelectorAll(".sidebar a[href^='#']");
+
+    function highlightSidebarLink() {
+        let currentSection = "";
+
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop - 180;
+
+            if (window.scrollY >= sectionTop) {
+                currentSection = section.getAttribute("id");
+            }
+        });
+
+        sidebarLinks.forEach(link => {
+            link.classList.remove("active-section");
+
+            if (link.getAttribute("href") === "#" + currentSection) {
+                link.classList.add("active-section");
+            }
+        });
+    }
+
+    window.addEventListener("scroll", highlightSidebarLink);
+    window.addEventListener("load", highlightSidebarLink);
+</script>
 </body>
 </html>
