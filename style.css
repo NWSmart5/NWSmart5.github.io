@@ -422,19 +422,32 @@ nav a:hover::after {
 /* ==================== SIDEBAR JUMP LINKS ==================== */
 
 .sidebar {
+    background: white;
+    padding: 28px;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.07);
+    position: sticky;
+    top: 100px;
+    height: fit-content;
+    align-self: start;
     max-height: calc(100vh - 130px);
     overflow-y: auto;
 }
 
 .sidebar h3 {
     color: #0f172a;
-    font-size: 1.25rem;
-    margin-bottom: 14px;
+    font-size: 1.2rem;
+    margin: 24px 0 12px;
+}
+
+.sidebar h3:first-child {
+    margin-top: 0;
 }
 
 .sidebar ul {
-    list-style: none;
-    padding-left: 0;
+    list-style: none !important;
+    padding-left: 0 !important;
+    margin-left: 0 !important;
 }
 
 .sidebar li {
@@ -442,23 +455,23 @@ nav a:hover::after {
 }
 
 .sidebar a {
-    display: block;
+    display: block !important;
     padding: 11px 14px;
     border-radius: 12px;
     background: #f8fafc;
-    color: #1e3a8a;
-    text-decoration: none;
+    border: 1px solid #e2e8f0;
+    color: #1e3a8a !important;
+    text-decoration: none !important;
     font-weight: 600;
     font-size: 0.94rem;
     line-height: 1.35;
-    border: 1px solid #e2e8f0;
     transition: all 0.25s ease;
 }
 
 .sidebar a:hover {
     background: #e0f2fe;
     border-color: #14b8a6;
-    color: #0f172a;
+    color: #0f172a !important;
     transform: translateX(4px);
 }
 
