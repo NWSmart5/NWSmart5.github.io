@@ -707,6 +707,10 @@ nav a:hover::after {
         grid-template-columns: 1fr;
     }
 
+    .flip-card-wide {
+        grid-column: auto;
+    }
+}
 
 
 /* ==================== SOURCE AND CROSS-LINK NOTES ==================== */
