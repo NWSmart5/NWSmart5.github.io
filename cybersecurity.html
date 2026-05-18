@@ -152,51 +152,89 @@
                 <h2>Cybersecurity for Safe AI Adoption</h2>
                 <p>Strong cybersecurity is the essential foundation for safe and responsible AI in manufacturing. Without it, AI systems can introduce new vulnerabilities that affect both digital and physical operations.</p>
 
-                               <h3 style="margin: 30px 0 20px 0; color:#1e3a8a;">Key AI-Specific Cyber Risks in Manufacturing</h3>
-                
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px;">
-                    
-                    <div style="background: #f8fafc; padding: 24px; border-radius: 12px; border-left: 5px solid #ef4444;">
-                        <h4 style="margin: 0 0 12px 0; color:#1e3a8a;">Data Poisoning</h4>
-                        <p style="margin: 0;">Attackers feed bad data into your AI so it makes wrong decisions (e.g. faulty quality control).</p>
-                    </div>
+                               <div class="flip-risk-grid">
 
-                    <div style="background: #f8fafc; padding: 24px; border-radius: 12px; border-left: 5px solid #ef4444;">
-                        <h4 style="margin: 0 0 12px 0; color:#1e3a8a;">Model Theft</h4>
-                        <p style="margin: 0;">Criminals or competitors steal your trained AI models containing valuable intellectual property.</p>
-                    </div>
-
-                    <div style="background: #f8fafc; padding: 24px; border-radius: 12px; border-left: 5px solid #ef4444;">
-                        <h4 style="margin: 0 0 12px 0; color:#1e3a8a;">Prompt Injection</h4>
-                        <p style="margin: 0;">Malicious inputs that trick AI systems into unsafe or incorrect actions.</p>
-                    </div>
-
-                    <div style="background: #f8fafc; padding: 24px; border-radius: 12px; border-left: 5px solid #ef4444;">
-                        <h4 style="margin: 0 0 12px 0; color:#1e3a8a;">Supply Chain Risks</h4>
-                        <p style="margin: 0;">Hidden weaknesses in third-party AI tools or datasets.</p>
-                    </div>
-
-                    <div style="background: #f8fafc; padding: 24px; border-radius: 12px; border-left: 5px solid #ef4444;">
-                        <h4 style="margin: 0 0 12px 0; color:#1e3a8a;">Increased Attack Surface</h4>
-                        <p style="margin: 0;">Connecting AI to OT systems creates more entry points for ransomware or disruption.</p>
-                    </div>
-                </div>
-
-                <h3 style="margin: 35px 0 15px 0; color:#1e3a8a;">Practical Best Practices for Manufacturers</h3>
-                <ul style="line-height: 2.1; padding-left: 20px;">
-                    <li><strong>Secure your training data</strong> in isolated environments — never send sensitive factory data to public AI models.</li>
-                    <li><strong>Apply security at every stage</strong> of the AI lifecycle (design, training, deployment, monitoring).</li>
-                    <li><strong>Keep human oversight</strong> for critical decisions such as predictive maintenance.</li>
-                    <li><strong>Test AI systems regularly</strong> for adversarial attacks.</li>
-                    <li><strong>Use zero-trust principles</strong> — verify every connection when AI talks to OT systems.</li>
-                    <li><strong>Integrate AI protection</strong> into your existing OT segmentation and monitoring.</li>
-                </ul>
-
-                <p style="margin-top: 25px; padding: 20px; background:#f0f9f7; border-radius: 12px; font-size:15px;">
-                    <strong>Source:</strong> NCSC Guidelines for Secure AI System Development.<br>
-                    <strong>Cross-link tip:</strong> Build cybersecurity into every phase of your digital journey — see the <a href="digital.html">Digital Transformation page</a>.
-                </p>
+    <div class="flip-card" onclick="this.classList.toggle('flipped')">
+        <div class="flip-card-inner">
+            <div class="flip-card-front">
+                <h4>Data Poisoning</h4>
+                <p>Attackers manipulate data so AI systems learn the wrong patterns.</p>
+                <span>Click to learn more →</span>
             </div>
+            <div class="flip-card-back">
+                <h4>Data Poisoning</h4>
+                <p>Bad training, supplier or sensor data can lead to incorrect AI outputs.</p>
+                <p><strong>Manufacturing example:</strong> faulty quality inspection or wrong maintenance predictions.</p>
+                <p><strong>Action:</strong> protect datasets, validate data sources and monitor AI outputs.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="flip-card" onclick="this.classList.toggle('flipped')">
+        <div class="flip-card-inner">
+            <div class="flip-card-front">
+                <h4>Model Theft</h4>
+                <p>AI models can contain valuable business knowledge and intellectual property.</p>
+                <span>Click to learn more →</span>
+            </div>
+            <div class="flip-card-back">
+                <h4>Model Theft</h4>
+                <p>Stolen models may expose production logic, process knowledge or competitive information.</p>
+                <p><strong>Manufacturing example:</strong> a competitor gains insight into your optimisation model.</p>
+                <p><strong>Action:</strong> restrict access, log usage and protect model files/API access.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="flip-card" onclick="this.classList.toggle('flipped')">
+        <div class="flip-card-inner">
+            <div class="flip-card-front">
+                <h4>Prompt Injection</h4>
+                <p>Malicious instructions can trick AI tools into unsafe behaviour.</p>
+                <span>Click to learn more →</span>
+            </div>
+            <div class="flip-card-back">
+                <h4>Prompt Injection</h4>
+                <p>Hidden instructions in emails, documents or webpages may override AI rules.</p>
+                <p><strong>Manufacturing example:</strong> an AI assistant reveals sensitive supplier data.</p>
+                <p><strong>Action:</strong> limit AI permissions and review outputs before action.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="flip-card" onclick="this.classList.toggle('flipped')">
+        <div class="flip-card-inner">
+            <div class="flip-card-front">
+                <h4>Supply Chain Risks</h4>
+                <p>Third-party AI tools, plugins and datasets can introduce weaknesses.</p>
+                <span>Click to learn more →</span>
+            </div>
+            <div class="flip-card-back">
+                <h4>Supply Chain Risks</h4>
+                <p>AI tools often rely on external models, APIs, libraries and datasets.</p>
+                <p><strong>Manufacturing example:</strong> an insecure plugin connects to internal files.</p>
+                <p><strong>Action:</strong> check suppliers, contracts, security controls and update practices.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="flip-card flip-card-wide" onclick="this.classList.toggle('flipped')">
+        <div class="flip-card-inner">
+            <div class="flip-card-front">
+                <h4>Increased Attack Surface</h4>
+                <p>Connecting AI to business or factory systems creates new entry points.</p>
+                <span>Click to learn more →</span>
+            </div>
+            <div class="flip-card-back">
+                <h4>Increased Attack Surface</h4>
+                <p>AI connected to cloud tools, business systems or OT environments can increase cyber exposure.</p>
+                <p><strong>Manufacturing example:</strong> AI linked to production data becomes a new target.</p>
+                <p><strong>Action:</strong> use access controls, monitoring, segmentation and incident planning.</p>
+            </div>
+        </div>
+    </div>
+
+</div>
 
 
             
