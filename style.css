@@ -713,7 +713,7 @@ nav a:hover::after {
 }
 .flip-card,
 .flip-card-inner {
-    min-height: 420px;
+    min-height: 390px;
 }
 
 .flip-card-front,
