@@ -452,21 +452,31 @@ nav a:hover::after {
 .quick-link-card {
     background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
     border-top: 5px solid #14b8a6;
-    min-height: 360px;
+    min-height: 390px;
+    position: relative;
 }
 
-.quick-link-card .quick-link-icon {
-    width: 42px;
-    height: 42px;
-    border-radius: 50%;
-    background: #e0f2fe;
-    color: #1e3a8a;
+.quick-link-icon {
+    width: 72px;
+    height: 72px;
+    border-radius: 22px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-weight: 800;
-    font-size: 1.2rem;
-    margin-bottom: 14px;
+    font-weight: 900;
+    font-size: 2.3rem;
+    margin-bottom: 18px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+.cyber-icon {
+    background: linear-gradient(135deg, #dbeafe, #67e8f9);
+    color: #1e3a8a;
+}
+
+.fraud-icon {
+    background: linear-gradient(135deg, #fef3c7, #f59e0b);
+    color: #78350f;
 }
 
 .quick-link-card h3 {
