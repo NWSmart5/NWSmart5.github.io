@@ -427,9 +427,12 @@ nav a:hover::after {
 
     position: sticky;
     top: 100px;
+    max-height: calc(100vh - 130px);
+overflow-y: auto;
 
     height: fit-content;
     align-self: start;
+    
 }
 
 /* Mobile */
