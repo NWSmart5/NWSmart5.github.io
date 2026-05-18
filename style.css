@@ -434,6 +434,19 @@ overflow-y: auto;
     align-self: start;
     
 }
+.sidebar::-webkit-scrollbar {
+    width: 8px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+    background: #e5e7eb;
+    border-radius: 999px;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+    background: #14b8a6;
+    border-radius: 999px;
+}
 
 /* Mobile */
 
