@@ -725,3 +725,12 @@ nav a:hover::after {
         grid-column: auto;
     }
 }
+.flip-card,
+.flip-card-inner {
+    min-height: 380px;
+}
+
+.flip-card-front,
+.flip-card-back {
+    overflow-y: auto;
+}
