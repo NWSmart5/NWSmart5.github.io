@@ -35,7 +35,7 @@
     <div class="container">
         <div class="main-content">
             <!-- Why Cybersecurity Matters -->
-            <div class="card">
+            <div class="card" id="why-cybersecurity">
                 <h2>Why Cybersecurity Matters for North West Manufacturers</h2>
                 <p>Manufacturing is a high-value target for cyber threats. As you adopt IoT, AI, automation, and connected systems, strong cybersecurity is essential for protecting production, data, people, and reputation.</p>
                 <ul style="line-height: 2.0; font-size: 16.5px; margin-top: 20px;">
@@ -48,7 +48,7 @@
             </div>
 
                         <!-- The 5 Pillars of Manufacturing Cyber Resilience -->
-            <div class="card">
+            <div class="card" id="five-pillars">
                 <h2>The 5 Pillars of Manufacturing Cyber Resilience</h2>
                 <p>Use these five pillars as your practical framework. Build them step by step to create strong, sustainable cyber resilience.</p>
                 
@@ -93,8 +93,8 @@
                 </div>
             </div>
 
-                                              <!-- OT/ICS Security for Manufacturing - Improved Visuals -->
-            <div class="card">
+                <!-- OT/ICS Security for Manufacturing - Improved Visuals -->
+            <div class="card" id="ot-ics-security">
                 <h2>OT/ICS Security for Manufacturing</h2>
                 <p>Manufacturing systems such as PLCs, SCADA, robots, sensors and automated production lines use <strong>Operational Technology (OT)</strong> and <strong>Industrial Control Systems (ICS)</strong>. These systems directly control physical processes on the factory floor.</p>
 
@@ -148,7 +148,7 @@
                 </p>
             </div>
 <!-- Cybersecurity Risks in AI Adoption -->
-<div class="card">
+<div class="card" id="ai-cyber-risks">
     <h2>Cybersecurity Risks in AI Adoption</h2>
     <p>
         AI can help manufacturers improve productivity, quality control and decision-making, but it can also introduce new cybersecurity risks when connected to business data, cloud platforms or operational systems.
@@ -253,7 +253,7 @@
 </div>
 
 <!-- Cyber Governance for Boards -->
-            <div class="card">
+            <div class="card" id="cyber-governance">
                 <h2>Cyber Governance for Boards</h2>
                 <p><strong>Source:</strong> <a href="https://www.ncsc.gov.uk/cyber-governance-for-boards/overview" target="_blank" style="color:#1e40af;">NCSC Cyber Governance for Boards</a></p>
                 <p>Cyber risk is a principal business risk. Boards must provide effective oversight even if they are not technical experts.</p>
@@ -285,7 +285,7 @@
                 </p>
             </div>
             <!-- NCSC Training for Staff -->
-            <div class="card">
+            <div class="card" id="staff-training">
                 <h2>NCSC's Cyber Security Training for Staff</h2>
                 <p><strong>Source:</strong> <a href="https://www.ncsc.gov.uk/blog-post/ncsc-cyber-security-training-for-staff-now-available" target="_blank" style="color:#1e40af;">NCSC Official Guidance</a></p>
                 <p>The NCSC has developed a free, easy-to-use e-learning package called <strong>"Staying Safe Online: Top Tips for Staff"</strong>. Ideal for manufacturing teams.</p>
@@ -307,7 +307,7 @@
                 </p>
             </div>
                         <!-- Quick Cyber Maturity Self-Check -->
-            <div class="card">
+            <div class="card" id="maturity-check">
                 <h2>Quick Cyber Maturity Self-Check for SMEs</h2>
                 <p>Score each statement from <strong>1 (Not started)</strong> to <strong>5 (Fully in place)</strong>. Total score out of 50.</p>
                 
@@ -398,7 +398,7 @@
                 window.addEventListener('load', renderMaturityChecker);
             </script>
             <!-- Cybersecurity Resources & Guides - FULL LIST -->
-<div class="card">
+<div class="card" id="resources-guides">
     <h2>Cybersecurity Resources & Guides</h2>
     <p>Read short summaries below, then download the full PDF.</p>
     <p class="scroll-hint">Scroll sideways to browse all guides →</p>
@@ -460,7 +460,7 @@
 </div>
 
 <!-- Helpful Videos & Quick Links -->
-<div class="card">
+<div class="card" id="helpful-videos">
     <h2>Helpful Videos & Quick Links</h2>
     <p>Short, practical videos from the National Cyber Security Centre.</p>
    
@@ -525,14 +525,29 @@
 </div> <!-- closes .main-content -->
 
 
-       <!-- Sidebar -->
+   
+             <!-- Sidebar -->
         <div class="sidebar">
-            <h3>Quick Downloads</h3>
+            <h3>On This Page</h3>
+            <ul class="sidebar-jump-links">
+                <li><a href="#why-cybersecurity">Why Cybersecurity Matters</a></li>
+                <li><a href="#five-pillars">5 Pillars of Cyber Resilience</a></li>
+                <li><a href="#ot-ics-security">OT/ICS Security</a></li>
+                <li><a href="#ai-cyber-risks">AI Cyber Risks</a></li>
+                <li><a href="#cyber-governance">Cyber Governance for Boards</a></li>
+                <li><a href="#staff-training">Staff Training</a></li>
+                <li><a href="#maturity-check">Cyber Maturity Self-Check</a></li>
+                <li><a href="#resources-guides">Resources & Guides</a></li>
+                <li><a href="#helpful-videos">Helpful Videos & Quick Links</a></li>
+            </ul>
+
+            <h3 style="margin-top:32px;">Quick Downloads</h3>
             <ul>
                 <li><a href="pdfs/NCSC_A5_Small_Business_Guide_v4_OCT20.pdf" target="_blank">→ NCSC Small Business Guide</a></li>
                 <li><a href="pdfs/NCSC_A5_Response_and_Recovery_Guide_v3_OCT20.pdf" target="_blank">→ Response & Recovery Guide</a></li>
                 <li><a href="pdfs/Mitigating-malware-and-ransomware-attacks.pdf" target="_blank">→ Mitigating Malware & Ransomware</a></li>
             </ul>
+
             <h3 style="margin-top:32px;">Important Links</h3>
             <ul>
                 <li><a href="https://www.ncsc.gov.uk/" target="_blank">National Cyber Security Centre</a></li>
