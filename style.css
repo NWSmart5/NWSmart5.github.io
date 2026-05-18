@@ -678,3 +678,31 @@ nav a:hover::after {
     margin-top: 8px;
     font-style: italic;
 }
+/* FORCE PDF RESOURCES TO HORIZONTAL SCROLL */
+.resource-scroll {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    gap: 24px !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    width: 100% !important;
+    max-width: 100% !important;
+}
+
+.resource-scroll .resource-card {
+    flex: 0 0 340px !important;
+    width: 340px !important;
+    min-width: 340px !important;
+    max-width: 340px !important;
+    height: auto !important;
+    min-height: 330px !important;
+    margin-bottom: 0 !important;
+}
+
+.resource-scroll .resource-card p {
+    flex-grow: 0 !important;
+}
+
+.resource-scroll .resource-card .button-primary {
+    margin-top: auto !important;
+}
