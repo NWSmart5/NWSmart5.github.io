@@ -811,3 +811,18 @@ nav a:hover::after {
     font-weight: 600;
     word-break: normal;
 }
+/* ==================== ACTIVE SIDEBAR SECTION ==================== */
+
+.sidebar a.active-section {
+    background: #14b8a6 !important;
+    color: white !important;
+    border-color: #14b8a6 !important;
+    box-shadow: 0 8px 18px rgba(20, 184, 166, 0.25);
+    transform: translateX(4px);
+}
+
+.sidebar a.active-section::before {
+    content: "● ";
+    color: white;
+    font-size: 0.75rem;
+}
