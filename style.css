@@ -639,7 +639,7 @@ nav a:hover::after {
 }
 
 .flip-card {
-    min-height: 260px;
+    min-height: 420px;
     perspective: 1000px;
     cursor: pointer;
 }
@@ -651,11 +651,10 @@ nav a:hover::after {
 .flip-card-inner {
     position: relative;
     width: 100%;
-    min-height: 260px;
+    min-height: 420px;
     transition: transform 0.7s ease;
     transform-style: preserve-3d;
 }
-
 .flip-card.flipped .flip-card-inner {
     transform: rotateY(180deg);
 }
@@ -664,10 +663,13 @@ nav a:hover::after {
 .flip-card-back {
     position: absolute;
     inset: 0;
+    min-height: 420px;
     border-radius: 18px;
     padding: 26px;
     backface-visibility: hidden;
     box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+    overflow-y: auto;
+    box-sizing: border-box;
 }
 
 .flip-card-front {
