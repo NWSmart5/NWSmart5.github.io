@@ -533,14 +533,14 @@ nav a:hover::after {
 .quick-link-card .button-primary {
     margin-top: auto !important;
 }
-/* Make quick-link buttons same size but not too large */
+/* Make Cyber Essentials and Take Five buttons identical */
 .quick-link-card .button-primary {
-    width: 100% !important;
-    max-width: 430px;
+    width: 430px !important;
+    max-width: 100%;
     min-height: 64px;
     padding: 16px 24px !important;
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: auto !important;
+    margin-right: auto !important;
     display: flex !important;
     align-items: center;
     justify-content: center;
