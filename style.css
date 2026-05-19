@@ -2,12 +2,17 @@
     margin: 0;/* ==================== HOMEPAGE PROJECT LOGO ==================== */
 
 .hero-project-logo {
-    width: 340px;
-    max-width: 90%;
+    width: 220px;
+    max-width: 70%;
     display: block;
-    margin: 28px auto 24px;
-    opacity: 0.98;
-}header {
+    margin: 22px auto 24px;
+    opacity: 0.96;
+    background: rgba(255,255,255,0.92);
+    padding: 16px 22px;
+    border-radius: 22px;
+    box-shadow: 0 12px 28px rgba(0,0,0,0.18);
+}
+    header {
     background: #1e3a8a;
     padding: 18px 40px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
