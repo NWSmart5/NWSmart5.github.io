@@ -1351,4 +1351,33 @@ nav a:hover::after {
         font-size: 22px;
     }
 }
+/* FORCE NAVBAR LOGO INLINE */
+
+.site-logo {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    flex-wrap: nowrap !important;
+    gap: 14px !important;
+}
+
+.site-logo a {
+    display: flex !important;
+    align-items: center !important;
+    gap: 14px !important;
+    text-decoration: none !important;
+}
+
+.navbar-logo {
+    width: 170px !important;
+    height: auto !important;
+    display: block !important;
+    flex-shrink: 0 !important;
+}
+
+.site-logo span {
+    display: inline-block !important;
+    white-space: nowrap !important;
+    margin: 0 !important;
+}
 
