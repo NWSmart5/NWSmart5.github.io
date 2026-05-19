@@ -1726,6 +1726,12 @@ nav a.active-nav::after {
 
     min-height: auto;
 }
+.example-scroll-card p {
+    margin-bottom: 0;
+}
+.examples-scroll {
+    align-items: stretch;
+}
 
     background: linear-gradient(
         180deg,
