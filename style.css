@@ -1388,3 +1388,101 @@ nav a.active-nav::after {
     border-radius: 20px;
 }
 
+/* ==================== DIGITAL ROADMAP TIMELINE ==================== */
+
+.timeline-roadmap {
+    position: relative;
+    margin-top: 50px;
+    padding-left: 30px;
+}
+
+.timeline-roadmap::before {
+    content: "";
+    position: absolute;
+    left: 42px;
+    top: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(
+        to bottom,
+        #1e3a8a,
+        #14b8a6
+    );
+    border-radius: 999px;
+}
+
+.timeline-step {
+    position: relative;
+    display: flex;
+    gap: 28px;
+    margin-bottom: 45px;
+    align-items: flex-start;
+}
+
+.timeline-circle {
+    width: 56px;
+    height: 56px;
+    min-width: 56px;
+
+    border-radius: 50%;
+    background: linear-gradient(135deg, #1e3a8a, #14b8a6);
+
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 800;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+    z-index: 2;
+
+    box-shadow: 0 10px 24px rgba(20,184,166,0.25);
+}
+
+.timeline-content {
+    flex: 1;
+    background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+    border-radius: 18px;
+    padding: 24px 26px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 10px 24px rgba(0,0,0,0.06);
+
+    transition: all 0.3s ease;
+}
+
+.timeline-content:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 34px rgba(0,0,0,0.10);
+}
+
+.timeline-content h3 {
+    color: #1e3a8a;
+    margin-bottom: 10px;
+}
+
+.timeline-content p {
+    color: #475569;
+    line-height: 1.7;
+    margin: 0;
+}
+
+@media (max-width: 800px) {
+
+    .timeline-roadmap {
+        padding-left: 10px;
+    }
+
+    .timeline-step {
+        gap: 18px;
+    }
+
+    .timeline-circle {
+        width: 48px;
+        height: 48px;
+        min-width: 48px;
+        font-size: 1rem;
+    }
+
+}
