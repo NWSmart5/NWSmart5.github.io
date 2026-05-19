@@ -1355,36 +1355,51 @@ nav a:hover::after {
 
 header {
     background: #1e3a8a !important;
+    padding: 18px 40px !important;
+}
+
+.nav-container {
+    max-width: 1280px !important;
+    margin: 0 auto !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
 }
 
 .site-logo {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    margin: 0;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 14px !important;
+    margin: 0 !important;
 }
 
 .navbar-logo {
-    width: 72px;
-    height: auto;
-    display: block;
-    background: white;
-    padding: 6px;
-    border-radius: 6px;
+    width: 74px !important;
+    height: auto !important;
+    display: block !important;
+    background: white !important;
+    padding: 6px !important;
+    border-radius: 8px !important;
 }
 
 .site-logo span {
     color: #67e8f9 !important;
     font-size: 27px !important;
     font-weight: 700 !important;
+    line-height: 1 !important;
+    white-space: nowrap !important;
+}
+
+nav {
+    display: flex !important;
+    gap: 28px !important;
+    align-items: center !important;
 }
 
 nav a {
     color: #e0f2fe !important;
+    text-decoration: none !important;
     font-family: 'Segoe UI', system-ui, -apple-system, Arial, sans-serif !important;
-    font-weight: 500 !important;
-}
-
-nav a:hover {
-    color: white !important;
+    font-weight: 600 !important;
 }
