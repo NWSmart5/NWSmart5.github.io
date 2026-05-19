@@ -262,6 +262,24 @@
                 <div style="background:#f0f9f7; padding:20px; border-radius:12px; margin-top:30px;">
                     <strong>Quick Self-Check:</strong> Where would you place your business on this journey today?
                 </div>
+                <div class="infographic-actions">
+
+    <button class="view-infographic-btn"
+            onclick="openInfographicModal()">
+
+        View Infographic
+
+    </button>
+
+    <a href="images/Understanding the three ds.png"
+       download
+       class="download-infographic-btn">
+
+       Download Infographic
+
+    </a>
+
+</div>
             </div>
 
          <div class="card" id="action-plan">
@@ -798,8 +816,37 @@ window.addEventListener("resize", highlightSidebarLink);
         card.classList.toggle('flipped');
     });
 });
-    </script>
+        function openInfographicModal() {
+    document.getElementById("infographicModal").style.display = "flex";
+}
 
+function closeInfographicModal() {
+    document.getElementById("infographicModal").style.display = "none";
+}
+
+window.onclick = function(event) {
+
+    const modal = document.getElementById("infographicModal");
+
+    if (event.target === modal) {
+        modal.style.display = "none";
+    }
+}
+    </script>
+<div id="infographicModal" class="infographic-modal">
+
+    <span class="close-infographic"
+          onclick="closeInfographicModal()">
+
+          &times;
+
+    </span>
+
+    <img src="images/Understanding the three ds.png"
+         alt="Understanding the Three Ds Infographic"
+         class="modal-infographic-image">
+
+</div>
             
           
 </body>
