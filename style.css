@@ -1698,3 +1698,98 @@ nav a.active-nav::after {
         min-width: 100%;
     }
 }
+
+/* ==================== NORTH WEST EXAMPLES SCROLL ==================== */
+
+.examples-scroll {
+
+    display: flex;
+    gap: 24px;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    padding: 16px 4px 30px;
+
+    margin-top: 30px;
+
+    scroll-snap-type: x mandatory;
+
+    -webkit-overflow-scrolling: touch;
+}
+
+.example-scroll-card {
+
+    flex: 0 0 360px;
+
+    min-width: 360px;
+    max-width: 360px;
+
+    min-height: 280px;
+
+    background: linear-gradient(
+        180deg,
+        #ffffff 0%,
+        #f8fafc 100%
+    );
+
+    border-radius: 20px;
+
+    padding: 30px;
+
+    border-top: 6px solid #14b8a6;
+
+    box-shadow: 0 10px 28px rgba(0,0,0,0.08);
+
+    scroll-snap-align: start;
+
+    transition: all 0.3s ease;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.example-scroll-card:hover {
+
+    transform: translateY(-8px);
+
+    box-shadow: 0 18px 36px rgba(0,0,0,0.12);
+}
+
+.example-scroll-card h3 {
+
+    color: #1e3a8a;
+
+    margin-bottom: 16px;
+
+    line-height: 1.4;
+}
+
+.example-scroll-card p {
+
+    color: #475569;
+
+    line-height: 1.7;
+
+    flex-grow: 1;
+}
+
+/* Scrollbar */
+
+.examples-scroll::-webkit-scrollbar {
+    height: 10px;
+}
+
+.examples-scroll::-webkit-scrollbar-track {
+    background: #e5e7eb;
+    border-radius: 999px;
+}
+
+.examples-scroll::-webkit-scrollbar-thumb {
+    background: #14b8a6;
+    border-radius: 999px;
+}
+
+.examples-scroll::-webkit-scrollbar-thumb:hover {
+    background: #0f766e;
+}
