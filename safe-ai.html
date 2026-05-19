@@ -150,7 +150,7 @@
 
             
             <!-- Common AI Security Risks -->
-            <<div class="card" id="ai-risks">
+            <div class="card" id="ai-risks">
                 <h2>Common AI Security Risks</h2>
             
                 <p>
@@ -195,6 +195,11 @@
                     </div>
             
                 </div>
+                <p class="source-note">
+                    <strong>Sources:</strong>
+                    <a href="https://www.ncsc.gov.uk/collection/guidelines-secure-ai-system-development" target="_blank" rel="noopener noreferrer">NCSC Secure AI Guidelines</a> ·
+                    <a href="https://www.nist.gov/itl/ai-risk-management-framework" target="_blank" rel="noopener noreferrer">NIST AI RMF</a>
+                </p>
             </div>
 
             <!-- Four Stages -->
@@ -261,6 +266,10 @@
                         <p><strong>SME Tip:</strong> Include AI systems within standard maintenance and cyber risk management processes.</p>
                     </div>
                 </div>
+                <p class="source-note">
+                    <strong>Source:</strong>
+                    <a href="https://www.ncsc.gov.uk/collection/guidelines-secure-ai-system-development" target="_blank" rel="noopener noreferrer">NCSC Guidelines for Secure AI System Development</a>
+                </p>
             </div>
 
             <!-- Quick-Start Checklist -->
@@ -336,6 +345,11 @@
                 <p style="margin-top:20px;">
                     Understanding adversarial AI risks helps manufacturing SMEs strengthen threat modelling, improve resilience, and adopt AI technologies more securely.
                 </p>
+                <p class="source-note">
+                    <strong>Sources:</strong>
+                    <a href="https://www.ncsc.gov.uk/collection/ai-security" target="_blank" rel="noopener noreferrer">NCSC AI Security Collection</a> ·
+                    <a href="https://csrc.nist.gov/pubs/ai/100/2/e2025/final" target="_blank" rel="noopener noreferrer">NIST Adversarial Machine Learning Taxonomy</a>
+                </p>
             </div>
 
             <!-- Secure by Design -->
@@ -403,6 +417,10 @@
                 <p style="margin-top:20px;">
                     For manufacturing SMEs, these approaches help improve operational resilience, reduce avoidable vulnerabilities, and support safer long-term AI adoption.
                 </p>
+                <p class="source-note">
+                    <strong>Source:</strong>
+                    <a href="https://www.cisa.gov/securebydesign" target="_blank" rel="noopener noreferrer">CISA Secure by Design Guidance</a>
+                </p>
             </div>
             
             
@@ -444,6 +462,10 @@
                 <p style="margin-top:20px;">
                     This approach supports responsible AI adoption by helping SMEs validate benefits, manage risks, and embed AI into existing workflows safely.
                 </p>
+                <p class="source-note">
+                    <strong>Source:</strong>
+                    <a href="https://www.madesmarter.uk/" target="_blank" rel="noopener noreferrer">Made Smarter UK</a>
+                </p>
             </div>
 
 
@@ -482,6 +504,11 @@
             
                 <p style="margin-top:20px;">
                     Applying trustworthy AI principles helps manufacturing SMEs improve resilience, support safer adoption, and maintain confidence in AI-driven systems.
+                </p>
+                <p class="source-note">
+                    <strong>Sources:</strong>
+                    <a href="https://www.nist.gov/itl/ai-risk-management-framework" target="_blank" rel="noopener noreferrer">NIST AI RMF</a> ·
+                    <a href="https://www.gov.uk/government/publications/ai-regulation-a-pro-innovation-approach" target="_blank" rel="noopener noreferrer">UK AI Regulation White Paper</a>
                 </p>
             </div>
             
@@ -729,47 +756,7 @@
             margin: 0;
         }
 
-        .adoption-flow {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 18px;
-            margin-top: 24px;
-        }
         
-        .adoption-step {
-            background: linear-gradient(135deg, #eef2ff, #f8fafc);
-            border: 1px solid #c7d2fe;
-            border-radius: 16px;
-            padding: 22px;
-            position: relative;
-            overflow: hidden;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        
-        .adoption-step:hover {
-            transform: translateY(-7px);
-            box-shadow: 0 14px 30px rgba(30, 58, 138, 0.16);
-        }
-        
-        .adoption-step::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            height: 5px;
-            width: 100%;
-            background: #1e3a8a;
-        }
-        
-        .adoption-step h3 {
-            color: #1e3a8a;
-            margin-bottom: 10px;
-        }
-        
-        .adoption-step p {
-            margin: 0;
-        }
-
         .risk-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -927,6 +914,9 @@
             padding: 22px;
             border: 1px solid #e2e8f0;
             box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+            
+            max-height: calc(100vh - 130px);
+            overflow-y: auto;
         }
         
         .sidebar h3 {
@@ -988,6 +978,23 @@
         
         .card {
             scroll-margin-top: 120px;
+        }
+
+        .source-note {
+            margin-top: 18px;
+            font-size: 0.88rem;
+            color: #64748b;
+            font-style: italic;
+        }
+        
+        .source-note a {
+            color: #1e40af;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .source-note a:hover {
+            text-decoration: underline;
         }
                 
     </style>
