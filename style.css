@@ -826,3 +826,75 @@ nav a:hover::after {
     color: white;
     font-size: 0.75rem;
 }
+/* ==================== CORE CYBER ACTION CARDS ==================== */
+
+.action-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+    margin: 28px 0;
+}
+
+.action-toggle-card {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-left: 6px solid #14b8a6;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.action-toggle-wide {
+    grid-column: 1 / -1;
+}
+
+.action-toggle-btn {
+    width: 100%;
+    background: transparent;
+    border: none;
+    padding: 18px 20px;
+    text-align: left;
+    color: #1e3a8a;
+    font-size: 1rem;
+    font-weight: 800;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    align-items: center;
+}
+
+.action-toggle-btn::after {
+    content: "+";
+    font-size: 1.4rem;
+    color: #14b8a6;
+    font-weight: 900;
+}
+
+.action-toggle-card.open .action-toggle-btn::after {
+    content: "−";
+}
+
+.action-toggle-content {
+    display: none;
+    padding: 0 20px 20px;
+}
+
+.action-toggle-card.open .action-toggle-content {
+    display: block;
+}
+
+.action-toggle-content p {
+    color: #475569;
+    line-height: 1.65;
+    margin: 0;
+}
+
+@media (max-width: 800px) {
+    .action-cards-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .action-toggle-wide {
+        grid-column: auto;
+    }
+}
