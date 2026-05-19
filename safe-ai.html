@@ -38,11 +38,31 @@
         <p>Secure, Responsible, and Human-Centric AI Adoption for Industry 5.0</p>
     </section>
 
-    <div class="container">
-        <div class="main-content">
+    <div class="container page-layout">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="sidebar-card">
+            <h3>On This Page</h3>
+
+            <nav class="sidebar-nav">
+                <a href="#why-safe-ai">Why Safe AI Matters</a>
+                <a href="#ai-risks">AI Security Risks</a>
+                <a href="#secure-ai-lifecycle">Secure AI Adoption</a>
+                <a href="#checklist-section">AI Checklist</a>
+                <a href="#aml">Adversarial ML</a>
+                <a href="#secure-by-design">Secure by Design</a>
+                <a href="#practical-adoption">Practical Adoption</a>
+                <a href="#trustworthy-ai">Trustworthy AI</a>
+                <a href="#resources">Resources</a>
+            </nav>
+        </div>
+    </aside>
+
+    <div class="main-content">
 
             <!-- Why Safe AI Matters -->
-            <div class="card">
+            <div class="card" id="why-safe-ai">
                 <h2>Why Safe AI Matters for Manufacturing SMEs</h2>
                 <p>Artificial Intelligence (AI) is transforming manufacturing through predictive maintenance, quality control, automation, supply chain optimisation, machine vision, and intelligent decision-making.</p>
                 <p>However, AI systems also introduce new cybersecurity and operational risks that organisations must manage carefully. Without secure and responsible implementation, AI can create vulnerabilities affecting production, safety, intellectual property, compliance, and business continuity.</p>
@@ -79,7 +99,7 @@
 
             
             <!-- Common AI Security Risks -->
-            <div class="card">
+            <<div class="card" id="ai-risks">
                 <h2>Common AI Security Risks</h2>
             
                 <p>
@@ -127,7 +147,7 @@
             </div>
 
             <!-- Four Stages -->
-            <div class="card">
+            <div class="card" id="secure-ai-lifecycle">
                 <h2>The Four Stages of Secure AI Adoption</h2>
                 <div class="lifecycle-flow">
                 <div class="lifecycle-step">
@@ -193,7 +213,7 @@
             </div>
 
             <!-- Quick-Start Checklist -->
-            <div class="card">
+            <div class="card" id="checklist-section">
                 <h2>Quick-Start Safe AI Checklist for SMEs</h2>
                 <div id="checklist" class="checklist">
                     <label><input type="checkbox"> We understand AI-specific cyber risks</label>
@@ -212,7 +232,7 @@
 
             <!-- Adversarial Machine Learning -->
             
-            <div class="card">
+            <div class="card" id="aml">
                 <h2>Understanding Adversarial Machine Learning (AML)</h2>
             
                 <p>
@@ -268,7 +288,7 @@
             </div>
 
             <!-- Secure by Design -->
-            <div class="card">
+            <div class="card" id="secure-by-design">
                 <h2>Secure by Design and Secure by Default</h2>
             
                 <p>
@@ -336,7 +356,7 @@
             
             
            <!-- Practical Adoption -->
-            <div class="card">
+            <div class="card" id="practical-adoption">
                 <h2>AI in Manufacturing: Practical Adoption Approach</h2>
             
                 <p>
@@ -377,7 +397,7 @@
 
 
             <!-- Trustworthy AI -->
-            <div class="card">
+            <div class="card" id="trustworthy-ai">
                 <h2>Trustworthy AI and Risk Management</h2>
             
                 <p>
@@ -417,7 +437,7 @@
             
             
             <!-- Resources -->
-            <div class="card">
+            <div class="card" id="resources">
                 <h2>Further Resources</h2>
             
                 <p>
@@ -806,6 +826,80 @@
         @media (max-width: 900px) {
             .process-arrow {
                 display: none;
+            }
+        }
+
+
+        /* Page layout with sidebar */
+        .page-layout {
+            display: flex;
+            gap: 28px;
+            align-items: flex-start;
+        }
+        
+        /* Sidebar */
+        .sidebar {
+            width: 260px;
+            position: sticky;
+            top: 110px;
+            flex-shrink: 0;
+        }
+        
+        /* Sidebar card */
+        .sidebar-card {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 18px;
+            padding: 22px;
+            box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+        }
+        
+        /* Sidebar heading */
+        .sidebar-card h3 {
+            margin-top: 0;
+            margin-bottom: 18px;
+            color: #1e3a8a;
+            font-size: 1.1rem;
+        }
+        
+        /* Sidebar links */
+        .sidebar-nav {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        .sidebar-nav a {
+            text-decoration: none;
+            color: #334155;
+            padding: 10px 14px;
+            border-radius: 10px;
+            transition: background 0.3s ease, color 0.3s ease, padding-left 0.3s ease;
+            font-weight: 500;
+        }
+        
+        .sidebar-nav a:hover {
+            background: #eff6ff;
+            color: #1e3a8a;
+            padding-left: 18px;
+        }
+        
+        /* Main content */
+        .main-content {
+            flex: 1;
+            min-width: 0;
+        }
+        
+        /* Mobile responsiveness */
+        @media (max-width: 1100px) {
+            .page-layout {
+                flex-direction: column;
+            }
+        
+            .sidebar {
+                width: 100%;
+                position: relative;
+                top: 0;
             }
         }
                 
