@@ -1757,3 +1757,133 @@ nav a.active-nav::after {
     background: #14b8a6;
     border-radius: 999px;
 }
+/* ==================== FURTHER RESOURCES HUB ==================== */
+
+.further-hub {
+    border-top: 6px solid #1e3a8a;
+}
+
+.further-resource-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+    margin-top: 24px;
+}
+
+.further-resource-card {
+    background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+    border: 1px solid #e2e8f0;
+    border-radius: 20px;
+    padding: 26px;
+    box-shadow: 0 10px 24px rgba(0,0,0,0.07);
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease;
+}
+
+.further-resource-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 34px rgba(0,0,0,0.12);
+}
+
+.further-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 18px;
+    background: #e0f2fe;
+    color: #1e3a8a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.9rem;
+    margin-bottom: 16px;
+}
+
+.further-resource-card h3 {
+    color: #1e3a8a;
+    margin: 10px 0;
+}
+
+.further-resource-card p {
+    color: #475569;
+    line-height: 1.6;
+    flex-grow: 1;
+}
+
+.further-resource-card .button-primary {
+    margin-top: 18px;
+    width: 100%;
+    text-align: center;
+    padding: 12px 20px;
+    font-size: 0.95rem;
+}
+
+.document-chip-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 18px;
+}
+
+.document-chip {
+    background: #eef2ff;
+    color: #1e3a8a;
+    border: 1px solid #c7d2fe;
+    padding: 12px 16px;
+    border-radius: 999px;
+    font-weight: 700;
+    font-size: 0.92rem;
+}
+
+.next-step-path {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 14px;
+    margin-top: 24px;
+}
+
+.next-step-item {
+    background: #f8fafc;
+    border-radius: 18px;
+    padding: 20px;
+    border: 1px solid #e2e8f0;
+    text-align: center;
+    position: relative;
+}
+
+.next-step-item span {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #1e3a8a, #14b8a6);
+    color: white;
+    font-weight: 800;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 12px;
+}
+
+.next-step-item p {
+    color: #475569;
+    line-height: 1.45;
+    font-size: 0.92rem;
+    margin: 0;
+}
+
+.further-tip {
+    margin-top: 34px;
+    padding: 22px 24px;
+    background: #f0fdfa;
+    border-left: 6px solid #14b8a6;
+    border-radius: 16px;
+    color: #334155;
+    font-size: 1.05rem;
+}
+
+@media (max-width: 1000px) {
+    .further-resource-grid,
+    .next-step-path {
+        grid-template-columns: 1fr;
+    }
+}
