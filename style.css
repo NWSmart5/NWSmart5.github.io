@@ -970,3 +970,52 @@ nav a:hover::after {
         grid-template-columns: 1fr;
     }
 }
+/* ==================== PRACTICAL RESILIENCE SECTION ==================== */
+
+.resilience-tabs {
+    margin-top: 28px;
+}
+
+.resilience-item {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    margin-bottom: 18px;
+    overflow: hidden;
+}
+
+.resilience-btn {
+    width: 100%;
+    border: none;
+    background: white;
+    padding: 20px 24px;
+    text-align: left;
+    cursor: pointer;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #1e3a8a;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.resilience-btn::after {
+    content: "+";
+    font-size: 1.5rem;
+    color: #14b8a6;
+}
+
+.resilience-item.active .resilience-btn::after {
+    content: "−";
+}
+
+.resilience-content {
+    display: none;
+    padding: 0 24px 24px;
+    color: #475569;
+    line-height: 1.75;
+}
+
+.resilience-item.active .resilience-content {
+    display: block;
+}
