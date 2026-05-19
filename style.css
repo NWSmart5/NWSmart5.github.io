@@ -979,30 +979,44 @@ nav a:hover::after {
 .resilience-item {
     background: #f8fafc;
     border: 1px solid #e2e8f0;
-    border-radius: 16px;
+    border-radius: 18px;
     margin-bottom: 18px;
     overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.resilience-item:hover {
+    box-shadow: 0 10px 24px rgba(0,0,0,0.06);
+    transform: translateY(-2px);
 }
 
 .resilience-btn {
     width: 100%;
     border: none;
     background: white;
-    padding: 20px 24px;
+    padding: 22px 24px;
     text-align: left;
     cursor: pointer;
     font-size: 1.05rem;
     font-weight: 700;
     color: #1e3a8a;
+
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    transition: all 0.3s ease;
+}
+
+.resilience-btn:hover {
+    background: #f0f9ff;
 }
 
 .resilience-btn::after {
     content: "+";
-    font-size: 1.5rem;
+    font-size: 1.7rem;
     color: #14b8a6;
+    font-weight: 700;
 }
 
 .resilience-item.active .resilience-btn::after {
@@ -1012,10 +1026,37 @@ nav a:hover::after {
 .resilience-content {
     display: none;
     padding: 0 24px 24px;
-    color: #475569;
-    line-height: 1.75;
+    background: #f8fafc;
 }
 
 .resilience-item.active .resilience-content {
     display: block;
+}
+
+.resilience-content p {
+    color: #475569;
+    line-height: 1.75;
+    margin-bottom: 18px;
+}
+
+.resilience-content ul {
+    padding-left: 22px;
+    color: #475569;
+}
+
+.resilience-content li {
+    margin-bottom: 10px;
+}
+
+@media (max-width: 800px) {
+
+    .resilience-btn {
+        font-size: 0.95rem;
+        padding: 18px;
+    }
+
+    .resilience-content {
+        padding: 0 18px 18px;
+    }
+
 }
