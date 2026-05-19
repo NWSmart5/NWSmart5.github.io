@@ -1243,5 +1243,77 @@ nav a:hover::after {
         flex-direction: column;
         align-items: flex-start;
     }
+/* ==================== DIGITAL PAGE VISUAL POLISH ==================== */
 
+#why-digital,
+#roadmap,
+#planning,
+#skills-culture,
+#measuring-success,
+#responsible-digital {
+    border-top: 6px solid #14b8a6;
+}
+
+#roadmap {
+    background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+    border-top-color: #1e3a8a;
+}
+
+#roadmap .button-primary {
+    max-width: 520px;
+    width: 100%;
+}
+
+.journey-card,
+.skills-card,
+.metric-card {
+    border-left: 5px solid #14b8a6;
+}
+
+.journey-card h3,
+.skills-card h3,
+.metric-card h3 {
+    color: #1e3a8a;
+    margin-bottom: 10px;
+}
+
+.journey-card p,
+.skills-card p {
+    color: #475569;
+    line-height: 1.65;
+}
+
+.metrics-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.metric-card {
+    min-height: 150px;
+}
+
+.tracker-callout .button-primary {
+    background: #14b8a6;
+    white-space: nowrap;
+}
+
+#responsible-digital .flip-card-front {
+    border-left-color: #1e3a8a;
+}
+
+#responsible-digital .flip-card-back {
+    border-left-color: #14b8a6;
+}
+
+@media (max-width: 900px) {
+
+    .metrics-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .tracker-callout .button-primary {
+        width: 100%;
+        text-align: center;
+    }
+
+}
 }
