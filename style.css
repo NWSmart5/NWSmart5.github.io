@@ -1327,12 +1327,9 @@ nav a:hover::after {
 }
 
 .navbar-logo {
-    width: 110px !important;
+        width: 150px !important;
     height: auto !important;
     display: block !important;
-    background: white !important;
-    padding: 6px 8px !important;
-    border-radius: 8px !important;
 }
 
 .site-logo span {
