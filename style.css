@@ -1,5 +1,9 @@
 * {
-    margin: 0;/* ==================== HOMEPAGE PROJECT LOGO ==================== */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+==================== HOMEPAGE PROJECT LOGO ==================== */
 
 header {
     background: #1e3a8a;
