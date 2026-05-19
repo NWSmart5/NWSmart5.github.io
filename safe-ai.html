@@ -55,6 +55,7 @@
             <li><a href="#secure-by-design">Secure by Design</a></li>
             <li><a href="#practical-adoption">Practical Adoption</a></li>
             <li><a href="#trustworthy-ai">Trustworthy AI</a></li>
+            <li><a href="#ai-readiness-toolkit">AI Readiness Toolkit</a></li>
             <li><a href="#resources">Resources</a></li>
         </ul>
     
@@ -511,7 +512,104 @@
                     <a href="https://www.gov.uk/government/publications/ai-regulation-a-pro-innovation-approach" target="_blank" rel="noopener noreferrer">UK AI Regulation White Paper</a>
                 </p>
             </div>
+
+
+            <!-- AI Readiness Toolkit -->
+            <div class="card" id="ai-readiness-toolkit">
             
+                <h2>AI Readiness Toolkit for Manufacturing SMEs</h2>
+            
+                <p>
+                    Before adopting AI technologies, manufacturing SMEs should assess whether they are operationally, technically, and organisationally prepared.
+                    This toolkit provides a practical starting point for evaluating AI readiness and identifying areas requiring improvement before deployment.
+                </p>
+            
+                <div class="accordion">
+            
+                    <button class="accordion-btn">
+                        1. Business & Operational Readiness
+                    </button>
+            
+                    <div class="accordion-content">
+                        <ul class="toolkit-list">
+                            <li>Have we identified a clear operational problem AI could help solve?</li>
+                            <li>Do we understand the expected business value?</li>
+                            <li>Have we considered operational risks and limitations?</li>
+                            <li>Do staff understand why AI is being introduced?</li>
+                        </ul>
+                    </div>
+            
+                </div>
+            
+                <div class="accordion">
+            
+                    <button class="accordion-btn">
+                        2. Data & Technical Readiness
+                    </button>
+            
+                    <div class="accordion-content">
+                        <ul class="toolkit-list">
+                            <li>Do we have reliable and accurate data?</li>
+                            <li>Is sensitive information properly protected?</li>
+                            <li>Have cybersecurity controls been reviewed?</li>
+                            <li>Can existing systems safely integrate with AI tools?</li>
+                        </ul>
+                    </div>
+            
+                </div>
+            
+                <div class="accordion">
+            
+                    <button class="accordion-btn">
+                        3. Governance & Human Oversight
+                    </button>
+            
+                    <div class="accordion-content">
+                        <ul class="toolkit-list">
+                            <li>Who is responsible for AI oversight?</li>
+                            <li>Are staff trained to review AI outputs?</li>
+                            <li>Do humans remain involved in important decisions?</li>
+                            <li>Do we understand supplier responsibilities and limitations?</li>
+                        </ul>
+                    </div>
+            
+                </div>
+            
+                <div class="accordion">
+            
+                    <button class="accordion-btn">
+                        4. Risk & Supplier Assessment
+                    </button>
+            
+                    <div class="accordion-content">
+                        <ul class="toolkit-list">
+                            <li>Have supplier security practices been reviewed?</li>
+                            <li>Do suppliers provide documentation and transparency?</li>
+                            <li>Have AI risks been assessed before deployment?</li>
+                            <li>Is incident response planning in place?</li>
+                        </ul>
+                    </div>
+            
+                </div>
+
+                <div class="toolkit-download-strip">
+                    <div>
+                        <h3>Downloadable Toolkit Coming Next</h3>
+                        <p>
+                            This checklist can later be converted into a downloadable PDF or Word toolkit for SMEs to use during AI planning workshops.
+                        </p>
+                    </div>
+                
+                    <span class="toolkit-badge">Toolkit Resource</span>
+                </div>
+            
+                <p class="source-note">
+                    <strong>Sources:</strong>
+                    <a href="https://www.madesmarter.uk/" target="_blank" rel="noopener noreferrer">Made Smarter UK</a> ·
+                    <a href="https://www.ncsc.gov.uk/collection/guidelines-secure-ai-system-development" target="_blank" rel="noopener noreferrer">NCSC Secure AI Guidelines</a>
+                </p>
+            
+            </div>
             
             
             <!-- Resources -->
@@ -995,6 +1093,73 @@
         
         .source-note a:hover {
             text-decoration: underline;
+        }
+
+        .toolkit-list {
+            margin: 0;
+            padding-left: 20px;
+            line-height: 2;
+        }
+        
+        .toolkit-list li {
+            margin-bottom: 10px;
+            color: #334155;
+        }
+
+        #ai-readiness-toolkit {
+            border-top: 6px solid #1e3a8a;
+            background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+        }
+        
+        #ai-readiness-toolkit .accordion {
+            border: 1px solid #dbeafe;
+        }
+        
+        #ai-readiness-toolkit .accordion-btn {
+            background: linear-gradient(90deg, #eff6ff, #ffffff);
+        }
+        
+        #ai-readiness-toolkit .accordion-btn:hover {
+            background: linear-gradient(90deg, #dbeafe, #eff6ff);
+        }
+
+        .toolkit-download-strip {
+            margin-top: 24px;
+            padding: 20px;
+            border-radius: 16px;
+            background: linear-gradient(135deg, #eff6ff, #f8fafc);
+            border: 1px solid #dbeafe;
+            display: flex;
+            justify-content: space-between;
+            gap: 18px;
+            align-items: center;
+        }
+        
+        .toolkit-download-strip h3 {
+            color: #1e3a8a;
+            margin-bottom: 8px;
+        }
+        
+        .toolkit-download-strip p {
+            margin: 0;
+            color: #334155;
+        }
+        
+        .toolkit-badge {
+            background: #1e3a8a;
+            color: white;
+            padding: 10px 14px;
+            border-radius: 999px;
+            font-weight: 600;
+            white-space: nowrap;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 700px) {
+            .toolkit-download-strip {
+                flex-direction: column;
+                align-items: flex-start;
+            }
         }
                 
     </style>
