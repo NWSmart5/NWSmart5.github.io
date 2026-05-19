@@ -40,24 +40,75 @@
 
     <div class="container page-layout">
 
+    
     <!-- Sidebar -->
-    <aside class="sidebar">
-        <div class="sidebar-card">
-            <h3>On This Page</h3>
-
-            <nav class="sidebar-nav">
-                <a href="#why-safe-ai">Why Safe AI Matters</a>
-                <a href="#ai-risks">AI Security Risks</a>
-                <a href="#secure-ai-lifecycle">Secure AI Adoption</a>
-                <a href="#checklist-section">AI Checklist</a>
-                <a href="#aml">Adversarial ML</a>
-                <a href="#secure-by-design">Secure by Design</a>
-                <a href="#practical-adoption">Practical Adoption</a>
-                <a href="#trustworthy-ai">Trustworthy AI</a>
-                <a href="#resources">Resources</a>
-            </nav>
-        </div>
-    </aside>
+    <div class="sidebar">
+    
+        <h3>On This Page</h3>
+    
+        <ul class="sidebar-jump-links">
+            <li><a href="#why-safe-ai">Why Safe AI Matters</a></li>
+            <li><a href="#ai-risks">AI Security Risks</a></li>
+            <li><a href="#secure-ai-lifecycle">Secure AI Adoption</a></li>
+            <li><a href="#checklist-section">AI Checklist</a></li>
+            <li><a href="#aml">Adversarial ML</a></li>
+            <li><a href="#secure-by-design">Secure by Design</a></li>
+            <li><a href="#practical-adoption">Practical Adoption</a></li>
+            <li><a href="#trustworthy-ai">Trustworthy AI</a></li>
+            <li><a href="#resources">Resources</a></li>
+        </ul>
+    
+        <h3 style="margin-top:32px;">Quick Resources</h3>
+    
+        <ul>
+            <li>
+                <a href="https://www.ncsc.gov.uk/collection/ai-security"
+                   target="_blank">
+                   → NCSC AI Security Collection
+                </a>
+            </li>
+    
+            <li>
+                <a href="https://www.ncsc.gov.uk/collection/guidelines-secure-ai-system-development"
+                   target="_blank">
+                   → Secure AI Development Guidelines
+                </a>
+            </li>
+    
+            <li>
+                <a href="https://www.nist.gov/itl/ai-risk-management-framework"
+                   target="_blank">
+                   → NIST AI RMF
+                </a>
+            </li>
+        </ul>
+    
+        <h3 style="margin-top:32px;">Important Links</h3>
+    
+        <ul>
+            <li>
+                <a href="https://www.madesmarter.uk/"
+                   target="_blank">
+                   Made Smarter UK
+                </a>
+            </li>
+    
+            <li>
+                <a href="https://www.cisa.gov/securebydesign"
+                   target="_blank">
+                   CISA Secure by Design
+                </a>
+            </li>
+    
+            <li>
+                <a href="https://www.gov.uk/government/publications/ai-regulation-a-pro-innovation-approach"
+                   target="_blank">
+                   UK AI Regulation
+                </a>
+            </li>
+        </ul>
+    
+    </div>
 
     <div class="main-content">
 
@@ -521,6 +572,33 @@
 
         document.getElementById('checklist').addEventListener('change', saveChecklist);
         window.addEventListener('load', loadChecklist);
+
+        // Highlight sidebar link based on current section
+        const sections = document.querySelectorAll(".card[id]");
+        const sidebarLinks = document.querySelectorAll(".sidebar a[href^='#']");
+        
+        function highlightSidebarLink() {
+            let currentSection = "";
+        
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 180;
+        
+                if (window.scrollY >= sectionTop) {
+                    currentSection = section.getAttribute("id");
+                }
+            });
+        
+            sidebarLinks.forEach(link => {
+                link.classList.remove("active-section");
+        
+                if (link.getAttribute("href") === "#" + currentSection) {
+                    link.classList.add("active-section");
+                }
+            });
+        }
+        
+        window.addEventListener("scroll", highlightSidebarLink);
+        window.addEventListener("load", highlightSidebarLink);
     </script>
 
     <style>
@@ -830,7 +908,7 @@
         }
 
 
-        /* Page layout with sidebar */
+       /* Page layout with sidebar */
         .page-layout {
             display: flex;
             gap: 28px;
@@ -840,46 +918,46 @@
         
         /* Sidebar */
         .sidebar {
-            width: 260px;
+            width: 280px;
             position: sticky;
             top: 110px;
             flex-shrink: 0;
-        }
-        
-        /* Sidebar card */
-        .sidebar-card {
             background: white;
-            border: 1px solid #e2e8f0;
             border-radius: 18px;
             padding: 22px;
+            border: 1px solid #e2e8f0;
             box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
         }
         
-        /* Sidebar heading */
-        .sidebar-card h3 {
+        .sidebar h3 {
             margin-top: 0;
-            margin-bottom: 18px;
+            margin-bottom: 16px;
             color: #1e3a8a;
-            font-size: 1.1rem;
+            font-size: 1.05rem;
         }
         
-        /* Sidebar links */
-        .sidebar-nav {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
+        .sidebar ul {
+            list-style: none;
+            padding-left: 0;
+            margin: 0;
         }
         
-        .sidebar-nav a {
+        .sidebar li {
+            margin-bottom: 10px;
+        }
+        
+        .sidebar a {
+            display: block;
             text-decoration: none;
             color: #334155;
-            padding: 10px 14px;
+            padding: 9px 12px;
             border-radius: 10px;
-            transition: background 0.3s ease, color 0.3s ease, padding-left 0.3s ease;
             font-weight: 500;
+            transition: background 0.3s ease, color 0.3s ease, padding-left 0.3s ease;
         }
         
-        .sidebar-nav a:hover {
+        .sidebar a:hover,
+        .sidebar a.active-section {
             background: #eff6ff;
             color: #1e3a8a;
             padding-left: 18px;
@@ -903,7 +981,7 @@
                 top: 0;
             }
         }
-
+        
         html {
             scroll-behavior: smooth;
         }
