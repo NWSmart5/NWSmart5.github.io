@@ -1327,12 +1327,12 @@ nav a:hover::after {
 }
 
 .navbar-logo {
-    width: 92px;
-    height: auto;
-    display: block;
-    background: white;
-    padding: 6px;
-    border-radius: 6px;
+    width: 110px !important;
+    height: auto !important;
+    display: block !important;
+    background: white !important;
+    padding: 6px 8px !important;
+    border-radius: 8px !important;
 }
 
 .site-logo span {
