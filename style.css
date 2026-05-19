@@ -1384,4 +1384,21 @@ nav a:hover::after {
     white-space: nowrap !important;
     margin: 0 !important;
 }
+/* ==================== ACTIVE NAVBAR LINK ==================== */
+
+nav a.active-nav {
+    color: #67e8f9 !important;
+    position: relative;
+}
+
+nav a.active-nav::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    width: 100%;
+    height: 3px;
+    background: #67e8f9;
+    border-radius: 20px;
+}
 
