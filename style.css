@@ -1322,12 +1322,12 @@ nav a:hover::after {
 .site-logo {
     display: flex;
     align-items: center;
-    gap: 14px;
+     gap: 10px !important;
     margin: 0;
 }
 
 .navbar-logo {
-        width: 150px !important;
+        width: 190px !important;
     height: auto !important;
     display: block !important;
 }
