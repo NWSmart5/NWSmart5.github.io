@@ -1329,7 +1329,7 @@ nav a:hover::after {
 }
 
 .navbar-logo {
-    width: 170px !important;
+    width: 150px !important;
     height: auto !important;
     display: block !important;
 }
