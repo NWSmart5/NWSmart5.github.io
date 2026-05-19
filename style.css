@@ -1702,85 +1702,47 @@ nav a.active-nav::after {
 /* ==================== NORTH WEST EXAMPLES SCROLL ==================== */
 
 .examples-scroll {
-
     display: flex;
-    gap: 24px;
-
+    gap: 20px;
     overflow-x: auto;
     overflow-y: hidden;
-
-    padding: 16px 4px 30px;
-
-    margin-top: 30px;
-
+    padding: 16px 4px 24px;
+    margin-top: 26px;
     scroll-snap-type: x mandatory;
-
-    -webkit-overflow-scrolling: touch;
-}
-.example-scroll-card {
-
-    flex: 0 0 360px;
-
-    min-width: 360px;
-    max-width: 360px;
-
-    min-height: auto;
-}
-.example-scroll-card p {
-    margin-bottom: 0;
-}
-.examples-scroll {
     align-items: stretch;
 }
 
-    background: linear-gradient(
-        180deg,
-        #ffffff 0%,
-        #f8fafc 100%
-    );
-
-    border-radius: 20px;
-
-    padding: 30px;
-
+.example-scroll-card {
+    flex: 0 0 300px;
+    min-width: 300px;
+    max-width: 300px;
+    height: auto !important;
+    min-height: 210px;
+    background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+    border-radius: 18px;
+    padding: 24px;
     border-top: 6px solid #14b8a6;
-
-    box-shadow: 0 10px 28px rgba(0,0,0,0.08);
-
+    box-shadow: 0 10px 24px rgba(0,0,0,0.08);
     scroll-snap-align: start;
-
     transition: all 0.3s ease;
-
-    display: flex;
-    flex-direction: column;
 }
 
 .example-scroll-card:hover {
-
-    transform: translateY(-8px);
-
-    box-shadow: 0 18px 36px rgba(0,0,0,0.12);
+    transform: translateY(-6px);
+    box-shadow: 0 16px 32px rgba(0,0,0,0.12);
 }
 
 .example-scroll-card h3 {
-
     color: #1e3a8a;
-
-    margin-bottom: 16px;
-
-    line-height: 1.4;
+    margin-bottom: 14px;
+    line-height: 1.35;
 }
 
 .example-scroll-card p {
-
     color: #475569;
-
-    line-height: 1.7;
-
-    flex-grow: 1;
+    line-height: 1.6;
+    margin-bottom: 0;
 }
-
-/* Scrollbar */
 
 .examples-scroll::-webkit-scrollbar {
     height: 10px;
@@ -1794,8 +1756,4 @@ nav a.active-nav::after {
 .examples-scroll::-webkit-scrollbar-thumb {
     background: #14b8a6;
     border-radius: 999px;
-}
-
-.examples-scroll::-webkit-scrollbar-thumb:hover {
-    background: #0f766e;
 }
