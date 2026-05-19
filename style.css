@@ -1618,3 +1618,83 @@ nav a.active-nav::after {
         opacity: 1;
     }
 }
+
+/* ==================== DIGITAL TOOLS DASHBOARD ==================== */
+
+.tools-dashboard {
+    display: grid;
+    gap: 20px;
+    margin-top: 28px;
+}
+
+.tool-dashboard-card {
+    display: flex;
+    gap: 22px;
+    align-items: center;
+    padding: 22px;
+    border-radius: 18px;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 8px 22px rgba(0,0,0,0.06);
+}
+
+.tool-icon {
+    width: 72px;
+    height: 72px;
+    min-width: 72px;
+    border-radius: 20px;
+    background: #e0f2fe;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+}
+
+.tool-tag {
+    display: inline-block;
+    background: #dbeafe;
+    color: #1e3a8a;
+    padding: 4px 10px;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.tool-content h3 {
+    color: #1e3a8a;
+    margin-bottom: 8px;
+}
+
+.tool-content p {
+    color: #475569;
+    line-height: 1.65;
+    margin-bottom: 14px;
+}
+
+.tool-content .button-primary {
+    padding: 11px 22px;
+    font-size: 0.95rem;
+}
+
+.tool-video-preview {
+    width: 260px;
+    min-width: 260px;
+}
+
+.tool-video-preview iframe {
+    border-radius: 14px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.10);
+}
+
+@media (max-width: 800px) {
+    .tool-dashboard-card {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .tool-video-preview {
+        width: 100%;
+        min-width: 100%;
+    }
+}
