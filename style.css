@@ -1486,3 +1486,8 @@ nav a.active-nav::after {
     }
 
 }
+.digital-video-card iframe {
+    border-radius: 14px;
+    margin: 16px 0 20px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.10);
+}
