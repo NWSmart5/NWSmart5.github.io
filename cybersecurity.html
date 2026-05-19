@@ -170,6 +170,85 @@
         <a href="https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/security/a-guide-to-data-security/" target="_blank">ICO Data Security Guidance</a>
     </p>
 </div>
+            </div>
+
+<!-- Core Cybersecurity Actions for SMEs -->
+<div class="card" id="core-cyber-actions">
+    <h2>Core Cybersecurity Actions for SMEs</h2>
+
+    <p>
+        Manufacturing SMEs should begin by identifying the systems, data and processes that are most important to daily operations. 
+        This may include production schedules, customer orders, supplier records, finance systems, employee data, design files, 
+        quality documentation, cloud platforms and any systems connected to machinery or operational technology.
+    </p>
+
+    <p>
+        Once critical assets are identified, SMEs should focus on a small number of high-impact actions. Click each action below 
+        to see why it matters.
+    </p>
+
+    <div class="action-cards-grid">
+        <div class="action-toggle-card">
+            <button type="button" class="action-toggle-btn">Back up important business data</button>
+            <div class="action-toggle-content">
+                <p>Keep secure backups of files needed to run the business, such as orders, finance records, production data and design files. Test backups regularly so you know they can be restored during disruption.</p>
+            </div>
+        </div>
+
+        <div class="action-toggle-card">
+            <button type="button" class="action-toggle-btn">Keep devices, software and routers updated</button>
+            <div class="action-toggle-content">
+                <p>Apply updates to laptops, servers, phones, routers, cloud tools and factory-connected systems where safe to do so. Updates often fix known security weaknesses that attackers may exploit.</p>
+            </div>
+        </div>
+
+        <div class="action-toggle-card">
+            <button type="button" class="action-toggle-btn">Protect accounts with strong passwords and MFA</button>
+            <div class="action-toggle-content">
+                <p>Use strong unique passwords and multi-factor authentication, especially for email, cloud platforms, finance systems, administrator accounts and remote access.</p>
+            </div>
+        </div>
+
+        <div class="action-toggle-card">
+            <button type="button" class="action-toggle-btn">Limit administrator access</button>
+            <div class="action-toggle-content">
+                <p>Only give administrator rights to people who genuinely need them. This reduces the damage if an account is compromised or malware gets onto a device.</p>
+            </div>
+        </div>
+
+        <div class="action-toggle-card">
+            <button type="button" class="action-toggle-btn">Train staff to spot suspicious requests</button>
+            <div class="action-toggle-content">
+                <p>Help staff recognise phishing emails, fake invoices, malicious links, impersonation calls and unusual payment requests. Make reporting suspicious activity simple and blame-free.</p>
+            </div>
+        </div>
+
+        <div class="action-toggle-card">
+            <button type="button" class="action-toggle-btn">Review supplier and remote access</button>
+            <div class="action-toggle-content">
+                <p>Check who can access your systems remotely, including IT providers, software vendors and machinery support partners. Remove access that is no longer needed and use MFA where possible.</p>
+            </div>
+        </div>
+
+        <div class="action-toggle-card action-toggle-wide">
+            <button type="button" class="action-toggle-btn">Prepare a simple cyber incident response plan</button>
+            <div class="action-toggle-content">
+                <p>Agree who does what during an incident, who to contact, how to isolate affected systems, where backups are stored and how production will continue while recovery is underway.</p>
+            </div>
+        </div>
+    </div>
+
+    <p>
+        These actions can help reduce risks linked to phishing, ransomware, account compromise, data loss and operational disruption.
+    </p>
+
+    <p class="source-note">
+        <strong>Source:</strong>
+        <a href="https://www.ncsc.gov.uk/collection/10-steps" target="_blank">NCSC 10 Steps to Cyber Security</a>
+    </p>
+</div>
+
+<!-- Cybersecurity Risks in AI Adoption -->
 <!-- Cybersecurity Risks in AI Adoption -->
 <div class="card" id="ai-cyber-risks">
     <h2>Cybersecurity Risks in AI Adoption</h2>
@@ -557,6 +636,7 @@
                 <li><a href="#five-pillars">5 Pillars of Cyber Resilience</a></li>
                 <li><a href="#ot-ics-security">OT/ICS Security</a></li>
                 <li><a href="#practical-guidance">Practical Guidance & Toolkits</a></li>
+                <li><a href="#core-cyber-actions">Core Cyber Actions</a></li>
                 <li><a href="#ai-cyber-risks">AI Cyber Risks</a></li>
                 <li><a href="#cyber-governance">Cyber Governance for Boards</a></li>
                 <li><a href="#staff-training">Staff Training</a></li>
@@ -626,6 +706,13 @@
 
     window.addEventListener("scroll", highlightSidebarLink);
     window.addEventListener("load", highlightSidebarLink);
+    // Toggle core cybersecurity action cards
+document.querySelectorAll(".action-toggle-btn").forEach(button => {
+    button.addEventListener("click", () => {
+        const card = button.parentElement;
+        card.classList.toggle("open");
+    });
+});
 </script>
 </body>
 </html>
