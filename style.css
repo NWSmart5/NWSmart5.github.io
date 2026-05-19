@@ -1,22 +1,13 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+    margin: 0;/* ==================== HOMEPAGE PROJECT LOGO ==================== */
 
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    font-family: 'Segoe UI', system-ui, -apple-system, Arial, sans-serif;
-    background-color: #f0f4f8;
-    color: #1e2937;
-    line-height: 1.75;
-}
-
-/* ==================== NAVBAR ==================== */
-header {
+.hero-project-logo {
+    width: 340px;
+    max-width: 90%;
+    display: block;
+    margin: 28px auto 24px;
+    opacity: 0.98;
+}header {
     background: #1e3a8a;
     padding: 18px 40px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
