@@ -3,13 +3,17 @@
     padding: 0;
     box-sizing: border-box;
 }
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: #f1f5f9;
-    color: #0f172a;
-    line-height: 1.6;
+
+html {
+    scroll-behavior: smooth;
 }
-==================== HOMEPAGE PROJECT LOGO ==================== */
+
+body {
+    font-family: 'Segoe UI', system-ui, -apple-system, Arial, sans-serif;
+    background-color: #f0f4f8;
+    color: #1e2937;
+    line-height: 1.75;
+}
 
 header {
     background: #1e3a8a;
@@ -1238,6 +1242,7 @@ nav a:hover::after {
         flex-direction: column;
         align-items: flex-start;
     }
+     }
 /* ==================== DIGITAL PAGE VISUAL POLISH ==================== */
 
 #why-digital,
@@ -1312,7 +1317,7 @@ nav a:hover::after {
 
 }
 }
-    /* ==================== NAVBAR LOGO ==================== */
+   /* ==================== NAVBAR LOGO ==================== */
 
 .site-logo {
     display: flex;
@@ -1322,26 +1327,26 @@ nav a:hover::after {
 }
 
 .navbar-logo {
-    width: 64px;
+    width: 92px;
     height: auto;
     display: block;
+    background: white;
+    padding: 6px;
+    border-radius: 6px;
 }
 
 .site-logo span {
-    color: #a5f3fc;
-    font-size: 2.2rem;
-    font-weight: 800;
-    letter-spacing: -0.5px;
+    color: #67e8f9;
+    font-size: 27px;
+    font-weight: 700;
 }
 
 @media (max-width: 900px) {
-
     .navbar-logo {
-        width: 48px;
+        width: 68px;
     }
 
     .site-logo span {
-        font-size: 1.5rem;
+        font-size: 22px;
     }
-
 }
