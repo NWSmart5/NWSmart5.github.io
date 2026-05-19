@@ -1491,3 +1491,130 @@ nav a.active-nav::after {
     margin: 16px 0 20px;
     box-shadow: 0 8px 20px rgba(0,0,0,0.10);
 }
+
+/* ==================== INFOGRAPHIC VIEWER ==================== */
+
+.infographic-actions {
+    display: flex;
+    gap: 18px;
+    flex-wrap: wrap;
+    margin-top: 28px;
+}
+
+.view-infographic-btn,
+.download-infographic-btn {
+
+    background: linear-gradient(
+        135deg,
+        #1e3a8a,
+        #14b8a6
+    );
+
+    color: white;
+    border: none;
+    padding: 14px 24px;
+    border-radius: 14px;
+
+    font-weight: 700;
+    font-size: 1rem;
+
+    cursor: pointer;
+    text-decoration: none;
+
+    transition: all 0.3s ease;
+
+    box-shadow: 0 10px 24px rgba(0,0,0,0.12);
+}
+
+.view-infographic-btn:hover,
+.download-infographic-btn:hover {
+
+    transform: translateY(-4px);
+
+    box-shadow: 0 14px 32px rgba(0,0,0,0.18);
+}
+
+/* ==================== MODAL ==================== */
+
+.infographic-modal {
+
+    display: none;
+
+    position: fixed;
+    z-index: 9999;
+
+    left: 0;
+    top: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(15,23,42,0.88);
+
+    backdrop-filter: blur(8px);
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 40px;
+
+    animation: fadeIn 0.3s ease;
+}
+
+.modal-infographic-image {
+
+    max-width: 95%;
+    max-height: 92vh;
+
+    border-radius: 18px;
+
+    box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+
+    animation: zoomIn 0.3s ease;
+}
+
+.close-infographic {
+
+    position: absolute;
+
+    top: 22px;
+    right: 34px;
+
+    font-size: 48px;
+    font-weight: bold;
+
+    color: white;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.close-infographic:hover {
+    transform: scale(1.1);
+    color: #67e8f9;
+}
+
+@keyframes fadeIn {
+
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes zoomIn {
+
+    from {
+        transform: scale(0.92);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
