@@ -1320,22 +1320,26 @@ nav a:hover::after {
    /* ==================== NAVBAR LOGO ==================== */
 
 .site-logo {
-    display: flex;
-    align-items: center;
-     gap: 10px !important;
-    margin: 0;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 16px !important;
+    margin: 0 !important;
+    white-space: nowrap !important;
 }
 
 .navbar-logo {
-        width: 190px !important;
+    width: 170px !important;
     height: auto !important;
     display: block !important;
 }
 
 .site-logo span {
-    color: #67e8f9;
-    font-size: 27px;
-    font-weight: 700;
+    color: #67e8f9 !important;
+    font-size: 26px !important;
+    font-weight: 700 !important;
+    line-height: 1 !important;
+    white-space: nowrap !important;
 }
 
 @media (max-width: 900px) {
