@@ -125,7 +125,7 @@ nav a:hover::after {
 .button-primary {
     display: inline-block;
     padding: 16px 40px;
-    background: #14b8a6;
+    background: #2d3e99;
     color: white;
     border-radius: 50px;
     font-weight: 600;
@@ -136,7 +136,7 @@ nav a:hover::after {
 }
 
 .button-primary:hover {
-    background: #0f766e;
+    background: #1e2d7a;
     transform: translateY(-6px) scale(1.05);
     box-shadow: 0 15px 30px rgba(20, 184, 166, 0.45);
 }
