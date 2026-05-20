@@ -478,13 +478,9 @@ nav a:hover::after {
     width: 8px;
 }
 
-.sidebar::-webkit-scrollbar-thumb {
-    background: #2d3e99;
-    border-radius: 999px;
-}
 
 .sidebar::-webkit-scrollbar-thumb {
-    background: #14b8a6;
+   background: #2d3e99;
     border-radius: 999px;
 }
 
