@@ -54,7 +54,7 @@
                     <li>Faster innovation and time-to-market</li>
                     <li>Sustainability gains (reduced waste and progress toward net zero)</li>
                 </ul>
-                <p style="margin-top: 25px; padding: 18px; background:#f0f9f7; border-left: 5px solid #14b8a6; border-radius: 8px;">
+                <p style="margin-top: 25px; padding: 18px; background:#f0f9f7; border-left: 5px solid #2d3e99; border-radius: 8px;">
                     <strong>Important Note:</strong> These benefits are only fully realised when combined with strong cybersecurity and responsible practices. Poorly secured systems can create new risks.
                 </p>
             </div>
@@ -259,7 +259,7 @@
                 <p>Connect digital tools across the whole business — operations, supply chain, customers, and culture. This is continuous and strategic.</p>
                 <p><strong>Industry 5.0 Perspective:</strong> Prioritise human-centric design, sustainability (net zero), and resilience against cyber threats.</p>
 
-                <div style="background:#f0f9f7; padding:20px; border-radius:12px; margin-top:30px;">
+                <div style="background:#eef2ff; padding:20px; border-radius:12px; margin-top:30px;">
                     <strong>Quick Self-Check:</strong> Where would you place your business on this journey today?
                 </div>
                 <div class="infographic-actions">
@@ -454,7 +454,7 @@
                     <a href="https://www.greatermanchester-ca.gov.uk/media/7849/gm-digital-blueprint-2023-26-final.pdf" target="_blank" class="button-primary">
                         📄 Download Main PDF
                     </a>
-                    <a href="https://www.greatermanchester-ca.gov.uk/media/7808/gm-digital-blueprint-2023-26-accessible.docx" target="_blank" class="button-primary" style="background:#0f766e;">
+                    <a href="https://www.greatermanchester-ca.gov.uk/media/7808/gm-digital-blueprint-2023-26-accessible.docx" target="_blank" class="button-primary" style="background:#2d3e99;">
                         📝 Download Accessible Version (.docx)
                     </a>
                 </div>
@@ -479,7 +479,7 @@
                     <!-- Questions will be here -->
                 </div>
 
-                <div style="margin-top: 40px; padding: 25px; background:#f0f9f7; border-radius: 12px; text-align:center;" id="score-result">
+                <div style="margin-top: 40px; padding: 25px; background:#eef2ff; border-radius: 12px; text-align:center;" id="score-result">
                     <h3>Your Total Score: <span id="total-score" style="font-size:2.2rem; font-weight:bold; color:#1e3a8a;">0</span>/25</h3>
                     <p id="score-interpretation" style="font-size:1.1rem; margin-top:12px; min-height:60px;"></p>
                 </div>
@@ -551,7 +551,7 @@
                     let html = '';
                     barrierQuestions.forEach((q, i) => {
                         html += `
-                            <div style="background:#f8fafc; padding:18px 20px; border-radius:12px; margin-bottom:16px; border-left:5px solid #f59e0b;">
+                            <div style="background:#f8fafc; padding:18px 20px; border-radius:12px; margin-bottom:16px; border-left:5px solid #2d3e99;">
                                 <label style="display:block; margin-bottom:12px; font-weight:500;">${q}</label>
                                 <div style="display:flex; gap:8px;">
                                     ${[1,2,3,4,5].map(n => `
@@ -574,7 +574,7 @@
                         b.style.background = '#e0f2fe';
                         b.style.color = '#1e3a8a';
                     });
-                    btn.style.background = '#14b8a6';
+                    btn.style.background = '#2d3e99';
                     btn.style.color = 'white';
 
                     barrierScores[qIndex] = value;
@@ -591,7 +591,7 @@
                         interp.style.color = '#64748b';
                     } else if (total <= 12) {
                         interp.innerHTML = '🟢 <strong>Relatively low barriers</strong> – Good position to start testing solutions';
-                        interp.style.color = '#14b8a6';
+                        interp.style.color = '#2d3e99';
                     } else if (total <= 20) {
                         interp.innerHTML = '🟡 <strong>Moderate challenges</strong> – Focus on your highest-scoring areas';
                         interp.style.color = '#f59e0b';
@@ -772,7 +772,7 @@
             let html = '';
             questions.forEach((q, i) => {
                 html += `
-                    <div style="background:#f8fafc; padding:18px 20px; border-radius:12px; margin-bottom:16px; border-left:5px solid #14b8a6;">
+                    <div style="background:#f8fafc; padding:18px 20px; border-radius:12px; margin-bottom:16px; border-left:5px solid #2d3e99;">
                         <label style="display:block; margin-bottom:12px; font-weight:500;">${q}</label>
                         <div style="display:flex; gap:8px;">
                             ${[1,2,3,4,5].map(n => `
@@ -795,7 +795,7 @@
                 b.style.background = '#e0f2fe';
                 b.style.color = '#1e3a8a';
             });
-            btn.style.background = '#14b8a6';
+            btn.style.background = '#2d3e99';
             btn.style.color = 'white';
 
             scores[questionIndex] = value;
