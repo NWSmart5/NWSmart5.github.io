@@ -469,7 +469,7 @@ nav a:hover::after {
 
 .sidebar a:hover {
     background: #e0f2fe;
-    border-color: #14b8a6;
+   border-color: #2d3e99;
     color: #0f172a !important;
     transform: translateX(4px);
 }
@@ -478,8 +478,8 @@ nav a:hover::after {
     width: 8px;
 }
 
-.sidebar::-webkit-scrollbar-track {
-    background: #e5e7eb;
+.sidebar::-webkit-scrollbar-thumb {
+    background: #2d3e99;
     border-radius: 999px;
 }
 
@@ -799,10 +799,10 @@ nav a:hover::after {
 /* ==================== ACTIVE SIDEBAR SECTION ==================== */
 
 .sidebar a.active-section {
-    background: #14b8a6 !important;
+    background: #2d3e99 !important;
     color: white !important;
-    border-color: #14b8a6 !important;
-    box-shadow: 0 8px 18px rgba(20, 184, 166, 0.25);
+    border-color: #2d3e99 !important;
+    box-shadow: 0 8px 18px rgba(45, 62, 153, 0.25);
     transform: translateX(4px);
 }
 
