@@ -652,12 +652,12 @@ nav a:hover::after {
 }
 
 .resource-scroll::-webkit-scrollbar-thumb {
-    background: #14b8a6;
+    background: #2d3e99;
     border-radius: 999px;
 }
 
 .resource-scroll::-webkit-scrollbar-thumb:hover {
-    background: #0f766e;
+    background: #1e2d7a;
 }
 
 .scroll-hint {
