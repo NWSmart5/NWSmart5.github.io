@@ -16,6 +16,9 @@
 </head>
 <body>
  <div id="navbar"></div>
+    <button class="mobile-sidebar-toggle" onclick="toggleMobileSidebar()">
+    ☰ Page Menu
+</button>
 
     <section class="page-hero digital-hero">
         <h2>Digital Transformation for Industry 5.0</h2>
@@ -586,6 +589,14 @@
 
                 // Auto-run when page loads
                 window.addEventListener('load', renderBarriersChecker);
+              
+function toggleMobileSidebar() {
+    const sidebar = document.querySelector('.sidebar');
+    if (sidebar) {
+        sidebar.classList.toggle('mobile-open');
+    }
+}
+
             </script>
                         <!-- Advanced Manufacturing Insights - HVM Catapult -->
             <div class="card">
