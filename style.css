@@ -1880,3 +1880,35 @@ nav a.active-nav::after {
         grid-template-columns: 1fr;
     }
 }
+/* ==================== HOMEPAGE PROJECT LOGO ==================== */
+
+.homepage-project-logo {
+
+    text-align: center;
+
+    margin: 55px 0 25px;
+}
+
+.homepage-project-logo img {
+
+    width: 340px;
+    max-width: 90%;
+    height: auto;
+
+    background: white;
+
+    padding: 18px 26px;
+
+    border-radius: 24px;
+
+    box-shadow: 0 14px 38px rgba(0,0,0,0.12);
+
+    transition: all 0.3s ease;
+}
+
+.homepage-project-logo img:hover {
+
+    transform: translateY(-4px);
+
+    box-shadow: 0 18px 44px rgba(0,0,0,0.16);
+}
