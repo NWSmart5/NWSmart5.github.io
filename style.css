@@ -1206,6 +1206,7 @@ nav a:hover::after {
 
 .tracker-callout h3 {
     margin-bottom: 8px;
+    color: white;
 }
 
 .tracker-callout p {
