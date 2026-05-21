@@ -17,7 +17,7 @@ body {
 
 header {
     background: #1e3a8a;
-    padding: 18px 40px;
+   padding: 14px 40px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     position: sticky;
     top: 0;
@@ -1314,10 +1314,7 @@ nav a:hover::after {
     width: 170px !important;
     height: auto !important;
     display: block !important;
-    border-radius: 14px !important;
-    padding: 4px 6px !important;
-    background: rgba(255,255,255,0.08) !important;
-    backdrop-filter: blur(4px);
+    flex-shrink: 0 !important;
 }
 
 .site-logo span {
