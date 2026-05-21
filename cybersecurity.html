@@ -16,6 +16,9 @@
 </head>
 <body>
 <div id="navbar"></div>
+    <button class="mobile-sidebar-toggle" onclick="toggleMobileSidebar()">
+    ☰ Page Menu
+</button>
   <section class="page-hero">
         <h2>Cybersecurity for Manufacturing SMEs</h2>
         <p>Secure, practical cyber resilience for Industry 5.0 in the North West</p>
@@ -998,6 +1001,13 @@ fetch('navbar.html')
 
         });
     });
+  
+function toggleMobileSidebar() {
+    const sidebar = document.querySelector('.sidebar');
+    if (sidebar) {
+        sidebar.classList.toggle('mobile-open');
+    }
+}
 </script>
 </body>
 </html>
