@@ -1299,6 +1299,20 @@ nav a:hover::after {
 
 }
 }
+.site-logo,
+.site-logo a,
+.site-logo span {
+    color: white !important;
+    text-decoration: none !important;
+    font-size: 30px !important;
+    font-weight: 700 !important;
+    line-height: 1.2;
+    white-space: nowrap;
+}
+
+.site-logo a:hover {
+    color: #67e8f9 !important;
+}
 /* ==================== NAVBAR DROPDOWN ==================== */
 
 .dropdown {
@@ -1963,11 +1977,12 @@ nav a.active-nav::after {
         gap: 18px;
     }
 
-    .site-logo span {
 
-        font-size: 26px !important;
-
-        text-align: center;
+.site-logo,
+.site-logo a,
+.site-logo span {
+    font-size: 26px !important;
+    text-align: center;
     }
 
     nav {
@@ -1989,12 +2004,13 @@ nav a.active-nav::after {
 }
 @media (max-width: 650px) {
 
-    .site-logo span {
-
-        font-size: 22px !important;
-
-        text-align: center;
-    }
+  
+.site-logo,
+.site-logo a,
+.site-logo span {
+    font-size: 22px !important;
+    text-align: center;
+}
 
     nav {
 
