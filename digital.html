@@ -14,25 +14,8 @@
         gtag('config', 'G-LHEP92H7P6');
     </script>
 </head>
-
 <body>
-   <header>
-    <div class="nav-container">
-        <div class="site-logo">
-            <img src="images/nwsmart5-logo.png" alt="NWSmart5.0 Logo" class="navbar-logo">
-            <span>Knowledge Hub</span>
-        </div>
-
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="cybersecurity.html">Cybersecurity</a>
-            <a href="safe-ai.html">Safe AI</a>
-            <a href="digital.html" class="active-nav">Digital Transformation</a>
-            <a href="library.html">Knowledge Library</a>
-            <a href="news.html">News</a>
-        </nav>
-    </div>
-</header>
+ <div id="navbar"></div>
 
     <section class="page-hero digital-hero">
         <h2>Digital Transformation for Industry 5.0</h2>
@@ -871,6 +854,27 @@ window.onclick = function(event) {
         modal.style.display = "none";
     }
 }
+fetch('navbar.html')
+    .then(response => response.text())
+    .then(data => {
+        document.getElementById('navbar').innerHTML = data;
+
+        const currentPage = window.location.pathname.split("/").pop();
+
+        document.querySelectorAll('nav a').forEach(link => {
+
+            const href = link.getAttribute('href');
+
+            if (
+                href === currentPage ||
+                (currentPage === '' && href === 'index.html')
+            ) {
+                link.classList.add('active-nav');
+            }
+
+        });
+    });
+
     </script>
 <div id="infographicModal" class="infographic-modal">
 
