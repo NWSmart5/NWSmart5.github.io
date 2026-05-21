@@ -1885,15 +1885,16 @@ nav a.active-nav::after {
 .homepage-project-logo {
     text-align: center;
     margin: 35px 0 20px;
+    margin-bottom: 40px;
 }
 
 .homepage-project-logo img {
 
-    width: 520px;
+    width: 620px;
     max-width: 90%;
     height: auto;
     background: white;
-    padding: 12px 18px;
+    padding: 8px 18px;
     border-radius: 24px;
     box-shadow: 0 14px 38px rgba(0,0,0,0.12);
     transition: all 0.3s ease;
