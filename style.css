@@ -1299,69 +1299,95 @@ nav a:hover::after {
 
 }
 }
-   /* ==================== NAVBAR LOGO ==================== */
+/* ==================== NAVBAR DROPDOWN ==================== */
 
-.site-logo {
-    display: flex !important;
-    flex-direction: row !important;
-    align-items: center !important;
-    gap: 16px !important;
-    margin: 0 !important;
-    white-space: nowrap !important;
+.dropdown {
+    position: relative;
 }
 
-.navbar-logo {
-    width: 170px !important;
-    height: auto !important;
-    display: block !important;
-    flex-shrink: 0 !important;
+.dropdown-btn {
+
+    background: none;
+
+    border: none;
+
+    color: #e0f2fe;
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    font-family: inherit;
+
+    padding: 10px 0;
+
+    transition: color 0.3s ease;
 }
 
-.site-logo span {
-     color: white !important;
-    font-size: 26px !important;
-    font-weight: 700 !important;
-    line-height: 1 !important;
-    white-space: nowrap !important;
+.dropdown-btn:hover {
+    color: white;
 }
 
-@media (max-width: 900px) {
-    .navbar-logo {
-        width: 68px;
-    }
+.dropdown-content {
 
-    .site-logo span {
-        font-size: 22px;
-    }
-}
-/* FORCE NAVBAR LOGO INLINE */
+    position: absolute;
 
-.site-logo {
-    display: flex !important;
-    flex-direction: row !important;
-    align-items: center !important;
-    flex-wrap: nowrap !important;
-    gap: 14px !important;
-}
+    top: 120%;
 
-.site-logo a {
-    display: flex !important;
-    align-items: center !important;
-    gap: 14px !important;
-    text-decoration: none !important;
-}
+    right: 0;
 
-.navbar-logo {
-    width: 170px !important;
-    height: auto !important;
-    display: block !important;
-    flex-shrink: 0 !important;
+    background: white;
+
+    min-width: 220px;
+
+    border-radius: 16px;
+
+    overflow: hidden;
+
+    box-shadow: 0 14px 34px rgba(0,0,0,0.14);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transform: translateY(10px);
+
+    transition: all 0.25s ease;
+
+    z-index: 999;
 }
 
-.site-logo span {
-    display: inline-block !important;
-    white-space: nowrap !important;
-    margin: 0 !important;
+.dropdown-content a {
+
+    display: block;
+
+    padding: 14px 18px;
+
+    color: #1e293b;
+
+    text-decoration: none;
+
+    font-weight: 500;
+
+    border-bottom: 1px solid #eef2ff;
+}
+
+.dropdown-content a:hover {
+
+    background: #eef2ff;
+
+    color: #2d3e99;
+}
+
+.dropdown:hover .dropdown-content {
+
+    opacity: 1;
+
+    visibility: visible;
+
+    transform: translateY(0);
 }
 /* ==================== ACTIVE NAVBAR LINK ==================== */
 
