@@ -2043,3 +2043,16 @@ nav a.active-nav::after {
         min-width: 180px;
     }
 }
+/* FORCE NAVBAR TITLE STYLE */
+header .site-logo a,
+header .site-logo a:link,
+header .site-logo a:visited,
+header .site-logo a:hover,
+header .site-logo a:active,
+header .site-logo span {
+    color: #ffffff !important;
+    text-decoration: none !important;
+    font-size: 30px !important;
+    font-weight: 700 !important;
+    line-height: 1.2 !important;
+}
