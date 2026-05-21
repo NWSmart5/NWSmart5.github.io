@@ -283,7 +283,7 @@ nav a:hover::after {
 }
 
 .filter-btn.active {
-    background: #2d3e99
+    background: #2d3e99;
     color: white;
     box-shadow: 0 4px 12px rgba(20, 184, 166, 0.3);
 }
