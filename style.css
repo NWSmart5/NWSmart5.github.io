@@ -1883,10 +1883,8 @@ nav a.active-nav::after {
 /* ==================== HOMEPAGE PROJECT LOGO ==================== */
 
 .homepage-project-logo {
-
     text-align: center;
-
-    margin: 55px 0 25px;
+    margin: 35px 0 20px;
 }
 
 .homepage-project-logo img {
@@ -1894,15 +1892,10 @@ nav a.active-nav::after {
     width: 520px;
     max-width: 90%;
     height: auto;
-
     background: white;
-
-    padding: 18px 26px;
-
+    padding: 12px 18px;
     border-radius: 24px;
-
     box-shadow: 0 14px 38px rgba(0,0,0,0.12);
-
     transition: all 0.3s ease;
 }
 
