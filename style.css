@@ -1886,11 +1886,8 @@ nav a.active-nav::after {
 
     width: 100%;
 
-    background: linear-gradient(
-    135deg,
-    #eef2ff 0%,
-    #dbeafe 100%
-);
+    background: white;
+    border-top: 6px solid #2d3e99;
 
     border-radius: 32px;
 
