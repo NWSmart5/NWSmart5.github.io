@@ -2132,3 +2132,32 @@ header .site-logo span {
         grid-template-columns: 1fr !important;
     }
 }
+#backToTopBtn {
+    display: none;
+    position: fixed;
+    bottom: 24px;
+    left: 24px;
+    z-index: 3000;
+
+    background: #2d3e99;
+    color: white;
+
+    border: none;
+    border-radius: 999px;
+
+    padding: 14px 18px;
+
+    font-size: 15px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+
+    transition: all 0.25s ease;
+}
+
+#backToTopBtn:hover {
+    transform: translateY(-2px);
+    background: #24327d;
+}
