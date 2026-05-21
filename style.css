@@ -1885,6 +1885,7 @@ nav a.active-nav::after {
 .homepage-project-logo {
 
     width: 100%;
+    border-bottom: 6px solid #2d3e99;
 
     background: white;
     border-top: 6px solid #2d3e99;
