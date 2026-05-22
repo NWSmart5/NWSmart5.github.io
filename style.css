@@ -1428,7 +1428,7 @@ nav a.active-nav::after {
     bottom: -8px;
     width: 100%;
     height: 3px;
-    background: #67e8f9;
+   background: #67e8f9;
     border-radius: 20px;
 }
 
@@ -2540,8 +2540,9 @@ header .site-logo span {
     }
 
     nav a.active-nav {
-        background: #eef2ff;
-        color: #2D3E99 !important;
+      background: rgba(45, 62, 153, 0.12);
+    color: #2D3E99 !important;
+    border: 1px solid rgba(45, 62, 153, 0.25);
     }
 
     .dropdown {
