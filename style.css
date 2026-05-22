@@ -2415,3 +2415,40 @@ header .site-logo span {
         font-size: 0.95rem;
     }
 }
+.cyber-awareness-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 24px;
+    margin-top: 35px;
+}
+
+.cyber-awareness-card {
+    background: #ffffff;
+    border-radius: 22px;
+    padding: 28px;
+    border-top: 6px solid #3b43a1;
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+}
+
+.cyber-awareness-card h3 {
+    margin: 16px 0;
+    color: #1e3a8a;
+}
+
+.cyber-awareness-card p {
+    line-height: 1.8;
+    color: #475569;
+    margin-bottom: 16px;
+}
+
+@media (max-width: 768px) {
+
+    .cyber-awareness-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cyber-awareness-card {
+        padding: 22px;
+    }
+
+}
