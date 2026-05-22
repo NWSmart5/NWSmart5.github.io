@@ -2201,3 +2201,17 @@ header .site-logo span {
     }
 
 }
+.infographic-block img {
+    width: 100%;
+    max-width: 900px;
+    height: auto;
+    border-radius: 16px;
+    display: block;
+    margin: 0 auto;
+    transition: transform 0.3s ease;
+    cursor: zoom-in;
+}
+
+.infographic-block img:hover {
+    transform: scale(1.01);
+}
