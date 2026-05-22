@@ -772,15 +772,15 @@ nav a:hover::after {
 /* ==================== SOURCE AND CROSS-LINK NOTES ==================== */
 
 .source-note {
+    margin-top: 20px;
+    padding: 14px 18px;
     background: #f8fafc;
     border-left: 5px solid #2d3e99;
-    padding: 14px 18px;
     border-radius: 12px;
+
     font-size: 0.9rem;
+    line-height: 1.6;
     color: #475569;
-    margin-top: 24px;
-    line-height: 1.7;
-    font-style: normal;
 }
 
 .source-note strong {
