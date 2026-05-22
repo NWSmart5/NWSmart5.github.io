@@ -903,7 +903,12 @@ function scrollToTop() {
         behavior: "smooth"
     });
 }
-
+function toggleMobileNav() {
+    const nav = document.querySelector("nav");
+    if (nav) {
+        nav.classList.toggle("mobile-nav-open");
+    }
+}
     </script>
 <div id="infographicModal" class="infographic-modal">
 
