@@ -2370,3 +2370,48 @@ header .site-logo span {
     padding: 14px 26px;
     font-size: 1rem;
 }
+
+@media (max-width: 900px) {
+
+    #cyber-essentials-guide > .cyber-essential-control-card {
+        padding: 22px;
+    }
+
+    #cyber-essentials-guide > .cyber-essential-control-card h3 {
+        font-size: 1.4rem;
+    }
+
+    #cyber-essentials-guide > .cyber-essential-control-card p {
+        font-size: 0.98rem;
+    }
+
+    #cyber-essentials-guide > .cyber-essential-control-card .resource-btn {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 600px) {
+
+    #cyber-essentials-guide > .cyber-essential-control-card {
+        padding: 20px;
+        border-radius: 20px;
+    }
+
+    #cyber-essentials-guide > .cyber-essential-control-card h3 {
+        font-size: 1.2rem;
+        line-height: 1.4;
+    }
+
+    #cyber-essentials-guide > .cyber-essential-control-card p {
+        font-size: 0.95rem;
+        line-height: 1.7;
+    }
+
+    #cyber-essentials-guide > .cyber-essential-control-card .resource-btn {
+        width: 100%;
+        min-width: unset;
+        padding: 13px 18px;
+        font-size: 0.95rem;
+    }
+}
