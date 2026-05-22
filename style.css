@@ -2485,44 +2485,59 @@ header .site-logo span {
 
 @media (max-width: 700px) {
 
+    header {
+        padding: 18px 14px;
+    }
+
     .nav-container {
         flex-direction: column;
         gap: 12px;
+        align-items: center;
     }
 
-    .site-logo,
-    .site-logo a,
     .site-logo span {
-        font-size: 18px !important;
-        line-height: 1.25;
+        font-size: 26px !important;
+        line-height: 1.2;
         text-align: center;
     }
 
     .mobile-nav-toggle {
         display: block;
-        background: #2D3E99;
-        color: white;
-        border: 1px solid rgba(255,255,255,0.35);
+        background: #ffffff;
+        color: #2D3E99;
+        border: none;
         border-radius: 999px;
-        padding: 8px 18px;
-        font-weight: 700;
-        cursor: pointer;
+        padding: 10px 24px;
+        font-weight: 800;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.16);
     }
 
     nav {
         display: none;
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
         width: 100%;
+        background: white;
+        border-radius: 18px;
+        padding: 16px;
+        margin-top: 8px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.16);
     }
 
     nav.mobile-nav-open {
         display: flex;
+        flex-direction: column;
+        gap: 10px;
     }
 
     nav a,
     .dropdown-btn {
-        font-size: 14px !important;
+        color: #1e3a8a !important;
+        font-size: 15px !important;
+        text-align: center;
+        padding: 10px;
+    }
+
+    nav a.active-nav {
+        background: #eef2ff;
+        border-radius: 12px;
     }
 }
