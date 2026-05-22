@@ -2461,3 +2461,20 @@ header .site-logo span {
     padding: 14px 26px;
 }
 }
+.cyber-awareness-wrapper {
+    background: #f8fafc;
+    border-radius: 28px;
+    padding: 28px;
+    margin-top: 36px;
+    margin-bottom: 36px;
+}
+
+.cyber-awareness-strip {
+    margin-top: 0;
+    margin-bottom: 0;
+    gap: 18px;
+}
+
+.cyber-awareness-mini-card {
+    padding: 24px;
+}
