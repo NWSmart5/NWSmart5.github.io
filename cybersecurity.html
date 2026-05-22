@@ -972,7 +972,7 @@
     });
 
     // Highlight sidebar link based on current section
-    const sections = document.querySelectorAll(".card[id]");
+    const sections = document.querySelectorAll(".card[id], section[id]");
     const sidebarLinks = document.querySelectorAll(".sidebar a[href^='#']");
 
     function highlightSidebarLink() {
