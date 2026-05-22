@@ -2430,15 +2430,56 @@ header .site-logo span {
     margin-bottom: 22px;
 }
 
-.cyber-awareness-mini-card {
+.cyber-awareness-banner {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2px;
+    margin: 40px 0;
+    background: #2D3E99;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 12px 28px rgba(15, 23, 42, 0.08);
+}
+
+.cyber-awareness-item {
     display: flex;
-    gap: 24px;
+    gap: 20px;
     align-items: flex-start;
     background: #ffffff;
-    border-radius: 20px;
     padding: 30px;
-    border-left: 6px solid #2d3e99;
-    box-shadow: 0 10px 28px rgba(15, 23, 42, 0.08);
+}
+
+.awareness-content h3 {
+    color: #1e3a8a;
+    margin-bottom: 10px;
+    font-size: 1.7rem;
+}
+
+.awareness-content p {
+    color: #475569;
+    line-height: 1.7;
+    margin-bottom: 14px;
+}
+
+.awareness-content a {
+    color: #2D3E99;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.awareness-content a:hover {
+    opacity: 0.8;
+}
+
+@media (max-width: 850px) {
+
+    .cyber-awareness-banner {
+        grid-template-columns: 1fr;
+    }
+
+    .cyber-awareness-item {
+        padding: 24px;
+    }
 }
 .cyber-awareness-mini-card h3 {
     margin-bottom: 14px;
@@ -2460,12 +2501,6 @@ header .site-logo span {
     min-width: 240px;
     padding: 14px 26px;
 }
-}
-.cyber-awareness-wrapper {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 28px;
-    margin: 42px 0;
 }
 
 .cyber-awareness-mini-card {
@@ -2526,11 +2561,7 @@ header .site-logo span {
     }
 }
 
-.cyber-awareness-strip {
-    margin-top: 0;
-    margin-bottom: 0;
-    gap: 18px;
-}
+
 
 
 @media (max-width: 700px) {
