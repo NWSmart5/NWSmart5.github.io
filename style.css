@@ -2462,12 +2462,13 @@ header .site-logo span {
 }
 }
 .cyber-awareness-wrapper {
-    background: linear-gradient(135deg, #2D3E99, #1e3a8a);
+    background: #ffffff;
     border-radius: 28px;
     padding: 28px;
     margin-top: 36px;
     margin-bottom: 36px;
-    box-shadow: 0 12px 30px rgba(45, 62, 153, 0.18);
+    box-shadow: 0 12px 30px rgba(45, 62, 153, 0.10);
+    border: 2px solid #2D3E99;
 }
 
 .cyber-awareness-strip {
