@@ -2491,12 +2491,12 @@ header .site-logo span {
 
     .nav-container {
         flex-direction: column;
-        gap: 12px;
         align-items: center;
+        gap: 10px;
     }
 
     .site-logo span {
-        font-size: 26px !important;
+        font-size: 24px !important;
         line-height: 1.2;
         text-align: center;
     }
@@ -2507,37 +2507,66 @@ header .site-logo span {
         color: #2D3E99;
         border: none;
         border-radius: 999px;
-        padding: 10px 24px;
+        padding: 9px 24px;
         font-weight: 800;
-        box-shadow: 0 8px 20px rgba(0,0,0,0.16);
     }
 
     nav {
         display: none;
-        width: 100%;
-        background: white;
+        width: 92%;
+        background: #ffffff;
         border-radius: 18px;
-        padding: 16px;
-        margin-top: 8px;
-        box-shadow: 0 10px 25px rgba(0,0,0,0.16);
+        padding: 10px;
+        margin-top: 6px;
+        box-shadow: 0 10px 24px rgba(0,0,0,0.14);
     }
 
     nav.mobile-nav-open {
         display: flex;
         flex-direction: column;
-        gap: 10px;
+        align-items: stretch;
+        gap: 6px;
     }
 
     nav a,
     .dropdown-btn {
+        display: block;
+        width: 100%;
         color: #1e3a8a !important;
-        font-size: 15px !important;
+        font-size: 14px !important;
         text-align: center;
-        padding: 10px;
+        padding: 10px 12px;
+        border-radius: 12px;
     }
 
     nav a.active-nav {
         background: #eef2ff;
+        color: #2D3E99 !important;
+    }
+
+    .dropdown {
+        width: 100%;
+        text-align: center;
+    }
+
+    .dropdown-btn {
+        margin: 0 auto;
+        background: transparent;
+        border: none;
+    }
+
+    .dropdown-content {
+        position: static;
+        display: none;
+        width: 100%;
+        margin-top: 4px;
+        box-shadow: none;
+        background: #f8fafc;
         border-radius: 12px;
+    }
+
+    .dropdown:hover .dropdown-content,
+    .dropdown:focus-within .dropdown-content {
+        display: block;
     }
 }
