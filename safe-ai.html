@@ -1113,29 +1113,7 @@
 });
 
         // Checklist
-        function saveChecklist() {
-            const checks = {};
-            document.querySelectorAll('#checklist input').forEach((cb, i) => checks[i] = cb.checked);
-            localStorage.setItem('safeAIChecklist', JSON.stringify(checks));
-        }
-
-        function loadChecklist() {
-            const saved = localStorage.getItem('safeAIChecklist');
-            if (saved) {
-                const checks = JSON.parse(saved);
-                document.querySelectorAll('#checklist input').forEach((cb, i) => cb.checked = checks[i] || false);
-            }
-        }
-
-        function clearChecklist() {
-            if (confirm("Reset checklist?")) {
-                document.querySelectorAll('#checklist input').forEach(cb => cb.checked = false);
-                localStorage.removeItem('safeAIChecklist');
-            }
-        }
-
-        document.getElementById('checklist').addEventListener('change', saveChecklist);
-        window.addEventListener('load', loadChecklist);
+     
 
         // Highlight sidebar link based on current section
         const sections = document.querySelectorAll(".card[id]");
@@ -1494,12 +1472,12 @@
             transition: background 0.3s ease, color 0.3s ease, padding-left 0.3s ease;
         }
         
-        .sidebar a:hover,
-        .sidebar a.active-section {
-            background: #eff6ff;
-            color: #1e3a8a;
-            padding-left: 18px;
-        }
+      .sidebar a:hover,
+.sidebar a.active-section {
+    background: #1e3a8a;
+    color: white !important;
+    padding-left: 18px;
+}
         
         /* Main content */
         .main-content {
