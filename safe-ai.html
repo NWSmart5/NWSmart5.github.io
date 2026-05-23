@@ -37,7 +37,7 @@
             <li><a href="#why-safe-ai">Why Safe AI Matters</a></li>
             <li><a href="#ai-risks">AI Security Risks</a></li>
             <li><a href="#secure-ai-lifecycle">Secure AI Adoption</a></li>
-            <li><a href="#checklist-section">AI Checklist</a></li>
+           <li><a href="#checklist-section">Safe AI Self-Check</a></li>
             <li><a href="#aml">Adversarial ML</a></li>
             <li><a href="#secure-by-design">Secure by Design</a></li>
             <li><a href="#practical-adoption">Practical Adoption</a></li>
@@ -239,22 +239,114 @@
             </div>
 
             <!-- Quick-Start Checklist -->
-            <div class="card" id="checklist-section">
-                <h2>Quick-Start Safe AI Checklist for SMEs</h2>
-                <div id="checklist" class="checklist">
-                    <label><input type="checkbox"> We understand AI-specific cyber risks</label>
-                    <label><input type="checkbox"> We have assessed potential operational and safety impacts</label>
-                    <label><input type="checkbox"> We conduct supplier due diligence</label>
-                    <label><input type="checkbox"> We document AI limitations and intended use</label>
-                    <label><input type="checkbox"> Access controls follow least privilege principles</label>
-                    <label><input type="checkbox"> Secure settings are enabled by default</label>
-                    <label><input type="checkbox"> We monitor AI performance and anomalies</label>
-                    <label><input type="checkbox"> We maintain incident response procedures for AI failures</label>
-                    <label><input type="checkbox"> Staff receive AI security awareness training</label>
-                    <label><input type="checkbox"> We review AI risks regularly</label>
-                </div>
-                <button onclick="clearChecklist()" class="button-primary" style="margin-top:20px;">Reset Checklist</button>
+          <div class="card" id="checklist-section">
+    <h2>Safe AI Readiness Self-Check for SMEs</h2>
+    <p>
+        Score each statement from 1 (Not started) to 5 (Fully in place). 
+        This helps you identify where your organisation may need stronger AI governance, security, or human oversight.
+    </p>
+
+    <div class="ai-checker">
+
+        <div class="checker-item">
+            <label>We understand AI-specific cyber risks such as prompt injection, data poisoning, and AI drift.</label>
+            <div class="score-buttons">
+                <button onclick="setAIScore(this, 1)">1</button>
+                <button onclick="setAIScore(this, 2)">2</button>
+                <button onclick="setAIScore(this, 3)">3</button>
+                <button onclick="setAIScore(this, 4)">4</button>
+                <button onclick="setAIScore(this, 5)">5</button>
             </div>
+        </div>
+
+        <div class="checker-item">
+            <label>We assess potential operational, safety, privacy, and compliance impacts before using AI.</label>
+            <div class="score-buttons">
+                <button onclick="setAIScore(this, 1)">1</button>
+                <button onclick="setAIScore(this, 2)">2</button>
+                <button onclick="setAIScore(this, 3)">3</button>
+                <button onclick="setAIScore(this, 4)">4</button>
+                <button onclick="setAIScore(this, 5)">5</button>
+            </div>
+        </div>
+
+        <div class="checker-item">
+            <label>We check AI suppliers for security, transparency, documentation, and responsible data use.</label>
+            <div class="score-buttons">
+                <button onclick="setAIScore(this, 1)">1</button>
+                <button onclick="setAIScore(this, 2)">2</button>
+                <button onclick="setAIScore(this, 3)">3</button>
+                <button onclick="setAIScore(this, 4)">4</button>
+                <button onclick="setAIScore(this, 5)">5</button>
+            </div>
+        </div>
+
+        <div class="checker-item">
+            <label>We document AI limitations, intended use, risks, and responsibilities clearly.</label>
+            <div class="score-buttons">
+                <button onclick="setAIScore(this, 1)">1</button>
+                <button onclick="setAIScore(this, 2)">2</button>
+                <button onclick="setAIScore(this, 3)">3</button>
+                <button onclick="setAIScore(this, 4)">4</button>
+                <button onclick="setAIScore(this, 5)">5</button>
+            </div>
+        </div>
+
+        <div class="checker-item">
+            <label>Access to AI tools, data, and integrations follows least privilege principles.</label>
+            <div class="score-buttons">
+                <button onclick="setAIScore(this, 1)">1</button>
+                <button onclick="setAIScore(this, 2)">2</button>
+                <button onclick="setAIScore(this, 3)">3</button>
+                <button onclick="setAIScore(this, 4)">4</button>
+                <button onclick="setAIScore(this, 5)">5</button>
+            </div>
+        </div>
+
+        <div class="checker-item">
+            <label>Humans review important AI outputs before decisions affect production, safety, or customers.</label>
+            <div class="score-buttons">
+                <button onclick="setAIScore(this, 1)">1</button>
+                <button onclick="setAIScore(this, 2)">2</button>
+                <button onclick="setAIScore(this, 3)">3</button>
+                <button onclick="setAIScore(this, 4)">4</button>
+                <button onclick="setAIScore(this, 5)">5</button>
+            </div>
+        </div>
+
+        <div class="checker-item">
+            <label>We monitor AI performance, anomalies, drift, and unexpected behaviour over time.</label>
+            <div class="score-buttons">
+                <button onclick="setAIScore(this, 1)">1</button>
+                <button onclick="setAIScore(this, 2)">2</button>
+                <button onclick="setAIScore(this, 3)">3</button>
+                <button onclick="setAIScore(this, 4)">4</button>
+                <button onclick="setAIScore(this, 5)">5</button>
+            </div>
+        </div>
+
+        <div class="checker-item">
+            <label>Staff receive guidance on safe, secure, and responsible AI use.</label>
+            <div class="score-buttons">
+                <button onclick="setAIScore(this, 1)">1</button>
+                <button onclick="setAIScore(this, 2)">2</button>
+                <button onclick="setAIScore(this, 3)">3</button>
+                <button onclick="setAIScore(this, 4)">4</button>
+                <button onclick="setAIScore(this, 5)">5</button>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="ai-score-box">
+        <h3>Your Safe AI Readiness Score: <span id="ai-score-total">0</span>/40</h3>
+        <p id="ai-score-message">Select a score for each statement to see your readiness level.</p>
+    </div>
+
+    <button onclick="resetAIScore()" class="button-primary" style="margin-top:20px;">
+        Reset Self-Check
+    </button>
+</div>
 
             <!-- Adversarial Machine Learning -->
             
@@ -1737,6 +1829,46 @@
 }.accordion-content p {
     margin: 10px 0;
     line-height: 1.55;
+}
+        .ai-checker {
+    display: grid;
+    gap: 18px;
+    margin-top: 28px;
+}
+
+.ai-score-box {
+    margin-top: 28px;
+    padding: 24px;
+    border-radius: 18px;
+    background: linear-gradient(135deg, #eff6ff, #f8fafc);
+    border-left: 6px solid #1e3a8a;
+}
+
+.ai-score-box h3 {
+    color: #1e3a8a;
+    margin-bottom: 8px;
+}
+
+.ai-score-box p {
+    margin: 0;
+    color: #475569;
+}
+
+.score-buttons button.active {
+    background: #1e3a8a;
+    color: white;
+    transform: scale(1.08);
+}
+
+@media (max-width: 700px) {
+    .score-buttons {
+        flex-wrap: wrap;
+    }
+
+    .score-buttons button {
+        width: 42px;
+        height: 42px;
+    }
 }
 
     </style>
