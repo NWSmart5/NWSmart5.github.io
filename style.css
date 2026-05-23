@@ -2527,7 +2527,10 @@ header .site-logo span {
 
 
 
-
+/* Desktop: hide mobile menu button */
+.mobile-nav-toggle {
+    display: none;
+}
 @media (max-width: 700px) {
     .mobile-nav-toggle {
     display: block;
