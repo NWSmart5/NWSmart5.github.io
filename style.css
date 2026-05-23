@@ -408,7 +408,7 @@ nav a:hover::after {
     padding: 0 20px;
 
     display: grid;
-    grid-template-columns: minmax(0, 1fr) 320px;
+   grid-template-columns: minmax(0, 1fr) 280px;
 
     gap: 40px;
     align-items: start;
@@ -422,7 +422,7 @@ nav a:hover::after {
 
 .sidebar {
     background: white;
-    padding: 28px;
+    padding: 22px;
     border-radius: 20px;
     box-shadow: 0 8px 25px rgba(0,0,0,0.07);
     position: sticky;
@@ -450,23 +450,22 @@ nav a:hover::after {
 }
 
 .sidebar li {
-    margin-bottom: 8px;
+    margin-bottom: 6px;
 }
 
 .sidebar a {
     display: block !important;
-    padding: 11px 14px;
-    border-radius: 12px;
+    padding: 9px 12px;
+    border-radius: 10px;
     background: #f8fafc;
     border: 1px solid #e2e8f0;
     color: #1e3a8a !important;
     text-decoration: none !important;
     font-weight: 600;
-    font-size: 0.94rem;
-    line-height: 1.35;
+    font-size: 0.88rem;
+    line-height: 1.25;
     transition: all 0.25s ease;
 }
-
 .sidebar a:hover {
     background: #e0f2fe;
    border-color: #2d3e99;
