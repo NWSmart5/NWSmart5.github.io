@@ -2699,7 +2699,8 @@ header .site-logo span {
 .sidebar a.active-section {
     background: #1e3a8a;
     color: white !important;
-    padding-left: 18px;
+    border-color: #1e3a8a;
+
 }
         
         /* Main content */
