@@ -450,7 +450,7 @@ nav a:hover::after {
 }
 
 .sidebar li {
-    margin-bottom: 10px;
+    margin-bottom: 8px;
 }
 
 .sidebar a {
@@ -2090,7 +2090,7 @@ header .site-logo span {
         max-height: 100vh;
         z-index: 2500;
         border-radius: 0;
-        padding: 28px;
+        padding: 22px;
         overflow-y: auto;
         transition: right 0.35s ease;
     }
