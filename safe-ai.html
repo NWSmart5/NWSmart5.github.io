@@ -1513,64 +1513,38 @@
             background: linear-gradient(90deg, #dbeafe, #eff6ff);
         }
 
-     .toolkit-download-strip {
+    .toolkit-download-strip {
     margin-top: 24px;
-    padding: 24px;
-    border-radius: 18px;
-
+    padding: 20px;
+    border-radius: 16px;
     background: linear-gradient(135deg, #eff6ff, #f8fafc);
     border: 1px solid #dbeafe;
-
     display: flex;
     justify-content: space-between;
+    gap: 18px;
     align-items: center;
-    gap: 24px;
-    flex-wrap: wrap;
 }
 
 .toolkit-download-strip h3 {
     color: #1e3a8a;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
 }
 
 .toolkit-download-strip p {
     margin: 0;
-    color: #475569;
-    max-width: 700px;
+    color: #334155;
 }
 
 .toolkit-badge {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-
+    display: inline-block;
     background: #1e3a8a;
-    color: white !important;
-
-    padding: 14px 24px;
-
+    color: white;
+    padding: 10px 14px;
     border-radius: 999px;
-
     font-weight: 600;
-    font-size: 0.95rem;
-
+    white-space: nowrap;
+    font-size: 0.9rem;
     text-decoration: none;
-
-    transition:
-        transform 0.25s ease,
-        box-shadow 0.25s ease,
-        background 0.25s ease;
-
-    box-shadow:
-        0 10px 24px rgba(30, 58, 138, 0.18);
-}
-
-.toolkit-badge:hover {
-    background: #2563eb;
-    transform: translateY(-2px);
-
-    box-shadow:
-        0 14px 28px rgba(37, 99, 235, 0.24);
 }
 
 @media (max-width: 700px) {
