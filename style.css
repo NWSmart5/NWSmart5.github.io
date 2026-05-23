@@ -2697,3 +2697,14 @@ header .site-logo span {
     }
 }
 
+.page-layout {
+    display: flex;
+    gap: 28px;
+    align-items: flex-start;
+    flex-direction: row-reverse;
+}
+
+.main-content {
+    flex: 1;
+    min-width: 0;
+}
