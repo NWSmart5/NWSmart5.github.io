@@ -719,11 +719,7 @@ nav a:hover::after {
     transform: none;
 }
 
-.sidebar a.active-section::before {
-    content: "● ";
-    color: white;
-    font-size: 0.75rem;
-}
+
 /* ==================== CORE CYBER ACTION CARDS ==================== */
 
 .action-cards-grid {
