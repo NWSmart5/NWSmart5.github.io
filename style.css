@@ -1414,6 +1414,9 @@ height: 100%;
 
     transform: translateY(0);
 }
+.mobile-nav-toggle {
+    display: none;
+}
 /* ==================== ACTIVE NAVBAR LINK ==================== */
 
 nav a.active-nav {
@@ -2013,13 +2016,15 @@ nav a.active-nav::after {
         font-size: 15px;
     }
 }
-@media (max-width: 650px) {
+@media (max-width: 700px) {
 
     header {
         padding: 14px 12px;
     }
 
     .nav-container {
+        flex-direction: column;
+        align-items: center;
         gap: 12px;
     }
 
@@ -2032,23 +2037,65 @@ nav a.active-nav::after {
         white-space: normal !important;
     }
 
+    .mobile-nav-toggle {
+        display: block;
+        background: #ffffff;
+        color: #2D3E99;
+        border: none;
+        border-radius: 999px;
+        padding: 10px 22px;
+        font-weight: 800;
+        cursor: pointer;
+    }
+
     nav {
-        gap: 10px 14px;
-        justify-content: center;
+        display: none;
+        flex-direction: column;
+        width: 92%;
+        background: white;
+        border-radius: 18px;
+        padding: 14px;
+        gap: 10px;
+        box-shadow: 0 10px 24px rgba(0,0,0,0.12);
+    }
+
+    nav.mobile-nav-open {
+        display: flex;
     }
 
     nav a,
     .dropdown-btn {
-        font-size: 12px !important;
+        width: 100%;
+        text-align: center;
+        font-size: 14px !important;
+        padding: 12px;
+        border-radius: 12px;
+        color: #1e3a8a !important;
     }
 
-    .hero h2,
-    .page-hero h2 {
-        font-size: 1.7rem;
+    nav a.active-nav {
+        background: rgba(45,62,153,0.12);
+        border: 1px solid rgba(45,62,153,0.2);
+    }
+
+    .dropdown {
+        width: 100%;
     }
 
     .dropdown-content {
-        min-width: 180px;
+        position: static;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        display: block;
+        background: #f8fafc;
+        margin-top: 6px;
+        border-radius: 12px;
+        box-shadow: none;
+    }
+
+    .dropdown-content a {
+        border-bottom: 1px solid #2D3E99;
     }
 }
 /* FORCE NAVBAR TITLE STYLE */
