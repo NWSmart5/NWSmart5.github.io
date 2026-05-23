@@ -2703,6 +2703,15 @@ header .site-logo span {
     align-items: flex-start;
     flex-direction: row-reverse;
 }
+.sidebar {
+    width: 280px;
+    flex-shrink: 0;
+}
+
+.main-content {
+    flex: 1;
+    min-width: 0;
+}
 
 .main-content {
     flex: 1;
