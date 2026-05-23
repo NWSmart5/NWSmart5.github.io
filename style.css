@@ -2722,3 +2722,6 @@ header .site-logo span {
     font-size: 1rem;
     border-radius: 16px;
 }
+.library-layout {
+    display: block;
+}
