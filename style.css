@@ -1973,9 +1973,7 @@ nav a.active-nav::after {
 
     box-shadow: 0 18px 44px rgba(0,0,0,0.16);
 }
-.mobile-nav-toggle {
-    display: none;
-}
+
 @media (max-width: 1100px) {
 
     header {
@@ -2531,7 +2529,16 @@ header .site-logo span {
 
 
 @media (max-width: 700px) {
-
+    .mobile-nav-toggle {
+    display: block;
+    background: #ffffff;
+    color: #2D3E99;
+    border: none;
+    border-radius: 999px;
+    padding: 10px 22px;
+    font-weight: 800;
+    cursor: pointer;
+}
     header {
         padding: 18px 14px;
     }
@@ -2608,6 +2615,18 @@ header .site-logo span {
     .dropdown:hover .dropdown-content,
     .dropdown:focus-within .dropdown-content {
         display: block;
+    }
+}
+@media (max-width: 700px) {
+    .mobile-nav-toggle {
+        display: block;
+        background: #ffffff;
+        color: #2D3E99;
+        border: none;
+        border-radius: 999px;
+        padding: 10px 22px;
+        font-weight: 800;
+        cursor: pointer;
     }
 }
 @media (max-width: 650px) {
