@@ -477,38 +477,57 @@
 
 
             <!-- Trustworthy AI -->
-            <div class="card" id="trustworthy-ai">
-                <h2>Trustworthy AI and Risk Management</h2>
-            
-                <p>
-                    Trustworthy AI refers to AI systems that are secure, reliable, transparent, and accountable throughout their lifecycle.
-                    Effective AI risk management helps organisations reduce operational, cybersecurity, and governance risks while improving confidence in AI technologies.
-                </p>
-            
-                <div class="trust-grid">
-            
-                    <div class="trust-card">
-                        <h3>Safety</h3>
-                        <p>AI systems should operate without causing harm to people, operations, or infrastructure.</p>
-                    </div>
-            
-                    <div class="trust-card">
-                        <h3>Security</h3>
-                        <p>Systems should resist cyber attacks, manipulation, and operational failures.</p>
-                    </div>
-            
-                    <div class="trust-card">
-                        <h3>Transparency</h3>
-                        <p>Organisations should understand how AI systems operate and make decisions.</p>
-                    </div>
-            
-                    <div class="trust-card">
-                        <h3>Accountability</h3>
-                        <p>Clear responsibility and oversight should exist for AI outcomes and decisions.</p>
-                    </div>
-            
-                </div>
-            
+           <p class="scroll-hint">
+    Scroll sideways to explore the four trustworthy AI principles →
+</p>
+
+<div class="trust-scroll">
+
+    <div class="trust-scroll-card">
+        <div class="trust-icon">🛡️</div>
+
+        <h3>Safety</h3>
+
+        <p>
+            AI systems should operate without causing harm to people,
+            operations, or infrastructure.
+        </p>
+    </div>
+
+    <div class="trust-scroll-card">
+        <div class="trust-icon">🔐</div>
+
+        <h3>Security</h3>
+
+        <p>
+            Systems should resist cyber attacks, manipulation,
+            and operational failures.
+        </p>
+    </div>
+
+    <div class="trust-scroll-card">
+        <div class="trust-icon">🔎</div>
+
+        <h3>Transparency</h3>
+
+        <p>
+            Organisations should understand how AI systems operate
+            and make decisions.
+        </p>
+    </div>
+
+    <div class="trust-scroll-card">
+        <div class="trust-icon">⚖️</div>
+
+        <h3>Accountability</h3>
+
+        <p>
+            Clear responsibility and oversight should exist
+            for AI outcomes and decisions.
+        </p>
+    </div>
+
+</div>
                 <p style="margin-top:20px;">
                     Applying trustworthy AI principles helps manufacturing SMEs improve resilience, support safer adoption, and maintain confidence in AI-driven systems.
                 </p>
@@ -1797,7 +1816,95 @@
         height: 42px;
     }
 }
+/* ==================== TRUSTWORTHY AI HORIZONTAL SCROLL ==================== */
 
+.trust-scroll {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 24px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 14px 4px 28px;
+    margin-top: 28px;
+
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+}
+
+.trust-scroll-card {
+    flex: 0 0 320px;
+    width: 320px;
+    min-width: 320px;
+
+    background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+    border: 1px solid #dbeafe;
+    border-top: 6px solid #1e3a8a;
+
+    border-radius: 20px;
+    padding: 28px;
+
+    scroll-snap-align: start;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.trust-scroll-card:hover {
+    transform: translateY(-6px);
+
+    box-shadow:
+        0 16px 34px rgba(30, 58, 138, 0.14);
+}
+
+.trust-icon {
+    width: 72px;
+    height: 72px;
+
+    border-radius: 20px;
+
+    background: linear-gradient(135deg, #dbeafe, #eff6ff);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 2rem;
+
+    margin-bottom: 20px;
+
+    box-shadow:
+        0 10px 22px rgba(30, 58, 138, 0.12);
+}
+
+.trust-scroll-card h3 {
+    color: #1e3a8a;
+    margin-bottom: 14px;
+}
+
+.trust-scroll-card p {
+    color: #475569;
+    line-height: 1.7;
+    margin: 0;
+}
+
+.trust-scroll::-webkit-scrollbar {
+    height: 10px;
+}
+
+.trust-scroll::-webkit-scrollbar-track {
+    background: #e5e7eb;
+    border-radius: 999px;
+}
+
+.trust-scroll::-webkit-scrollbar-thumb {
+    background: #1e3a8a;
+    border-radius: 999px;
+}
+
+.trust-scroll::-webkit-scrollbar-thumb:hover {
+    background: #2563eb;
+}
     </style>
             <script>
             fetch('navbar.html')
