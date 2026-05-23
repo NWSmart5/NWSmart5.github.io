@@ -2643,7 +2643,7 @@ header .site-logo span {
         .sidebar {
             width: 280px;
             position: sticky;
-            top: 60px;
+            top: 40px;
             align-self: start;
             flex-shrink: 0;
             background: white;
@@ -2652,7 +2652,7 @@ header .site-logo span {
             border: 1px solid #e2e8f0;
             box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
             
-            max-height: calc(100vh - 130px);
+            max-height: calc(100vh - 80px);
             overflow-y: auto;
         }
         
