@@ -444,32 +444,28 @@
                     For manufacturing SMEs, a phased approach helps reduce risk and build confidence before wider deployment.
                 </p>
             
-                <div class="process-flow">
+              <div class="infographic-container">
 
-                <div class="process-step">
-                    <div class="process-icon">🔍</div>
-                    <h3>1. Scan</h3>
-                    <p>Identify operational challenges, business priorities, risks, and opportunities where AI may provide value.</p>
-                </div>
-            
-                <div class="process-arrow">→</div>
-            
-                <div class="process-step">
-                    <div class="process-icon">🧪</div>
-                    <h3>2. Pilot</h3>
-                    <p>Test AI systems safely on a small scale using human oversight, validation, and cybersecurity checks.</p>
-                </div>
-            
-                <div class="process-arrow">→</div>
-            
-                <div class="process-step">
-                    <div class="process-icon">📈</div>
-                    <h3>3. Scale</h3>
-                    <p>Expand proven AI solutions gradually with governance, monitoring, staff training, and documentation.</p>
-                </div>
-            
-            </div>
-            
+    <img
+        src="infographics/The Scan Pilot Scale approach to AI adoption.png"
+        alt="Infographic showing the Scan, Pilot, Scale approach for safe AI adoption in manufacturing SMEs."
+        class="ai-risk-infographic"
+        onclick="openScanPilotScaleInfographic()"
+    >
+
+</div>
+
+<div id="scanPilotScaleLightbox"
+     class="infographic-lightbox"
+     onclick="closeScanPilotScaleInfographic()">
+
+    <img
+        src="infographics/The Scan Pilot Scale approach to AI adoption.png"
+        alt="Expanded Scan Pilot Scale AI adoption infographic"
+        class="lightbox-image"
+    >
+
+</div>
                 <p style="margin-top:20px;">
                     This approach supports responsible AI adoption by helping SMEs validate benefits, manage risks, and embed AI into existing workflows safely.
                 </p>
@@ -1950,6 +1946,17 @@ function closeAMLInfographic() {
 function closeSecureAIInfographic() {
     document
         .getElementById("secureAIInfographicLightbox")
+        .classList.remove("active");
+}
+                function openScanPilotScaleInfographic() {
+    document
+        .getElementById("scanPilotScaleLightbox")
+        .classList.add("active");
+}
+
+function closeScanPilotScaleInfographic() {
+    document
+        .getElementById("scanPilotScaleLightbox")
         .classList.remove("active");
 }
             </script>
