@@ -150,19 +150,29 @@
         AI systems introduce cybersecurity and operational risks that organisations must manage carefully throughout the AI lifecycle.
     </p>
 
-    <!-- INFOGRAPHIC -->
-    <div class="infographic-container">
+  <!-- INFOGRAPHIC -->
+<div class="infographic-container">
 
-        <img 
-            src="infographics/Common AI security risks.png"
-            alt="Infographic showing common AI security risks including prompt injection, data poisoning, model theft, adversarial inputs, unauthorised actions, AI drift, and supply chain risks."
-            class="ai-risk-infographic"
-        >
-
-    </div>
+    <img 
+        src="infographics/Common AI security risks.png"
+        alt="Infographic showing common AI security risks including prompt injection, data poisoning, model theft, adversarial inputs, unauthorised actions, AI drift, and supply chain risks."
+        class="ai-risk-infographic"
+        onclick="openInfographic()"
+    >
 
 </div>
 
+<!-- LIGHTBOX POPUP -->
+<div id="infographicLightbox" class="infographic-lightbox" onclick="closeInfographic()">
+
+    <img 
+        src="infographics/Common AI security risks.png"
+        alt="Expanded AI security risks infographic"
+        class="lightbox-image"
+    >
+
+</div>
+</div>
             <!-- Four Stages -->
             <div class="card" id="secure-ai-lifecycle">
                 <h2>The Four Stages of Secure AI Adoption</h2>
@@ -1665,6 +1675,41 @@
     }
 
 }
+        /* ==================== INFOGRAPHIC LIGHTBOX ==================== */
+
+.infographic-lightbox {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.88);
+    backdrop-filter: blur(6px);
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+
+.infographic-lightbox.active {
+    display: flex;
+}
+
+.lightbox-image {
+    max-width: 95%;
+    max-height: 92vh;
+    border-radius: 20px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.35);
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+
+    .lightbox-image {
+        max-width: 100%;
+        max-height: 85vh;
+        border-radius: 14px;
+    }
+
+}
 
     </style>
             <script>
@@ -1717,6 +1762,17 @@ function scrollToTop() {
     if (nav) {
         nav.classList.toggle("mobile-nav-open");
     }
+}
+                function openInfographic() {
+    document
+        .getElementById("infographicLightbox")
+        .classList.add("active");
+}
+
+function closeInfographic() {
+    document
+        .getElementById("infographicLightbox")
+        .classList.remove("active");
 }
             </script>
     <button id="backToTopBtn" onclick="scrollToTop()">
