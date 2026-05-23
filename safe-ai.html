@@ -1053,8 +1053,19 @@
     <style>
         .accordion { margin-bottom: 16px; border: 1px solid #e2e8f0; border-radius: 12px; overflow: hidden; }
         .accordion-btn { width: 100%; padding: 20px; background: white; border: none; text-align: left; font-weight: 600; font-size: 1.15rem; cursor: pointer; }
-        .accordion-content { padding: 0 22px; max-height: 0; overflow: hidden; transition: max-height 0.4s ease; background: #f8fafc; }
-        .checklist label { display: block; padding: 14px 10px; border-bottom: 1px solid #f1f5f9; cursor: pointer; }
+       .accordion-content {
+    padding: 18px 22px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+    background: #f8fafc;
+}
+        .checklist label {
+    display: block;
+    padding: 14px 10px;
+    border-bottom: 1px solid #f1f5f9;
+    cursor: pointer;
+}
 
         /* Visual polish: card hover effects */
         .card {
@@ -1700,6 +1711,10 @@
         border-radius: 14px;
     }
 
+}
+        .accordion-content p {
+    margin: 12px 0;
+    line-height: 1.7;
 }
 
     </style>
