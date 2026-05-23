@@ -271,7 +271,7 @@
         </div>
 
         <div class="checker-item">
-            <label>We check AI suppliers for security, transparency, documentation, and responsible data use.</label>
+            <label>We assess AI suppliers for security controls, data protection, transparency, documentation, support arrangements, and accountability.</label>
             <div class="score-buttons">
                 <button onclick="setAIScore(this, 1)">1</button>
                 <button onclick="setAIScore(this, 2)">2</button>
@@ -326,7 +326,7 @@
         </div>
 
         <div class="checker-item">
-            <label>Staff receive guidance on safe, secure, and responsible AI use.</label>
+            <label>Staff receive training on AI limitations, cybersecurity risks, safe use, escalation routes, and responsible human oversight.</label>
             <div class="score-buttons">
                 <button onclick="setAIScore(this, 1)">1</button>
                 <button onclick="setAIScore(this, 2)">2</button>
@@ -1933,6 +1933,71 @@ function closeInfographic() {
     document
         .getElementById("infographicLightbox")
         .classList.remove("active");
+}
+                function setAIScore(button, score) {
+
+    const item = button.closest('.checker-item');
+
+    item.dataset.score = score;
+
+    item.querySelectorAll('button').forEach(btn => {
+        btn.classList.remove('active');
+    });
+
+    button.classList.add('active');
+
+    updateAIScore();
+}
+
+function updateAIScore() {
+
+    const items = document.querySelectorAll('.ai-checker .checker-item');
+
+    let total = 0;
+
+    items.forEach(item => {
+        total += Number(item.dataset.score || 0);
+    });
+
+    document.getElementById('ai-score-total').textContent = total;
+
+    const message = document.getElementById('ai-score-message');
+
+    if (total === 0) {
+
+        message.textContent =
+            'Select a score for each statement to see your readiness level.';
+
+    } else if (total <= 15) {
+
+        message.textContent =
+            'Early stage: start with basic AI risk awareness, supplier checks, and human oversight.';
+
+    } else if (total <= 28) {
+
+        message.textContent =
+            'Developing: you have some good foundations, but governance and monitoring may need strengthening.';
+
+    } else {
+
+        message.textContent =
+            'Strong readiness: continue reviewing AI risks regularly and improving controls over time.';
+    }
+}
+
+function resetAIScore() {
+
+    document.querySelectorAll('.ai-checker .checker-item').forEach(item => {
+
+        item.dataset.score = 0;
+
+        item.querySelectorAll('button').forEach(btn => {
+            btn.classList.remove('active');
+        });
+
+    });
+
+    updateAIScore();
 }
             </script>
     <button id="backToTopBtn" onclick="scrollToTop()">
