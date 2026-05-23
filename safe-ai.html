@@ -141,59 +141,38 @@
                 <p><strong>Cybersecurity is a necessary foundation for AI safety, resilience, privacy, fairness, reliability, and trustworthiness.</strong></p>
             </div>
 
-            
-            <!-- Common AI Security Risks -->
-            <div class="card" id="ai-risks">
-                <h2>Common AI Security Risks</h2>
-            
-                <p>
-                    AI systems introduce cybersecurity and operational risks that organisations must manage carefully throughout the AI lifecycle.
-                </p>
-            
-                <div class="risk-grid">
-            
-                    <div class="risk-card">
-                        <h3>Prompt Injection</h3>
-                        <p>Manipulating AI systems through malicious inputs, especially large language models (LLMs).</p>
-                    </div>
-            
-                    <div class="risk-card">
-                        <h3>Data Poisoning</h3>
-                        <p>Corrupting training data to influence AI behaviour and reduce reliability.</p>
-                    </div>
-            
-                    <div class="risk-card">
-                        <h3>Model Theft / Inversion</h3>
-                        <p>Extracting sensitive training data, intellectual property, or model behaviour.</p>
-                    </div>
-            
-                    <div class="risk-card">
-                        <h3>Adversarial Inputs</h3>
-                        <p>Crafting inputs that intentionally trigger incorrect AI decisions.</p>
-                    </div>
-            
-                    <div class="risk-card">
-                        <h3>Unauthorised Actions</h3>
-                        <p>Exploiting AI systems to perform unsafe or unintended operations.</p>
-                    </div>
-            
-                    <div class="risk-card">
-                        <h3>AI Drift</h3>
-                        <p>Gradual decline in model accuracy or reliability over time.</p>
-                    </div>
-            
-                    <div class="risk-card">
-                        <h3>Supply Chain Risks</h3>
-                        <p>Vulnerabilities introduced through third-party AI tools, APIs, datasets, or libraries.</p>
-                    </div>
-            
-                </div>
-                <p class="source-note">
-                    <strong>Sources:</strong>
-                    <a href="https://www.ncsc.gov.uk/collection/guidelines-secure-ai-system-development" target="_blank" rel="noopener noreferrer">NCSC Secure AI Guidelines</a> ·
-                    <a href="https://www.nist.gov/itl/ai-risk-management-framework" target="_blank" rel="noopener noreferrer">NIST AI RMF</a>
-                </p>
-            </div>
+       <!-- Common AI Security Risks -->
+<div class="card" id="ai-risks">
+
+    <h2>Common AI Security Risks</h2>
+
+    <p>
+        AI systems introduce cybersecurity and operational risks that organisations must manage carefully throughout the AI lifecycle.
+    </p>
+
+    <!-- INFOGRAPHIC -->
+    <div class="infographic-container">
+
+        <img 
+            src="infographics/Common AI security risks.png"
+            alt="Infographic showing common AI security risks including prompt injection, data poisoning, model theft, adversarial inputs, unauthorised actions, AI drift, and supply chain risks."
+            class="ai-risk-infographic"
+        >
+
+    </div>
+
+    <p class="source-note">
+        <strong>Sources:</strong>
+        <a href="https://www.ncsc.gov.uk/collection/guidelines-secure-ai-system-development" target="_blank" rel="noopener noreferrer">
+            NCSC Secure AI Guidelines
+        </a>
+        ·
+        <a href="https://www.nist.gov/itl/ai-risk-management-framework" target="_blank" rel="noopener noreferrer">
+            NIST AI RMF
+        </a>
+    </p>
+
+</div>
 
             <!-- Four Stages -->
             <div class="card" id="secure-ai-lifecycle">
@@ -1655,6 +1634,48 @@
                 width: 100%;
             }
         }
+        /* ==================== AI RISK INFOGRAPHIC ==================== */
+
+.infographic-container {
+    margin-top: 28px;
+    text-align: center;
+    overflow-x: auto;
+}
+
+.ai-risk-infographic {
+    width: 100%;
+    max-width: 950px;
+    height: auto;
+    border-radius: 22px;
+    border: 1px solid #dbeafe;
+    box-shadow: 0 12px 30px rgba(15, 23, 42, 0.10);
+    display: block;
+    margin: 0 auto;
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+
+    .ai-risk-infographic {
+        max-width: 100%;
+        border-radius: 18px;
+    }
+
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+
+    .infographic-container {
+        margin-top: 20px;
+    }
+
+    .ai-risk-infographic {
+        width: 100%;
+        border-radius: 14px;
+    }
+
+}
 
     </style>
             <script>
