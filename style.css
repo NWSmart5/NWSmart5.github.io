@@ -716,7 +716,7 @@ nav a:hover::after {
     color: white !important;
     border-color: #2d3e99 !important;
     box-shadow: 0 8px 18px rgba(45, 62, 153, 0.25);
-    transform: translateX(4px);
+    transform: none;
 }
 
 .sidebar a.active-section::before {
