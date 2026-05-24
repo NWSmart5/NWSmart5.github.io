@@ -2765,3 +2765,6 @@ header .site-logo span {
         top: 0;
     }
 }
+.page-layout .sidebar {
+    min-height: calc(100vh - 120px);
+}
