@@ -2813,14 +2813,27 @@ header .site-logo span {
 }
 
 .digital-benefits-scroll .digital-benefit-card {
-    flex: 0 0 340px;
-    width: 340px;
-    min-width: 340px;
-    max-width: 340px;
+   flex: 0 0 320px;
+    width: 320px;
+    min-width: 320px;
+    max-width: 320px;
 
-    min-height: 190px;
+    min-height: 140px;
 
-    padding: 22px;
+    padding: 18px 20px;
+}
+.digital-benefits-scroll .digital-benefit-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.digital-benefits-scroll .digital-benefit-card h3 {
+    margin-top: 10px;
+}
+
+.digital-benefits-scroll .digital-benefit-card p {
+    margin-top: 10px;
 }
 .digital-benefits-scroll .digital-benefit-card h3 {
     font-size: 1.6rem;
