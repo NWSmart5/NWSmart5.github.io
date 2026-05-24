@@ -2908,3 +2908,26 @@ header .site-logo span {
         font-size: 13px;
     }
 }
+
+
+
+
+
+
+
+/* Smooth sidebar active highlight */
+.sidebar a {
+    transition: 
+        background-color 0.35s ease,
+        color 0.35s ease,
+        border-color 0.35s ease,
+        box-shadow 0.35s ease !important;
+}
+
+.sidebar a.active-section {
+    background-color: #2d3e99 !important;
+    color: #ffffff !important;
+    border-color: #2d3e99 !important;
+    box-shadow: 0 4px 12px rgba(45, 62, 153, 0.22) !important;
+    transform: none !important;
+}
