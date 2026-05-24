@@ -32,7 +32,14 @@ header {
     justify-content: space-between;
     align-items: center;
 }
+.ai-resource-scroll {
+    margin-top: 12px !important;
+    padding-top: 0 !important;
+}
 
+.ai-resource-scroll .resource-card {
+    margin-top: 0 !important;
+}
 header h1 {
     color: #ffffff;
     font-size: 27px;
