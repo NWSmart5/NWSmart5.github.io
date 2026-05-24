@@ -2732,11 +2732,13 @@ header .site-logo span {
 
 .page-layout .main-content {
     grid-column: 1;
+    grid-row: 1;
     min-width: 0;
 }
 
 .page-layout .sidebar {
     grid-column: 2;
+    grid-row: 1;
     width: 280px;
     position: sticky;
     top: 110px;
