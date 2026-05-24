@@ -537,16 +537,30 @@ max-width: 430px;
 }
 
 .resource-scroll .resource-card {
-    flex: 0 0 280px;
-    width: 280px;
-    min-width: 280px;
-    max-width: 280px;
-    min-height: 240px;
-    padding: 22px;
+     flex: 0 0 300px;
+    width: 300px;
+    min-width: 300px;
+    max-width: 300px;
+    height: 430px;
+    padding: 24px;
     margin-bottom: 0;
     scroll-snap-align: start;
 }
 
+.resource-scroll .resource-card h3 {
+    font-size: 1.45rem;
+    line-height: 1.25;
+}
+
+.resource-scroll .resource-card p {
+    font-size: 14px;
+    line-height: 1.55;
+}
+
+.resource-scroll .resource-card .button-primary {
+    margin-top: auto;
+    min-height: 56px;
+}
 .resource-scroll .resource-card p {
     flex-grow: 0;
 }
