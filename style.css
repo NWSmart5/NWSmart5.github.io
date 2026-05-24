@@ -508,8 +508,8 @@ nav a:hover::after {
 }
 /* Make Cyber Essentials and Take Five buttons identical */
 .quick-link-card .button-primary {
-    width: 430px !important;
-    max-width: 100%;
+    width: 100% !important;
+max-width: 430px;
     min-height: 64px;
     padding: 16px 24px !important;
     margin-left: auto !important;
