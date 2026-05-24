@@ -2806,25 +2806,19 @@ header .site-logo span {
         overflow-y: auto !important;
     }
 }
-.digital-benefits-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 22px;
-    margin: 30px 0;
+
+
+.digital-benefits-scroll {
+    margin-top: 24px;
 }
 
-.digital-benefit-card {
-    flex: 1 1 260px;
+.digital-benefits-scroll .digital-benefit-card {
+    flex: 0 0 300px;
+    width: 300px;
+    min-width: 300px;
     max-width: 300px;
-
-    padding: 24px;
-    border-radius: 20px;
-    border: 1px solid #e2e8f0;
-    background: white;
-    box-shadow: 0 10px 26px rgba(15, 23, 42, 0.08);
+    min-height: 260px;
 }
-
 .digital-benefit-card .benefit-icon {
     font-size: 2rem;
     margin-bottom: 12px;
