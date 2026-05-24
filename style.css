@@ -355,7 +355,7 @@ nav a:hover::after {
     padding: 18px 20px;
     border-radius: 12px;
     margin-bottom: 16px;
-    border-left: 5px solid #2d3e99
+    border-left: 5px solid #2d3e99;
 }
 
 .checker-item label {
@@ -424,7 +424,7 @@ nav a:hover::after {
 
 .quick-link-card {
     background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
-    border-top: 5px solid #2d3e99
+    border-top: 5px solid #2d3e99;
     min-height: 390px;
     position: relative;
 }
@@ -471,7 +471,7 @@ nav a:hover::after {
 /* FIX: quick link cards only */
 .quick-link-card {
     padding: 30px !important;
-    border-top: 6px solid #2d3e99
+    border-top: 6px solid #2d3e99;
     background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
 }
 
@@ -2711,3 +2711,55 @@ header .site-logo span {
         html {
             scroll-behavior: smooth;
         }
+
+
+
+
+/* ==================== FINAL STRUCTURE FIX ==================== */
+
+.container {
+    max-width: 1280px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+.page-layout {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) 280px;
+    gap: 32px;
+    align-items: start;
+}
+
+.page-layout .main-content {
+    grid-column: 1;
+    min-width: 0;
+}
+
+.page-layout .sidebar {
+    grid-column: 2;
+    width: 280px;
+    position: sticky;
+    top: 110px;
+    align-self: start;
+}
+
+.library-layout {
+    display: block !important;
+}
+
+@media (max-width: 1100px) {
+    .page-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .page-layout .main-content,
+    .page-layout .sidebar {
+        grid-column: auto;
+    }
+
+    .page-layout .sidebar {
+        width: 100%;
+        position: relative;
+        top: 0;
+    }
+}
