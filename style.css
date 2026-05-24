@@ -2765,6 +2765,7 @@ header .site-logo span {
         top: 0;
     }
 }
+/* Make sticky sidebar fill the visible page area */
 .page-layout .sidebar {
-    min-height: calc(100vh - 120px);
+    min-height: calc(100vh - 150px);
 }
