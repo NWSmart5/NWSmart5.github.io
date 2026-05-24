@@ -2807,13 +2807,17 @@ header .site-logo span {
     }
 }
 .digital-benefits-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 22px;
     margin: 30px 0;
 }
 
 .digital-benefit-card {
+    flex: 1 1 260px;
+    max-width: 300px;
+
     padding: 24px;
     border-radius: 20px;
     border: 1px solid #e2e8f0;
