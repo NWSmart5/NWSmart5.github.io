@@ -2813,11 +2813,24 @@ header .site-logo span {
 }
 
 .digital-benefits-scroll .digital-benefit-card {
-    flex: 0 0 300px;
-    width: 300px;
-    min-width: 300px;
-    max-width: 300px;
-    min-height: 260px;
+    flex: 0 0 420px;
+    width: 420px;
+    min-width: 420px;
+    max-width: 420px;
+
+    min-height: 220px;
+
+    padding: 26px;
+}
+.digital-benefits-scroll .digital-benefit-card h3 {
+    font-size: 2rem;
+    line-height: 1.2;
+    margin-bottom: 14px;
+}
+
+.digital-benefits-scroll .digital-benefit-card p {
+    font-size: 15px;
+    line-height: 1.7;
 }
 .digital-benefit-card .benefit-icon {
     font-size: 2rem;
