@@ -2878,3 +2878,22 @@ header .site-logo span {
     background: linear-gradient(135deg, #fff7ed, #ffffff);
     border-top: 5px solid #f97316;
 }
+@media (max-width: 768px) {
+
+    .digital-benefits-scroll .digital-benefit-card {
+        flex: 0 0 280px;
+        width: 280px;
+        min-width: 280px;
+        max-width: 280px;
+
+        padding: 16px;
+    }
+
+    .digital-benefits-scroll .digital-benefit-card h3 {
+        font-size: 1.35rem;
+    }
+
+    .digital-benefits-scroll .digital-benefit-card p {
+        font-size: 13px;
+    }
+}
