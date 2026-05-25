@@ -551,32 +551,45 @@ max-width: 430px;
 }
 
 .resource-scroll .resource-card {
-     flex: 0 0 300px;
-    width: 300px;
-    min-width: 300px;
-    max-width: 300px;
-    height: 430px;
-    padding: 24px;
+  flex: 0 0 420px;
+    width: 420px;
+    min-width: 420px;
+    max-width: 420px;
+
+    min-height: 280px;
+    height: auto;
+
+    padding: 20px;
     margin-bottom: 0;
     scroll-snap-align: start;
+
+    display: flex;
+    flex-direction: column;
 }
 
 .resource-scroll .resource-card h3 {
-    font-size: 1.45rem;
-    line-height: 1.25;
+     font-size: 1.15rem;
+    line-height: 1.35;
+    margin-bottom: 12px;
 }
 
 .resource-scroll .resource-card p {
-    font-size: 14px;
-    line-height: 1.55;
+     font-size: 15px;
+    line-height: 1.65;
+    flex-grow: 1;
 }
 
 .resource-scroll .resource-card .button-primary {
     margin-top: auto;
     min-height: 56px;
 }
-.resource-scroll .resource-card p {
-    flex-grow: 0;
+@media (max-width: 700px) {
+    .resource-scroll .resource-card {
+        flex: 0 0 88%;
+        width: 88%;
+        min-width: 88%;
+        max-width: 88%;
+    }
 }
 
 .resource-scroll .resource-card .button-primary {
