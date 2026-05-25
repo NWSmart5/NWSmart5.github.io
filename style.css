@@ -185,7 +185,7 @@ nav a:hover::after {
             rgba(7, 23, 74, 0.72),
             rgba(7, 23, 74, 0.78)
         ),
-        url('images/cyber1.png') center center / cover no-repeat !important;
+        url('images/cyber1.png') center center / 115% no-repeat !important;
 
     position: relative;
 
@@ -3336,7 +3336,7 @@ body {
 /* ==================== CYBER PAGE HERO ONLY ==================== */
 
 .cyber-hero {
-    min-height: calc(100vh - 110px);
+    min-height: 78vh;
     padding: 90px 20px 80px !important;
 
     background:
@@ -3353,25 +3353,34 @@ body {
 }
 
 .cyber-hero h2 {
-    max-width: 720px;
-    margin: 0 0 22px 70px;
 
-    font-size: clamp(2.3rem, 4vw, 4rem);
+    max-width: 620px;
+
+    margin: 0 0 18px 55px;
+
+    font-size: clamp(2.2rem, 3.7vw, 3.7rem);
+
     line-height: 1.08;
+
     font-weight: 800;
+
     text-align: left;
 }
 
 .cyber-hero p {
-    max-width: 620px;
-    margin: 0 0 0 70px;
 
-    font-size: 1.45rem;
+    max-width: 520px;
+
+    margin: 0 0 0 55px;
+
+    font-size: 1.15rem;
+
     line-height: 1.6;
+
     text-align: left;
+
     color: rgba(255,255,255,0.92);
 }
-
 @media (max-width: 800px) {
     .cyber-hero {
         text-align: center;
@@ -3403,7 +3412,7 @@ body {
     display: flex;
     gap: 22px;
 
-    margin-top: 38px;
+    margin-top: 26px;
     margin-left: 70px;
 
     position: relative;
@@ -3427,22 +3436,24 @@ body {
 
 .cyber-icon-box span {
 
-    width: 72px;
-    height: 72px;
+    width: 58px;
+    height: 58px;
 
-    border-radius: 20px;
+    border-radius: 18px;
 
-    background: rgba(255,255,255,0.08);
+    background: rgba(255,255,255,0.03);
 
-    border: 1px solid rgba(255,255,255,0.14);
+    border: 1px solid rgba(120,170,255,0.35);
 
     display: flex;
     align-items: center;
     justify-content: center;
 
-    font-size: 1.8rem;
+    font-size: 1.35rem;
 
-    backdrop-filter: blur(8px);
+    color: #dbeafe;
+
+    backdrop-filter: blur(6px);
 }
 
 .cyber-icon-box p {
@@ -3469,10 +3480,18 @@ body {
         gap: 16px;
     }
 
-    .cyber-icon-box {
+ .cyber-icon-box {
 
-        width: 80px;
-    }
+    width: 82px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 8px;
+
+    color: white;
+}
 
     .cyber-icon-box span {
 
