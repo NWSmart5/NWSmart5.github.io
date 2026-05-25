@@ -3413,7 +3413,7 @@ body {
     gap: 22px;
 
     margin-top: 26px;
-    margin-left: 70px;
+    margin-left: 55px;
 
     position: relative;
     z-index: 2;
@@ -3435,9 +3435,8 @@ body {
 }
 
 .cyber-icon-box span {
-
-    width: 58px;
-    height: 58px;
+width: 52px;
+height: 52px;
 
     border-radius: 18px;
 
@@ -3501,8 +3500,8 @@ body {
 }
 .cyber-icon-box svg {
 
-    width: 28px;
-    height: 28px;
+   width: 24px;
+height: 24px;
 
     stroke-width: 1.7;
 
