@@ -168,9 +168,6 @@ nav a:hover::after {
         padding: 16px 22px;
         font-size: 1rem;
     }
-
-}
-
 }
 /* Buttons */
 .button-primary {
@@ -1382,6 +1379,17 @@ header {
     box-shadow:
         0 10px 30px rgba(0,0,0,0.18),
         0 1px 0 rgba(255,255,255,0.06);
+}
+.dropdown-btn {
+    background: transparent !important;
+    color: rgba(255,255,255,0.92) !important;
+    border: 1px solid transparent !important;
+    outline: none;
+}
+
+.dropdown-btn:hover {
+    background: rgba(255,255,255,0.10) !important;
+    color: white !important;
 }
 
 /* NAV CONTAINER */
