@@ -76,7 +76,7 @@ nav a:hover::after {
 /* Homepage hero only */
 .home-hero {
     background: url('images/Home.png') center center / cover no-repeat;
-    min-height: 72vh;
+    min-height: 58vh;
 }
 
 .home-hero::before {
