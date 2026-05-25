@@ -3448,9 +3448,6 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-
-    font-size: 1.35rem;
-
     color: #dbeafe;
 
     backdrop-filter: blur(6px);
@@ -3501,4 +3498,13 @@ body {
         font-size: 1.4rem;
     }
 
+}
+.cyber-icon-box svg {
+
+    width: 28px;
+    height: 28px;
+
+    stroke-width: 1.7;
+
+    color: #dbeafe;
 }
