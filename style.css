@@ -97,13 +97,10 @@ nav a:hover::after {
 }
 
 /* ==================== HERO ==================== */
-.hero,
+/* ==================== HERO ==================== */
+
 .hero,
 .page-hero {
-    background:
-        linear-gradient(rgba(15, 23, 42, 0.86), rgba(15, 23, 42, 0.9)),
-        linear-gradient(135deg, #1e3a8a, #0f172a);
-
     color: white;
     text-align: center;
     padding: 150px 20px 120px;
@@ -116,45 +113,32 @@ nav a:hover::after {
     overflow: hidden;
 }
 
-.hero::after {
-    content: "";
-    position: absolute;
-    right: 8%;
-    bottom: 8%;
-    width: 360px;
-    height: 220px;
-
-    background: url('images/nwsmart5-logo.png') center / contain no-repeat;
-    opacity: 0.08;
-
-    z-index: 1;
-    pointer-events: none;
-}
-.hero::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: rgba(15, 23, 42, 0.3);
-    z-index: 1;
+/* Homepage hero only */
+.home-hero {
+    background: url('images/Home.png') center center / cover no-repeat;
+    min-height: 72vh;
 }
 
-.hero > *, .page-hero > * {
-    position: relative;
-    z-index: 2;
+/* Other pages */
+.page-hero {
+    background:
+        linear-gradient(rgba(15, 23, 42, 0.82), rgba(15, 23, 42, 0.88)),
+        linear-gradient(135deg, #1e3a8a, #0f172a);
 }
 
-.hero h2, .page-hero h2 {
+.hero h2,
+.page-hero h2 {
     font-size: 3rem;
     margin-bottom: 16px;
     text-shadow: 0 3px 10px rgba(0,0,0,0.3);
 }
 
-.hero p, .page-hero p {
+.hero p,
+.page-hero p {
     font-size: 1.3rem;
     max-width: 780px;
     margin: 0 auto 30px;
 }
-
 /* Buttons */
 .button-primary {
     display: inline-block;
