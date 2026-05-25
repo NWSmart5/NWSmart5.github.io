@@ -2955,3 +2955,32 @@ header .site-logo span {
     }
 }
 
+/* ==================== SAFE AI INFOGRAPHIC LIGHTBOX FIX ==================== */
+
+.infographic-lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    background: rgba(15, 23, 42, 0.92);
+    backdrop-filter: blur(6px);
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+
+.infographic-lightbox.active {
+    display: flex;
+}
+
+.infographic-lightbox .lightbox-image {
+    max-width: 95vw;
+    max-height: 90vh;
+    width: auto;
+    height: auto;
+    border-radius: 16px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+    cursor: zoom-out;
+    transform: none !important;
+}
+
