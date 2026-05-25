@@ -125,9 +125,9 @@ nav a:hover::after {
     justify-content: center;
 
    width: min(1080px, 94%);
-    margin: 34px auto 0;
+    margin: 28px auto 0;
 
-    padding: 22px 40px;
+    padding: 15px 40px;
 
     background: rgba(255, 255, 255, 0.14);
     color: white;
@@ -144,6 +144,7 @@ nav a:hover::after {
     box-shadow:
         0 12px 30px rgba(0,0,0,0.22),
         0 0 25px rgba(59,130,246,0.18);
+    height: 74px;
 
     transition: all 0.3s ease;
 }
@@ -1444,7 +1445,7 @@ nav a,
 
     border-radius: 999px;
 
-    color: #dbeafe;
+    color: rgba(255,255,255,0.92);
     text-decoration: none;
 
     font-size: 15px;
