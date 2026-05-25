@@ -155,6 +155,47 @@ nav a:hover::after {
     max-width: 780px;
     margin: 0 auto 30px;
 }
+.hero-blog-btn {
+    position: relative;
+    z-index: 2;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: fit-content;
+    margin: 28px auto 0;
+    padding: 15px 34px;
+
+    background: rgba(255, 255, 255, 0.14);
+    color: white;
+
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 999px;
+
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1rem;
+
+    backdrop-filter: blur(8px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.22);
+
+    transition: all 0.3s ease;
+}
+
+.hero-blog-btn:hover {
+    background: white;
+    color: #1e3a8a;
+    transform: translateY(-4px);
+}
+
+@media (max-width: 700px) {
+    .hero-blog-btn {
+        width: 90%;
+        padding: 14px 22px;
+        font-size: 0.95rem;
+    }
+}
 /* Buttons */
 .button-primary {
     display: inline-block;
