@@ -83,6 +83,28 @@ nav a:hover::after {
 }
 .home-hero::before {
     display: none;
+    position: relative;
+overflow: hidden;
+}
+.home-hero::after {
+
+    content: '';
+
+    position: absolute;
+
+    top: 0;
+    right: 42%;
+
+    width: 180px;
+    height: 100%;
+
+    background: rgba(255,255,255,0.78);
+
+    border-radius: 0 100% 100% 0;
+
+    backdrop-filter: blur(2px);
+
+    z-index: 1;
 }
 
 .home-hero h2,
@@ -99,12 +121,14 @@ nav a:hover::after {
     font-size: clamp(2.2rem, 4vw, 4rem);
     line-height: 1.1;
     text-shadow: none;
+    margin-bottom: 18px;
 }
 
 .home-hero p {
     color: #1e3a8a;
     font-weight: 700;
     text-shadow: none;
+    margin-bottom: 30px;
 }
 
 .home-hero .hero-blog-btn {
