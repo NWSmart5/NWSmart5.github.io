@@ -86,26 +86,6 @@ nav a:hover::after {
     position: relative;
 overflow: hidden;
 }
-.home-hero::after {
-
-    content: '';
-
-    position: absolute;
-
-    top: 0;
-    right: 42%;
-
-    width: 180px;
-    height: 100%;
-
-    background: rgba(255,255,255,0.78);
-
-    border-radius: 0 100% 100% 0;
-
-    backdrop-filter: blur(2px);
-
-    z-index: 1;
-}
 
 .home-hero h2,
 .home-hero p,
@@ -114,21 +94,43 @@ overflow: hidden;
     z-index: 2;
     margin-left: 90px;
     max-width: 620px;
+    z-index: 5;
 }
 
 .home-hero h2 {
-    color: #0f1f4d;
-    font-size: clamp(2.2rem, 4vw, 4rem);
-    line-height: 1.1;
-    text-shadow: none;
+
+    color: #132968;
+
+    font-size: clamp(2.3rem, 4vw, 4.4rem);
+
+    line-height: 1.08;
+
+    max-width: 700px;
+
+    margin-left: 70px;
+
+    margin-top: 30px;
+
     margin-bottom: 18px;
+
+    text-shadow: none;
 }
 
 .home-hero p {
-    color: #1e3a8a;
+
+    color: #233876;
+
+    font-size: 1.35rem;
+
     font-weight: 700;
+
+    line-height: 1.6;
+
+    margin-left: 70px;
+
+    margin-bottom: 35px;
+
     text-shadow: none;
-    margin-bottom: 30px;
 }
 
 .home-hero .hero-blog-btn {
@@ -166,38 +168,33 @@ overflow: hidden;
     margin: 0 auto 30px;
 }
 .hero-blog-btn {
-    position: relative;
-    z-index: 2;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    margin-left: 70px;
 
-   width: min(1080px, 94%);
-    margin: 52px auto 0;
+    background: #3246b8;
 
-    padding: 15px 40px;
-
-    background: rgba(255, 255, 255, 0.14);
     color: white;
 
-    border: 1px solid rgba(255, 255, 255, 0.35);
-    border-radius: 999px;
+    padding: 18px 42px;
+
+    border-radius: 20px;
+
+    font-size: 1.2rem;
+
+    font-weight: 700;
+
+    box-shadow: 0 10px 30px rgba(50,70,184,0.25);
 
     text-decoration: none;
-    font-weight: 700;
-    font-size: 1.22rem;
 
-    backdrop-filter: blur(8px);
+    display: inline-flex;
 
-    box-shadow:
-        0 12px 30px rgba(0,0,0,0.22),
-        0 0 25px rgba(59,130,246,0.18);
-    height: 60px;
+    align-items: center;
 
-    transition: all 0.3s ease;
+    gap: 10px;
+
+    transition: 0.3s ease;
 }
-
 .hero-blog-btn:hover {
     background: white;
     color: #1e3a8a;
@@ -3295,6 +3292,8 @@ header .site-logo span {
 
 .home-hero {
     margin-bottom: 0 !important;
+    position: relative;
+overflow: hidden;
 }
 
 body {
