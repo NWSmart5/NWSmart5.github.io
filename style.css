@@ -62,7 +62,7 @@ nav a:hover::after {
 
 .hero,
 .page-hero {
-   color: white;
+    color: white;
     text-align: center;
     padding: 90px 20px 80px;
     min-height: 70vh;
