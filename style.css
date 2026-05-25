@@ -84,8 +84,8 @@ nav a:hover::after {
     position: absolute;
     inset: 0;
     background: linear-gradient(
-        rgba(15, 23, 42, 0.45),
-        rgba(15, 23, 42, 0.55)
+      rgba(15, 23, 42, 0.28)
+       rgba(15, 23, 42, 0.35)
     );
     z-index: 1;
 }
@@ -1371,7 +1371,7 @@ header {
     top: 0;
     z-index: 1000;
 
-   background: #314286;
+   background: #0f3ea8;
 
     backdrop-filter: blur(18px);
     -webkit-backdrop-filter: blur(18px);
@@ -1431,7 +1431,7 @@ nav {
 
     padding: 8px;
 
-background: #3a468f;
+background: rgba(21, 73, 190, 0.88);
 border: 1px solid rgba(255,255,255,0.08);
 
 border-radius: 999px;
@@ -1488,8 +1488,7 @@ nav a:hover,
 /* ACTIVE LINK */
 nav a.active-nav {
 
- background: rgba(255,255,255,0.14);
-
+ background: rgba(255,255,255,0.16);
     color: white !important;
 
     border: 1px solid rgba(103,232,249,0.22);
@@ -3205,7 +3204,7 @@ header .site-logo span {
 }
 
 body {
-    background-color: #f0f4f8;
+   background-color: #f8fbff;
 
 }
 
