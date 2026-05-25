@@ -1373,12 +1373,12 @@ header {
 
     padding: 18px 34px;
 
-  background:
+background:
     linear-gradient(
         135deg,
-        rgba(255,255,255,0.14) 0%,
-        rgba(255,255,255,0.08) 45%,
-        rgba(255,255,255,0.04) 100%
+        rgba(15,23,42,0.92) 0%,
+        rgba(30,41,59,0.88) 45%,
+        rgba(15,23,42,0.95) 100%
     );
     backdrop-filter: blur(16px);
 
@@ -1438,8 +1438,8 @@ nav {
 
     padding: 8px;
 
-   background: rgba(255,255,255,0.10);
-    border: 1px solid rgba(255,255,255,0.08);
+   background: rgba(15,23,42,0.55);
+   border: 1px solid rgba(255,255,255,0.06);
 
     border-radius: 999px;
 
