@@ -98,46 +98,37 @@ nav a:hover::after {
 
 /* ==================== HERO ==================== */
 .hero,
+.hero,
 .page-hero {
-
     background:
-        linear-gradient(rgba(15, 23, 42, 0.82),
-        rgba(15, 23, 42, 0.88)),
-
-        url('images/nwsmart5-logo.png') center center / 420px no-repeat,
-
+        linear-gradient(rgba(15, 23, 42, 0.86), rgba(15, 23, 42, 0.9)),
         linear-gradient(135deg, #1e3a8a, #0f172a);
 
     color: white;
     text-align: center;
-
-    padding: 170px 20px 130px;
-
-    min-height: 68vh;
+    padding: 150px 20px 120px;
+    min-height: 65vh;
 
     display: flex;
     flex-direction: column;
     justify-content: center;
-
     position: relative;
-
     overflow: hidden;
 }
 
 .hero::after {
-
     content: "";
-
     position: absolute;
+    right: 8%;
+    bottom: 8%;
+    width: 360px;
+    height: 220px;
 
-    inset: 0;
-
-    background:
-        radial-gradient(circle at center,
-        rgba(255,255,255,0.04),
-        transparent 60%);
+    background: url('images/nwsmart5-logo.png') center / contain no-repeat;
+    opacity: 0.08;
 
     z-index: 1;
+    pointer-events: none;
 }
 .hero::before {
     content: '';
