@@ -62,9 +62,9 @@ nav a:hover::after {
 
 .hero,
 .page-hero {
-    color: white;
+   color: white;
     text-align: center;
-     padding: 90px 20px 70px;
+    padding: 80px 20px 40px;
     min-height: 52vh;
     display: flex;
     flex-direction: column;
@@ -75,8 +75,8 @@ nav a:hover::after {
 
 /* Homepage hero only */
 .home-hero {
-    background: url('images/Home.png') center center / cover no-repeat;
-    min-height: 63vh;
+  background: url('images/Home.png') center center / cover no-repeat;
+    min-height: 56vh;
 }
 
 .home-hero::before {
@@ -3201,4 +3201,12 @@ header .site-logo span {
         font-size: 1rem;
         line-height: 1.6;
     }
+}
+
+.home-hero {
+    margin-bottom: 0 !important;
+}
+
+body {
+    background: #0f172a;
 }
