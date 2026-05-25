@@ -119,6 +119,22 @@ nav a:hover::after {
     min-height: 72vh;
 }
 
+.home-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        rgba(15, 23, 42, 0.45),
+        rgba(15, 23, 42, 0.55)
+    );
+    z-index: 1;
+}
+
+.home-hero h2,
+.home-hero p {
+    position: relative;
+    z-index: 2;
+}
 /* Other pages */
 .page-hero {
     background:
