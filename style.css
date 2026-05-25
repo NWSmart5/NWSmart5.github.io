@@ -1371,7 +1371,7 @@ header {
     top: 0;
     z-index: 1000;
 
-    background: #24356b;
+   background: #314286;
 
     backdrop-filter: blur(18px);
     -webkit-backdrop-filter: blur(18px);
@@ -1430,15 +1430,13 @@ nav {
 
     padding: 8px;
 
-background: #24356b;
+background: rgba(255,255,255,0.08);
   border: 1px solid rgba(255,255,255,0.14);
 
     border-radius: 999px;
 
     backdrop-filter: blur(10px);
-    box-shadow:
-    0 8px 24px rgba(0,0,0,0.12),
-    inset 0 1px 0 rgba(255,255,255,0.08);
+box-shadow: none;
     backdrop-filter: blur(14px);
 -webkit-backdrop-filter: blur(14px);
 }
@@ -1492,11 +1490,7 @@ nav a:hover,
 /* ACTIVE LINK */
 nav a.active-nav {
 
-    background: linear-gradient(
-        135deg,
-        rgba(103,232,249,0.20),
-        rgba(255,255,255,0.08)
-    );
+ background: rgba(255,255,255,0.14);
 
     color: white !important;
 
