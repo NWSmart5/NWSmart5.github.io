@@ -64,7 +64,7 @@ nav a:hover::after {
 .page-hero {
    color: white;
     text-align: center;
-    padding: 80px 20px 40px;
+    padding: 55px 20px 18px;
     min-height: 52vh;
     display: flex;
     flex-direction: column;
@@ -75,8 +75,8 @@ nav a:hover::after {
 
 /* Homepage hero only */
 .home-hero {
-  background: url('images/Home.png') center center / cover no-repeat;
-    min-height: 56vh;
+    background: url('images/Home.png') center center / cover no-repeat;
+    min-height: 44vh;
 }
 
 .home-hero::before {
