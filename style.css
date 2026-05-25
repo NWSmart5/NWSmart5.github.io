@@ -75,25 +75,43 @@ nav a:hover::after {
 
 /* Homepage hero only */
 .home-hero {
-    background: url('images/Home.png') center center / cover no-repeat;
-   min-height: calc(100vh - 110px);
+    background: url('images/Home1.png') center center / cover no-repeat;
+    min-height: 72vh;
+    align-items: flex-start;
+    text-align: left;
+    padding: 90px 20px 80px;
 }
-
 .home-hero::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-      rgba(15, 23, 42, 0.28)
-       rgba(15, 23, 42, 0.35)
-    );
-    z-index: 1;
+    display: none;
 }
 
 .home-hero h2,
-.home-hero p {
+.home-hero p,
+.home-hero .hero-blog-btn {
     position: relative;
     z-index: 2;
+    margin-left: 90px;
+    max-width: 620px;
+}
+
+.home-hero h2 {
+    color: #0f1f4d;
+    font-size: clamp(2.2rem, 4vw, 4rem);
+    line-height: 1.1;
+    text-shadow: none;
+}
+
+.home-hero p {
+    color: #1e3a8a;
+    font-weight: 700;
+    text-shadow: none;
+}
+
+.home-hero .hero-blog-btn {
+    width: fit-content;
+    min-width: 260px;
+    background: #2d3e99;
+    color: white;
 }
 /* Other pages */
 .page-hero {
