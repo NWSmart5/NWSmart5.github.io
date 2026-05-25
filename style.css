@@ -124,6 +124,21 @@ nav a:hover::after {
     overflow: hidden;
 }
 
+.hero::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        radial-gradient(circle at center,
+        rgba(255,255,255,0.04),
+        transparent 60%);
+
+    z-index: 1;
+}
 .hero::before {
     content: '';
     position: absolute;
