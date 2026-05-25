@@ -113,16 +113,41 @@ nav a:hover::after {
 
 .hero h2,
 .page-hero h2 {
-    font-size: 3rem;
-    margin-bottom: 16px;
-    text-shadow: 0 3px 10px rgba(0,0,0,0.3);
-}
 
+    font-size: clamp(3rem, 5vw, 5.2rem);
+
+    font-weight: 800;
+
+    line-height: 1.08;
+
+    margin-bottom: 22px;
+
+    text-shadow:
+        0 4px 18px rgba(0,0,0,0.35);
+
+    max-width: 1100px;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    position: relative;
+    z-index: 2;
+}
 .hero p,
 .page-hero p {
-    font-size: 1.3rem;
-    max-width: 780px;
-    margin: 0 auto 30px;
+
+    font-size: 1.45rem;
+
+    max-width: 900px;
+
+    margin: 0 auto;
+
+    color: rgba(255,255,255,0.92);
+
+    line-height: 1.7;
+
+    position: relative;
+    z-index: 2;
 }
 .hero-blog-btn {
     position: relative;
@@ -176,6 +201,39 @@ nav a:hover::after {
         padding: 16px 22px;
         font-size: 1rem;
     }
+}
+/* ==================== CYBER HERO ==================== */
+
+.cyber-hero {
+
+    background:
+        linear-gradient(
+            rgba(7, 23, 74, 0.72),
+            rgba(7, 23, 74, 0.78)
+        ),
+        url('images/cyber1.png') center center / cover no-repeat !important;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+/* optional subtle glow */
+.cyber-hero::after {
+
+    content: '';
+
+    position: absolute;
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle at right center,
+            rgba(59,130,246,0.20),
+            transparent 45%
+        );
+
+    pointer-events: none;
 }
 /* Buttons */
 .button-primary {
