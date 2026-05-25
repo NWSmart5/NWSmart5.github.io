@@ -163,53 +163,50 @@ nav a:hover::after {
     align-items: center;
     justify-content: center;
 
-    width: min(520px, 92%);
+    width: min(780px, 92%);
     margin: 34px auto 0;
 
     padding: 18px 34px;
 
-    background: rgba(255, 255, 255, 0.12);
-
+    background: rgba(255, 255, 255, 0.14);
     color: white;
+
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 999px;
+
     text-decoration: none;
-
-    border: 1px solid rgba(255,255,255,0.22);
-
-    border-radius: 22px;
-
-    backdrop-filter: blur(10px);
-
-    font-size: 1.15rem;
     font-weight: 700;
-    letter-spacing: 0.2px;
+    font-size: 1.1rem;
+
+    backdrop-filter: blur(8px);
 
     box-shadow:
-        0 10px 30px rgba(0,0,0,0.25),
-        0 0 30px rgba(59,130,246,0.18);
+        0 12px 30px rgba(0,0,0,0.22),
+        0 0 25px rgba(59,130,246,0.18);
 
     transition: all 0.3s ease;
 }
 
 .hero-blog-btn:hover {
-    transform: translateY(-4px) scale(1.01);
+    background: white;
+    color: #1e3a8a;
 
-    background: rgba(255,255,255,0.2);
-
-    border-color: rgba(255,255,255,0.4);
+    transform: translateY(-4px);
 
     box-shadow:
-        0 14px 34px rgba(0,0,0,0.3),
-        0 0 45px rgba(59,130,246,0.28);
+        0 14px 34px rgba(0,0,0,0.28),
+        0 0 35px rgba(255,255,255,0.25);
 }
 
 @media (max-width: 768px) {
 
     .hero-blog-btn {
         width: 92%;
-        font-size: 1rem;
         padding: 16px 22px;
-        border-radius: 18px;
+        font-size: 1rem;
     }
+
+}
 
 }
 /* Buttons */
