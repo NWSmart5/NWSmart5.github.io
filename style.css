@@ -2757,7 +2757,21 @@ header .site-logo span {
     visibility: visible !important;
     transform: none !important;
 }
+.dropdown-content a {
+    color: #1e3a8a !important;
+    background: white !important;
+    font-weight: 700 !important;
+    padding: 12px 14px !important;
+    margin-bottom: 6px;
+    border-radius: 10px;
+    text-align: center;
+    display: block;
+}
 
+.dropdown-content a:hover {
+    background: #dbeafe !important;
+    color: #0f3ea8 !important;
+}
     .dropdown:hover .dropdown-content,
     .dropdown:focus-within .dropdown-content {
         display: block;
