@@ -77,7 +77,7 @@ nav a:hover::after {
 .home-hero {
     background: url('images/Home1.png') center center / cover no-repeat !important;
     min-height: 66vh;
-    padding: 70px 20px 90px;
+    padding: 55px 20px 145px;
     align-items: flex-start;
     text-align: left;
     justify-content: center;
@@ -90,7 +90,7 @@ nav a:hover::after {
 
 .home-hero h2 {
     color: #132968 !important;
-    font-size: clamp(2.3rem, 4vw, 4.1rem) !important;
+    font-size: clamp(2rem, 3.2vw, 3.2rem) !important;
     line-height: 1.08;
     max-width: 720px;
     margin: 20px 0 18px 70px !important;
@@ -109,11 +109,12 @@ nav a:hover::after {
 .home-hero .hero-blog-btn {
     margin: 0 0 0 70px !important;
     width: fit-content !important;
-    min-width: 260px;
+    min-width: 240px;
     height: auto !important;
-    padding: 16px 38px;
+    padding: 14px 34px;
+    position: relative;
+    z-index: 10;
 }
-
 /* Other pages */
 .page-hero {
     background:
@@ -3530,7 +3531,7 @@ height: 24px;
 
     position: absolute;
 
-    bottom: -45px;
+    bottom: -95px;
     left: 50%;
 
     transform: translateX(-50%);
