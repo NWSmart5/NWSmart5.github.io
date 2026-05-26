@@ -4341,3 +4341,40 @@ background-position: center right !important;
         display: none;
     }
 }
+
+
+
+
+
+
+
+
+
+/* tighten library content spacing */
+
+.library-sticky-search {
+    padding: 22px 28px 14px !important;
+}
+
+.library-layout {
+    margin-top: 0 !important;
+}
+
+.library-layout .filter-buttons {
+    margin: 8px 0 35px 0 !important;
+    padding-left: 20px !important;
+}
+
+.library-layout .resource-grid {
+    margin-top: 10px !important;
+}
+
+.library-layout .resource-card {
+    min-height: 260px !important;
+    padding: 26px !important;
+}
+
+.library-layout .resource-card h3 {
+    font-size: 1.55rem !important;
+    line-height: 1.35 !important;
+}
