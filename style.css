@@ -4609,6 +4609,11 @@ background-position: center right !important;
 /* ================= MOBILE LIBRARY FIX ================= */
 
 @media (max-width: 768px) {
+    .library-page #resource-search {
+    height: 68px !important;
+    font-size: 1.08rem !important;
+    padding: 0 26px !important;
+}
 
     /* REMOVE HERO IMAGE ON MOBILE */
     .library-page .library-landing {
@@ -4616,8 +4621,7 @@ background-position: center right !important;
         background: #f8fafc !important;
 
         min-height: auto !important;
-
-        padding: 40px 20px 24px !important;
+padding: 55px 20px 55px !important;
 
         display: flex;
         flex-direction: column;
