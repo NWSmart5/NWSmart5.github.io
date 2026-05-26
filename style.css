@@ -598,11 +598,12 @@ max-width: 430px;
 .resource-scroll {
     display: flex;
     flex-wrap: nowrap;
-    gap: 24px;
+     gap: 18px;
+    padding: 6px 4px 12px;
+    margin-top: 10px;
     overflow-x: auto;
     overflow-y: hidden;
-    padding: 12px 4px 28px;
-    margin-top: 30px;
+    
     max-width: 100%;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
@@ -613,11 +614,9 @@ max-width: 430px;
     width: 420px;
     min-width: 420px;
     max-width: 420px;
-
-    min-height: 280px;
     height: auto;
-
-    padding: 20px;
+ min-height: 240px;
+    padding: 18px;
     margin-bottom: 0;
     scroll-snap-align: start;
 
@@ -2400,7 +2399,7 @@ header .site-logo span {
 }
 
 .resource-card h3 {
-    font-size: 1.8rem;
+    font-size: 1.45rem;
     margin-bottom: 14px;
     color: #111827;
 }
@@ -4158,8 +4157,8 @@ background-position: center right !important;
 }
 
 .library-layout .filter-buttons {
-    margin: 0 0 35px 0 !important;
-    padding: 0 20px !important;
+    margin: 8px 0 12px 0 !important;
+    padding-left: 20px !important;
 }
 /* restore library hero text */
 
