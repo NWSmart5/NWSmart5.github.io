@@ -93,7 +93,7 @@ nav a:hover::after {
     font-size: clamp(1.9rem, 3vw, 3rem) !important;
     line-height: 1.08;
     max-width: 680px;
-    margin: 90px 0 18px 55px !important;
+    margin: 65px 0 18px 55px !important;
     text-shadow: none !important;
 }
 
