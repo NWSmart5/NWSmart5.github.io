@@ -3884,7 +3884,8 @@ background-color: #f8fbff;
 
 .digital-landing {
     min-height: 58vh;
-    background: url("images/digital1.png") center center / cover no-repeat;
+    background: url("images/digital1.png") center center / contain no-repeat;
+background-color: #f8fafc;
     display: flex;
     align-items: center;
     padding: 55px 0 55px 70px;
@@ -3966,7 +3967,7 @@ background-color: #f8fbff;
 /* TABLETS */
 @media (max-width: 900px) {
     .digital-landing {
-        min-height: 52vh;
+        min-height: 46vh;
         padding: 45px 30px;
         background-position: 62% center;
     }
@@ -3979,7 +3980,7 @@ background-color: #f8fbff;
 /* MOBILES */
 @media (max-width: 768px) {
     .digital-landing {
-        min-height: 50vh;
+        min-height: 42vh;
         padding: 38px 20px;
         background-position: 68% center;
     }
