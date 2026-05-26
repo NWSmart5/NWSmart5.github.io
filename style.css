@@ -195,45 +195,69 @@ nav a:hover::after {
 /* ==================== CYBER HERO ==================== */
 
 .cyber-hero {
-
     background:
         linear-gradient(
             rgba(7, 23, 74, 0.72),
             rgba(7, 23, 74, 0.78)
         ),
-        url('images/cyber1.png') center center / 115% no-repeat !important;
+        url('images/cyber1.png') center center / cover no-repeat !important;
 
     position: relative;
-
     overflow: hidden;
-}
-.cyber-hero {
-    align-items: flex-start;
-    text-align: left;
+
+    display: flex;
+    flex-direction: column;
     justify-content: center;
+
+    align-items: flex-start !important;
+    text-align: left !important;
+    padding: 105px 0 105px 85px !important;
 }
 
-.cyber-hero h2,
+/* TEXT BLOCK */
+.cyber-hero h2 {
+    max-width: 580px;
+    font-size: clamp(3rem, 5vw, 5rem);
+    line-height: 1.02;
+    margin-bottom: 24px !important;
+}
+
 .cyber-hero p {
-    margin-left: 0 !important;
+    max-width: 700px;
+    font-size: 1.2rem;
+    margin: 0 0 38px 0 !important;
 }
 
-/* optional subtle glow */
-.cyber-hero::after {
+/* ICON ROW */
+.cyber-hero-icons {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
 
-    content: '';
+      gap: 42px;
 
-    position: absolute;
-    inset: 0;
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+}
 
-    background:
-        radial-gradient(
-            circle at right center,
-            rgba(59,130,246,0.20),
-            transparent 45%
-        );
+/* EACH ICON */
+.cyber-icon-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
-    pointer-events: none;
+    min-width: 90px;
+}
+
+.cyber-icon-box span {
+    width: 74px;
+    height: 74px;
+}
+
+.cyber-icon-box p {
+    margin-top: 14px !important;
+    margin-bottom: 0 !important;
+    font-size: 1rem;
 }
 /* Buttons */
 .button-primary {
