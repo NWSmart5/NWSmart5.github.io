@@ -4100,7 +4100,7 @@ background-position: center right !important;
     background: url("images/library1.png") center center / cover no-repeat !important;
     display: flex !important;
     align-items: flex-start !important;
-    padding: 70px 0 160px 70px !important;
+    padding: 90px 0 160px 90px !important;
     margin-bottom: 0 !important;
 }
 
@@ -4160,6 +4160,26 @@ background-position: center right !important;
 .library-layout .filter-buttons {
     margin: 0 0 35px 0 !important;
     padding: 0 20px !important;
+}
+/* restore library hero text */
+
+.library-hero-content h2 {
+    color: #1e1b7a !important;
+    font-size: clamp(3rem, 5vw, 4.8rem) !important;
+    line-height: 1.05 !important;
+    font-weight: 900 !important;
+    margin-bottom: 20px !important;
+}
+
+.library-hero-content h2 span {
+    color: #5b5ce2 !important;
+}
+
+.library-hero-content p {
+    color: #1e2760 !important;
+    font-size: 1.35rem !important;
+    line-height: 1.55 !important;
+    max-width: 560px !important;
 }
 /* TABLETS */
 @media (max-width: 900px) {
