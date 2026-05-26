@@ -320,7 +320,7 @@ nav a:hover::after {
     flex-grow: 1;
     color: #475569;
     font-size: 15px;
-    margin-bottom: 20px;
+    margin-bottom: 14px;
 }
 
 .resource-card .button-primary {
