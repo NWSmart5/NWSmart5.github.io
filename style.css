@@ -3684,12 +3684,16 @@ background-color: #f8fbff;
 }
 
 .cyber-hero h2,
-.cyber-hero p,
-.cyber-hero-icons {
-    margin-left: 95px !important;
-    margin-right: 0 !important;
+.cyber-hero p {
+    margin-left: 70px !important;
+    text-align: left;
 }
 
 .cyber-hero-icons {
+    display: flex;
     justify-content: flex-start !important;
+    gap: 60px;
+    margin-left: 70px !important;
+    margin-top: 40px;
 }
+
