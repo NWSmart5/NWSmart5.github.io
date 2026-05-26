@@ -213,11 +213,6 @@ nav a:hover::after {
     justify-content: center;
 }
 
-.cyber-hero .hero-content {
-    max-width: 720px;
-    margin-left: 70px;
-    margin-top: 40px;
-}
 .cyber-hero h2,
 .cyber-hero p {
     margin-left: 0 !important;
@@ -3682,4 +3677,19 @@ background-color: #f8fbff;
         font-size: 1rem;
         justify-content: center;
     }
+}
+.cyber-hero {
+    align-items: flex-start !important;
+    text-align: left !important;
+}
+
+.cyber-hero h2,
+.cyber-hero p,
+.cyber-hero-icons {
+    margin-left: 95px !important;
+    margin-right: 0 !important;
+}
+
+.cyber-hero-icons {
+    justify-content: flex-start !important;
 }
