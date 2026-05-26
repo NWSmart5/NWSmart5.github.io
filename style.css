@@ -3586,7 +3586,10 @@ height: 24px;
     .home-hero {
         min-height: 620px;
         padding: 40px 18px 50px;
-        background-position: center top !important;
+        background-size: 100% auto !important;
+background-position: top center !important;
+background-repeat: no-repeat !important;
+background-color: #f8fbff;
     }
 
     .home-hero h2 {
