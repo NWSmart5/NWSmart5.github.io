@@ -4505,3 +4505,29 @@ background-position: center right !important;
         justify-content: center;
     }
 }
+/* restore news hero button */
+
+.news-hero-btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 10px !important;
+
+    background: linear-gradient(135deg, #4f46e5, #4338ca) !important;
+    color: white !important;
+    text-decoration: none !important;
+
+    padding: 14px 26px !important;
+    border-radius: 999px !important;
+
+    font-size: 0.95rem !important;
+    font-weight: 700 !important;
+
+    box-shadow: 0 12px 28px rgba(79,70,229,0.25) !important;
+    transition: all 0.3s ease !important;
+}
+
+.news-hero-btn:hover {
+    transform: translateY(-3px) !important;
+    box-shadow: 0 16px 34px rgba(79,70,229,0.35) !important;
+}
