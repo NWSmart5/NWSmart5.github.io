@@ -3877,3 +3877,146 @@ background-color: #f8fbff;
     }
 
 }
+
+
+
+/* DIGITAL LANDING HERO */
+
+.digital-landing {
+    min-height: 58vh;
+    background: url("images/digital1.png") center center / cover no-repeat;
+    display: flex;
+    align-items: center;
+    padding: 55px 0 55px 70px;
+}
+
+.digital-hero-content {
+    max-width: 580px;
+    text-align: left;
+}
+
+.digital-pill {
+    display: inline-block;
+    padding: 8px 18px;
+    border: 1px solid #4b5cff;
+    border-radius: 999px;
+    color: #304bd6;
+    font-weight: 800;
+    font-size: 0.85rem;
+    margin-bottom: 24px;
+}
+
+.digital-hero-content h2 {
+    font-size: clamp(2rem, 4vw, 4.2rem);
+    line-height: 1.08;
+    font-weight: 800;
+    color: #111c6d;
+    margin-bottom: 18px;
+}
+
+.digital-hero-content h2 span {
+    color: #4454e3;
+}
+
+.digital-line {
+    width: 58px;
+    height: 4px;
+    background: #4b5cff;
+    border-radius: 999px;
+    margin-bottom: 22px;
+}
+
+.digital-hero-content p {
+    font-size: clamp(1rem, 1.8vw, 1.2rem);
+    line-height: 1.6;
+    font-weight: 500;
+    color: #334477;
+    margin-bottom: 28px;
+}
+
+.digital-buttons {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.digital-btn {
+    padding: 14px 28px;
+    border-radius: 8px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: 0.25s ease;
+}
+
+.digital-btn.primary {
+    background: #4454e3;
+    color: white;
+}
+
+.digital-btn.secondary {
+    background: white;
+    color: #4454e3;
+    border: 2px solid #4454e3;
+}
+
+.digital-btn:hover {
+    transform: translateY(-2px);
+}
+
+/* TABLETS */
+@media (max-width: 900px) {
+    .digital-landing {
+        min-height: 52vh;
+        padding: 45px 30px;
+        background-position: 62% center;
+    }
+
+    .digital-hero-content {
+        max-width: 470px;
+    }
+}
+
+/* MOBILES */
+@media (max-width: 768px) {
+    .digital-landing {
+        min-height: 50vh;
+        padding: 38px 20px;
+        background-position: 68% center;
+    }
+
+    .digital-hero-content h2 {
+        font-size: 2rem;
+    }
+
+    .digital-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .digital-btn {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* SMALL PHONES */
+@media (max-width: 480px) {
+    .digital-landing {
+        min-height: 46vh;
+        padding: 30px 18px;
+        background-position: 72% center;
+    }
+
+    .digital-pill {
+        font-size: 0.72rem;
+        padding: 6px 14px;
+    }
+
+    .digital-hero-content h2 {
+        font-size: 1.7rem;
+    }
+
+    .digital-hero-content p {
+        font-size: 0.95rem;
+    }
+}
