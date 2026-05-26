@@ -4607,6 +4607,62 @@ background-position: center right !important;
 }
 
 
+@media (max-width: 768px) {
 
+    .library-page .library-landing {
+        min-height: 430px;
+        padding: 55px 22px 40px;
+        background-position: 70% center;
+    }
+
+    .library-page .library-hero-content h2 {
+        font-size: 2.6rem !important;
+        line-height: 1.05;
+    }
+
+    .library-page .library-hero-content p {
+        font-size: 1.05rem !important;
+        line-height: 1.55;
+    }
+
+    .library-page .library-floating-tags {
+        display: none;
+    }
+
+    .library-page .library-sticky-search {
+        padding: 22px 18px !important;
+    }
+
+    .library-page .library-search-inner {
+        flex-direction: column;
+        gap: 14px;
+        padding: 16px;
+    }
+
+    .library-page #resource-search {
+        margin-bottom: 0;
+        text-align: center;
+    }
+
+    .library-page #hero-search-btn {
+        width: 100%;
+        min-height: 54px;
+    }
+
+    .library-page .filter-buttons {
+        justify-content: center;
+        gap: 10px;
+        margin: 18px 0 24px 0;
+    }
+
+    .library-page .resource-grid {
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+
+    .library-page .resource-card {
+        min-height: 260px;
+    }
+}
 
 
