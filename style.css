@@ -192,73 +192,7 @@ nav a:hover::after {
         font-size: 1rem;
     }
 }
-/* ==================== CYBER HERO ==================== */
 
-.cyber-hero {
-    background:
-        linear-gradient(
-            rgba(7, 23, 74, 0.72),
-            rgba(7, 23, 74, 0.78)
-        ),
-        url('images/cyber2.png') center center / cover no-repeat !important;
-
-    position: relative;
-    overflow: hidden;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-
-    align-items: flex-start !important;
-    text-align: left !important;
-    padding: 105px 0 105px 85px !important;
-}
-
-/* TEXT BLOCK */
-.cyber-hero h2 {
-    max-width: 580px;
-    font-size: clamp(3rem, 5vw, 5rem);
-    line-height: 1.02;
-    margin-bottom: 24px !important;
-}
-
-.cyber-hero p {
-    max-width: 700px;
-    font-size: 1.2rem;
-    margin: 0 0 38px 0 !important;
-}
-
-/* ICON ROW */
-.cyber-hero-icons {
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-
-      gap: 42px;
-
-    margin-left: 0 !important;
-    padding-left: 0 !important;
-}
-
-/* EACH ICON */
-.cyber-icon-box {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    min-width: 90px;
-}
-
-.cyber-icon-box span {
-    width: 74px;
-    height: 74px;
-}
-
-.cyber-icon-box p {
-    margin-top: 14px !important;
-    margin-bottom: 0 !important;
-    font-size: 1rem;
-}
 /* Buttons */
 .button-primary {
     display: inline-block;
@@ -4014,6 +3948,134 @@ padding: 55px 0 55px 70px;
     }
 
     .digital-hero-content p {
+        font-size: 0.95rem;
+    }
+}
+
+/* CYBER LANDING HERO */
+
+.cyber-landing {
+    min-height: 58vh;
+    background: url("images/cyber2.png") center center / cover no-repeat;
+    display: flex;
+    align-items: center;
+    padding: 55px 0 55px 70px;
+}
+
+.cyber-hero-content {
+    max-width: 560px;
+    text-align: left;
+}
+
+.cyber-pill {
+    display: inline-block;
+    padding: 8px 18px;
+    border: 1px solid #4b5cff;
+    border-radius: 999px;
+    color: #304bd6;
+    font-weight: 800;
+    font-size: 0.85rem;
+    margin-bottom: 24px;
+}
+
+.cyber-hero-content h2 {
+    font-size: clamp(2rem, 4vw, 4.2rem);
+    line-height: 1.08;
+    font-weight: 800;
+    color: #111c6d;
+    margin-bottom: 18px;
+}
+
+.cyber-line {
+    width: 58px;
+    height: 4px;
+    background: #4b5cff;
+    border-radius: 999px;
+    margin-bottom: 22px;
+}
+
+.cyber-hero-content p {
+    font-size: clamp(1rem, 1.8vw, 1.2rem);
+    line-height: 1.6;
+    font-weight: 500;
+    color: #334477;
+    margin-bottom: 28px;
+}
+
+.cyber-buttons {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.cyber-btn {
+    padding: 14px 28px;
+    border-radius: 8px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.cyber-btn.primary {
+    background: #4454e3;
+    color: white;
+}
+
+.cyber-btn.secondary {
+    background: white;
+    color: #4454e3;
+    border: 2px solid #4454e3;
+}
+
+/* TABLETS */
+@media (max-width: 900px) {
+    .cyber-landing {
+        min-height: 52vh;
+        padding: 45px 30px;
+        background-position: 62% center;
+    }
+}
+
+/* MOBILES */
+@media (max-width: 768px) {
+    .cyber-landing {
+        min-height: 48vh;
+        padding: 38px 20px;
+        background-position: 68% center;
+    }
+
+    .cyber-hero-content h2 {
+        font-size: 2rem;
+    }
+
+    .cyber-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .cyber-btn {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* SMALL PHONES */
+@media (max-width: 480px) {
+    .cyber-landing {
+        min-height: 44vh;
+        padding: 30px 18px;
+        background-position: 72% center;
+    }
+
+    .cyber-pill {
+        font-size: 0.72rem;
+        padding: 6px 14px;
+    }
+
+    .cyber-hero-content h2 {
+        font-size: 1.7rem;
+    }
+
+    .cyber-hero-content p {
         font-size: 0.95rem;
     }
 }
