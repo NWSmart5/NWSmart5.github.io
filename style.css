@@ -4272,12 +4272,15 @@ background-position: center right !important;
 
 .library-floating-tags {
     position: absolute;
-    right: 110px;
-    bottom: 120px;
+    left: 115px;
+    bottom: 75px;
 
     display: flex;
-    flex-direction: column;
-    gap: 16px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 14px;
+
+    max-width: 620px;
 }
 
 .library-tag {
@@ -4301,7 +4304,11 @@ background-position: center right !important;
 
     animation: floatTag 4s ease-in-out infinite;
 }
-
+.library-tag:nth-child(2),
+.library-tag:nth-child(3),
+.library-tag:nth-child(4) {
+    margin-left: 0 !important;
+}
 .library-tag:nth-child(2) {
     margin-left: 50px;
 }
