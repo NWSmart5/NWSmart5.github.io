@@ -4096,11 +4096,11 @@ background-position: center right !important;
 /* FIX LIBRARY PAGE LAYOUT */
 
 .library-landing {
-    min-height: 62vh !important;
+    min-height: 78vh !important;
     background: url("images/library1.png") center center / cover no-repeat !important;
     display: flex !important;
     align-items: flex-start !important;
-    padding: 90px 0 160px 90px !important;
+    padding: 90px 0 230px 90px !important;
     margin-bottom: 0 !important;
 }
 
