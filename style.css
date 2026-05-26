@@ -3956,8 +3956,8 @@ padding: 55px 0 55px 70px;
 /* FORCE CYBER HERO FIX */
 
 .cyber-landing {
-    min-height: 46vh !important;
-    padding: 38px 0 38px 70px !important;
+       min-height: 58vh !important;
+    padding: 55px 0 55px 70px !important;
     background: url("images/cyber2.png") center center / cover no-repeat !important;
     display: flex !important;
     align-items: center !important;
@@ -3966,9 +3966,9 @@ padding: 55px 0 55px 70px;
 }
 
 .cyber-hero-content {
-     max-width: 500px !important;
-    margin-left: 0 !important;
-    text-align: left !important;
+     font-size: clamp(2rem, 4vw, 4.2rem) !important;
+    line-height: 1.05 !important;
+    margin: 0 0 16px 0 !important;
 }
 
 .cyber-pill {
@@ -3979,7 +3979,8 @@ padding: 55px 0 55px 70px;
     color: #304bd6;
     font-weight: 800;
     font-size: 0.85rem;
-    margin-bottom: 24px;
+       margin-bottom: 24px;
+
 }
 
 .cyber-hero-content h2 {
@@ -3995,7 +3996,8 @@ padding: 55px 0 55px 70px;
     height: 4px;
     background: #4b5cff;
     border-radius: 999px;
-    margin-bottom: 22px;
+        margin-bottom: 18px;
+
 }
 
 .cyber-hero-content p {
@@ -4015,7 +4017,7 @@ padding: 55px 0 55px 70px;
 
 .cyber-btn {
     display: inline-block;
-    padding: 12px 24px;
+    padding: 14px 28px;
     border-radius: 8px;
     text-decoration: none !important;
     font-weight: 700;
