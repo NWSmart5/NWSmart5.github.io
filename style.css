@@ -4675,3 +4675,14 @@ background-position: center right !important;
         font-size: 1rem !important;
     }
 }
+
+.trusted-orgs {
+    margin: 18px 0;
+    padding-left: 22px;
+    color: #1e293b;
+    line-height: 1.9;
+}
+
+.trusted-orgs li {
+    margin-bottom: 6px;
+}
