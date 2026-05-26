@@ -4089,3 +4089,85 @@ background-position: center right !important;
 .cyber-btn:hover {
     transform: translateY(-2px);
 }
+
+
+/* LIBRARY LANDING HERO */
+
+.library-landing {
+    min-height: 58vh;
+    background: url("images/library1.png") center center / cover no-repeat;
+    display: flex;
+    align-items: center;
+    padding: 55px 0 55px 70px;
+}
+
+.library-hero-content {
+    max-width: 560px;
+    text-align: left;
+}
+
+.library-hero-content h2 {
+    font-size: clamp(2.4rem, 4.5vw, 4.8rem);
+    line-height: 1.08;
+    font-weight: 800;
+    color: #111c6d;
+    margin-bottom: 18px;
+}
+
+.library-hero-content h2 span {
+    color: #4454e3;
+}
+
+.library-hero-content p {
+    font-size: clamp(1rem, 1.8vw, 1.2rem);
+    line-height: 1.6;
+    color: #334477;
+}
+
+/* TABLETS */
+@media (max-width: 900px) {
+    .library-landing {
+        min-height: 52vh;
+        padding: 45px 30px;
+        background-position: 62% center;
+    }
+
+    .library-hero-content {
+        max-width: 460px;
+    }
+}
+
+/* MOBILES */
+@media (max-width: 768px) {
+    .library-landing {
+        min-height: 48vh;
+        padding: 38px 20px;
+        background-position: 70% center;
+    }
+
+    .library-hero-content h2 {
+        font-size: 2.1rem;
+    }
+
+    .library-hero-content p {
+        font-size: 0.98rem;
+    }
+}
+
+/* SMALL PHONES */
+@media (max-width: 480px) {
+    .library-landing {
+        min-height: 44vh;
+        padding: 30px 18px;
+        background-position: 75% center;
+    }
+
+    .library-hero-content h2 {
+        font-size: 1.8rem;
+    }
+
+    .library-hero-content p {
+        font-size: 0.92rem;
+        max-width: 260px;
+    }
+}
