@@ -4395,9 +4395,9 @@ background-position: center right !important;
         rgba(255,255,255,0.08) 72%),
         url('images/news1.png') center right / cover no-repeat;
 
-    min-height: calc(100vh - 110px);
+    min-height: 78vh;
 
-    padding: 90px 70px 120px;
+    padding: 70px 70px 85px;
 
     display: flex;
     align-items: center;
