@@ -3957,7 +3957,7 @@ padding: 55px 0 55px 70px;
 
 .cyber-landing {
        min-height: 58vh !important;
-    padding: 55px 70px !important;
+    padding: 55px 0 55px 70px !important;
      background: url("images/cyber2.png") no-repeat !important;
     background-size: cover !important;
 background-position: center right !important;
@@ -3969,9 +3969,9 @@ background-position: center right !important;
 }
 
 .cyber-hero-content {
-     font-size: clamp(2rem, 4vw, 4.2rem) !important;
-    line-height: 1.05 !important;
-    margin: 0 0 16px 0 !important;
+  max-width: 500px !important;
+    margin-left: 0 !important;
+    text-align: left !important;
 }
 
 .cyber-pill {
