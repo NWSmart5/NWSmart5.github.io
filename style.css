@@ -3678,22 +3678,29 @@ background-color: #f8fbff;
         justify-content: center;
     }
 }
+/* FIX CYBER HERO LEFT ALIGNMENT */
 .cyber-hero {
     align-items: flex-start !important;
     text-align: left !important;
+    padding-left: 90px !important;
 }
 
 .cyber-hero h2,
-.cyber-hero p {
-    margin-left: 70px !important;
-    text-align: left;
+.cyber-hero > p,
+.cyber-hero-icons {
+    margin-left: 0 !important;
+    max-width: 780px;
 }
 
 .cyber-hero-icons {
-    display: flex;
+    display: flex !important;
     justify-content: flex-start !important;
-    gap: 60px;
-    margin-left: 70px !important;
-    margin-top: 40px;
+    align-items: center !important;
+    gap: 34px !important;
+    margin-top: 28px !important;
+}
+
+.cyber-icon-box {
+    text-align: center;
 }
 
