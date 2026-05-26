@@ -3584,11 +3584,10 @@ height: 24px;
 @media (max-width: 768px) {
 
     .home-hero {
-        min-height: 620px;
+        min-height: 520px;
         padding: 40px 18px 50px;
-        background-size: 100% auto !important;
-background-position: top center !important;
-background-repeat: no-repeat !important;
+background-size: cover !important;
+background-position: 68% center !important;
 background-color: #f8fbff;
     }
 
@@ -3596,7 +3595,7 @@ background-color: #f8fbff;
         font-size: 1.65rem !important;
         line-height: 1.15;
         max-width: 320px;
-        margin: 240px 0 14px 28px !important;
+        margin: 170px 0 14px 28px !important;
     }
 
     .home-hero p {
