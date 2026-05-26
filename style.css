@@ -1100,11 +1100,11 @@ max-width: 430px;
 }
 
 .blog-card {
-     flex: 0 0 min(380px, 88vw);
-    min-height: 390px;
+     flex: 0 0 min(520px, 88vw);
+    min-height: 300px;
     background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
     border-radius: 20px;
-    padding: 28px;
+    padding: 22px;
     border: 1px solid #e2e8f0;
     border-top: 6px solid #2d3e99;
     box-shadow: 0 10px 28px rgba(0,0,0,0.08);
