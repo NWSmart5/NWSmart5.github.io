@@ -4103,7 +4103,7 @@ background-position: center right !important;
 }
 
 .library-sticky-search {
-    background: #f0f4f8 !important;
+    background: #ffffff !important;
     padding: 34px 28px 20px !important;
     margin-top: 0 !important;
     position: relative !important;
@@ -4610,10 +4610,3 @@ background-position: center right !important;
 
 
 
-.library-page {
-    background: #ffffff;
-}
-
-.library-page body {
-    background: #ffffff;
-}
