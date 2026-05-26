@@ -3883,18 +3883,17 @@ background-color: #f8fbff;
 /* DIGITAL LANDING HERO */
 
 .digital-landing {
-    min-height: 46vh;
+   min-height: 58vh;
 
-    background:
-        url("images/digital1.png")
-        right center / 92% auto no-repeat;
-
+background:
+    url("images/digital1.png")
+    center center / cover no-repeat;
+padding: 55px 0 55px 70px;
     background-color: #f8fafc;
 
     display: flex;
     align-items: center;
 
-    padding: 42px 0 42px 70px;
 
     overflow: hidden;
 }
@@ -3976,13 +3975,10 @@ background-color: #f8fbff;
 @media (max-width: 900px) {
 
     .digital-landing {
-        min-height: 44vh;
-
-        background-position: 72% center;
-        background-size: cover;
-
-        padding: 36px 28px;
-    }
+    min-height: 52vh;
+    padding: 45px 30px;
+    background-position: 62% center;
+}
 
 }
 
@@ -3990,13 +3986,10 @@ background-color: #f8fbff;
 @media (max-width: 768px) {
 
     .digital-landing {
-        min-height: 42vh;
-
-        background-position: 70% center;
-        background-size: cover;
-
-        padding: 30px 20px;
-    }
+    min-height: 48vh;
+    padding: 38px 20px;
+    background-position: 68% center;
+}
 
     .digital-hero-content h2 {
         font-size: 2rem;
@@ -4006,12 +3999,11 @@ background-color: #f8fbff;
 
 /* SMALL PHONES */
 @media (max-width: 480px) {
-    .digital-landing {
-        min-height: 46vh;
-        padding: 30px 18px;
-        background-position: 72% center;
-    }
-
+  .digital-landing {
+    min-height: 44vh;
+    padding: 30px 18px;
+    background-position: 72% center;
+}
     .digital-pill {
         font-size: 0.72rem;
         padding: 6px 14px;
