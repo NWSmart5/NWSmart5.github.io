@@ -4686,3 +4686,10 @@ background-position: center right !important;
 .trusted-orgs li {
     margin-bottom: 6px;
 }
+
+.trusted-orgs,
+.trusted-orgs li,
+.trusted-orgs + p {
+    font-size: 16px !important;
+    line-height: 1.75 !important;
+}
