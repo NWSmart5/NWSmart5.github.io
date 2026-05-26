@@ -1123,15 +1123,15 @@ max-width: 430px;
 
         max-width: 88%;
 
-        min-height: 320px;
+        min-height: 260px;
 
         padding: 20px;
     }
 
     .blog-card h3 {
-        font-size: 1.9rem;
-        line-height: 1.35;
-    }
+    font-size: 1.25rem;
+    line-height: 1.4;
+}
 
     .blog-actions {
         flex-direction: column;
