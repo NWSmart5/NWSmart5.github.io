@@ -331,7 +331,7 @@ nav a:hover::after {
 
 /* Filter Buttons */
 .filter-buttons {
-    margin: 25px 0 35px 0;
+   margin: 12px 0 18px 0;
     display: flex;
     gap: 12px;
     flex-wrap: wrap;
@@ -4346,7 +4346,7 @@ background-position: center right !important;
 
 .library-layout {
     margin-top: 0 !important;
-    background: #f1f5f9;
+    background: #ffffff;
 }
 
 .library-layout .filter-buttons {
