@@ -3735,4 +3735,17 @@ background-color: #f8fbff;
 .cyber-icon-box {
     min-width: 80px !important;
 }
+.cyber-subtitle {
+    font-size: 1.2rem !important;
+    line-height: 1.55 !important;
+    font-weight: 500;
+    color: rgba(255,255,255,0.92);
+
+    max-width: 620px;
+
+    margin-top: 8px !important;
+    margin-bottom: 0 !important;
+
+    letter-spacing: 0.2px;
+}
 
