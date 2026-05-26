@@ -4388,31 +4388,29 @@ background-position: center right !important;
 /* ==================== NEWS HERO ==================== */
 
 .news-hero {
-
-    min-height: 64vh;
-
     background:
-        linear-gradient(
-            90deg,
-            rgba(255,255,255,0.96) 0%,
-            rgba(255,255,255,0.82) 34%,
-            rgba(255,255,255,0.10) 62%,
-            rgba(255,255,255,0.02) 100%
-        ),
-        url('images/news1.png') center center / cover no-repeat;
+        linear-gradient(to right,
+        rgba(255,255,255,0.96) 28%,
+        rgba(255,255,255,0.80) 48%,
+        rgba(255,255,255,0.08) 72%),
+        url('images/news1.png') center right / cover no-repeat;
+
+    min-height: calc(100vh - 110px);
+
+    padding: 90px 70px 120px;
 
     display: flex;
     align-items: center;
-
-    padding: 65px 60px;
 
     position: relative;
     overflow: hidden;
 }
 
+
 .news-hero-content {
-    max-width: 500px;
     z-index: 2;
+     max-width: 560px;
+    padding-bottom: 40px;
 }
 
 .news-hero h2 {
