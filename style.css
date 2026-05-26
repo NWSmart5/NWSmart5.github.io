@@ -4151,15 +4151,15 @@ background-position: center right !important;
     display: flex;
     align-items: center;
     gap: 14px;
-    padding: 14px;
+    padding: 18px 14px;
     background: white;
     border-radius: 999px;
     box-shadow: 0 12px 32px rgba(0,0,0,0.12);
 }
 
 .library-search-inner input {
-    flex: 1;
-    height: 54px;
+     flex: 1;
+    height: 46px;
     border: 1px solid #dbe3f0;
     border-radius: 999px;
     padding: 0 24px;
