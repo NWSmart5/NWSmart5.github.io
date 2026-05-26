@@ -207,6 +207,21 @@ nav a:hover::after {
 
     overflow: hidden;
 }
+.cyber-hero {
+    align-items: flex-start;
+    text-align: left;
+    justify-content: center;
+}
+
+.cyber-hero .hero-content {
+    max-width: 720px;
+    margin-left: 70px;
+    margin-top: 40px;
+}
+.cyber-hero h2,
+.cyber-hero p {
+    margin-left: 0 !important;
+}
 
 /* optional subtle glow */
 .cyber-hero::after {
