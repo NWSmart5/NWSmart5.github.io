@@ -3480,23 +3480,36 @@ body {
 
 /* ==================== CYBER HERO ICONS ==================== */
 
+.cyber-hero-content {
+
+    margin-left: 60px;
+
+    align-items: flex-start;
+
+    text-align: left;
+}
+
 .cyber-hero-icons {
 
     display: flex;
 
     gap: 55px;
 
-    margin-top: 45px;
+    margin-top: 42px;
 
     justify-content: flex-start;
 
     align-items: center;
 
-    max-width: 720px;
+    padding-left: 0;
+}
 
-    margin-left: auto;
+.cyber-hero h2,
+.cyber-hero p {
 
-    margin-right: auto;
+    text-align: left;
+
+    margin-left: 0;
 }
 .cyber-icon-box {
 
@@ -3539,17 +3552,7 @@ height: 52px;
 
     text-align: center;
 }
-.cyber-hero h2,
-.cyber-hero p {
 
-    max-width: 720px;
-
-    margin-left: auto;
-
-    margin-right: auto;
-
-    text-align: left;
-}
 /* MOBILE */
 
 @media (max-width: 800px) {
