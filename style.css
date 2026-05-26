@@ -4389,7 +4389,7 @@ background-position: center right !important;
 
 .news-hero {
 
-    min-height: 78vh;
+    min-height: 64vh;
 
     background:
         linear-gradient(
@@ -4404,65 +4404,46 @@ background-position: center right !important;
     display: flex;
     align-items: center;
 
-    padding: 90px 70px;
+    padding: 65px 60px;
 
     position: relative;
     overflow: hidden;
 }
 
 .news-hero-content {
-    max-width: 620px;
+    max-width: 500px;
     z-index: 2;
 }
 
 .news-hero h2 {
 
-    font-size: clamp(3.2rem, 6vw, 5.4rem);
+    font-size: clamp(2.5rem, 5vw, 4.2rem);
 
-    line-height: 1.05;
+    line-height: 1.02;
 
-    margin-bottom: 24px;
+    margin-bottom: 18px;
 
     color: #111827;
 
     font-weight: 900;
 }
 
-.news-hero h2 span {
-    color: #5b5ce2;
-}
-
 .news-hero p {
 
-    font-size: 1.35rem;
+    font-size: 1.12rem;
 
-    line-height: 1.7;
+    line-height: 1.6;
 
     color: #475569;
 
-    margin-bottom: 34px;
+    margin-bottom: 26px;
 }
 
 .news-hero-btn {
 
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
+    padding: 14px 24px;
 
-    background: linear-gradient(135deg, #4f46e5, #4338ca);
-
-    color: white;
-    text-decoration: none;
-
-    padding: 16px 30px;
-
-    border-radius: 999px;
-
-    font-weight: 700;
-
-    box-shadow: 0 12px 30px rgba(79,70,229,0.25);
-
-    transition: all 0.3s ease;
+    font-size: 0.95rem;
 }
 
 .news-hero-btn:hover {
@@ -4477,6 +4458,10 @@ background-position: center right !important;
 .news-hero + .container {
     margin-top: 30px !important;
 }
+.news-hero img,
+.news-hero::after {
+    transform: scale(0.92);
+}
 
 /* MOBILE */
 
@@ -4484,7 +4469,7 @@ background-position: center right !important;
 
     .news-hero {
 
-        min-height: 62vh;
+       min-height: 50vh;
 
         padding: 70px 28px;
 
