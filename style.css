@@ -3958,7 +3958,7 @@ padding: 55px 0 55px 70px;
 .cyber-landing {
        min-height: 58vh !important;
     padding: 55px 70px !important;
-    background: url("images/cyber2.png") center center / cover no-repeat !important;
+     background: url("images/cyber2.png") no-repeat !important;
     background-size: cover !important;
 background-position: center right !important;
     display: flex !important;
