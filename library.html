@@ -138,17 +138,25 @@ function applySearchAndFilter() {
             r.category.toLowerCase().includes(term)
         );
     }
+
     renderResources(filtered);
+}
+
+function scrollToResults() {
     document.getElementById("resource-grid").scrollIntoView({
         behavior: "smooth",
         block: "start"
     });
 }
 document.getElementById('resource-search').addEventListener('input', applySearchAndFilter);
-document.getElementById('hero-search-btn').addEventListener('click', applySearchAndFilter);
+document.getElementById('hero-search-btn').addEventListener('click', function () {
+    applySearchAndFilter();
+    scrollToResults();
+});
 document.getElementById('resource-search').addEventListener('keydown', function(e) {
     if (e.key === "Enter") {
         applySearchAndFilter();
+        scrollToResults();
     }
 });
 
