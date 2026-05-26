@@ -4709,7 +4709,7 @@ background-position: center right !important;
 
     color: #e5e7eb;
 
-    padding: 75px 40px 34px;
+   padding: 52px 40px 22px;
 
     margin-top: 100px;
 
@@ -4759,7 +4759,7 @@ background-position: center right !important;
         1.2fr
         1.2fr;
 
-    gap: 70px;
+    gap: 42px;
 
     position: relative;
     z-index: 2;
@@ -4772,7 +4772,7 @@ background-position: center right !important;
 
     font-size: 1.15rem;
 
-    margin-bottom: 22px;
+   margin-bottom: 14px;
 
     font-weight: 700;
 
@@ -4787,7 +4787,7 @@ background-position: center right !important;
 
     font-size: 1rem;
 
-    line-height: 1.95;
+    line-height: 1.7;
 
     text-decoration: none;
 }
@@ -4797,7 +4797,7 @@ background-position: center right !important;
 
     display: block;
 
-    margin-bottom: 12px;
+    margin-bottom: 8px;
 
     transition: all 0.25s ease;
 }
@@ -4814,9 +4814,9 @@ background-position: center right !important;
 
     max-width: 1380px;
 
-    margin: 55px auto 0;
+   margin: 34px auto 0;
 
-    padding-top: 26px;
+    padding-top: 18px;
 
     border-top: 1px solid rgba(255,255,255,0.10);
 
