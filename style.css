@@ -4169,7 +4169,6 @@ background-position: center right !important;
 }
 .library-search-inner button {
    height: 58px;
-    margin-top: 2px;
     padding: 0 30px;
     border: none;
     border-radius: 999px;
@@ -4179,15 +4178,17 @@ background-position: center right !important;
     font-size: 1rem;
     cursor: pointer;
     display: flex;
-    align-items: center;
+    align-items: stretch;
     justify-content: center;
     white-space: nowrap;
+    align-self: center;
 }
 
 /* stop extra gap */
 .library-layout {
     margin-top: 70px !important;
 }
+
 
 /* TABLET */
 @media (max-width: 900px) {
