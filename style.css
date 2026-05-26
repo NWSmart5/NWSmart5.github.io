@@ -3958,52 +3958,100 @@ padding: 55px 0 55px 70px;
 .cyber-landing {
     min-height: 58vh !important;
     background: url("images/cyber2.png") center center / cover no-repeat !important;
-
     display: flex !important;
     align-items: center !important;
-
     padding: 55px 0 55px 70px !important;
-
     position: relative;
     overflow: hidden;
 }
 
-.cyber-landing::before {
-    display: none !important;
-}
-
-.cyber-landing * {
-    position: relative;
-    z-index: 2;
-}
-
 .cyber-hero-content {
-    max-width: 560px;
+    max-width: 560px !important;
+    margin-left: 0 !important;
+    text-align: left !important;
+}
+
+.cyber-pill {
+    display: inline-block;
+    padding: 8px 18px;
+    border: 1px solid #4b5cff;
+    border-radius: 999px;
+    color: #304bd6;
+    font-weight: 800;
+    font-size: 0.85rem;
+    margin-bottom: 24px;
+}
+
+.cyber-hero-content h2 {
+    font-size: clamp(2rem, 4vw, 4.2rem) !important;
+    line-height: 1.08 !important;
+    font-weight: 800 !important;
+    color: #111c6d !important;
+    margin: 0 0 18px 0 !important;
+}
+
+.cyber-line {
+    width: 58px;
+    height: 4px;
+    background: #4b5cff;
+    border-radius: 999px;
+    margin-bottom: 22px;
+}
+
+.cyber-hero-content p {
+    font-size: clamp(1rem, 1.8vw, 1.2rem) !important;
+    line-height: 1.6 !important;
+    font-weight: 500;
+    color: #334477 !important;
+    margin-bottom: 28px !important;
 }
 
 .cyber-buttons {
-    display: flex;
+    display: flex !important;
     gap: 16px;
-    margin-top: 28px;
+    flex-wrap: wrap;
+    margin-top: 0 !important;
 }
 
 .cyber-btn {
     display: inline-block;
     padding: 14px 28px;
     border-radius: 8px;
-    text-decoration: none;
+    text-decoration: none !important;
     font-weight: 700;
 }
 
 .cyber-btn.primary {
     background: #4454e3;
-    color: white;
+    color: white !important;
 }
 
 .cyber-btn.secondary {
     background: white;
-    color: #4454e3;
+    color: #4454e3 !important;
     border: 2px solid #4454e3;
+}
+
+@media (max-width: 768px) {
+    .cyber-landing {
+        min-height: 48vh !important;
+        padding: 38px 20px !important;
+        background-position: 68% center !important;
+    }
+
+    .cyber-hero-content h2 {
+        font-size: 2rem !important;
+    }
+
+    .cyber-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .cyber-btn {
+        width: 100%;
+        text-align: center;
+    }
 }
 
 @media (max-width: 900px) {
