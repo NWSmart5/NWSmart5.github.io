@@ -1113,7 +1113,34 @@ max-width: 430px;
     flex-direction: column;
     max-width: 88vw;
 }
+@media (max-width: 768px) {
 
+    .blog-card {
+
+        flex: 0 0 88% !important;
+
+        min-width: 88%;
+
+        max-width: 88%;
+
+        min-height: 320px;
+
+        padding: 20px;
+    }
+
+    .blog-card h3 {
+        font-size: 1.9rem;
+        line-height: 1.35;
+    }
+
+    .blog-actions {
+        flex-direction: column;
+    }
+
+    .blog-actions .button-primary {
+        width: 100%;
+    }
+}
 .featured-blog {
     border-top-color: #1e3a8a;
 }
