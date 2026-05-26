@@ -4096,7 +4096,7 @@ background-position: center right !important;
 /* ==================== LIBRARY LANDING HERO ==================== */
 
 .library-landing {
-    min-height: 48vh;
+    min-height: 56vh;
     background: url("images/library1.png") center center / cover no-repeat;
     display: flex;
     align-items: center;
@@ -4149,9 +4149,10 @@ background-position: center right !important;
     display: flex;
     gap: 12px;
     background: white;
-    border: 1px solid #dbe3f0;
-    border-radius: 999px;
     padding: 6px;
+    background: transparent;
+border: none;
+box-shadow: none;
 }
 
 .library-search-inner input {
