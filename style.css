@@ -3883,12 +3883,20 @@ background-color: #f8fbff;
 /* DIGITAL LANDING HERO */
 
 .digital-landing {
-    min-height: 58vh;
-    background: url("images/digital1.png") center center / contain no-repeat;
-background-color: #f8fafc;
+    min-height: 46vh;
+
+    background:
+        url("images/digital1.png")
+        right center / 92% auto no-repeat;
+
+    background-color: #f8fafc;
+
     display: flex;
     align-items: center;
-    padding: 55px 0 55px 70px;
+
+    padding: 42px 0 42px 70px;
+
+    overflow: hidden;
 }
 
 .digital-hero-content {
@@ -3966,38 +3974,34 @@ background-color: #f8fafc;
 
 /* TABLETS */
 @media (max-width: 900px) {
+
     .digital-landing {
-        min-height: 46vh;
-        padding: 45px 30px;
-        background-position: 62% center;
+        min-height: 44vh;
+
+        background-position: 72% center;
+        background-size: cover;
+
+        padding: 36px 28px;
     }
 
-    .digital-hero-content {
-        max-width: 470px;
-    }
 }
 
 /* MOBILES */
 @media (max-width: 768px) {
+
     .digital-landing {
         min-height: 42vh;
-        padding: 38px 20px;
-        background-position: 68% center;
+
+        background-position: 70% center;
+        background-size: cover;
+
+        padding: 30px 20px;
     }
 
     .digital-hero-content h2 {
         font-size: 2rem;
     }
 
-    .digital-buttons {
-        flex-direction: column;
-        width: 100%;
-    }
-
-    .digital-btn {
-        width: 100%;
-        text-align: center;
-    }
 }
 
 /* SMALL PHONES */
