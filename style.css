@@ -75,7 +75,7 @@ nav a:hover::after {
 
 /* Homepage hero only */
 .home-hero {
-    background: url('images/Home1.png') center 35px / cover no-repeat !important;
+    background: url('images/Home1.png') center center / cover no-repeat !important;
     min-height: 66vh;
      padding: 55px 20px 70px;
     align-items: flex-start;
@@ -93,7 +93,7 @@ nav a:hover::after {
     font-size: clamp(1.9rem, 3vw, 3rem) !important;
     line-height: 1.08;
     max-width: 680px;
-    margin: 65px 0 18px 55px !important;
+    margin: 95px 0 18px 55px !important;
     text-shadow: none !important;
 }
 
