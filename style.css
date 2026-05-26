@@ -2946,6 +2946,7 @@ header .site-logo span {
 
 .library-layout {
     display: block;
+    margin-top: 45px !important;
 }
 
 
@@ -4129,15 +4130,15 @@ background-position: center right !important;
 /* SEARCH BAR */
 
 .library-hero-search {
-    max-width: 500px;
+     max-width: 480px;
     background: white;
     border: 1px solid #dbe3f0;
     border-radius: 999px;
-    padding: 6px;
+    padding: 5px;
     display: flex;
     align-items: center;
-    gap: 10px;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+    gap: 8px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.06);
 }
 
 .library-hero-search span {
@@ -4153,6 +4154,7 @@ background-position: center right !important;
     background: transparent;
     font-size: 0.95rem;
     color: #334477;
+    padding: 10px 4px;
 }
 
 .library-hero-search input::placeholder {
@@ -4166,8 +4168,6 @@ background-position: center right !important;
     border-radius: 999px;
     padding: 10px 24px;
     font-weight: 700;
-    cursor: pointer;
-    transition: 0.25s ease;
 }
 
 .library-hero-search button:hover {
