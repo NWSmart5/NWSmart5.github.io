@@ -63,7 +63,7 @@ nav a:hover::after {
 .hero,
 .page-hero {
    color: white;
-    text-align: center;
+    text-align: left;
     padding: 90px 20px 80px;
     min-height: calc(100vh - 110px);
     display: flex;
@@ -74,71 +74,7 @@ nav a:hover::after {
 }
 
 /* Homepage hero only */
-.home-hero {
-    background: url('images/Home1.png') center center / cover no-repeat;
-    min-height: 72vh;
-    align-items: flex-start;
-    text-align: left;
-    padding: 90px 20px 80px;
-}
-.home-hero::before {
-    display: none;
-    position: relative;
-overflow: hidden;
-}
 
-.home-hero h2,
-.home-hero p,
-.home-hero .hero-blog-btn {
-    position: relative;
-    z-index: 2;
-    margin-left: 90px;
-    max-width: 620px;
-    z-index: 5;
-}
-
-.home-hero h2 {
-
-    color: #132968;
-
-    font-size: clamp(2.3rem, 4vw, 4.4rem);
-
-    line-height: 1.08;
-
-    max-width: 700px;
-
-    margin-left: 70px;
-
-    margin-top: 30px;
-
-    margin-bottom: 18px;
-
-    text-shadow: none;
-}
-
-.home-hero p {
-
-    color: #233876;
-
-    font-size: 1.35rem;
-
-    font-weight: 700;
-
-    line-height: 1.6;
-
-    margin-left: 70px;
-
-    margin-bottom: 35px;
-
-    text-shadow: none;
-}
-
-.home-hero .hero-blog-btn {
-    width: fit-content;
-    min-width: 260px;
-    background: #2d3e99;
-    color: white;
-}
 /* Other pages */
 .page-hero {
     background:
