@@ -23,13 +23,22 @@
         <h2>Knowledge <span>Library</span></h2>
         <p>Search and download practical infographics, guides<br>and tools for manufacturing SMEs.</p>
 
-      <div class="library-hero-search">
-    <span>⌕</span>
-    <input type="text" id="resource-search" placeholder="Search for infographics, guides, tools...">
-    <button type="button" id="hero-search-btn">Search</button>
-</div>
+        <div class="filter-buttons library-hero-filters">
+            <button class="filter-btn active" data-category="all">All Resources</button>
+            <button class="filter-btn" data-category="infographic">Infographics & Guides</button>
+            <button class="filter-btn" data-category="cyber">Cybersecurity</button>
+            <button class="filter-btn" data-category="digital">Digital Transformation</button>
+            <button class="filter-btn" data-category="ai">Safe AI</button>
+        </div>
     </div>
 </section>
+
+<div class="library-sticky-search">
+    <div class="library-search-inner">
+        <input type="text" id="resource-search" placeholder="Search for infographics, guides, tools...">
+        <button type="button" id="hero-search-btn">Search</button>
+    </div>
+</div>
 
     <div class="container library-layout">
         <div class="main-content">
