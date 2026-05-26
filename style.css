@@ -3702,29 +3702,37 @@ background-color: #f8fbff;
         justify-content: center;
     }
 }
-/* FIX CYBER HERO LEFT ALIGNMENT */
 .cyber-hero {
+    justify-content: flex-start !important;
     align-items: flex-start !important;
     text-align: left !important;
-    padding-left: 90px !important;
+    padding: 90px 0 80px 65px !important;
+    min-height: 70vh !important;
 }
 
-.cyber-hero h2,
-.cyber-hero > p,
-.cyber-hero-icons {
-    margin-left: 0 !important;
-    max-width: 780px;
+.cyber-hero h2 {
+    max-width: 560px !important;
+    font-size: clamp(2.8rem, 4.4vw, 4.4rem) !important;
+    line-height: 1.05 !important;
+    margin: 0 0 24px 0 !important;
+}
+
+.cyber-hero > p {
+    max-width: 520px !important;
+    font-size: 1.15rem !important;
+    line-height: 1.45 !important;
+    margin: 0 0 42px 0 !important;
 }
 
 .cyber-hero-icons {
     display: flex !important;
     justify-content: flex-start !important;
-    align-items: center !important;
-    gap: 34px !important;
-    margin-top: 28px !important;
+    gap: 42px !important;
+    margin: 0 !important;
+    padding: 0 !important;
 }
 
 .cyber-icon-box {
-    text-align: center;
+    min-width: 80px !important;
 }
 
