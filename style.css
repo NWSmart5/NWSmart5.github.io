@@ -200,7 +200,7 @@ nav a:hover::after {
             rgba(7, 23, 74, 0.72),
             rgba(7, 23, 74, 0.78)
         ),
-        url('images/cyber1.png') center center / cover no-repeat !important;
+        url('images/cyber2.png') center center / cover no-repeat !important;
 
     position: relative;
     overflow: hidden;
