@@ -4605,3 +4605,15 @@ background-position: center right !important;
 .library-download-btn:hover {
     transform: translateY(-3px);
 }
+
+
+
+
+
+.library-page {
+    background: #ffffff;
+}
+
+.library-page body {
+    background: #ffffff;
+}
