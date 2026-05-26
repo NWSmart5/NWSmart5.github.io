@@ -23,18 +23,17 @@
         <h2>Knowledge <span>Library</span></h2>
         <p>Search and download practical infographics, guides<br>and tools for manufacturing SMEs.</p>
 
-        <div class="library-hero-search">
-            <span>⌕</span>
-            <input type="text" placeholder="Search for infographics, guides, tools...">
-            <button>Search</button>
-        </div>
+      <div class="library-hero-search">
+    <span>⌕</span>
+    <input type="text" id="resource-search" placeholder="Search for infographics, guides, tools...">
+    <button type="button" id="hero-search-btn">Search</button>
+</div>
     </div>
 </section>
 
     <div class="container library-layout">
         <div class="main-content">
-            <input type="text" id="resource-search" 
-                   placeholder="Search resources (e.g. ransomware, phishing, password)...">
+           
 
             <div class="filter-buttons">
                 <button class="filter-btn active" data-category="all">All Resources</button>
@@ -114,27 +113,47 @@
         renderResources(resources);
 
         // Search
-        document.getElementById('resource-search').addEventListener('input', () => {
-            const term = document.getElementById('resource-search').value.toLowerCase();
-            const filtered = resources.filter(r => r.title.toLowerCase().includes(term));
-            renderResources(filtered);
-        });
+      let activeCategory = "all";
+
+function applySearchAndFilter() {
+    const term = document.getElementById('resource-search').value.toLowerCase().trim();
+
+    let filtered = resources;
+
+    if (activeCategory !== "all") {
+        filtered = filtered.filter(r => r.category === activeCategory);
+    }
+
+    if (term !== "") {
+        filtered = filtered.filter(r => 
+            r.title.toLowerCase().includes(term) ||
+            r.category.toLowerCase().includes(term)
+        );
+    }
+    renderResources(filtered);
+    document.getElementById("resource-grid").scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+    });
+}
+document.getElementById('resource-search').addEventListener('input', applySearchAndFilter);
+document.getElementById('hero-search-btn').addEventListener('click', applySearchAndFilter);
+document.getElementById('resource-search').addEventListener('keydown', function(e) {
+    if (e.key === "Enter") {
+        applySearchAndFilter();
+    }
+});
 
         // Filters
-        document.querySelectorAll('.filter-btn').forEach(btn => {
-            btn.addEventListener('click', () => {
-                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
+       document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
 
-                const category = btn.dataset.category;
-                let filtered = resources;
-
-                if (category !== 'all') {
-                    filtered = resources.filter(r => r.category === category);
-                }
-                renderResources(filtered);
-            });
-        });
+        activeCategory = btn.dataset.category;
+        applySearchAndFilter();
+    });
+});
         fetch('navbar.html')
     .then(response => response.text())
     .then(data => {
