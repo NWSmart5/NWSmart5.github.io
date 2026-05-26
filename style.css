@@ -3749,3 +3749,109 @@ background-color: #f8fbff;
     letter-spacing: 0.2px;
 }
 
+/* SAFE AI LANDING HERO */
+
+.safe-ai-landing {
+    min-height: 70vh;
+    background: url("images/ai1.png") center center / cover no-repeat;
+    display: flex;
+    align-items: center;
+    padding: 90px 0 90px 70px;
+}
+
+.safe-ai-hero-content {
+    max-width: 560px;
+    text-align: left;
+    color: #071a5c;
+}
+
+.safe-ai-hero-content h2 {
+    font-size: clamp(2.2rem, 4.5vw, 4.8rem);
+    line-height: 1.08;
+    font-weight: 800;
+    margin: 0 0 18px;
+    color: #071a5c;
+    text-shadow: none;
+}
+
+.hero-line {
+    width: 65px;
+    height: 4px;
+    background: #3256ff;
+    border-radius: 50px;
+    margin-bottom: 22px;
+}
+
+.safe-ai-hero-content p {
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    line-height: 1.55;
+    font-weight: 500;
+    color: #263b78;
+    margin: 0 0 30px;
+}
+
+.safe-ai-buttons {
+    display: flex;
+    gap: 18px;
+    flex-wrap: wrap;
+}
+
+.safe-ai-btn {
+    padding: 14px 28px;
+    border-radius: 6px;
+    font-weight: 700;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.safe-ai-btn.primary {
+    background: #304bd6;
+    color: white;
+}
+
+.safe-ai-btn.secondary {
+    background: white;
+    color: #304bd6;
+    border: 2px solid #304bd6;
+}
+
+/* Mobile and small screens */
+@media (max-width: 768px) {
+    .safe-ai-landing {
+        min-height: 62vh;
+        padding: 55px 22px;
+        background-position: center right;
+        align-items: center;
+    }
+
+    .safe-ai-hero-content {
+        max-width: 100%;
+    }
+
+    .safe-ai-hero-content h2 {
+        font-size: 2.2rem;
+    }
+
+    .safe-ai-buttons {
+        flex-direction: column;
+        width: 100%;
+        gap: 12px;
+    }
+
+    .safe-ai-btn {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .safe-ai-landing {
+        min-height: 58vh;
+        padding: 45px 18px;
+        background-position: 62% center;
+    }
+
+    .safe-ai-hero-content h2 {
+        font-size: 1.9rem;
+    }
+}
