@@ -44,7 +44,8 @@
 
             <div class="filter-buttons">
                 <button class="filter-btn active" data-category="all">All Resources</button>
-                <button class="filter-btn" data-category="infographic">Infographics & Guides</button>
+                <button class="filter-btn" data-category="infographic">Infographics</button>
+<button class="filter-btn" data-category="tools">Tools</button>
                 <button class="filter-btn" data-category="cyber">Cybersecurity</button>
                 <button class="filter-btn" data-category="digital">Digital Transformation</button>
                 <button class="filter-btn" data-category="ai">Safe AI</button>
@@ -215,7 +216,17 @@ function applySearchAndFilter() {
 
     let filtered = resources;
 
-    if (activeCategory !== "all") {
+    if (activeCategory === "infographic") {
+        filtered = filtered.filter(r =>
+           r.link.toLowerCase().includes("infographics/")
+        );
+    } 
+    else if (activeCategory === "tools") {
+        filtered = filtered.filter(r =>
+            r.link.toLowerCase().includes("tools/")
+        );
+    }
+    else if (activeCategory !== "all") {
         filtered = filtered.filter(r => r.category === activeCategory);
     }
 
