@@ -5012,40 +5012,51 @@ background-position: center right !important;
 
 
 
+.footer-disclaimer-bar {
+    margin-top: 34px;
+    padding-top: 22px;
 
-.footer-mini-disclaimer {
-    margin-top: 16px;
-    font-size: 0.82rem;
-    line-height: 1.55;
-    color: #cbd5e1;
+    border-top: 1px solid rgba(255,255,255,0.10);
+
+    text-align: center;
 }
 
-.footer-disclaimer-link {
-    display: inline-block;
-    margin-top: 10px;
+.footer-disclaimer-bar p {
+    max-width: 950px;
+    margin: 0 auto;
 
-    color: #67e8f9;
-    text-decoration: none;
+    color: #cbd5e1;
 
     font-size: 0.9rem;
-    font-weight: 700;
-
-    transition: 0.2s ease;
+    line-height: 1.7;
 }
 
-.footer-disclaimer-link:hover {
+.footer-disclaimer-bar a {
+    color: #67e8f9;
+    text-decoration: none;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.footer-disclaimer-bar a:hover {
     text-decoration: underline;
-    opacity: 0.9;
 }
 
 @media (max-width: 768px) {
 
-    .footer-mini-disclaimer {
-        font-size: 0.76rem;
-        line-height: 1.5;
+    .footer-disclaimer-bar {
+        margin-top: 26px;
+        padding-top: 18px;
     }
 
-    .footer-disclaimer-link {
-        font-size: 0.82rem;
+    .footer-disclaimer-bar p {
+        font-size: 0.78rem;
+        line-height: 1.6;
+        padding: 0 10px;
+    }
+
+    .footer-disclaimer-bar a {
+        display: inline-block;
+        margin-top: 6px;
     }
 }
