@@ -218,7 +218,7 @@ nav a:hover::after {
 /* Cards */
 .card, .resource-card {
     background: white;
-    padding: 40px;
+    padding: 30px;
     border-radius: 20px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.08);
     margin-bottom: 32px;
