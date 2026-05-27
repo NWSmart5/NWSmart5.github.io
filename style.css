@@ -1883,7 +1883,7 @@ nav a.active-nav::after {
     gap: 16px;
     align-items: center;
 
-    padding: 20px 22px;
+    padding: 20px 22px 36px;
     border-radius: 16px;
 
     background: #ffffff;
