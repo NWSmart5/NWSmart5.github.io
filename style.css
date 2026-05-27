@@ -93,7 +93,7 @@ nav a:hover::after {
     font-size: clamp(1.9rem, 3vw, 3rem) !important;
     line-height: 1.08;
     max-width: 680px;
-    margin: 95px 0 18px 78px !important;
+    margin: 95px 0 18px 62px !important;
     text-shadow: none !important;
 }
 
@@ -102,13 +102,13 @@ nav a:hover::after {
     font-size: 1.15rem !important;
     font-weight: 700;
     max-width: 680px;
-    margin: 0 0 30px 78px !important;
+    margin: 0 0 30px 62px !important;
     text-shadow: none !important;
 }
 
 
 .home-hero .hero-blog-btn {
-    margin: 0 0 0 78px !important;
+    margin: 0 0 0 62px !important;
     width: fit-content !important;
     min-width: 230px;
     height: auto !important;
