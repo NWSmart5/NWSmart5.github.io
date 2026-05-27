@@ -75,7 +75,7 @@ nav a:hover::after {
 
 /* Homepage hero only */
 .home-hero {
-    background: url('images/Home4.png') center center / cover no-repeat !important;
+    background: url('images/Home5.png') center center / cover no-repeat !important;
     min-height: 66vh;
      padding: 55px 20px 70px;
     align-items: flex-start;
