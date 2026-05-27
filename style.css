@@ -2203,14 +2203,19 @@ nav a.active-nav::after {
         padding: 18px 24px;
     }
 
-    .nav-container {
+  .nav-container {
 
-        flex-direction: column;
+    flex-direction: row;
 
-        align-items: center;
+    justify-content: space-between;
 
-        gap: 18px;
-    }
+    align-items: center;
+
+    gap: 12px;
+}
+    nav {
+    margin-left: auto;
+}
 
 
 .site-logo,
