@@ -2790,41 +2790,50 @@ line-height: 1.25;
 }
 @media (max-width: 700px) {
     .mobile-nav-toggle {
-    display: block;
-    background: #ffffff;
-    color: #2D3E99;
-    border: none;
-    border-radius: 999px;
-    padding: 10px 22px;
-    font-weight: 800;
-    cursor: pointer;
-}
+        display: block;
+        background: #ffffff;
+        color: #2D3E99;
+        border: none;
+        border-radius: 999px;
+        padding: 10px 22px;
+        font-weight: 800;
+        cursor: pointer;
+        flex-shrink: 0;
+        margin-left: auto;
+    }
+
     header {
         padding: 18px 14px;
     }
 
     .nav-container {
-        flex-direction: column;
-        align-items: center;
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        align-items: center !important;
         gap: 10px;
     }
 
     .site-logo span {
         font-size: 24px !important;
         line-height: 1.2;
-        text-align: center;
+        text-align: left !important;
+        white-space: nowrap;
     }
 
+   nav {
+    display: none;
+    width: 92%;
+    background: #ffffff;
+    border-radius: 18px;
+    padding: 10px;
+    margin-top: 6px;
+    box-shadow: 0 10px 24px rgba(0,0,0,0.14);
+}
 
-
-    nav {
-        display: none;
-        width: 92%;
-        background: #ffffff;
-        border-radius: 18px;
-        padding: 10px;
-        margin-top: 6px;
-        box-shadow: 0 10px 24px rgba(0,0,0,0.14);
+    .site-logo span {
+        font-size: 24px !important;
+        line-height: 1.2;
+        text-align: center;
     }
 
     nav.mobile-nav-open {
