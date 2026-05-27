@@ -5052,3 +5052,76 @@ background-position: center right !important;
         margin-top: 6px;
     }
 }
+
+
+
+
+
+/* ==================== DISCLAIMER PAGE ==================== */
+
+.disclaimer-hero {
+    min-height: 42vh;
+    padding: 90px 20px;
+}
+
+.disclaimer-container {
+    max-width: 1050px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+.disclaimer-card {
+    background: white;
+    padding: 32px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    margin-bottom: 26px;
+    border-left: 6px solid #2d3e99;
+}
+
+.disclaimer-card h2 {
+    color: #1e3a8a;
+    margin-bottom: 14px;
+    font-size: 1.6rem;
+}
+
+.disclaimer-card p {
+    color: #334155;
+    font-size: 1rem;
+    line-height: 1.75;
+    margin-bottom: 12px;
+}
+
+@media (max-width: 768px) {
+    .disclaimer-hero {
+        min-height: 32vh;
+        padding: 70px 18px;
+    }
+
+    .disclaimer-hero h2 {
+        font-size: 2rem;
+    }
+
+    .disclaimer-hero p {
+        font-size: 1rem;
+    }
+
+    .disclaimer-container {
+        margin: 35px auto;
+        padding: 0 14px;
+    }
+
+    .disclaimer-card {
+        padding: 22px 18px;
+        border-radius: 16px;
+    }
+
+    .disclaimer-card h2 {
+        font-size: 1.25rem;
+    }
+
+    .disclaimer-card p {
+        font-size: 0.95rem;
+        line-height: 1.65;
+    }
+}
