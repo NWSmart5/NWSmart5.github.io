@@ -4963,3 +4963,27 @@ background-position: center right !important;
         line-height: 1.6;
     }
 }
+
+
+
+
+
+@keyframes heroSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(28px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.cyber-hero-content,
+.digital-hero-content,
+.safe-ai-hero-content,
+.library-hero-content,
+.news-hero-content {
+    animation: heroSlideUp 0.8s ease-out both;
+}
