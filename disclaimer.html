@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disclaimer | NWSmart5.0 Knowledge Hub</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/nwsmart5-logo.png">
+</head>
+
+<body>
+    <div id="navbar"></div>
+
+    <section class="page-hero disclaimer-hero">
+        <h2>Disclaimer</h2>
+        <p>Important information about the use of this Knowledge Hub.</p>
+    </section>
+
+    <main class="disclaimer-container">
+
+        <section class="disclaimer-card">
+            <h2>Educational Use Only</h2>
+            <p>
+                The NWSmart5.0 Knowledge Hub provides educational and informational resources to support manufacturing SMEs in understanding cybersecurity, safe AI adoption, digital transformation, and Industry 5.0 concepts.
+            </p>
+            <p>
+                The information provided on this website should not be treated as legal, regulatory, cybersecurity, financial, or professional advice.
+            </p>
+        </section>
+
+        <section class="disclaimer-card">
+            <h2>Use of Official Guidance</h2>
+            <p>
+                This Knowledge Hub refers to publicly available guidance, frameworks, and resources from recognised organisations including the National Cyber Security Centre, Information Commissioner’s Office, UK Government, Made Smarter UK, OECD, and other trusted sources.
+            </p>
+            <p>
+                External guidance may change over time. Users should always check the latest official source before making decisions.
+            </p>
+        </section>
+
+        <section class="disclaimer-card">
+            <h2>Cybersecurity and AI Risk</h2>
+            <p>
+                Cybersecurity and AI-related risks cannot be fully eliminated. The resources on this website are intended to help organisations improve awareness, planning, and resilience, but they do not guarantee protection from cyber incidents, operational disruption, data loss, or compliance issues.
+            </p>
+        </section>
+
+        <section class="disclaimer-card">
+            <h2>Funding, Programmes, and Support</h2>
+            <p>
+                Information about funding, support programmes, grants, eligibility, and regional initiatives may change. Organisations should verify current availability and eligibility directly with the relevant provider before applying or making investment decisions.
+            </p>
+        </section>
+
+        <section class="disclaimer-card">
+            <h2>External Links and Third-Party Content</h2>
+            <p>
+                This website may link to external websites, documents, videos, news sources, and third-party resources. These remain the property and responsibility of their respective organisations.
+            </p>
+            <p>
+                NWSmart5.0 is not responsible for the accuracy, availability, or content of external websites.
+            </p>
+        </section>
+
+        <section class="disclaimer-card">
+            <h2>Professional Advice</h2>
+            <p>
+                Organisations should seek appropriate professional advice before making significant operational, legal, cybersecurity, data protection, AI deployment, or technology investment decisions.
+            </p>
+        </section>
+
+        <section class="disclaimer-card">
+            <h2>No Endorsement</h2>
+            <p>
+                References to external organisations, frameworks, tools, or guidance do not imply formal endorsement, partnership, certification, or approval unless clearly stated.
+            </p>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="footer-bottom">
+            <p>© 2026 NWSmart5.0 Knowledge Hub • Supporting smarter, safer, and more sustainable manufacturing.</p>
+            <p>External resources and guidance remain the property of their respective organisations.</p>
+        </div>
+    </footer>
+
+    <script>
+        fetch('navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar').innerHTML = data;
+
+                const currentPage = window.location.pathname.split("/").pop();
+
+                document.querySelectorAll('nav a').forEach(link => {
+                    const href = link.getAttribute('href');
+
+                    if (href === currentPage) {
+                        link.classList.add('active-nav');
+                    }
+                });
+            });
+    </script>
+</body>
+</html>
