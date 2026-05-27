@@ -5007,3 +5007,44 @@ background-position: center right !important;
     }
 
 }
+
+
+
+.footer-disclaimer {
+    margin-top: 14px;
+    padding-top: 14px;
+    border-top: 1px solid rgba(255,255,255,0.12);
+
+    font-size: 0.84rem;
+    line-height: 1.55;
+    color: #cbd5e1;
+
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.footer-disclaimer a {
+    color: #67e8f9;
+    text-decoration: none;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.footer-disclaimer a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+
+    .footer-disclaimer {
+        font-size: 0.76rem;
+        padding: 12px 10px 0;
+        line-height: 1.5;
+    }
+
+    .footer-disclaimer a {
+        display: inline-block;
+        margin-top: 6px;
+    }
+}
