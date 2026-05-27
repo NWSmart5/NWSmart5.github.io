@@ -1883,7 +1883,7 @@ nav a.active-nav::after {
     gap: 16px;
     align-items: center;
 
-    padding: 20px 22px 36px;
+    padding: 20px 22px;
     border-radius: 16px;
 
     background: #ffffff;
@@ -1960,7 +1960,9 @@ nav a.active-nav::after {
         min-width: 100%;
     }
 }
-
+.real-examples-section {
+    margin-top: 50px;
+}
 /* ==================== NORTH WEST EXAMPLES SCROLL ==================== */
 
 .examples-scroll {
