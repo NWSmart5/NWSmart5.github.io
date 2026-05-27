@@ -5062,72 +5062,67 @@ background-position: center right !important;
 
 .disclaimer-header {
     max-width: 1050px;
-    margin: 60px auto 30px;
-    padding: 48px 32px;
-    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
-    border-radius: 24px;
-    border-left: 7px solid #2d3e99;
-    box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+    margin: 45px auto 22px;
+    padding: 0 20px;
 }
 
 .disclaimer-header span {
     display: inline-block;
-    margin-bottom: 12px;
-    padding: 7px 14px;
-    border-radius: 999px;
-    background: #e0f2fe;
-    color: #1e3a8a;
+    margin-bottom: 10px;
+    color: #2d3e99;
     font-size: 0.85rem;
     font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
 }
 
 .disclaimer-header h1 {
     color: #111827;
-    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-size: clamp(2.1rem, 4vw, 3rem);
     line-height: 1.1;
-    margin-bottom: 14px;
+    margin-bottom: 10px;
 }
 
 .disclaimer-header p {
     color: #475569;
-    font-size: 1.1rem;
-    line-height: 1.7;
-    max-width: 760px;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    max-width: 720px;
 }
 
 .disclaimer-container {
     max-width: 1050px;
-    margin: 0 auto 70px;
+    margin: 0 auto 60px;
     padding: 0 20px;
 }
 
 .disclaimer-card {
     background: white;
-    padding: 28px 30px;
-    border-radius: 20px;
-    box-shadow: 0 10px 28px rgba(0,0,0,0.07);
-    margin-bottom: 22px;
-    border-left: 6px solid #2d3e99;
+    padding: 24px 26px;
+    border-radius: 18px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+    margin-bottom: 18px;
+    border: 1px solid #e2e8f0;
+    border-left: 5px solid #2d3e99;
 }
 
 .disclaimer-card h2 {
     color: #1e3a8a;
-    margin-bottom: 12px;
-    font-size: 1.45rem;
+    margin-bottom: 10px;
+    font-size: 1.3rem;
 }
 
 .disclaimer-card p {
     color: #334155;
-    font-size: 1rem;
-    line-height: 1.75;
-    margin-bottom: 10px;
+    font-size: 0.98rem;
+    line-height: 1.7;
+    margin-bottom: 8px;
 }
 
 @media (max-width: 768px) {
     .disclaimer-header {
-        margin: 28px 14px 22px;
-        padding: 30px 22px;
-        border-radius: 18px;
+        margin: 30px auto 18px;
+        padding: 0 16px;
     }
 
     .disclaimer-header h1 {
@@ -5139,21 +5134,21 @@ background-position: center right !important;
     }
 
     .disclaimer-container {
-        margin-bottom: 45px;
         padding: 0 14px;
+        margin-bottom: 42px;
     }
 
     .disclaimer-card {
-        padding: 22px 18px;
-        border-radius: 16px;
+        padding: 20px 18px;
+        border-radius: 15px;
     }
 
     .disclaimer-card h2 {
-        font-size: 1.22rem;
+        font-size: 1.15rem;
     }
 
     .disclaimer-card p {
-        font-size: 0.94rem;
-        line-height: 1.65;
+        font-size: 0.93rem;
+        line-height: 1.6;
     }
 }
