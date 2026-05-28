@@ -2811,6 +2811,7 @@ line-height: 1.25;
         justify-content: space-between !important;
         align-items: center !important;
         gap: 10px;
+        flex-wrap: wrap !important;
     }
 
     .site-logo span {
@@ -2820,14 +2821,15 @@ line-height: 1.25;
         white-space: nowrap;
     }
 
-   nav {
+nav {
     display: none;
-    width: 92%;
+    flex-basis: 100%;
+    width: 100%;
+    margin-top: 16px;
     background: #ffffff;
-    border-radius: 18px;
-    padding: 10px;
-    margin-top: 6px;
-    box-shadow: 0 10px 24px rgba(0,0,0,0.14);
+    border-radius: 20px;
+    padding: 12px;
+    box-shadow: 0 12px 28px rgba(0,0,0,0.16);
 }
 
     .site-logo span {
