@@ -5280,7 +5280,7 @@ background-position: center right !important;
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-height: 620px;
+    min-height: 520px;
 }
 
 .team-member-card:hover {
@@ -5572,7 +5572,7 @@ background-position: center right !important;
 .team-bio {
     flex-grow: 0 !important;
     margin-bottom: 24px !important;
-     min-height: 170px;
+    
 }
 
 .team-profile-btn {
