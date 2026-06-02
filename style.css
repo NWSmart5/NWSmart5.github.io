@@ -5217,14 +5217,14 @@ background-position: center right !important;
 
 
 
-/* ==================== TEAM PAGE ==================== */
+
 
 /* ==================== PROJECT TEAM PAGE ==================== */
 
 .team-page {
-    max-width: 1180px;
+    max-width: 980px;
     margin: 0 auto;
-    padding: 60px 24px 30px;
+    padding: 50px 20px;
 }
 
 .team-intro {
@@ -5234,7 +5234,7 @@ background-position: center right !important;
 }
 
 .team-intro h1 {
-    font-size: clamp(2.2rem, 5vw, 4rem);
+   font-size: clamp(2rem, 4vw, 3.5rem);
     color: #111827;
     line-height: 1.1;
     margin-bottom: 14px;
@@ -5260,10 +5260,11 @@ background-position: center right !important;
 }
 
 .team-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 26px;
-    margin-bottom: 45px;
+   display: grid;
+    grid-template-columns: repeat(3, minmax(260px, 1fr));
+    gap: 24px;
+    max-width: 980px;
+    margin: 0 auto;
 }
 
 .team-member-card {
@@ -5282,8 +5283,8 @@ background-position: center right !important;
 }
 
 .team-member-photo {
-    width: 170px;
-    height: 170px;
+    width: 150px;
+    height: 150px;
     object-fit: cover;
     object-position: center top;
     border-radius: 50%;
