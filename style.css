@@ -5214,3 +5214,49 @@ background-position: center right !important;
         line-height: 1.6;
     }
 }
+
+
+
+/* ==================== TEAM PAGE ==================== */
+
+.team-container {
+    display: block !important;
+}
+
+.team-card {
+    min-height: 100%;
+}
+
+.team-photo {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    object-position: center top;
+    border-radius: 18px;
+    margin-bottom: 18px;
+    border: 3px solid #eef2ff;
+}
+
+.team-card h3 {
+    color: #1e3a8a;
+    margin-bottom: 8px;
+}
+
+.team-card .button-primary {
+    margin-top: auto;
+}
+
+@media (max-width: 768px) {
+
+    .team-photo {
+        aspect-ratio: 1 / 1;
+    }
+
+    .team-card {
+        padding: 20px;
+    }
+
+    .team-card h3 {
+        font-size: 1.2rem;
+    }
+}
