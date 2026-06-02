@@ -5314,7 +5314,7 @@ background-position: center right !important;
 }
 
 .team-role {
-    color: #2d3e99 !important;
+   color: #2d3e99 !important;
     font-weight: 700 !important;
     font-size: 0.95rem !important;
     line-height: 1.45 !important;
@@ -5324,18 +5324,9 @@ background-position: center right !important;
     display: flex;
     align-items: center;
     justify-content: center;
+    text-align: center;
 }
 
-.team-role::after {
-    content: "";
-    display: block;
-    width: 32px;
-    height: 3px;
-    background: #2d3e99;
-    margin: 12px auto 0;
-    border-radius: 999px;
-    position: absolute;
-}
 
 .team-bio {
     color: #475569 !important;
