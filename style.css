@@ -5262,7 +5262,7 @@ background-position: center right !important;
 
 .team-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+     grid-template-columns: repeat(3, 1fr);
     gap: 24px;
     align-items: stretch;
     margin-bottom: 42px;
@@ -5325,6 +5325,7 @@ background-position: center right !important;
     margin: 12px 0 22px !important;
     max-width: 280px;
     flex-grow: 1;
+     min-height: 120px;
 }
 
 .team-profile-btn {
@@ -5553,7 +5554,7 @@ background-position: center right !important;
 }
 /* FINAL TEAM CARD HEIGHT FIX */
 .team-member-card {
-    min-height: unset !important;
+     min-height: 520px !important;
     height: auto !important;
     justify-content: flex-start !important;
     padding: 26px 22px 28px !important;
