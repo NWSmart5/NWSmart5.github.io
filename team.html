@@ -1,51 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Team | NWSmart5.0 Knowledge Hub</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/nwsmart5-logo.png">
+</head>
+
+<body>
+
+<div id="navbar"></div>
+
 <section class="page-hero">
     <h2>Project Team</h2>
-    <p>Meet the team behind NWSmart5.0.</p>
+    <p>Meet the team behind NWSmart5.0 and the Knowledge Hub.</p>
 </section>
 
-<div class="container">
+<div class="container team-container">
+
     <div class="main-content">
 
         <div class="card">
-            <h2>Meet the Project Team</h2>
+            <h2>About the Team</h2>
+
             <p>
-                NWSmart5.0 is delivered by researchers and academics from the University of Salford, supporting manufacturing SMEs in cybersecurity, safe AI adoption, and digital transformation.
+                NWSmart5.0 brings together expertise in digital transformation,
+                cybersecurity, artificial intelligence, manufacturing innovation,
+                and Industry 5.0. The project supports manufacturing SMEs across
+                Greater Manchester and the North West through practical guidance,
+                resources and workshops.
             </p>
         </div>
 
         <div class="resource-grid">
 
-            <div class="resource-card">
+            <div class="resource-card team-card">
+
+                <img src="Team/Sadaf.jpg"
+                     alt="Dr Sadaf Hina"
+                     class="team-photo">
+
                 <h3>Dr Sadaf Hina</h3>
-                <p>Project Lead</p>
+
+                <p><strong>Project Lead</strong></p>
+
+                <p>
+                    Leading the NWSmart5.0 initiative and supporting the delivery
+                    of practical guidance, workshops and resources for manufacturing SMEs.
+                </p>
+
                 <a href="https://www.salford.ac.uk/our-staff/sadaf-hina"
                    target="_blank"
                    class="button-primary">
                     View Profile
                 </a>
+
             </div>
 
-            <div class="resource-card">
+            <div class="resource-card team-card">
+
+                <img src="Team/Angel.jpg"
+                     alt="Dr Angel Jiménez-Aranda"
+                     class="team-photo">
+
                 <h3>Dr Angel Jiménez-Aranda</h3>
-                <p>Research Associate</p>
+
+                <p><strong>Research Associate</strong></p>
+
+                <p>
+                    Supporting research activities, SME engagement,
+                    knowledge transfer and innovation within NWSmart5.0.
+                </p>
+
                 <a href="https://sustainable-innovation.salford.ac.uk/meet-the-team/angel-jimenez-aranda/"
                    target="_blank"
                    class="button-primary">
                     View Profile
                 </a>
+
             </div>
 
-            <div class="resource-card">
+            <div class="resource-card team-card">
+
+                <img src="Team/Tarek.jpg"
+                     alt="Prof Tarek Gaber"
+                     class="team-photo">
+
                 <h3>Prof Tarek Gaber</h3>
-                <p>Principal Investigator</p>
+
+                <p><strong>Principal Investigator</strong></p>
+
+                <p>
+                    Providing strategic leadership and expertise in artificial intelligence,
+                    cybersecurity, digital transformation and Industry 5.0 research.
+                </p>
+
                 <a href="https://www.salford.ac.uk/our-staff/tarek-gaber"
                    target="_blank"
                    class="button-primary">
                     View Profile
                 </a>
+
             </div>
 
         </div>
 
     </div>
+
 </div>
+
+<footer class="footer home-footer">
+    <div class="footer-bottom">
+        <p>© 2026 NWSmart5.0 Knowledge Hub • Supporting smarter, safer, and more sustainable manufacturing.</p>
+    </div>
+</footer>
+
+<script>
+fetch('navbar.html')
+.then(response => response.text())
+.then(data => {
+    document.getElementById('navbar').innerHTML = data;
+
+    const currentPage = window.location.pathname.split("/").pop();
+
+    document.querySelectorAll('nav a').forEach(link => {
+        const href = link.getAttribute('href');
+
+        if (href === currentPage) {
+            link.classList.add('active-nav');
+        }
+    });
+});
+
+function toggleMobileNav() {
+    const nav = document.querySelector("nav");
+    if (nav) {
+        nav.classList.toggle("mobile-nav-open");
+    }
+}
+</script>
+
+</body>
+</html>
