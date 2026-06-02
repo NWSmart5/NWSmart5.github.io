@@ -5302,29 +5302,19 @@ background-position: center right !important;
 }
 
 .team-member-card h2 {
-    font-size: 1.22rem;
-    color: #111827;
-    line-height: 1.35;
-    margin-bottom: 10px;
-    min-height: 66px;
-
+    min-height: 70px !important;
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-bottom: 12px !important;
 }
 
 .team-role {
-   color: #2d3e99 !important;
-    font-weight: 700 !important;
-    font-size: 0.95rem !important;
-    line-height: 1.45 !important;
-    margin-bottom: 18px !important;
-    min-height: 52px;
-
+    min-height: 55px !important;
     display: flex;
     align-items: center;
     justify-content: center;
-    text-align: center;
+    margin-bottom: 18px !important;
 }
 
 
@@ -5582,6 +5572,7 @@ background-position: center right !important;
 .team-bio {
     flex-grow: 0 !important;
     margin-bottom: 24px !important;
+     min-height: 170px;
 }
 
 .team-profile-btn {
