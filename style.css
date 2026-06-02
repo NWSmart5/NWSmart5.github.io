@@ -5561,3 +5561,33 @@ background-position: center right !important;
         font-size: 0.88rem;
     }
 }
+/* FINAL TEAM CARD HEIGHT FIX */
+.team-member-card {
+    min-height: unset !important;
+    height: auto !important;
+    justify-content: flex-start !important;
+    padding: 26px 22px 28px !important;
+}
+
+.team-member-card h2 {
+    min-height: unset !important;
+    margin-bottom: 12px !important;
+}
+
+.team-role {
+    min-height: unset !important;
+    margin-bottom: 18px !important;
+}
+
+.team-bio {
+    flex-grow: 0 !important;
+    margin-bottom: 24px !important;
+}
+
+.team-profile-btn {
+    margin-top: 8px !important;
+}
+
+.team-grid {
+    align-items: start !important;
+}
