@@ -5675,3 +5675,32 @@ background-position: center right !important;
         grid-template-columns: 1fr;
     }
 }
+@media (max-width: 700px) {
+
+    .aisi-highlight-grid {
+        gap: 14px;
+    }
+
+    .aisi-highlight-card {
+        padding: 16px;
+    }
+
+    .aisi-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 1.3rem;
+        margin-bottom: 10px;
+    }
+
+    .aisi-highlight-card h3 {
+        font-size: 1.1rem;
+        margin-bottom: 8px;
+    }
+
+    .aisi-highlight-card p {
+        font-size: 0.9rem;
+        line-height: 1.5;
+        margin: 0;
+    }
+
+}
