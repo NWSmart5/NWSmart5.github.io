@@ -271,7 +271,7 @@
             for (const feed of feeds) {
                 try {
                     // Using corsproxy.io - currently more reliable
-                    const proxyUrl = `https://corsproxy.io/?${encodeURIComponent(feed.url)}`;
+                    const proxyUrl = `https://api.allorigins.win/raw?url=${encodeURIComponent(feed.url)}`;
                     const response = await fetch(proxyUrl);
                     
                     if (!response.ok) continue;
