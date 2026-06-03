@@ -123,15 +123,13 @@
     <script>
         let allNews = [];
 
-        const feeds = [
-            {url: 'https://industrialcyber.co/feed/', name: 'Industrial Cyber'},
-            {url: 'https://www.ncsc.gov.uk/api/1/services/v1/all-rss-feed.xml', name: 'NCSC'}
-                {url: 'https://www.nist.gov/blogs/cybersecurity-insights/rss.xml', name: 'NIST Cybersecurity'},
+     const feeds = [
+    {url: 'https://www.nist.gov/blogs/cybersecurity-insights/rss.xml', name: 'NIST Cybersecurity'},
     {url: 'https://www.securitymagazine.com/rss/15', name: 'Security Magazine'},
     {url: 'https://industrialcyber.co/feed/', name: 'Industrial Cyber'},
     {url: 'https://krebsonsecurity.com/feed/', name: 'Krebs on Security'},
     {url: 'https://www.ncsc.gov.uk/api/1/services/v1/all-rss-feed.xml', name: 'NCSC'}
-        ];
+];
 
         async function fetchLiveNews() {
             const container = document.getElementById('news-grid');
