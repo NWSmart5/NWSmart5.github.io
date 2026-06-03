@@ -126,6 +126,11 @@
         const feeds = [
             {url: 'https://industrialcyber.co/feed/', name: 'Industrial Cyber'},
             {url: 'https://www.ncsc.gov.uk/api/1/services/v1/all-rss-feed.xml', name: 'NCSC'}
+                {url: 'https://www.nist.gov/blogs/cybersecurity-insights/rss.xml', name: 'NIST Cybersecurity'},
+    {url: 'https://www.securitymagazine.com/rss/15', name: 'Security Magazine'},
+    {url: 'https://industrialcyber.co/feed/', name: 'Industrial Cyber'},
+    {url: 'https://krebsonsecurity.com/feed/', name: 'Krebs on Security'},
+    {url: 'https://www.ncsc.gov.uk/api/1/services/v1/all-rss-feed.xml', name: 'NCSC'}
         ];
 
         async function fetchLiveNews() {
@@ -142,7 +147,7 @@
                     const parser = new DOMParser();
                     const xml = parser.parseFromString(text, "text/xml");
 
-                    const items = Array.from(xml.querySelectorAll("item")).slice(0, 8);
+                   const items = Array.from(xml.querySelectorAll("item")).slice(0, 20);
 
                     items.forEach(item => {
                         const title = item.querySelector("title").textContent.trim();
