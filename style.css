@@ -5704,3 +5704,56 @@ background-position: center right !important;
     }
 
 }
+
+
+/* ==================== WORKSHOP SLIDES HOMEPAGE SCROLL ==================== */
+
+#workshop-slides {
+    border-top: 6px solid #2d3e99;
+}
+
+.workshop-slide-scroll {
+    margin-top: 22px;
+}
+
+.workshop-slide-card {
+    border-top-color: #1e3a8a;
+}
+
+.workshop-slide-card h3 {
+    color: #1e3a8a;
+}
+
+.workshop-slide-card p {
+    color: #475569;
+}
+
+/* Mobile/small screen polish */
+@media (max-width: 768px) {
+    #workshop-slides {
+        padding: 22px 18px;
+    }
+
+    #workshop-slides h2 {
+        font-size: 1.45rem;
+        line-height: 1.3;
+    }
+
+    #workshop-slides p {
+        font-size: 0.95rem;
+    }
+
+    .workshop-slide-card {
+        flex: 0 0 78% !important;
+        min-width: 78%;
+        max-width: 78%;
+    }
+}
+
+@media (max-width: 480px) {
+    .workshop-slide-card {
+        flex: 0 0 86% !important;
+        min-width: 86%;
+        max-width: 86%;
+    }
+}
