@@ -2810,7 +2810,7 @@ line-height: 1.25;
 .mobile-nav-toggle {
     display: none;
 }
-@media (max-width: 700px) {
+@media (max-width: 1150px) {
     .mobile-nav-toggle {
         display: block;
         background: #ffffff;
