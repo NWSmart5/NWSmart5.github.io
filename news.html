@@ -121,38 +121,14 @@
 
 
     <script>
-   let allNews = [];
+let allNews = [];
 
-async function fetchLiveNews() {
-    const container = document.getElementById('news-grid');
-    container.innerHTML = `<p style="grid-column:1/-1; text-align:center; padding:60px;">Loading news...</p>`;
-
-    try {
-        const response = await fetch('news.json');
-        allNews = await response.json();
-        renderNews(allNews);
-    } catch (error) {
-        container.innerHTML = `<p style="grid-column:1/-1; text-align:center; padding:40px;">News is temporarily unavailable. Please check back soon.</p>`;
-    }
-}
-
-function renderNews(items) {
-    const grid = document.getElementById('news-grid');
-    grid.innerHTML = '';
-
-    items.forEach(item => {
-        const card = document.createElement('div');
-        card.className = 'card news-card';
-        card.innerHTML = `
-            <span class="news-date">${item.date} • ${item.source}</span>
-            <h3><a href="${item.link}" target="_blank" rel="noopener">${item.title}</a></h3>
-            <p>${item.excerpt}</p>
-            <a href="${item.link}" target="_blank" rel="noopener" class="read-more">Read Full Article →</a>
-        `;
-        grid.appendChild(card);
-    });
-}
-
+const feeds = [
+    {url: 'https://www.ncsc.gov.uk/api/1/services/v1/all-rss-feed.xml', name: 'NCSC'},
+    {url: 'https://industrialcyber.co/feed/', name: 'Industrial Cyber'},
+    {url: 'https://www.computerweekly.com/rss/ITsecurity.xml', name: 'Computer Weekly Security'},
+    {url: 'https://www.uktech.news/feed', name: 'UK Tech News'}
+];
         // Search and Filters (working)
         document.getElementById('news-search').addEventListener('input', (e) => {
             const term = e.target.value.toLowerCase();
