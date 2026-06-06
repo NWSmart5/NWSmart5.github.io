@@ -1,0 +1,26 @@
+[
+  {
+    "title": "AI Security Institute – News and communications",
+    "link": "https://www.gov.uk/search/news-and-communications?organisations%5B%5D=ai-security-institute&parent=ai-security-institute",
+    "excerpt": "Official UK updates on AI security, advanced AI risks, safeguards and responsible AI development.",
+    "date": "Live source",
+    "source": "AI Security Institute",
+    "category": "ai"
+  },
+  {
+    "title": "NCSC – Latest cybersecurity guidance",
+    "link": "https://www.ncsc.gov.uk/section/advice-guidance/all-topics",
+    "excerpt": "Official UK cybersecurity advice and guidance for organisations, including SMEs.",
+    "date": "Live source",
+    "source": "NCSC",
+    "category": "cyber"
+  },
+  {
+    "title": "UK Tech News – Digital transformation and technology updates",
+    "link": "https://www.uktech.news/",
+    "excerpt": "UK technology news covering digital innovation, AI, startups and transformation.",
+    "date": "Live source",
+    "source": "UK Tech News",
+    "category": "digital"
+  }
+]
