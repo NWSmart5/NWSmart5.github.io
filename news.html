@@ -8,36 +8,199 @@
     <link rel="icon" type="image/png" sizes="32x32" href="images/nwsmart5-logo.png">
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-LHEP92H7P6"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-LHEP92H7P6');
-    </script>
-</head>
-<body>
-  <div id="navbar"></div>
+   <script>
+let allNews = [];
 
-   <section class="news-hero">
+const feeds = [
+    {
+        url: "https://www.ncsc.gov.uk/api/1/services/v1/all-rss-feed.xml",
+        name: "NCSC",
+        category: "cyber"
+    },
+    {
+        url: "https://www.gov.uk/government/organisations/department-for-science-innovation-and-technology.atom",
+        name: "UK Government DSIT",
+        category: "ai"
+    },
+    {
+        url: "https://www.computerweekly.com/rss/ITsecurity.xml",
+        name: "Computer Weekly Security",
+        category: "cyber"
+    },
+    {
+        url: "https://www.uktech.news/feed",
+        name: "UK Tech News",
+        category: "digital"
+    }
+];
 
-    <div class="news-hero-content">
+async function fetchLiveNews() {
+    const newsGrid = document.getElementById("news-grid");
+    newsGrid.innerHTML = "<p>Loading latest news...</p>";
 
-        <h2>
-            Live <span>News & Insights</span>
-        </h2>
+    try {
+        const results = await Promise.allSettled(
+            feeds.map(feed =>
+                fetch(`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(feed.url)}`)
+                    .then(res => res.json())
+                    .then(data => {
+                        if (!data.items) return [];
 
-        <p>
-            Real-time updates from NCSC, industry,<br>
-            and official UK Government sources
-        </p>
+                        return data.items.slice(0, 6).map(item => ({
+                            title: item.title || "Untitled article",
+                            link: item.link || "#",
+                            excerpt: cleanText(item.description || item.content || "No summary available."),
+                            date: item.pubDate || "",
+                            source: feed.name,
+                            category: feed.category
+                        }));
+                    })
+            )
+        );
 
-        <a href="#news-grid" class="news-hero-btn">
-            Browse All Articles →
-        </a>
+        allNews = results
+            .filter(result => result.status === "fulfilled")
+            .flatMap(result => result.value)
+            .sort((a, b) => new Date(b.date) - new Date(a.date))
+            .slice(0, 24);
 
-    </div>
+        if (allNews.length === 0) {
+            newsGrid.innerHTML = "<p>No live news could be loaded right now. Please try again later.</p>";
+            return;
+        }
 
-</section>
+        renderNews(allNews);
+
+    } catch (error) {
+        console.error("News loading error:", error);
+        newsGrid.innerHTML = "<p>Live news could not be loaded right now.</p>";
+    }
+}
+
+function renderNews(newsItems) {
+    const newsGrid = document.getElementById("news-grid");
+
+    if (!newsItems.length) {
+        newsGrid.innerHTML = "<p>No matching articles found.</p>";
+        return;
+    }
+
+    newsGrid.innerHTML = newsItems.map(item => `
+        <div class="card news-card">
+            <span class="news-source">${item.source}</span>
+            <h4>
+                <a href="${item.link}" target="_blank" rel="noopener noreferrer">
+                    ${item.title}
+                </a>
+            </h4>
+            <p>${item.excerpt}</p>
+            <small>${formatDate(item.date)}</small>
+        </div>
+    `).join("");
+}
+
+function cleanText(text) {
+    const div = document.createElement("div");
+    div.innerHTML = text;
+    return div.textContent
+        .replace(/\s+/g, " ")
+        .trim()
+        .substring(0, 180) + "...";
+}
+
+function formatDate(dateString) {
+    if (!dateString) return "";
+    return new Date(dateString).toLocaleDateString("en-GB", {
+        day: "numeric",
+        month: "short",
+        year: "numeric"
+    });
+}
+
+document.getElementById("news-search").addEventListener("input", e => {
+    const term = e.target.value.toLowerCase();
+
+    const activeCategory = document.querySelector(".filter-btn.active").dataset.category;
+
+    let filtered = allNews.filter(item =>
+        item.title.toLowerCase().includes(term) ||
+        item.excerpt.toLowerCase().includes(term) ||
+        item.source.toLowerCase().includes(term)
+    );
+
+    if (activeCategory !== "all") {
+        filtered = filtered.filter(item => item.category === activeCategory);
+    }
+
+    renderNews(filtered);
+});
+
+document.querySelectorAll(".filter-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+        document.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+
+        const category = btn.dataset.category;
+        const term = document.getElementById("news-search").value.toLowerCase();
+
+        let filtered = category === "all"
+            ? allNews
+            : allNews.filter(item => item.category === category);
+
+        if (term) {
+            filtered = filtered.filter(item =>
+                item.title.toLowerCase().includes(term) ||
+                item.excerpt.toLowerCase().includes(term) ||
+                item.source.toLowerCase().includes(term)
+            );
+        }
+
+        renderNews(filtered);
+    });
+});
+
+fetch("navbar.html")
+    .then(response => response.text())
+    .then(data => {
+        document.getElementById("navbar").innerHTML = data;
+
+        const currentPage = window.location.pathname.split("/").pop();
+
+        document.querySelectorAll("nav a").forEach(link => {
+            const href = link.getAttribute("href");
+
+            if (href === currentPage || (currentPage === "" && href === "index.html")) {
+                link.classList.add("active-nav");
+            }
+        });
+    });
+
+window.addEventListener("scroll", () => {
+    const btn = document.getElementById("backToTopBtn");
+    if (!btn) return;
+
+    btn.style.display =
+        document.body.scrollTop > 300 || document.documentElement.scrollTop > 300
+            ? "flex"
+            : "none";
+});
+
+function scrollToTop() {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+}
+
+function toggleMobileNav() {
+    const nav = document.querySelector("nav");
+    if (nav) {
+        nav.classList.toggle("mobile-nav-open");
+    }
+}
+
+window.addEventListener("load", fetchLiveNews);
+</script>
 
     <div class="container">
         <div class="main-content" style="grid-column: 1 / -1;">
@@ -129,6 +292,7 @@ const feeds = [
     {url: 'https://www.computerweekly.com/rss/ITsecurity.xml', name: 'Computer Weekly Security'},
     {url: 'https://www.uktech.news/feed', name: 'UK Tech News'}
 ];
+        
         // Search and Filters (working)
         document.getElementById('news-search').addEventListener('input', (e) => {
             const term = e.target.value.toLowerCase();
