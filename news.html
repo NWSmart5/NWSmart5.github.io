@@ -123,11 +123,27 @@
     <script>
         let allNews = [];
 
-   const feeds = [
-    {url: 'https://www.ncsc.gov.uk/api/1/services/v1/all-rss-feed.xml', name: 'NCSC'},
-    {url: 'https://industrialcyber.co/feed/', name: 'Industrial Cyber'},
-    {url: 'https://www.computerweekly.com/rss/ITsecurity.xml', name: 'Computer Weekly Security'},
-    {url: 'https://www.uktech.news/feed', name: 'UK Tech News'}
+ const feeds = [
+    {
+        url: 'https://www.gov.uk/search/news-and-communications.atom?organisations%5B%5D=ai-security-institute&parent=ai-security-institute',
+        name: 'AI Security Institute'
+    },
+    {
+        url: 'https://www.ncsc.gov.uk/api/1/services/v1/all-rss-feed.xml',
+        name: 'NCSC'
+    },
+    {
+        url: 'https://industrialcyber.co/feed/',
+        name: 'Industrial Cyber'
+    },
+    {
+        url: 'https://www.computerweekly.com/rss/ITsecurity.xml',
+        name: 'Computer Weekly Security'
+    },
+    {
+        url: 'https://www.uktech.news/feed',
+        name: 'UK Tech News'
+    }
 ];
 
         async function fetchLiveNews() {
