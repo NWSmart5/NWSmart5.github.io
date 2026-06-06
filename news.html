@@ -121,88 +121,169 @@
 
 
     <script>
-        let allNews = [];
+       let allNews = [];
 
- const feeds = [
+const feeds = [
     {
         url: 'https://www.gov.uk/search/news-and-communications.atom?organisations%5B%5D=ai-security-institute&parent=ai-security-institute',
-        name: 'AI Security Institute'
+        name: 'AI Security Institute',
+        category: 'ai'
     },
     {
         url: 'https://www.ncsc.gov.uk/api/1/services/v1/all-rss-feed.xml',
-        name: 'NCSC'
-    },
-    {
-        url: 'https://industrialcyber.co/feed/',
-        name: 'Industrial Cyber'
-    },
-    {
-        url: 'https://www.computerweekly.com/rss/ITsecurity.xml',
-        name: 'Computer Weekly Security'
+        name: 'NCSC',
+        category: 'cyber'
     },
     {
         url: 'https://www.uktech.news/feed',
-        name: 'UK Tech News'
+        name: 'UK Tech News',
+        category: 'digital'
     }
 ];
 
-        async function fetchLiveNews() {
-            const container = document.getElementById('news-grid');
-            container.innerHTML = `<p style="grid-column:1/-1; text-align:center; padding:60px;">Loading live news...</p>`;
+const fallbackNews = [
+    {
+        title: 'AI Security Institute – News and communications',
+        link: 'https://www.gov.uk/search/news-and-communications?organisations%5B%5D=ai-security-institute&parent=ai-security-institute',
+        excerpt: 'Official UK updates on AI security, advanced AI risks, safeguards and responsible AI development.',
+        date: 'Live source',
+        source: 'AI Security Institute',
+        category: 'ai'
+    },
+    {
+        title: 'NCSC – Latest cybersecurity guidance',
+        link: 'https://www.ncsc.gov.uk/section/advice-guidance/all-topics',
+        excerpt: 'Official UK cybersecurity advice and guidance for organisations, including SMEs.',
+        date: 'Live source',
+        source: 'NCSC',
+        category: 'cyber'
+    },
+    {
+        title: 'UK Tech News – Digital transformation and technology updates',
+        link: 'https://www.uktech.news/',
+        excerpt: 'UK technology news covering digital innovation, AI, startups and transformation.',
+        date: 'Live source',
+        source: 'UK Tech News',
+        category: 'digital'
+    }
+];
 
-            for (let feed of feeds) {
-                try {
-                   const proxyUrl = `https://api.allorigins.win/raw?url=${encodeURIComponent(feed.url)}`;
-                    const res = await fetch(proxyUrl);
-                    if (!res.ok) continue;
+function getProxyUrls(feedUrl) {
+    return [
+        `https://api.allorigins.win/raw?url=${encodeURIComponent(feedUrl)}`,
+        `https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(feedUrl)}`
+    ];
+}
 
-                    const text = await res.text();
-                    const parser = new DOMParser();
-                    const xml = parser.parseFromString(text, "text/xml");
+async function fetchWithFallback(feedUrl) {
+    const proxyUrls = getProxyUrls(feedUrl);
 
-                   const items = Array.from(xml.querySelectorAll("item")).slice(0, 20);
+    for (const proxyUrl of proxyUrls) {
+        try {
+            const response = await fetch(proxyUrl);
+            if (!response.ok) continue;
 
-                    items.forEach(item => {
-                        const title = item.querySelector("title").textContent.trim();
-                        let category = "cyber";
-                        const lower = title.toLowerCase();
-                        if (lower.includes("ai") || lower.includes("artificial") || lower.includes("ethics")) category = "ai";
-                        if (lower.includes("digital") || lower.includes("industry 5") || lower.includes("transformation") || lower.includes("smart")) category = "digital";
-
-                        allNews.push({
-                            title: title,
-                            link: item.querySelector("link").textContent.trim(),
-                            excerpt: (item.querySelector("description") ? item.querySelector("description").textContent.replace(/<[^>]+>/g, '').substring(0, 160) + "..." : ""),
-                            date: item.querySelector("pubDate") ? new Date(item.querySelector("pubDate").textContent).toLocaleDateString('en-GB') : "Recent",
-                            source: feed.name,
-                            category: category
-                        });
-                    });
-                } catch (e) {
-                    console.log(`Failed to load ${feed.name}`);
-                }
+            const text = await response.text();
+            if (text && text.length > 50) {
+                return text;
             }
+        } catch (error) {
+            console.warn('Proxy failed:', proxyUrl);
+        }
+    }
 
-            allNews = allNews.filter((v, i, a) => a.findIndex(t => t.title === v.title) === i);
-            renderNews(allNews);
+    return null;
+}
+
+async function fetchLiveNews() {
+    const container = document.getElementById('news-grid');
+    container.innerHTML = `<p style="grid-column:1/-1; text-align:center; padding:60px;">Loading live news...</p>`;
+
+    allNews = [];
+
+    for (const feed of feeds) {
+        const text = await fetchWithFallback(feed.url);
+
+        if (!text) {
+            console.warn(`Failed to load ${feed.name}`);
+            continue;
         }
 
-        function renderNews(items) {
-            const grid = document.getElementById('news-grid');
-            grid.innerHTML = '';
+        const parser = new DOMParser();
+        const xml = parser.parseFromString(text, 'text/xml');
 
-            items.forEach(item => {
-                const card = document.createElement('div');
-                card.className = 'card news-card';
-                card.innerHTML = `
-                    <span class="news-date">${item.date} • ${item.source}</span>
-                    <h3><a href="${item.link}" target="_blank">${item.title}</a></h3>
-                    <p>${item.excerpt}</p>
-                    <a href="${item.link}" target="_blank" class="read-more">Read Full Article →</a>
-                `;
-                grid.appendChild(card);
+        let items = Array.from(xml.querySelectorAll('item'));
+
+        if (items.length === 0) {
+            items = Array.from(xml.querySelectorAll('entry'));
+        }
+
+        items.slice(0, 12).forEach(item => {
+            const title = item.querySelector('title')?.textContent?.trim() || 'No title';
+
+            const link =
+                item.querySelector('link')?.getAttribute('href') ||
+                item.querySelector('link')?.textContent?.trim() ||
+                '#';
+
+            const description =
+                item.querySelector('description')?.textContent ||
+                item.querySelector('summary')?.textContent ||
+                item.querySelector('content')?.textContent ||
+                '';
+
+            const dateValue =
+                item.querySelector('pubDate')?.textContent ||
+                item.querySelector('published')?.textContent ||
+                item.querySelector('updated')?.textContent ||
+                '';
+
+            allNews.push({
+                title: title,
+                link: link,
+                excerpt: description.replace(/<[^>]+>/g, '').substring(0, 160) + '...',
+                date: dateValue ? new Date(dateValue).toLocaleDateString('en-GB') : 'Recent',
+                source: feed.name,
+                category: feed.category
             });
-        }
+        });
+    }
+
+    allNews = allNews.filter((item, index, self) =>
+        index === self.findIndex(t => t.title === item.title)
+    );
+
+    if (allNews.length === 0) {
+        allNews = fallbackNews;
+    } else {
+        const categories = ['ai', 'cyber', 'digital'];
+
+        categories.forEach(category => {
+            if (!allNews.some(item => item.category === category)) {
+                allNews.push(...fallbackNews.filter(item => item.category === category));
+            }
+        });
+    }
+
+    renderNews(allNews);
+}
+
+function renderNews(items) {
+    const grid = document.getElementById('news-grid');
+    grid.innerHTML = '';
+
+    items.forEach(item => {
+        const card = document.createElement('div');
+        card.className = 'card news-card';
+        card.innerHTML = `
+            <span class="news-date">${item.date} • ${item.source}</span>
+            <h3><a href="${item.link}" target="_blank" rel="noopener">${item.title}</a></h3>
+            <p>${item.excerpt}</p>
+            <a href="${item.link}" target="_blank" rel="noopener" class="read-more">Read Full Article →</a>
+        `;
+        grid.appendChild(card);
+    });
+}
 
         // Search and Filters (working)
         document.getElementById('news-search').addEventListener('input', (e) => {
