@@ -5957,7 +5957,7 @@ background-position: center right !important;
 /* ==================== LINKEDIN FOLLOW CARD ==================== */
 
 .linkedin-follow-card {
-    background: linear-gradient(135deg, #1e3a8a, #2d3e99);
+    background: #1e3a8a;
     color: white;
     padding: 38px 34px !important;
     border-radius: 22px;
