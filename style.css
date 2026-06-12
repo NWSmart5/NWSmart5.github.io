@@ -6032,3 +6032,93 @@ background-position: center right !important;
         white-space: normal;
     }
 }
+
+
+
+/* ==================== TEAM PAGE LINKEDIN SECTION ==================== */
+
+.team-linkedin-section {
+    max-width: 1180px;
+    margin: 50px auto 0;
+    padding: 42px 48px;
+    border-radius: 28px;
+    background: #1e3a8a;
+    color: white;
+    box-shadow: 0 16px 36px rgba(15, 23, 42, 0.18);
+}
+
+.team-linkedin-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 34px;
+}
+
+.team-linkedin-label {
+    display: inline-block;
+    background: rgba(255,255,255,0.16);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 999px;
+    font-size: 0.9rem;
+    font-weight: 800;
+    margin-bottom: 14px;
+}
+
+.team-linkedin-section h2 {
+    color: white;
+    font-size: clamp(1.8rem, 3vw, 2.4rem);
+    margin-bottom: 14px;
+}
+
+.team-linkedin-section p {
+    color: #e0f2fe;
+    max-width: 720px;
+    font-size: 1.05rem;
+    line-height: 1.75;
+    margin: 0;
+}
+
+.team-linkedin-btn {
+    background: white;
+    color: #1e3a8a;
+    padding: 16px 30px;
+    border-radius: 999px;
+    font-weight: 800;
+    text-decoration: none;
+    white-space: nowrap;
+    box-shadow: 0 10px 24px rgba(0,0,0,0.18);
+    transition: all 0.3s ease;
+}
+
+.team-linkedin-btn:hover {
+    background: #e0f2fe;
+    transform: translateY(-4px);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .team-linkedin-section {
+        margin: 35px 16px 0;
+        padding: 32px 22px;
+        text-align: center;
+        border-radius: 22px;
+    }
+
+    .team-linkedin-content {
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+    }
+
+    .team-linkedin-section p {
+        font-size: 0.95rem;
+    }
+
+    .team-linkedin-btn {
+        width: 100%;
+        text-align: center;
+        padding: 14px 20px;
+        white-space: normal;
+    }
+}
