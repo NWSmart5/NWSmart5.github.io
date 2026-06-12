@@ -5888,8 +5888,8 @@ background-position: center right !important;
 }
 
 .home-infographic-block img {
-    width: 100%;
-    max-width: 960px;
+    width: 75%;
+    max-width: 850px;
     height: auto;
     display: block;
     margin: 0 auto;
