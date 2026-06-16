@@ -6219,6 +6219,9 @@ background-position: center right !important;
     background: #2d3e99;
     border-radius: 999px;
 }
+.event-card p:not(.event-date) {
+    margin-bottom: 24px;
+}
 
 @media (max-width: 768px) {
     .event-card {
