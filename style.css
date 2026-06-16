@@ -6145,9 +6145,9 @@ background-position: center right !important;
 }
 
 .event-card {
-    flex: 0 0 300px !important;
-    min-width: 300px !important;
-    max-width: 300px !important;
+      flex: 0 0 250px !important;
+    min-width: 250px !important;
+    max-width: 250px !important;
     min-height: 355px;
     padding: 18px !important;
 
@@ -6168,7 +6168,7 @@ background-position: center right !important;
 
 .event-card h3 {
     color: #1e3a8a;
-    font-size: 1.18rem;
+      font-size: 1.05rem;
     line-height: 1.35;
     margin-bottom: 12px;
 
