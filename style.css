@@ -6238,3 +6238,7 @@ background-position: center right !important;
         height: 292px !important;
     }
 }
+.footer-partners {
+    list-style: none;
+    padding-left: 0;
+}
