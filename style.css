@@ -6242,3 +6242,26 @@ background-position: center right !important;
     list-style: none;
     padding-left: 0;
 }
+
+
+/* Blog page mobile improvements */
+@media (max-width: 650px) {
+
+    .main-content .card h1 {
+        font-size: 2rem;
+        line-height: 1.25;
+    }
+
+    .main-content .card {
+        padding: 28px;
+    }
+
+    .blog-actions {
+        flex-direction: column;
+    }
+
+    .blog-actions .button-primary {
+        width: 100%;
+    }
+
+}
