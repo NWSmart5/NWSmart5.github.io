@@ -1,1 +1,115 @@
-....
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI in Manufacturing SMEs | NWSmart5.0</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/nwsmart5-logo.png">
+</head>
+
+<body>
+    <div id="navbar"></div>
+
+    <section class="hero home-hero">
+        <h2>AI in Manufacturing SMEs</h2>
+        <p>Driving Productivity and Efficiency in the Industry 5.0 Era</p>
+    </section>
+
+    <div class="container">
+        <div class="main-content">
+
+            <div class="card">
+                <span class="blog-tag">Safe AI</span>
+
+                <h1>AI in Manufacturing SMEs: Driving Productivity and Efficiency in the Industry 5.0 Era</h1>
+
+                <p>
+                    This blog explores how artificial intelligence can support manufacturing SMEs through predictive maintenance,
+                    quality control, intelligent automation and human-centred Industry 5.0 adoption.
+                </p>
+
+                <p>
+                    Add the converted blog content here from your PDF.
+                </p>
+
+                <div class="blog-actions">
+                    <a href="Blogs/Blog1-AI in Manufacturing SMEs.pdf"
+                       download
+                       class="button-primary">
+                       Download PDF
+                    </a>
+
+                    <a href="index.html#blog-insights"
+                       class="button-primary blog-download-btn">
+                       Back to Blog Insights
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer class="footer home-footer">
+        <div class="footer-grid">
+
+            <div>
+                <h3>NWSmart5.0 Knowledge Hub</h3>
+                <p>Practical guidance supporting manufacturing SMEs improve cybersecurity, explore safe AI adoption, and build smarter digital operations.</p>
+            </div>
+
+            <div>
+                <h3>Quick Links</h3>
+                <a href="index.html">Home</a>
+                <a href="safe-ai.html">Safe AI</a>
+                <a href="cybersecurity.html">Cybersecurity</a>
+                <a href="digital.html">Digital Transformation</a>
+                <a href="library.html">Knowledge Library</a>
+            </div>
+
+            <div>
+                <h3>Project Partners</h3>
+                <ul class="footer-partners">
+                    <li>University of Salford</li>
+                    <li>Engineering and Physical Sciences Research Council (UKRI)</li>
+                    <li>Greater Manchester Chamber of Commerce (GMCC)</li>
+                    <li>Greater Manchester Institute of Technology (GMIoT)</li>
+                    <li>EPSRC</li>
+                    <li>CyberFocus</li>
+                </ul>
+            </div>
+
+            <div>
+                <h3>Project Information</h3>
+                <p>
+                    Educational guidance only. Verify current official guidance before making operational, legal, cybersecurity, or technology investment decisions.
+                </p>
+                <a href="disclaimer.html" class="footer-disclaimer-link">
+                    Full Disclaimer →
+                </a>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 NWSmart5.0 Knowledge Hub • Supporting smarter, safer, and more sustainable manufacturing.</p>
+            <p>External resources and guidance remain the property of their respective organisations.</p>
+        </div>
+    </footer>
+
+    <script>
+        fetch('navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar').innerHTML = data;
+            });
+
+        function toggleMobileNav() {
+            const nav = document.querySelector("nav");
+            if (nav) {
+                nav.classList.toggle("mobile-nav-open");
+            }
+        }
+    </script>
+</body>
+</html>
