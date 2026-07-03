@@ -6265,3 +6265,9 @@ background-position: center right !important;
     }
 
 }
+@media (max-width: 650px) {
+    .card h1 {
+        font-size: 1.7rem !important;
+        line-height: 1.25 !important;
+    }
+}
