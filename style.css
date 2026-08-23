@@ -6369,3 +6369,42 @@ background-position: center right !important;
         font-size: 0.9rem;
     }
 }
+
+.scan-scale-expand {
+    margin-top: 22px;
+}
+
+.scan-scale-expand summary {
+    background: #2d3e99;
+    color: white;
+    padding: 16px 22px;
+    border-radius: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    list-style: none;
+    transition: 0.25s ease;
+}
+
+.scan-scale-expand summary:hover {
+    background: #1e2d7a;
+}
+
+.scan-scale-expand summary::after {
+    content: "+";
+    float: right;
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+.scan-scale-expand[open] summary::after {
+    content: "−";
+}
+
+.scan-scale-expand[open] summary {
+    border-radius: 12px 12px 0 0;
+}
+
+.scan-scale-expand .comparison-table-wrapper {
+    margin-top: 0;
+    border-radius: 0 0 16px 16px;
+}
