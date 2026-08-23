@@ -6274,55 +6274,98 @@ background-position: center right !important;
 
 
 
-/* Scan and Scale Comparison Table */
+/* ==================== SCAN & SCALE COMPARISON ==================== */
 
 .scan-scale-comparison {
-    margin-top: 30px;
+    margin-top: 32px;
 }
 
 .scan-scale-comparison h3 {
+    color: #1e3a8a;
+    font-size: 1.35rem;
     margin-bottom: 10px;
+}
+
+.scan-scale-comparison > p {
+    color: #475569;
+    margin-bottom: 22px;
 }
 
 .comparison-table-wrapper {
     width: 100%;
     overflow-x: auto;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    border: 1px solid #dbe4ee;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+    margin: 20px 0 24px;
 }
 
 .scan-scale-table {
     width: 100%;
     border-collapse: collapse;
-    min-width: 650px;
-}
-
-.scan-scale-table th,
-.scan-scale-table td {
-    padding: 16px;
-    text-align: left;
-    vertical-align: top;
-    border: 1px solid #d9e0e7;
-    line-height: 1.6;
-}
-
-.scan-scale-table th {
-    background: #f2f6f8;
-    font-weight: 700;
-}
-
-.scan-scale-table td {
+    table-layout: fixed;
     background: #ffffff;
 }
 
-.scan-scale-table tbody tr:nth-child(even) td {
-    background: #f8fafb;
+.scan-scale-table th {
+    width: 50%;
+    background: #2d3e99;
+    color: #ffffff;
+    padding: 18px 20px;
+    text-align: left;
+    font-size: 1rem;
+    font-weight: 700;
+    border: none;
+}
+
+.scan-scale-table th:first-child {
+    border-right: 1px solid rgba(255,255,255,0.25);
+}
+
+.scan-scale-table td {
+    width: 50%;
+    padding: 18px 20px;
+    vertical-align: top;
+    color: #334155;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    border: none;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.scan-scale-table td:first-child {
+    border-right: 1px solid #e5e7eb;
+}
+
+.scan-scale-table tbody tr:nth-child(even) {
+    background: #f8fafc;
+}
+
+.scan-scale-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.scan-scale-table tbody tr {
+    transition: background 0.2s ease;
+}
+
+.scan-scale-table tbody tr:hover {
+    background: #eef4ff;
 }
 
 @media (max-width: 768px) {
+
+    .comparison-table-wrapper {
+        border-radius: 12px;
+    }
+
+    .scan-scale-table {
+        min-width: 700px;
+    }
+
     .scan-scale-table th,
     .scan-scale-table td {
-        padding: 12px;
-        font-size: 14px;
+        padding: 14px 16px;
+        font-size: 0.9rem;
     }
 }
