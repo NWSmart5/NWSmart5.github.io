@@ -6423,3 +6423,47 @@ background-position: center right !important;
     border-radius: 0 0 12px 12px;
 }
 
+/* ==================== COMMON SME MISTAKES ==================== */
+
+.mistakes-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+    margin-top: 26px;
+}
+
+.mistake-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-left: 4px solid #2d3e99;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 14px rgba(15, 23, 42, 0.05);
+}
+
+.mistake-card h3 {
+    color: #1e3a8a;
+    font-size: 1rem;
+    line-height: 1.45;
+    margin: 0 0 14px;
+}
+
+.mistake-card .mitigation {
+    background: #f8fafc;
+    border-radius: 8px;
+    padding: 12px 14px;
+    margin: 0;
+    color: #475569;
+    font-size: 0.94rem;
+    line-height: 1.6;
+}
+
+.mistake-card .mitigation strong {
+    color: #2d3e99;
+}
+
+@media (max-width: 800px) {
+    .mistakes-grid {
+        grid-template-columns: 1fr;
+    }
+}
