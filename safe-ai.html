@@ -55,6 +55,7 @@
             <li><a href="#ai-readiness-toolkit">AI Readiness Toolkit</a></li>
             <li><a href="#ico-ai-risk-toolkit">ICO AI Risk Toolkit</a></li>
             <li><a href="#scan-pilot-scale-toolkit">Scan Pilot Scale Guide</a></li>
+            <li><a href="#vision-inspection-example">Vision Inspection Example</a></li>
             <li><a href="#ai-supplier-assessment-toolkit">Supplier Assessment</a></li>
             <li><a href="#ai-risk-assessment-toolkit">Risk Assessment</a></li>
             <li><a href="#human-oversight-toolkit">Human Oversight</a></li>
@@ -900,6 +901,117 @@
         Made Smarter UK
     </a>
 </p>
+
+</div>
+        <!-- Vision Inspection Example -->
+<div class="card" id="vision-inspection-example">
+
+    <h2>AI Vision Inspection Example</h2>
+
+    <p>
+        A manufacturer wants to use AI vision inspection to detect surface defects
+        on finished parts. Before deployment, the business should confirm the
+        inspection goal, test whether the image data is good enough, review supplier
+        security and support, document known limitations, and decide when a human
+        inspector must overrule the system.
+    </p>
+
+    <p>
+        If the cameras or workflow capture people, IDs or other personal data,
+        the organisation should also assess its data protection obligations.
+    </p>
+
+    <div class="vision-stage-grid">
+
+        <div class="vision-stage-card">
+            <div class="vision-stage-number">01</div>
+            <h3>Pre-deploy</h3>
+
+            <ul>
+                <li>
+                    Define the defect types, acceptable tolerance levels and what
+                    counts as a pass, fail or manual review case.
+                </li>
+
+                <li>
+                    Validate images from real operating conditions, including
+                    different lighting, angles, speeds and product variants.
+                </li>
+
+                <li>
+                    Check data governance, supplier security, model versioning and
+                    fallback procedures if the system fails or becomes unavailable.
+                </li>
+            </ul>
+        </div>
+
+        <div class="vision-stage-card">
+            <div class="vision-stage-number">02</div>
+            <h3>Deploy</h3>
+
+            <ul>
+                <li>
+                    Start on one line or one product family with protected access
+                    controls, audit logs and a documented escalation route.
+                </li>
+
+                <li>
+                    Require operators or quality engineers to review borderline or
+                    high-impact cases rather than allowing the model to act alone.
+                </li>
+
+                <li>
+                    Compare AI decisions with human inspection results to confirm
+                    the pilot is performing as expected in live conditions.
+                </li>
+            </ul>
+        </div>
+
+        <div class="vision-stage-card">
+            <div class="vision-stage-number">03</div>
+            <h3>Post-deploy</h3>
+
+            <ul>
+                <li>
+                    Monitor false positives, false negatives, drift and override
+                    rates over time.
+                </li>
+
+                <li>
+                    Reassess performance when new materials, finishes, lighting
+                    conditions or camera settings are introduced.
+                </li>
+
+                <li>
+                    Review incidents and lessons learned, then retrain, restrict or
+                    retire the model if it no longer meets safety, quality or
+                    compliance expectations.
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
+    <p class="source-note">
+        <strong>Sources:</strong>
+        <a href="https://www.ncsc.gov.uk/collection/guidelines-secure-ai-system-development"
+           target="_blank"
+           rel="noopener noreferrer">
+            NCSC Guidelines for Secure AI System Development
+        </a>
+        ·
+        <a href="https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/artificial-intelligence/"
+           target="_blank"
+           rel="noopener noreferrer">
+            Information Commissioner's Office (ICO)
+        </a>
+        ·
+        <a href="https://www.nist.gov/itl/ai-risk-management-framework"
+           target="_blank"
+           rel="noopener noreferrer">
+            NIST AI Risk Management Framework
+        </a>
+    </p>
 
 </div>
 
