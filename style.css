@@ -6370,30 +6370,44 @@ background-position: center right !important;
     }
 }
 
+/* Expandable Scan & Scale comparison */
+
 .scan-scale-expand {
     margin-top: 22px;
 }
 
 .scan-scale-expand summary {
     background: #2d3e99;
-    color: white;
-    padding: 16px 22px;
+    color: #ffffff;
+    padding: 17px 22px;
     border-radius: 12px;
     font-weight: 700;
+    font-size: 1rem;
     cursor: pointer;
     list-style: none;
-    transition: 0.25s ease;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    box-shadow: 0 5px 14px rgba(45, 62, 153, 0.18);
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.scan-scale-expand summary::-webkit-details-marker {
+    display: none;
 }
 
 .scan-scale-expand summary:hover {
-    background: #1e2d7a;
+    background: #243584;
+    transform: translateY(-1px);
 }
 
 .scan-scale-expand summary::after {
     content: "+";
-    float: right;
-    font-size: 1.4rem;
-    font-weight: 700;
+    font-size: 1.5rem;
+    line-height: 1;
+    font-weight: 600;
 }
 
 .scan-scale-expand[open] summary::after {
@@ -6406,5 +6420,5 @@ background-position: center right !important;
 
 .scan-scale-expand .comparison-table-wrapper {
     margin-top: 0;
-    border-radius: 0 0 16px 16px;
+    border-radius: 0 0 12px 12px;
 }
