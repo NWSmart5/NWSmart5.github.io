@@ -6155,23 +6155,25 @@ background-position: center right !important;
 }
 
 .event-card {
-    flex: 0 0 270px !important;
-    min-width: 270px !important;
-    max-width: 270px !important;
-    height: 300px !important;
+    flex: 0 0 300px !important;
+    min-width: 300px !important;
+    max-width: 300px !important;
+    min-height: 340px !important;
+    height: auto !important;
 
-    padding: 18px !important;
+    padding: 22px !important;
     border-radius: 18px;
     border: 1px solid #e2e8f0;
     border-top: 5px solid #2d3e99;
     background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
     box-shadow: 0 8px 22px rgba(0,0,0,0.07);
 
-    display: grid;
-    grid-template-rows: 38px 64px 34px 1fr 46px;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 14px;
+
     scroll-snap-align: start;
 }
-
 .event-card .blog-tag {
     margin: 0;
     align-self: start;
@@ -6205,15 +6207,19 @@ background-position: center right !important;
 
 .event-card .button-primary {
     width: 100%;
-    height: 42px;
-    min-height: 42px;
+    height: 46px;
+    min-height: 46px;
     padding: 0 14px !important;
-    font-size: 0.86rem;
+    font-size: 0.9rem;
+
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 !important;
-    align-self: end;
+
+    margin-top: auto !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    margin-bottom: 0 !important;
 }
 
 .events-scroll::-webkit-scrollbar {
@@ -6232,10 +6238,11 @@ background-position: center right !important;
 
 @media (max-width: 768px) {
     .event-card {
-        flex: 0 0 76% !important;
-        min-width: 76% !important;
-        max-width: 76% !important;
-        height: 292px !important;
+        flex: 0 0 82% !important;
+        min-width: 82% !important;
+        max-width: 82% !important;
+        min-height: 340px !important;
+        height: auto !important;
     }
 }
 .footer-partners {
