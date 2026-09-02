@@ -6474,3 +6474,90 @@ background-position: center right !important;
         grid-template-columns: 1fr;
     }
 }
+
+
+
+
+
+/* ========================================
+   SAFE AI WORKSHOP TICKER
+======================================== */
+
+.workshop-ticker {
+    width: 100%;
+    background: linear-gradient(
+        90deg,
+        #172554 0%,
+        #1e3a8a 45%,
+        #283fb8 100%
+    );
+    color: white;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 1000;
+}
+
+.ticker-content {
+    width: 100%;
+    min-height: 58px;
+    padding: 10px 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+
+    box-sizing: border-box;
+}
+
+.ticker-label {
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    padding: 7px 13px;
+    border-radius: 20px;
+
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+
+    white-space: nowrap;
+}
+
+.ticker-title {
+    font-size: 15px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.ticker-detail {
+    font-size: 14px;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.ticker-divider {
+    color: rgba(255, 255, 255, 0.45);
+}
+
+.ticker-register {
+    margin-left: 12px;
+
+    background: white;
+    color: #1e3a8a;
+
+    padding: 9px 18px;
+    border-radius: 8px;
+
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 700;
+
+    white-space: nowrap;
+
+    transition: all 0.2s ease;
+}
+
+.ticker-register:hover {
+    background: #f1f5f9;
+    transform: translateY(-1px);
+}
