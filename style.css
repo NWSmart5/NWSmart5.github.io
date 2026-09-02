@@ -6493,19 +6493,21 @@ background-position: center right !important;
     );
     color: white;
     box-sizing: border-box;
-    position: relative;
-    z-index: 1000;
+    overflow: hidden;
 }
 
 .ticker-content {
     width: 100%;
-    min-height: 58px;
-    padding: 10px 40px;
+    max-width: 1600px;
+    margin: 0 auto;
+
+    min-height: 52px;
+    padding: 8px 20px;
 
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 18px;
+    gap: 12px;
 
     box-sizing: border-box;
 }
@@ -6513,46 +6515,51 @@ background-position: center right !important;
 .ticker-label {
     background: rgba(255, 255, 255, 0.15);
     border: 1px solid rgba(255, 255, 255, 0.22);
-    padding: 7px 13px;
+
+    padding: 6px 11px;
     border-radius: 20px;
 
-    font-size: 13px;
+    font-size: 12px;
     font-weight: 700;
-    letter-spacing: 0.3px;
 
     white-space: nowrap;
+    flex-shrink: 0;
 }
 
 .ticker-title {
-    font-size: 15px;
+    font-size: 14px;
     font-weight: 700;
+
     white-space: nowrap;
+    flex-shrink: 1;
 }
 
 .ticker-detail {
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 500;
+
     white-space: nowrap;
+    flex-shrink: 1;
 }
 
 .ticker-divider {
     color: rgba(255, 255, 255, 0.45);
+    flex-shrink: 0;
 }
 
 .ticker-register {
-    margin-left: 12px;
-
     background: white;
     color: #1e3a8a;
 
-    padding: 9px 18px;
+    padding: 8px 14px;
     border-radius: 8px;
 
     text-decoration: none;
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 700;
 
     white-space: nowrap;
+    flex-shrink: 0;
 
     transition: all 0.2s ease;
 }
@@ -6560,4 +6567,11 @@ background-position: center right !important;
 .ticker-register:hover {
     background: #f1f5f9;
     transform: translateY(-1px);
+}
+
+/* Prevent horizontal page stretching */
+html,
+body {
+    max-width: 100%;
+    overflow-x: hidden;
 }
