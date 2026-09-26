@@ -2379,15 +2379,7 @@ line-height: 1.25;
         grid-template-columns: 1fr !important;
     }
 }
-/* Keep news sidebar visible while scrolling on desktop */
-@media (min-width: 769px) {
-    .sidebar {
-        position: sticky;
-        top: 20px;
-        align-self: start;
-        height: fit-content;
-    }
-}
+
 
 #backToTopBtn {
     display: none;
