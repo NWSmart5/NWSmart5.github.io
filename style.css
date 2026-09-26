@@ -6703,13 +6703,3 @@ body {
 
 
 
-
-
-/* Homepage desktop sidebar */
-@media (min-width: 901px) {
-    body .container > .sidebar {
-        position: sticky !important;
-        top: 110px !important;
-        align-self: start !important;
-    }
-}
