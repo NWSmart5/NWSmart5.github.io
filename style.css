@@ -6699,3 +6699,32 @@ body {
     max-width: 100%;
     overflow-x: hidden;
 }
+
+
+
+/* FORCE HOMEPAGE SIDEBAR TO STAY ON SCREEN - DESKTOP ONLY */
+@media (min-width: 901px) {
+
+    .container {
+        position: relative !important;
+    }
+
+    .container > .sidebar {
+        position: fixed !important;
+
+        top: 120px !important;
+        right: max(20px, calc((100vw - 1280px) / 2 + 20px)) !important;
+
+        width: 280px !important;
+        height: calc(100vh - 140px) !important;
+        max-height: calc(100vh - 140px) !important;
+
+        overflow-y: auto !important;
+
+        z-index: 900 !important;
+    }
+
+    .container > .main-content {
+        margin-right: 320px !important;
+    }
+}
