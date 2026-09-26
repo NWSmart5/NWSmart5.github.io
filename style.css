@@ -3097,7 +3097,7 @@ nav {
                 flex-direction: column;
             }
         
-            .sidebar {
+            .page-layout .sidebar {
                 width: 100%;
                 position: relative;
                 top: 0;
