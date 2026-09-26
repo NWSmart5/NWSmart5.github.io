@@ -15,8 +15,35 @@
         gtag('js', new Date());
         gtag('config', 'G-LHEP92H7P6');
     </script>
+    <style>
+/* Homepage news sidebar fix */
+@media (min-width: 901px) {
+
+    body.home-page .container {
+        display: grid !important;
+        grid-template-columns: minmax(0, 1fr) 280px !important;
+        gap: 40px !important;
+        align-items: start !important;
+    }
+
+    body.home-page .container > .main-content {
+        min-width: 0 !important;
+        margin-right: 0 !important;
+    }
+
+    body.home-page .container > .sidebar {
+        position: sticky !important;
+        top: 110px !important;
+        width: 280px !important;
+        align-self: start !important;
+        height: fit-content !important;
+        max-height: calc(100vh - 130px) !important;
+        overflow-y: auto !important;
+    }
+}
+</style>
 </head>
-<body>
+<body class="home-page">
 
 
  <!-- NWSmart5.0 Consultancy Ticker -->
