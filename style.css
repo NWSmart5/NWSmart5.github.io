@@ -492,7 +492,6 @@ nav a:hover::after {
 
 
 /* ==================== QUICK LINK CARDS ONLY ==================== */
-/* This only affects Cyber Essentials and Take Five cards, not video cards */
 
 .quick-link-card {
     background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
@@ -2380,6 +2379,16 @@ line-height: 1.25;
         grid-template-columns: 1fr !important;
     }
 }
+/* Keep news sidebar visible while scrolling on desktop */
+@media (min-width: 769px) {
+    .sidebar {
+        position: sticky;
+        top: 20px;
+        align-self: start;
+        height: fit-content;
+    }
+}
+
 #backToTopBtn {
     display: none;
     position: fixed;
@@ -3125,7 +3134,7 @@ nav {
 
 
 
-/* ==================== FINAL STRUCTURE FIX ==================== */
+
 
 .container {
     max-width: 1280px;
@@ -4521,7 +4530,6 @@ background-position: center right !important;
     box-shadow: 0 18px 38px rgba(79,70,229,0.35);
 }
 
-/* REMOVE EXTRA GAP UNDER HERO */
 
 .news-hero + .container {
     margin-top: 30px !important;
