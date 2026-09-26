@@ -3008,21 +3008,6 @@ nav {
     }
 }
 
-.page-layout {
-    display: flex;
-    gap: 28px;
-    align-items: flex-start;
-    flex-direction: row-reverse;
-}
-.sidebar {
-    width: 280px;
-    flex-shrink: 0;
-}
-
-.main-content {
-    flex: 1;
-    min-width: 0;
-}
 
 
 .library-layout {
@@ -3039,7 +3024,7 @@ nav {
         .sidebar {
             width: 280px;
             position: sticky;
-            top: 40px;
+            top: 20px;
             align-self: start;
             flex-shrink: 0;
             background: white;
