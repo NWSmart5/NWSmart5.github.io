@@ -6718,3 +6718,59 @@ body {
 
 
 
+
+/* ==================== HOMEPAGE LAYOUT ==================== */
+
+@media (min-width: 1101px) {
+
+    body:has(.home-hero) .container {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 280px;
+        gap: 32px;
+        align-items: start;
+    }
+
+    .home-sidebar {
+        grid-column: 2;
+
+        position: sticky !important;
+        top: 24px !important;
+
+        width: 280px !important;
+        height: auto !important;
+        max-height: calc(100vh - 48px) !important;
+
+        right: auto !important;
+        left: auto !important;
+        bottom: auto !important;
+
+        align-self: start;
+        overflow-y: auto;
+    }
+}
+
+
+/* HOMEPAGE MOBILE */
+
+@media (max-width: 1100px) {
+
+    body:has(.home-hero) .container {
+        display: block;
+    }
+
+    .home-sidebar {
+        position: relative !important;
+        top: auto !important;
+        right: auto !important;
+
+        width: 100% !important;
+        max-width: none !important;
+        height: auto !important;
+        max-height: none !important;
+
+        overflow: visible;
+    }
+}
+
+
+
