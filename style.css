@@ -6740,18 +6740,3 @@ body {
 
 
 
-
-
-/* Knowledge Library footer spacing fix */
-
-body.library-page {
-    margin: 0;
-    padding: 0;
-}
-
-.library-page .footer {
-    width: 100%;
-    max-width: none;
-    margin: 0;
-    box-sizing: border-box;
-}
