@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cybersecurity Risks in AI-Driven Manufacturing | NWSmart5.0</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/nwsmart5-logo.png">
+</head>
+
+<body>
+    <div id="navbar"></div>
+
+
+ <div class="container page-layout">
+<button class="mobile-sidebar-toggle" onclick="toggleMobileSidebar()">
+    ☰ Page Menu
+</button>
+    <div class="sidebar">
+        <h3>📖 Article Navigation</h3>
+        <ul class="sidebar-jump-links">
+            <li><a href="#why-cybersecurity-matters">Why Cybersecurity Matters</a></li>
+<li><a href="#ai-attack-surface">How AI Expands the Attack Surface</a></li>
+<li><a href="#ai-specific-threats">AI-Specific Threats</a></li>
+<li><a href="#real-world-impact">Real-World Impact</a></li>
+<li><a href="#sme-next-steps">What SMEs Should Do Next</a></li>
+<li><a href="#article-sources">Sources</a></li>
+        </ul>
+
+        <h3 style="margin-top:32px;">📥 Related Downloads</h3>
+        <ul>
+           <li><a href="Tools/AI_Risk_Assessment_Toolkit.docx" download>AI Risk Assessment Toolkit</a></li>
+
+<li><a href="Tools/AI_Supplier_Assessment_Checklist_Toolkit.docx" download>AI Supplier Assessment Checklist</a></li>
+
+<li><a href="Tools/Human_Oversight_Responsible_AI_Toolkit.docx" download>Human Oversight Toolkit</a></li>
+        </ul>
+
+        <h3 style="margin-top:32px;">🔗 Continue Exploring</h3>
+        <ul>
+            <li><a href="safe-ai.html">Safe AI Knowledge Hub</a></li>
+            <li><a href="library.html">Knowledge Library</a></li>
+            <li><a href="news.html">Latest AI News</a></li>
+        </ul>
+    </div>
+<div class="main-content">
+    <div class="card">
+    <span class="blog-tag">Cybersecurity</span>
+
+    <h1>Cybersecurity Risks in AI-Driven Manufacturing: What SMEs Need to Know</h1>
+
+    <p style="margin-top: 20px;">
+        By Dr. Tarek Gaber (PI of the NWSmart5.0 and Senior Lecturer in Cybersecurity,
+        University of Salford)
+    </p>
+
+    <h2 id="why-cybersecurity-matters" style="margin-top: 20px;">Why Cybersecurity Matters for AI-Enabled SMEs</h2>
+
+    <p>
+        As manufacturing SMEs adopt Artificial Intelligence (AI) to improve productivity and efficiency, their
+        operations are becoming more connected. Joint guidance from the UK's National Cyber Security
+        Centre (NCSC) and international partners notes that operational technology (OT) environments are
+        now more interconnected than ever. That connectivity brings value, but it also creates entry points.
+        The US Cybersecurity and Infrastructure Security Agency (CISA) warns that attackers are deliberately
+        targeting internet-connected industrial systems, and urges operators to secure remote access to
+        them.
+    </p>
+
+    <p>
+        Manufacturing has become a prime target. According to IBM's X-Force Threat Intelligence Index 2026,
+        manufacturing was the most attacked industry for the fifth consecutive year, accounting for 27.7% of
+        the incidents IBM's responders handled in 2025. IBM links this to the sector's central role in supply
+        chains and the high value of its operational and intellectual property data. In these attacks, malware
+        was the most common attacker action (45%), which IBM says indicates a focus on operational
+        disruption and financial extortion. Data theft was the most common impact (40%).
+    </p>
+
+    <p>
+        SMEs are not exempt simply because they are smaller. The UK government's latest survey found that
+        42% of micro and 46% of small businesses identified a breach or attack in the previous 12 months.
+        Smaller firms are also exposed through their place in supply chains. The NCSC notes that small
+        suppliers with little security budget can still be a critical part of a larger supply chain. When a large
+        manufacturer is hit, the impact flows down the chain: after the 2025 attack on Jaguar Land Rover,
+        some suppliers paused or scaled back production, and some feared bankruptcy.
+    </p>
+
+    <h2 id="ai-attack-surface" style="margin-top: 20px;">How AI Expands the Attack Surface</h2>
+
+    <p>
+        AI systems depend on data, connectivity, and integration. Predictive maintenance relies on Industrial
+        Internet of Things (IIoT) sensors, quality control on networked cameras, and production scheduling on
+        data flowing between machines, enterprise systems, and cloud platforms. As Control Engineering
+        explains, moving industrial sensors and data systems onto IP networks, and in some cases into the
+        cloud, has exposed OT to a much broader range of modern cyber threats.
+    </p>
+
+    <p>
+        In the past, many factory systems operated in isolation from IT networks and the internet. The NCSC-
+        led guidance points out that many OT environments still depend on older technology that was never
+        built for modern connectivity or security. Connecting such equipment to modern AI platforms
+        therefore exposes it to new risks. Weak credentials are a common problem: CISA reports that recently
+        targeted industrial systems used default or easily guessable passwords.
+    </p>
+
+    <p>
+        IBM's research also found that exploitation of public-facing applications was the most common way
+        attackers breached manufacturing organisations (32%), followed by valid accounts (16%) and external
+        remote services (11%). Across all sectors, Verizon's 2026 Data Breach Investigations Report likewise
+        found that vulnerability exploitation has overtaken stolen credentials as the leading way into breached
+        organisations. For industrial systems, CISA advises removing OT connections to the public internet and
+        securing remote access.
+    </p>
+
+    <h2 id="ai-specific-threats" style="margin-top: 20px;">AI-Specific Threats SMEs Should Understand</h2>
+
+    <p>
+        Beyond traditional cyber threats, AI systems face attacks of their own. The US National Institute of
+        Standards and Technology (NIST) has published a taxonomy of attacks on AI systems and warns that
+        attackers are already exploiting the way AI can fail when fed untrustworthy data. The main categories
+        relevant to SMEs are:
+    </p>
+
+    <ul>
+        <li>
+            <strong>Data poisoning:</strong> NIST describes poisoning as introducing corrupted data during an AI model's
+            training. In a factory, a poisoned model could, for example, overlook warning signs of machine
+            failure or accept defective products.
+        </li>
+        <li>
+            <strong>Evasion (model manipulation):</strong> These attacks alter the inputs a deployed AI system receives
+            in order to change how it responds. For computer vision or anomaly detection, this could
+            mean missed defects or missed alerts.
+        </li>
+        <li>
+            <strong>Data leakage:</strong> NIST also describes privacy attacks that try to extract sensitive information
+            about an AI system or its training data. Everyday use is a risk too: Verizon found that regular
+            employee use of AI tools on work devices rose from 15% to 45% in a year, and that unapproved
+            “shadow AI” is now the third most common source of non-malicious data leakage. Company
+            source code was the data most often submitted to external AI tools.
+        </li>
+        <li>
+            <strong>AI-powered attacks:</strong> The NCSC reports that threat actors are already using AI to improve
+            reconnaissance, phishing, and coding, and assesses that AI will almost certainly increase the
+            volume and impact of cyber attacks.
+        </li>
+    </ul>
+
+    <p>
+        The UK Government's Cyber Security Breaches Survey 2025/2026 highlights the preparedness gap. It
+        found that 43% of UK businesses identified a cyber breach or attack in the previous 12 months. It also
+        found that 31% of businesses are using, adopting, or considering AI, but only 24% of those have cyber
+        security measures in place to manage the associated risks.
+    </p>
+
+    <h2 id="real-world-impact" style="margin-top: 20px;">Real-World Impact on Manufacturing Operations</h2>
+
+    <p>
+        The consequences of a cyber attack in manufacturing extend beyond IT disruption. The NCSC notes
+        that OT priorities are safety, reliability, and availability, because OT failures can have physical
+        consequences. The cyber attack on Jaguar Land Rover (JLR) in 2025 showed how far the damage can
+        spread: production stopped for around five weeks from 1 September. The Cyber Monitoring Centre
+        estimated the cost to the UK economy at around £1.9 billion, with around 5,000 organisations affected
+        and most of the impact coming from lost output at JLR and its suppliers.
+    </p>
+
+    <p>
+        The financial impact on businesses is growing. In the UK survey, the share of breached businesses
+        reporting a loss of revenue or share value rose from 2% to 5%. Phishing remains the most common
+        type of attack, reported by 38% of UK businesses, and 69% of affected businesses rated it the most
+        disruptive. That is a reminder that cybersecurity depends on people and processes as well as
+        technology.
+    </p>
+
+    <h2 id="sme-next-steps" style="margin-top: 20px;">What SMEs Should Do Next</h2>
+
+    <p>
+        Practical help is available without an enterprise-sized budget. The NCSC publishes a free Small
+        organisations guide to cyber security, and it has also published Guidelines for secure AI system
+        development on building security into AI systems.
+    </p>
+
+    <p>
+        A sensible first step is to map what is connected: which machines, sensors, and AI platforms exchange
+        data, and where that data is stored. The NCSC-led guidance stresses the need for an up-to-date,
+        definitive view of your OT architecture. CISA's primary mitigations for OT then cover the basics:
+        remove OT connections to the public internet, change default passwords, secure remote access with
+        multi-factor authentication, separate IT and OT networks, and keep the ability to run operations
+        manually.
+    </p>
+
+    <p>
+        When selecting AI vendors and other suppliers, the NCSC's Supplier assurance questions offer a ready-
+        made set of basic security questions to ask. The government-backed Cyber Essentials scheme certifies
+        five technical controls designed to guard against the most common internet-based threats. According
+        to the NCSC, organisations with the Cyber Essentials controls in place are 92% less likely to make a
+        claim on their cyber insurance.
+    </p>
+
+    <p>
+        Preparing for incidents is equally important, yet only 25% of UK businesses have a formal incident
+        response plan. For industrial systems, CISA advises developing and testing contingency plans so that
+        operations can continue manually if systems are disrupted. Because phishing is the most common
+        attack, staff awareness training is also essential.
+    </p>
+
+    <p>
+        Resilience is one of the three pillars of the European Commission's Industry 5.0 vision, alongside
+        human-centricity and sustainability. For manufacturing SMEs adopting AI, cybersecurity is a core part
+        of that resilience. Treating security as an integral part of AI strategy helps SMEs protect their
+        operations and reassure customers in an increasingly connected industrial landscape.
+    </p>
+
+    <p>
+        Support of this kind is already available to manufacturers in the Northwest and beyond. NWSmart5.0,
+        an initiative of the University of Salford (SecureAI Lab: NWSmart5.0 Knowledge Hub), was created to
+        help manufacturing SMEs adopt new technologies securely while minimising risk. Funded through the
+        CyberFocus programme, with support from UKRI’s Engineering and Physical Sciences Research
+        Council, and delivered with Greater Manchester Chamber of Commerce and Greater Manchester
+        Institute of Technology, it offers scenario-based workshops on cybersecurity, safe AI and digital
+        transformation. Selected manufacturers also receive readiness assessments and tailored
+        improvement roadmaps, and an open-access Knowledge Hub shares guides, toolkits and case studies.
+        By favouring ongoing engagement over one-off interventions and building workforce skills, initiatives
+        such as NWSmart5.0 are creating long-term, sustainable impact: a regional manufacturing sector that
+        is more secure, more resilient and better prepared for Industry 5.0.
+    </p>
+
+    <h2 id="article-sources" style="margin-top: 30px;">Sources</h2>
+
+    <ol>
+        <li>IBM X-Force Threat Intelligence Index 2026</li>
+        <li>GOV.UK Cyber Security Breaches Survey 2025/2026</li>
+        <li>NI Business Info survey summary</li>
+        <li>ITPro survey coverage</li>
+        <li>National Cyber Security Centre (NCSC)</li>
+        <li>CISA: Primary mitigations to reduce cyber threats to OT</li>
+        <li>National Institute of Standards and Technology (NIST)</li>
+        <li>Healthcare Innovation: Verizon DBIR 2026 coverage</li>
+        <li>Data Privacy + Cybersecurity Insider: Shadow AI and source code</li>
+        <li>Control Engineering: Legacy OT cybersecurity</li>
+        <li>City AM: JLR £1.9bn cyber attack</li>
+        <li>Prolific North: Cyber Monitoring Centre report</li>
+        <li>Transport Topics: JLR suppliers</li>
+        <li>TechCrunch via Yahoo Finance: JLR shutdown</li>
+        <li>National Business Crime Centre: Cyber Essentials</li>
+        <li>Springer: Industry 5.0 pillars</li>
+        <li>University of Salford Centre for Sustainable Innovation: NWSmart5.0</li>
+        <li>Greater Manchester Chamber of Commerce: NWSmart5.0 workshop</li>
+        <li>NWSmart5.0 Knowledge Hub</li>
+    </ol>
+
+    <div class="blog-actions" style="margin-top: 40px;">
+        <a href="Blogs/Cybersecurity-Risks-AI-Manufacturing-SMEs.pdf"
+           download
+           class="button-primary">
+            Download PDF
+        </a>
+
+        <a href="index.html#blog-insights"
+           class="button-primary blog-download-btn">
+            Back to Blog Insights
+        </a>
+    </div>
+</div> 
+
+        </div>
+    </div>
+
+    <footer class="footer home-footer">
+        <div class="footer-grid">
+
+            <div>
+                <h3>NWSmart5.0 Knowledge Hub</h3>
+                <p>Practical guidance supporting manufacturing SMEs improve cybersecurity, explore safe AI adoption, and build smarter digital operations.</p>
+            </div>
+
+            <div>
+                <h3>Quick Links</h3>
+                <a href="index.html">Home</a>
+                <a href="safe-ai.html">Safe AI</a>
+                <a href="cybersecurity.html">Cybersecurity</a>
+                <a href="digital.html">Digital Transformation</a>
+                <a href="library.html">Knowledge Library</a>
+            </div>
+
+            <div>
+                <h3>Project Partners</h3>
+                <ul class="footer-partners">
+                    <li>University of Salford</li>
+                    <li>Engineering and Physical Sciences Research Council (UKRI)</li>
+                    <li>Greater Manchester Chamber of Commerce (GMCC)</li>
+                    <li>Greater Manchester Institute of Technology (GMIoT)</li>
+                    <li>EPSRC</li>
+                    <li>CyberFocus</li>
+                </ul>
+            </div>
+
+            <div>
+                <h3>Project Information</h3>
+                <p>
+                    Educational guidance only. Verify current official guidance before making operational, legal, cybersecurity, or technology investment decisions.
+                </p>
+                <a href="disclaimer.html" class="footer-disclaimer-link">
+                    Full Disclaimer →
+                </a>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 NWSmart5.0 Knowledge Hub • Supporting smarter, safer, and more sustainable manufacturing.</p>
+            <p>External resources and guidance remain the property of their respective organisations.</p>
+        </div>
+    </footer>
+
+    <script>
+        fetch('navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar').innerHTML = data;
+            });
+
+        function toggleMobileNav() {
+            const nav = document.querySelector("nav");
+            if (nav) {
+                nav.classList.toggle("mobile-nav-open");
+            }
+        }
+        function toggleMobileSidebar() {
+    const sidebar = document.querySelector('.sidebar');
+    if (sidebar) {
+        sidebar.classList.toggle('mobile-open');
+    }
+}
+    </script>
+</body>
+</html>
